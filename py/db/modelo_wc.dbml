@@ -1,0 +1,378 @@
+Project mundiales_model {
+  database_type: 'PostgreSQL'
+  Note: 'Modelo alineado con postgres_schema.sql y sin prefijo wc'
+}
+
+Enum tipo_tarjeta {
+  amarilla
+  roja
+}
+
+Enum seccion_aparicion {
+  titular
+  ingresado
+  suplente_no_jugo
+  entrenador
+}
+
+Enum tipo_destinatario_premio {
+  jugador
+  seleccion
+}
+
+Enum rol_plantel {
+  jugador
+  entrenador
+}
+
+Enum source_table_resolucion {
+  goles
+  tarjetas
+  cambios_entrada
+  cambios_salida
+  apariciones_partido
+  penales
+}
+
+Table mundiales {
+  anio integer [pk]
+  sede text
+  campeon text
+  subcampeon text
+  tercer_lugar text
+  cuarto_lugar text
+  equipos integer
+  partidos_jugados integer
+  goles_total integer
+  promedio_gol decimal(6,2)
+}
+
+Table selecciones {
+  seleccion_id bigint [pk, increment]
+  slug text [not null, unique]
+  nombre text [not null]
+  participaciones integer
+  pj integer
+  pg integer
+  pe integer
+  pp integer
+  gf integer
+  gc integer
+  titulos integer
+  subcampeonatos integer
+  posicion_historica text
+}
+
+Table selecciones_alias {
+  alias_slug text [pk]
+  alias_nombre text [not null]
+  seleccion_id bigint [not null]
+  notas text
+}
+
+Table jugadores {
+  jugador_id bigint [pk, increment]
+  slug text [unique]
+  nombre text [not null]
+  nombre_completo text
+  seleccion_nombre text
+  seleccion_id bigint
+  fecha_nacimiento text
+  lugar_nacimiento text
+  posicion text
+  numeros_camiseta text
+  altura text
+  apodo text
+  sitio_web text
+  redes_sociales text
+  mundiales integer
+  partidos integer
+  goles integer
+  promedio_gol decimal(6,2)
+}
+
+Table partidos {
+  partido_id bigint [pk, increment]
+  slug text [not null, unique]
+  anio integer [not null]
+  fecha text
+  etapa text
+  local_nombre text [not null]
+  visitante_nombre text [not null]
+  local_seleccion_id bigint
+  visitante_seleccion_id bigint
+  resultado text
+  tiempo_extra boolean
+  penales boolean
+  resultado_penales text
+}
+
+Table apariciones_partido {
+  aparicion_id bigint [pk, increment]
+  partido_slug text [not null]
+  anio integer [not null]
+  equipo_nombre text [not null]
+  seleccion_id bigint
+  jugador_slug text
+  jugador_id bigint
+  jugador_nombre text [not null]
+  posicion text
+  camiseta text
+  seccion seccion_aparicion [not null]
+  es_capitan boolean [not null, default: false]
+
+  Indexes {
+    (partido_slug, equipo_nombre, jugador_nombre, seccion) [unique]
+  }
+}
+
+Table goles {
+  gol_id bigint [pk, increment]
+  partido_slug text [not null]
+  anio integer [not null]
+  equipo_nombre text [not null]
+  seleccion_id bigint
+  jugador text [not null]
+  jugador_slug text
+  jugador_id bigint
+  minuto text
+  es_penal boolean [not null, default: false]
+  es_autogol boolean [not null, default: false]
+}
+
+Table tarjetas {
+  tarjeta_id bigint [pk, increment]
+  partido_slug text [not null]
+  anio integer [not null]
+  jugador text [not null]
+  jugador_slug text
+  jugador_id bigint
+  equipo_nombre text [not null]
+  seleccion_id bigint
+  tipo tipo_tarjeta [not null]
+  minuto text
+}
+
+Table cambios {
+  cambio_id bigint [pk, increment]
+  partido_slug text [not null]
+  anio integer [not null]
+  equipo_nombre text [not null]
+  seleccion_id bigint
+  sale text
+  sale_slug text
+  sale_jugador_id bigint
+  entra text
+  entra_slug text
+  entra_jugador_id bigint
+  minuto text
+}
+
+Table penales {
+  penal_id bigint [pk, increment]
+  partido_slug text [not null]
+  anio integer [not null]
+  equipo_nombre text [not null]
+  seleccion_id bigint
+  orden integer [not null]
+  jugador text [not null]
+  jugador_slug text
+  jugador_id bigint
+  resultado text [not null]
+
+  Indexes {
+    (partido_slug, equipo_nombre, orden) [unique]
+  }
+}
+
+Table grupos {
+  grupo_id bigint [pk, increment]
+  anio integer [not null]
+  grupo text [not null]
+  posicion integer
+  seleccion_nombre text [not null]
+  seleccion_id bigint
+  pts integer
+  pj integer
+  pg integer
+  pe integer
+  pp integer
+  gf integer
+  gc integer
+  dif integer
+  clasificado boolean
+
+  Indexes {
+    (anio, grupo, seleccion_nombre) [unique]
+  }
+}
+
+Table posiciones_finales {
+  posicion_final_id bigint [pk, increment]
+  anio integer [not null]
+  posicion integer [not null]
+  seleccion_nombre text [not null]
+  seleccion_id bigint
+
+  Indexes {
+    (anio, posicion, seleccion_nombre) [unique]
+  }
+}
+
+Table goleadores {
+  goleador_id bigint [pk, increment]
+  anio integer [not null]
+  jugador text [not null]
+  jugador_slug text
+  jugador_id bigint
+  seleccion_nombre text
+  seleccion_id bigint
+  goles integer
+
+  Indexes {
+    (anio, jugador, seleccion_nombre) [unique]
+  }
+}
+
+Table premios {
+  premio_id bigint [pk, increment]
+  anio integer [not null]
+  premio text [not null]
+  tipo_destinatario tipo_destinatario_premio [not null]
+  jugador text
+  jugador_slug text
+  jugador_id bigint
+  seleccion_nombre text
+  seleccion_id bigint
+  destinatario_key text [note: 'Generado en SQL para soportar premios a jugador o seleccion']
+
+  Indexes {
+    (anio, premio, tipo_destinatario, destinatario_key) [unique]
+  }
+}
+
+Table planteles {
+  plantel_id bigint [pk, increment]
+  anio integer [not null]
+  seleccion_nombre text
+  seleccion_slug text
+  seleccion_key text [note: 'Generado en SQL: coalesce(seleccion_slug, seleccion_nombre)']
+  seleccion_id bigint
+  jugador text [not null]
+  jugador_slug text
+  jugador_key text [note: 'Generado en SQL: coalesce(jugador_slug, jugador)']
+  jugador_id bigint
+  posicion text
+  camiseta text
+  fecha_nacimiento text
+  altura text
+  club text
+  rol rol_plantel [not null]
+
+  Indexes {
+    (anio, jugador_key, seleccion_key, rol) [unique]
+  }
+}
+
+Table participaciones_mundial {
+  participacion_id bigint [pk, increment]
+  anio integer [not null]
+  seleccion_nombre text [not null]
+  seleccion_slug text
+  seleccion_key text [note: 'Generado en SQL para deduplicar por anio y seleccion']
+  seleccion_id bigint
+  posicion integer
+  etapa text
+  pts integer
+  pj integer
+  pg integer
+  pe integer
+  pp integer
+  gf integer
+  gc integer
+  dif integer
+  participo boolean [not null, default: true]
+
+  Indexes {
+    (anio, seleccion_key) [unique]
+  }
+}
+
+Table resolucion_identidad_jugador {
+  resolucion_id bigint [pk, increment]
+  source_table source_table_resolucion [not null]
+  source_pk bigint
+  partido_slug text [not null]
+  anio integer [not null]
+  equipo_nombre text
+  equipo_key text [note: 'Generado en SQL']
+  jugador_nombre_raw text [not null]
+  jugador_slug_raw text
+  minuto text
+  minuto_key text [note: 'Generado en SQL']
+  jugador_id_resuelto bigint
+  jugador_slug_resuelto text
+  metodo text [not null, default: 'manual']
+  confianza decimal(5,2)
+  notas text
+  resolved_at timestamptz
+
+  Indexes {
+    (source_table, partido_slug, equipo_key, jugador_nombre_raw, minuto_key) [unique]
+  }
+}
+
+Ref: selecciones_alias.seleccion_id > selecciones.seleccion_id
+Ref: jugadores.seleccion_id > selecciones.seleccion_id
+Ref: partidos.anio > mundiales.anio
+Ref: partidos.local_seleccion_id > selecciones.seleccion_id
+Ref: partidos.visitante_seleccion_id > selecciones.seleccion_id
+Ref: apariciones_partido.partido_slug > partidos.slug
+Ref: apariciones_partido.anio > mundiales.anio
+Ref: apariciones_partido.seleccion_id > selecciones.seleccion_id
+Ref: apariciones_partido.jugador_slug > jugadores.slug
+Ref: apariciones_partido.jugador_id > jugadores.jugador_id
+Ref: goles.partido_slug > partidos.slug
+Ref: goles.anio > mundiales.anio
+Ref: goles.seleccion_id > selecciones.seleccion_id
+Ref: goles.jugador_slug > jugadores.slug
+Ref: goles.jugador_id > jugadores.jugador_id
+Ref: tarjetas.partido_slug > partidos.slug
+Ref: tarjetas.anio > mundiales.anio
+Ref: tarjetas.seleccion_id > selecciones.seleccion_id
+Ref: tarjetas.jugador_slug > jugadores.slug
+Ref: tarjetas.jugador_id > jugadores.jugador_id
+Ref: cambios.partido_slug > partidos.slug
+Ref: cambios.anio > mundiales.anio
+Ref: cambios.seleccion_id > selecciones.seleccion_id
+Ref: cambios.sale_slug > jugadores.slug
+Ref: cambios.sale_jugador_id > jugadores.jugador_id
+Ref: cambios.entra_slug > jugadores.slug
+Ref: cambios.entra_jugador_id > jugadores.jugador_id
+Ref: penales.partido_slug > partidos.slug
+Ref: penales.anio > mundiales.anio
+Ref: penales.seleccion_id > selecciones.seleccion_id
+Ref: penales.jugador_slug > jugadores.slug
+Ref: penales.jugador_id > jugadores.jugador_id
+Ref: grupos.anio > mundiales.anio
+Ref: grupos.seleccion_id > selecciones.seleccion_id
+Ref: posiciones_finales.anio > mundiales.anio
+Ref: posiciones_finales.seleccion_id > selecciones.seleccion_id
+Ref: goleadores.anio > mundiales.anio
+Ref: goleadores.jugador_slug > jugadores.slug
+Ref: goleadores.jugador_id > jugadores.jugador_id
+Ref: goleadores.seleccion_id > selecciones.seleccion_id
+Ref: premios.anio > mundiales.anio
+Ref: premios.jugador_slug > jugadores.slug
+Ref: premios.jugador_id > jugadores.jugador_id
+Ref: premios.seleccion_id > selecciones.seleccion_id
+Ref: planteles.anio > mundiales.anio
+Ref: planteles.seleccion_id > selecciones.seleccion_id
+Ref: planteles.jugador_slug > jugadores.slug
+Ref: planteles.jugador_id > jugadores.jugador_id
+Ref: participaciones_mundial.anio > mundiales.anio
+Ref: participaciones_mundial.seleccion_id > selecciones.seleccion_id
+Ref: resolucion_identidad_jugador.partido_slug > partidos.slug
+Ref: resolucion_identidad_jugador.anio > mundiales.anio
+Ref: resolucion_identidad_jugador.jugador_id_resuelto > jugadores.jugador_id
+Ref: resolucion_identidad_jugador.jugador_slug_resuelto > jugadores.slug

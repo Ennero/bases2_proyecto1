@@ -1,0 +1,245 @@
+﻿partido_slug,anio,jugador,jugador_slug,equipo,tipo,minuto
+2022_catar_ecuador,2022,Saad Al Sheeb,,Catar,amarilla,15
+2022_catar_ecuador,2022,Almoez Ali,,Catar,amarilla,22
+2022_catar_ecuador,2022,Moisés Caicedo,,Ecuador,amarilla,29
+2022_catar_ecuador,2022,Karim Boudiaf,,Catar,amarilla,36
+2022_catar_ecuador,2022,Jhegson Méndez,,Ecuador,amarilla,56
+2022_catar_ecuador,2022,Akram Afif,,Catar,amarilla,78
+2022_inglaterra_iran,2022,Alireza Jahanbakhsh,,Irán,amarilla,25
+2022_inglaterra_iran,2022,Morteza Pouraliganji,,Irán,amarilla,48
+2022_senegal_holanda,2022,Matthijs De Ligt,,Paises Bajos,amarilla,56
+2022_senegal_holanda,2022,Nampalys Mendy,,Senegal,amarilla,90+4
+2022_senegal_holanda,2022,Idrissa Gana Gueye,,Senegal,amarilla,90+6
+2022_estados_unidos_gales,2022,Sergiño Dest,,Estados Unidos,amarilla,11
+2022_estados_unidos_gales,2022,Weston McKennie,,Estados Unidos,amarilla,13
+2022_estados_unidos_gales,2022,Gareth Bale,,Gales,amarilla,40
+2022_estados_unidos_gales,2022,Chris Mepham,,Gales,amarilla,45+2
+2022_estados_unidos_gales,2022,Tim Ream,,Estados Unidos,amarilla,51
+2022_estados_unidos_gales,2022,Kellyn Acosta,,Estados Unidos,amarilla,90+10
+2022_argentina_arabia_saudita,2022,Abdulelah Al-Malki,,Arabia Saudita,amarilla,67
+2022_argentina_arabia_saudita,2022,Ali Al-Bulaihi,,Arabia Saudita,amarilla,75
+2022_argentina_arabia_saudita,2022,Salem Al-Dawsari,,Arabia Saudita,amarilla,79
+2022_argentina_arabia_saudita,2022,Saud Abdulhamid,,Arabia Saudita,amarilla,82
+2022_argentina_arabia_saudita,2022,Nawaf Al-Abed,,Arabia Saudita,amarilla,88
+2022_argentina_arabia_saudita,2022,Mohammed Al-Owais,,Arabia Saudita,amarilla,90+2
+2022_dinamarca_tunez,2022,Rasmus Kristensen,,Dinamarca,amarilla,24
+2022_dinamarca_tunez,2022,Mathias Jensen,,Dinamarca,amarilla,78
+2022_dinamarca_tunez,2022,Taha Yassine Khenissi,,Túnez,amarilla,86
+2022_mexico_polonia,2022,Jorge Sánchez,,México,amarilla,29
+2022_mexico_polonia,2022,Hector Moreno,,México,amarilla,56
+2022_mexico_polonia,2022,Przemyslaw Frankowski,,Polonia,amarilla,76
+2022_mexico_polonia,2022,,,,roja,
+2022_francia_australia,2022,Mitchell Duke,,Australia,amarilla,55
+2022_francia_australia,2022,Jackson Irvine,,Australia,amarilla,80
+2022_francia_australia,2022,Aaron Mooy,,Australia,amarilla,90+5
+2022_marruecos_croacia,2022,Sofyan Amrabat,,Marruecos,amarilla,78
+2022_alemania_japon,2022,,,Minuto 67,roja,
+2022_alemania_japon,2022,,,Minuto 79,roja,
+2022_alemania_japon,2022,,,Minuto 90,roja,
+2022_alemania_japon,2022,,,Minuto 46 (en el entretiempo),roja,
+2022_alemania_japon,2022,,,Minuto 57,roja,
+2022_alemania_japon,2022,,,Minuto 71,roja,
+2022_alemania_japon,2022,,,Minuto 75,roja,
+2022_espana_costa_rica,2022,Francisco Calvo,,Costa Rica,amarilla,68
+2022_espana_costa_rica,2022,Joel Campbell,,Costa Rica,amarilla,90+7
+2022_belgica_canada,2022,Yannick Carrasco,,Bélgica,amarilla,9
+2022_belgica_canada,2022,Thomas Meunier,,Bélgica,amarilla,54
+2022_belgica_canada,2022,Amadou Onana,,Bélgica,amarilla,56
+2022_belgica_canada,2022,Alphonso Davies,,Canadá,amarilla,81
+2022_belgica_canada,2022,Alistair Johnston,,Canadá,amarilla,83
+2022_suiza_camerun,2022,Collins Faï,,Camerún,amarilla,36
+2022_suiza_camerun,2022,Nico Elvedi,,Suiza,amarilla,64
+2022_suiza_camerun,2022,Manuel Akanji,,Suiza,amarilla,83
+2022_uruguay_corea_del_sur,2022,Martin Caceres,,Uruguay,amarilla,57
+2022_uruguay_corea_del_sur,2022,Gue-sung Cho,,Corea del Sur,amarilla,88
+2022_uruguay_corea_del_sur,2022,,,,roja,
+2022_portugal_ghana,2022,Mohammed Kudus,,Ghana,amarilla,45+1
+2022_portugal_ghana,2022,Andre Ayew,,Ghana,amarilla,49
+2022_portugal_ghana,2022,Alidu Seidu,,Ghana,amarilla,57
+2022_portugal_ghana,2022,Danilo Pereira,,Portugal,amarilla,90+1
+2022_portugal_ghana,2022,Inaki Williams,,Ghana,amarilla,90+1
+2022_portugal_ghana,2022,Bruno Fernandes,,Portugal,amarilla,90+5
+2022_brasil_serbia,2022,Strahinja Pavlovic,,Serbia,amarilla,7
+2022_brasil_serbia,2022,Nemanja Gudelj,,Serbia,amarilla,49
+2022_brasil_serbia,2022,Sasa Lukic,,Serbia,amarilla,64
+2022_gales_iran,2022,Joe Rodon,,Gales,amarilla,45+3
+2022_gales_iran,2022,Wayne Heennesey,,Gales,roja,86
+2022_gales_iran,2022,Ramin Rezaeian,,Irán,amarilla,90+5
+2022_gales_iran,2022,Alireza Jahanbakhsh,,Irán,amarilla,90+5
+2022_catar_senegal,2022,Ismaeel Mohammad,,Catar,amarilla,20
+2022_catar_senegal,2022,Boulaye Dia,,Senegal,amarilla,30
+2022_catar_senegal,2022,Homam Ahmed,,Catar,amarilla,45+2
+2022_catar_senegal,2022,Ismail Jakobs,,Senegal,amarilla,52
+2022_catar_senegal,2022,Pathé Ciss,,Senegal,amarilla,87
+2022_catar_senegal,2022,Assim Madibo,,Catar,amarilla,90+1
+2022_holanda_ecuador,2022,Jhegson Méndez,,Ecuador,amarilla,57
+2022_inglaterra_estados_unidos,2022,,,Minuto 68,roja,
+2022_inglaterra_estados_unidos,2022,,,Minuto 77,roja,
+2022_inglaterra_estados_unidos,2022,,,Minuto 83,roja,
+2022_tunez_australia,2022,Aissa Laidouni,,Túnez,amarilla,26
+2022_tunez_australia,2022,Ali Abdi,,Túnez,amarilla,64
+2022_tunez_australia,2022,Ferjani Sassi,,Túnez,amarilla,90+3
+2022_polonia_arabia_saudita,2022,Jakub Kiwior,,Polonia,amarilla,15
+2022_polonia_arabia_saudita,2022,Matty Cash,,Polonia,amarilla,16
+2022_polonia_arabia_saudita,2022,Arkadiusz Milik,,Polonia,amarilla,19
+2022_polonia_arabia_saudita,2022,Abdulelah Al-Malki,,Arabia Saudita,amarilla,20
+2022_polonia_arabia_saudita,2022,Abdulelah Al-Amri,,Arabia Saudita,amarilla,45+4
+2022_polonia_arabia_saudita,2022,,,,roja,
+2022_francia_dinamarca,2022,Andreas Christensen,,Dinamarca,amarilla,20
+2022_francia_dinamarca,2022,Andreas Cornelius,,Dinamarca,amarilla,23
+2022_francia_dinamarca,2022,Jules Koundé,,Francia,amarilla,43
+2022_argentina_mexico,2022,Néstor Araujo,,México,amarilla,22
+2022_argentina_mexico,2022,Gonzalo Montiel,,Argentina,amarilla,43
+2022_argentina_mexico,2022,Érick Gutiérrez,,México,amarilla,50
+2022_argentina_mexico,2022,Héctor Herrera,,México,amarilla,66
+2022_argentina_mexico,2022,Roberto Alvarado,,México,amarilla,89
+2022_japon_costa_rica,2022,Anthony Contreras,,Costa Rica,amarilla,41
+2022_japon_costa_rica,2022,Miki Yamane,,Japón,amarilla,44
+2022_japon_costa_rica,2022,Celso Borges,,Costa Rica,amarilla,61
+2022_japon_costa_rica,2022,Francisco Calvo,,Costa Rica,amarilla,70
+2022_japon_costa_rica,2022,Ko Itakura,,Japón,amarilla,84
+2022_japon_costa_rica,2022,Wataru Endo,,Japón,amarilla,90+3
+2022_belgica_marruecos,2022,Amadou Onana,,Bélgica,amarilla,29
+2022_belgica_marruecos,2022,Abdelhamid Sabiri,,Marruecos,amarilla,90+5
+2022_croacia_canada,2022,Tajon Buchanan,,Canadá,amarilla,52
+2022_croacia_canada,2022,Dejan Lovren,,Croacia,amarilla,56
+2022_croacia_canada,2022,Kamal Miller,,Canadá,amarilla,85
+2022_croacia_canada,2022,Luka Modric,,Croacia,amarilla,85
+2022_espana_alemania,2022,Thilo Kehrer,,Alemania,amarilla,37
+2022_espana_alemania,2022,Sergio Busquets,,España,amarilla,44
+2022_espana_alemania,2022,Leon Goretzka,,Alemania,amarilla,58
+2022_espana_alemania,2022,Joshua Kimmich,,Alemania,amarilla,60
+2022_camerun_serbia,2022,Nicolas Nkoulou,,Camerún,amarilla,24
+2022_camerun_serbia,2022,Christian Bassogog,,Camerún,amarilla,30
+2022_camerun_serbia,2022,Luka Jović,,Serbia,amarilla,45+4
+2022_camerun_serbia,2022,Nikola Milenković,,Serbia,amarilla,90+3
+2022_corea_del_sur_ghana,2022,Daniel Amartey,,Ghana,amarilla,21
+2022_corea_del_sur_ghana,2022,Woo-young Jung,,Corea del Sur,amarilla,27
+2022_corea_del_sur_ghana,2022,Tariq Lamptey,,Ghana,amarilla,73
+2022_corea_del_sur_ghana,2022,Young-Gwon Kim,,Corea del Sur,amarilla,77
+2022_corea_del_sur_ghana,2022,,,,roja,
+2022_brasil_suiza,2022,Fabian Rieder,,Suiza,amarilla,50
+2022_brasil_suiza,2022,Fred,,Brasil,amarilla,52
+2022_portugal_uruguay,2022,Rodrigo Bentancur,,Uruguay,amarilla,6
+2022_portugal_uruguay,2022,Rúben Neves,,Portugal,amarilla,38
+2022_portugal_uruguay,2022,Mathías Olivera,,Uruguay,amarilla,44
+2022_portugal_uruguay,2022,João Félix,,Portugal,amarilla,77
+2022_portugal_uruguay,2022,Rúben Dias,,Portugal,amarilla,89
+2022_holanda_catar,2022,Nathan Aké,,Paises Bajos,amarilla,52
+2022_ecuador_senegal,2022,Idrissa Gana Gueye,,Senegal,amarilla,66
+2022_gales_inglaterra,2022,Dan James,,Gales,amarilla,29
+2022_gales_inglaterra,2022,Aaron Ramsey,,Gales,amarilla,61
+2022_iran_estados_unidos,2022,Tyler Adams,,Estados Unidos,amarilla,43
+2022_iran_estados_unidos,2022,Majid Hosseini,,Irán,amarilla,77
+2022_iran_estados_unidos,2022,Hossein Kanaani,,Irán,amarilla,83
+2022_iran_estados_unidos,2022,Abolfazl Jalali,,Irán,amarilla,90+6
+2022_australia_dinamarca,2022,Aziz Behich,,Australia,amarilla,4
+2022_australia_dinamarca,2022,Milos Degenek,,Australia,amarilla,57
+2022_australia_dinamarca,2022,Robert Skov,,Dinamarca,amarilla,75
+2022_tunez_francia,2022,Wajdi Kechrida,,Túnez,amarilla,28
+2022_arabia_saudita_mexico,2022,Edson Álvarez,,México,amarilla,16
+2022_arabia_saudita_mexico,2022,Saleh Al-Shehri,,Arabia Saudita,amarilla,28
+2022_arabia_saudita_mexico,2022,Ali Al-Hassan,,Arabia Saudita,amarilla,34
+2022_arabia_saudita_mexico,2022,Hassan Tambakti,,Arabia Saudita,amarilla,52
+2022_arabia_saudita_mexico,2022,Abdullah Madu,,Arabia Saudita,amarilla,81
+2022_arabia_saudita_mexico,2022,Abdulelah Al-Amri,,Arabia Saudita,amarilla,90+1
+2022_arabia_saudita_mexico,2022,Hattan Bahebri,,Arabia Saudita,amarilla,90+7
+2022_polonia_argentina,2022,Marcos Acuña,,Argentina,amarilla,49
+2022_polonia_argentina,2022,Grzegorz Krychowiak,,Polonia,amarilla,78
+2022_croacia_belgica,2022,Leander Dendoncker,,Bélgica,amarilla,67
+2022_canada_marruecos,2022,Junior Hoilett,,Canadá,amarilla,7
+2022_canada_marruecos,2022,Jonathan Osorio,,Canadá,amarilla,26
+2022_canada_marruecos,2022,Sam Adekugbe,,Canadá,amarilla,45+2
+2022_canada_marruecos,2022,Steven Vitoria,,Canadá,amarilla,84
+2022_japon_espana,2022,Ko Itakura,,Japón,amarilla,39
+2022_japon_espana,2022,Shogo Taniguchi,,Japón,amarilla,44
+2022_japon_espana,2022,Maya Yoshida,,Japón,amarilla,45
+2022_costa_rica_alemania,2022,Óscar Duarte,,Costa Rica,amarilla,77
+2022_ghana_uruguay,2022,Darwin Núñez,,Uruguay,amarilla,20
+2022_ghana_uruguay,2022,Luis Suarez,,Uruguay,amarilla,60
+2022_ghana_uruguay,2022,Kamaldeen Sulemana,,Ghana,amarilla,86
+2022_ghana_uruguay,2022,Sebastián Coates,,Uruguay,amarilla,87
+2022_ghana_uruguay,2022,Alidu Seidu,,Ghana,amarilla,90+9
+2022_ghana_uruguay,2022,Edinson Cavani,,Uruguay,amarilla,90+10
+2022_ghana_uruguay,2022,José María Giménez,,Uruguay,amarilla,90+10
+2022_corea_del_sur_portugal,2022,Kang-in Lee,,Corea del Sur,amarilla,36
+2022_corea_del_sur_portugal,2022,Hee-chan Hwang,,Corea del Sur,amarilla,90+2
+2022_serbia_suiza,2022,Silvan Widmer,,Suiza,amarilla,15
+2022_serbia_suiza,2022,Rubén Vargas,,Suiza,amarilla,34
+2022_serbia_suiza,2022,Sergej Milinković-Savić,,Serbia,amarilla,47
+2022_serbia_suiza,2022,Strahinja Pavlovic,,Serbia,amarilla,56
+2022_serbia_suiza,2022,Predrag Rajković,,Serbia,amarilla,66
+2022_serbia_suiza,2022,Nemanja Gudelj,,Serbia,amarilla,81
+2022_serbia_suiza,2022,Aleksandar Mitrović,,Serbia,amarilla,82
+2022_serbia_suiza,2022,Granit Xhaka,,Suiza,amarilla,90+5
+2022_serbia_suiza,2022,Nikola Milenković,,Serbia,amarilla,90+5
+2022_serbia_suiza,2022,Fabian Schär,,Suiza,amarilla,90+9
+2022_serbia_suiza,2022,Sasa Lukic,,Serbia,amarilla,90+10
+2022_camerun_brasil,2022,Nouhou Tolo,,Camerún,amarilla,6
+2022_camerun_brasil,2022,Eder Militao,,Brasil,amarilla,7
+2022_camerun_brasil,2022,Pierre Kunde,,Camerún,amarilla,28
+2022_camerun_brasil,2022,Collins Faï,,Camerún,amarilla,32
+2022_camerun_brasil,2022,Vincent Aboubakar,,Camerún,amarilla,81
+2022_camerun_brasil,2022,Bruno Guimaraes,,Brasil,amarilla,85
+2022_camerun_brasil,2022,Vincent Aboubakar,,Camerún,amarilla,90+3
+2022_holanda_estados_unidos,2022,Teun Koopmeiners,,Paises Bajos,amarilla,60
+2022_holanda_estados_unidos,2022,Frenkie de Jong,,Paises Bajos,amarilla,87
+2022_argentina_australia,2022,Jackson Irvine,,Australia,amarilla,15
+2022_argentina_australia,2022,Milos Degenek,,Australia,amarilla,38
+2022_inglaterra_senegal,2022,Kalidou Koulibaly,,Senegal,amarilla,76
+2022_francia_polonia,2022,Aurélien Tchouaméni,,Francia,amarilla,32
+2022_francia_polonia,2022,Bartosz Bereszyński,,Polonia,amarilla,47
+2022_francia_polonia,2022,Matty Cash,,Polonia,amarilla,88
+2022_japon_croacia,2022,Mateo Kovacic,,Croacia,amarilla,90
+2022_japon_croacia,2022,Borna Barisic,,Croacia,amarilla,116
+2022_brasil_corea_del_sur,2022,Woo-young Jung,,Corea del Sur,amarilla,44
+2022_marruecos_espana,2022,Aymeric Laporte,,España,amarilla,77
+2022_marruecos_espana,2022,Romain Saïss,,Marruecos,amarilla,90
+2022_portugal_suiza,2022,Fabian Schär,,Suiza,amarilla,43
+2022_portugal_suiza,2022,Eray Cömert,,Suiza,amarilla,59
+2022_holanda_argentina,2022,Marcos Acuña,,Argentina,amarilla,43
+2022_holanda_argentina,2022,Jurrïen Timber,,Paises Bajos,amarilla,43
+2022_holanda_argentina,2022,Cristian Romero,,Argentina,amarilla,45
+2022_holanda_argentina,2022,Wout Weghorst,,Paises Bajos,amarilla,45+2
+2022_holanda_argentina,2022,Memphis Depay,,Paises Bajos,amarilla,76
+2022_holanda_argentina,2022,Lisandro Martinez,,Argentina,amarilla,76
+2022_holanda_argentina,2022,Steven Berghuis,,Paises Bajos,amarilla,88
+2022_holanda_argentina,2022,Leandro Paredes,,Argentina,amarilla,89
+2022_holanda_argentina,2022,Lionel Messi,,Argentina,amarilla,90+10
+2022_holanda_argentina,2022,Nicolas Otamendi,,Argentina,amarilla,90+12
+2022_holanda_argentina,2022,Steven Bergwijn,,Paises Bajos,amarilla,91
+2022_holanda_argentina,2022,Gonzalo Montiel,,Argentina,amarilla,109
+2022_holanda_argentina,2022,German Pezzella,,Argentina,amarilla,112
+2022_holanda_argentina,2022,Denzel Dumfries,,Paises Bajos,amarilla,128
+2022_holanda_argentina,2022,Noa Lang,,Paises Bajos,amarilla,129
+2022_holanda_argentina,2022,Denzel Dumfries,,Paises Bajos,amarilla,129
+2022_holanda_argentina,2022,,,,roja,
+2022_croacia_brasil,2022,Danilo,,Brasil,amarilla,25
+2022_croacia_brasil,2022,Marcelo Brozovic,,Croacia,amarilla,31
+2022_croacia_brasil,2022,Casemiro,,Brasil,amarilla,68
+2022_croacia_brasil,2022,Marquinhos,,Brasil,amarilla,77
+2022_croacia_brasil,2022,Bruno Petkovic,,Croacia,amarilla,117
+2022_inglaterra_francia,2022,Antoine Griezmann,,Francia,amarilla,43
+2022_inglaterra_francia,2022,Ousmane Dembélé,,Francia,amarilla,46
+2022_inglaterra_francia,2022,Théo Hernandez,,Francia,amarilla,82
+2022_inglaterra_francia,2022,Harry Maguire,,Inglaterra,amarilla,90
+2022_marruecos_portugal,2022,Achraf Dari,,Marruecos,amarilla,70
+2022_marruecos_portugal,2022,Vitinha,,Portugal,amarilla,87
+2022_marruecos_portugal,2022,Walid Cheddira,,Marruecos,amarilla,90+1
+2022_marruecos_portugal,2022,Walid Cheddira,,Marruecos,amarilla,90+3
+2022_argentina_croacia,2022,Dominik Livaković,,Croacia,amarilla,32
+2022_argentina_croacia,2022,Mateo Kovacic,,Croacia,amarilla,32
+2022_argentina_croacia,2022,Cristian Romero,,Argentina,amarilla,68
+2022_argentina_croacia,2022,Nicolas Otamendi,,Argentina,amarilla,71
+2022_argentina_croacia,2022,,,,roja,
+2022_francia_marruecos,2022,Sofiane Boufal,,Marruecos,amarilla,27
+2022_croacia_marruecos,2022,Azzedine Ounahi,,Marruecos,amarilla,69
+2022_croacia_marruecos,2022,Selim Amallah,,Marruecos,amarilla,84
+2022_argentina_francia,2022,Enzo Fernandez,,Argentina,amarilla,45+7
+2022_argentina_francia,2022,Adrien Rabiot,,Francia,amarilla,55
+2022_argentina_francia,2022,Marcus Thuram,,Francia,amarilla,87
+2022_argentina_francia,2022,Olivier Giroud,,Francia,amarilla,90+5
+2022_argentina_francia,2022,Marcos Acuña,,Argentina,amarilla,90+8
+2022_argentina_francia,2022,Leandro Paredes,,Argentina,amarilla,114
+2022_argentina_francia,2022,Gonzalo Montiel,,Argentina,amarilla,116
+2022_argentina_francia,2022,Emiliano Martinez,,Argentina,amarilla,125
