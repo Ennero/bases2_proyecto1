@@ -280,7 +280,6 @@ CREATE TABLE IF NOT EXISTS resolucion_identidad_jugador (
     metodo text NOT NULL DEFAULT 'manual',
     confianza numeric(5,2),
     notas text,
-    resolved_at timestamptz,
     UNIQUE (source_table, partido_slug, equipo_key, jugador_nombre_raw, minuto_key)
 );
 

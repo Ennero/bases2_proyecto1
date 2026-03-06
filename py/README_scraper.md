@@ -33,7 +33,9 @@ Genera CSV listos para cargarse en una base relacional y ahora puede trabajar en
 pip install pandas beautifulsoup4
 ```
 
-No depende de Selenium.
+En modo `local` solo necesitas leer los HTML descargados.
+
+En modo `web`, el scraper usa Microsoft Edge en modo headless para evitar el bloqueo `403` del sitio. No depende de Selenium ni de drivers externos, pero sí necesita que Edge esté instalado en Windows.
 
 ## Uso con HTML descargado
 

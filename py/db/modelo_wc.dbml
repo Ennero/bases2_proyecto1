@@ -315,7 +315,6 @@ Table resolucion_identidad_jugador {
   metodo text [not null, default: 'manual']
   confianza decimal(5,2)
   notas text
-  resolved_at timestamptz
 
   Indexes {
     (source_table, partido_slug, equipo_key, jugador_nombre_raw, minuto_key) [unique]

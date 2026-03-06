@@ -10,11 +10,12 @@ from __future__ import annotations
 import argparse
 import os
 import re
+import shutil
+import subprocess
 import time
 from dataclasses import dataclass
 from typing import Iterable
 from urllib.parse import urlparse
-from urllib.request import Request, urlopen
 
 import pandas as pd
 from bs4 import BeautifulSoup, Tag
@@ -56,12 +57,46 @@ class FuenteDatos:
                 html = descriptor.read()
         else:
             url = normalizar_url(ruta_sitio)
-            request = Request(url, headers={"User-Agent": USER_AGENT})
-            with urlopen(request) as response:
-                html = response.read().decode("utf-8", errors="ignore")
+            html = obtener_html_con_edge(url)
             if self.pausa > 0:
                 time.sleep(self.pausa)
         return BeautifulSoup(html, "html.parser")
+
+    def cerrar(self) -> None:
+        return None
+
+
+def resolver_ruta_edge() -> str:
+    candidatos = [
+        shutil.which("msedge.exe"),
+        r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
+        r"C:\Program Files\Microsoft\Edge\Application\msedge.exe",
+    ]
+    for candidato in candidatos:
+        if candidato and os.path.exists(candidato):
+            return candidato
+    raise FileNotFoundError("No se encontró Microsoft Edge instalado para el modo web.")
+
+
+def obtener_html_con_edge(url: str) -> str:
+    comando = [
+        resolver_ruta_edge(),
+        "--headless=new",
+        "--disable-gpu",
+        "--dump-dom",
+        f"--user-agent={USER_AGENT}",
+        url,
+    ]
+    resultado = subprocess.run(
+        comando,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="ignore",
+        timeout=90,
+        check=True,
+    )
+    return resultado.stdout
 
 
 def normalizar_ruta_sitio(ruta: str) -> str:
@@ -1184,14 +1219,17 @@ def main() -> None:
     if args.origen == "local":
         print(f"  HTML local: {fuente.html_dir}")
 
-    for seccion in secciones:
-        funcion = SECCIONES[seccion]
-        if seccion == "selecciones":
-            funcion(fuente, args.salida)
-        elif seccion == "jugadores":
-            funcion(fuente, args.salida, limite=args.limite_jugadores)
-        else:
-            funcion(fuente, anios, args.salida)
+    try:
+        for seccion in secciones:
+            funcion = SECCIONES[seccion]
+            if seccion == "selecciones":
+                funcion(fuente, args.salida)
+            elif seccion == "jugadores":
+                funcion(fuente, args.salida, limite=args.limite_jugadores)
+            else:
+                funcion(fuente, anios, args.salida)
+    finally:
+        fuente.cerrar()
 
     print("\n" + "=" * 60)
     print("EXTRACCIÓN COMPLETADA")

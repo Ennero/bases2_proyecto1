@@ -309,7 +309,6 @@ Cola para revisar filas en las que el sitio no permite identificar un jugador co
 - `metodo`: método de resolución.
 - `confianza`: confianza asignada a la resolución.
 - `notas`: comentarios del analista.
-- `resolved_at`: momento en que quedó resuelto.
 
 El campo `notas` aquí también es principalmente manual. Sirve para que, cuando resuelvas un jugador dudoso, quede documentado qué decisión se tomó y por qué.
 
@@ -376,8 +375,7 @@ SET jugador_id_resuelto = j.jugador_id,
     jugador_slug_resuelto = j.slug,
     metodo = 'manual',
     confianza = 1.00,
-    notas = 'Resuelto por revision manual',
-    resolved_at = now()
+    notas = 'Resuelto por revision manual'
 FROM jugadores j
 WHERE r.resolucion_id = <RESOLUCION_ID>
   AND j.slug = '<JUGADOR_SLUG>';
@@ -422,15 +420,4 @@ Ejemplo de slug poco confiable o ausente:
 
 Por eso existe la tabla `resolucion_identidad_jugador`: guarda casos donde hay nombre, pero no un slug suficientemente confiable para enlazarlo automáticamente.
 
-## Para qué sirve `resolved_at`
-
-`resolved_at` guarda el momento en que una fila pendiente de `resolucion_identidad_jugador` fue resuelta manualmente.
-
-Sirve para saber:
-
-- si ya fue revisada
-- cuándo se revisó
-- qué pendientes siguen abiertos
-
-No es obligatorio para que la base funcione. A diferencia de `slug`, no es estructural. Si quieres un modelo todavía más minimalista, también se podría eliminar sin romper la carga principal.
 ```
