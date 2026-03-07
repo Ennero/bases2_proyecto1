@@ -1,0 +1,2716 @@
+﻿partido_slug,anio,equipo,jugador,jugador_slug,minuto,es_penal,es_autogol
+2022_catar_ecuador,2022,Ecuador,Enner Valencia,,16,True,False
+2022_catar_ecuador,2022,Ecuador,Enner Valencia,,31,False,False
+2022_inglaterra_iran,2022,Inglaterra,Jude Bellingham,,35,False,False
+2022_inglaterra_iran,2022,Inglaterra,Bukayo Saka,,43,False,False
+2022_inglaterra_iran,2022,Inglaterra,+1' Raheem Sterling,,45+1,False,False
+2022_inglaterra_iran,2022,Inglaterra,Bukayo Saka,,62,False,False
+2022_inglaterra_iran,2022,Irán,Mehdi Taremi,,65,False,False
+2022_inglaterra_iran,2022,Inglaterra,Marcus Rashford,,71,False,False
+2022_inglaterra_iran,2022,Inglaterra,Jack Grealish,,90,False,False
+2022_inglaterra_iran,2022,Irán,+13' Mehdi Taremi,,90+13,True,False
+2022_senegal_holanda,2022,Paises Bajos,Cody Gakpo,,84,False,False
+2022_senegal_holanda,2022,Paises Bajos,+9' Davy Klaassen,,90+9,False,False
+2022_estados_unidos_gales,2022,Estados Unidos,Tim Weah,,36,False,False
+2022_estados_unidos_gales,2022,Gales,Gareth Bale,,82,True,False
+2022_argentina_arabia_saudita,2022,Argentina,Lionel Messi,,10,True,False
+2022_argentina_arabia_saudita,2022,Arabia Saudita,Saleh Al-Shehri,,48,False,False
+2022_argentina_arabia_saudita,2022,Arabia Saudita,Salem Al-Dawsari,,53,False,False
+2022_francia_australia,2022,Australia,Craig Goodwin,,9,False,False
+2022_francia_australia,2022,Francia,Adrien Rabiot,,27,False,False
+2022_francia_australia,2022,Francia,Olivier Giroud,,32,False,False
+2022_francia_australia,2022,Francia,Kylian Mbappé,,68,False,False
+2022_francia_australia,2022,Francia,Olivier Giroud,,71,False,False
+2022_alemania_japon,2022,Alemania,Ilkay Gündogan,,33,True,False
+2022_alemania_japon,2022,Japón,Ritsu Doan,,75,False,False
+2022_alemania_japon,2022,Japón,Takuma Asano,,83,False,False
+2022_espana_costa_rica,2022,España,Dani Olmo,,11,False,False
+2022_espana_costa_rica,2022,España,Marco Asensio,,21,False,False
+2022_espana_costa_rica,2022,España,Ferran Torres,,31,True,False
+2022_espana_costa_rica,2022,España,Ferran Torres,,54,False,False
+2022_espana_costa_rica,2022,España,Gavi,,74,False,False
+2022_espana_costa_rica,2022,España,Carlos Soler,,90,False,False
+2022_espana_costa_rica,2022,España,+2' Álvaro Morata,,90+2,False,False
+2022_belgica_canada,2022,Bélgica,Michy Batshuayi,,44,False,False
+2022_suiza_camerun,2022,Suiza,Breel Embolo,,48,False,False
+2022_portugal_ghana,2022,Portugal,Cristiano Ronaldo,,65,True,False
+2022_portugal_ghana,2022,Ghana,Andre Ayew,,73,False,False
+2022_portugal_ghana,2022,Portugal,João Félix,,78,False,False
+2022_portugal_ghana,2022,Portugal,Rafael Leão,,80,False,False
+2022_portugal_ghana,2022,Ghana,Osman Bukari,,89,False,False
+2022_brasil_serbia,2022,Brasil,Richarlison,,62,False,False
+2022_brasil_serbia,2022,Brasil,Richarlison,,73,False,False
+2022_gales_iran,2022,Irán,+8' Rouzbeh Cheshmi,,90+8,False,False
+2022_gales_iran,2022,Irán,+11' Ramin Rezaeian,,90+11,False,False
+2022_catar_senegal,2022,Senegal,Boulaye Dia,,41,False,False
+2022_catar_senegal,2022,Senegal,Famara Diéhiou,,48,False,False
+2022_catar_senegal,2022,Catar,Mohammed Muntari,,78,False,False
+2022_catar_senegal,2022,Senegal,Bamba Dieng,,84,False,False
+2022_holanda_ecuador,2022,Paises Bajos,Cody Gakpo,,6,False,False
+2022_holanda_ecuador,2022,Ecuador,Enner Valencia,,49,False,False
+2022_tunez_australia,2022,Australia,Mitchell Duke,,23,False,False
+2022_polonia_arabia_saudita,2022,Polonia,Piotr Zieliński,,39,False,False
+2022_polonia_arabia_saudita,2022,Polonia,Robert Lewandowski,,82,False,False
+2022_francia_dinamarca,2022,Francia,Kylian Mbappé,,61,False,False
+2022_francia_dinamarca,2022,Dinamarca,Andreas Christensen,,68,False,False
+2022_francia_dinamarca,2022,Francia,Kylian Mbappé,,86,False,False
+2022_argentina_mexico,2022,Argentina,Lionel Messi,,64,False,False
+2022_argentina_mexico,2022,Argentina,Enzo Fernandez,,87,False,False
+2022_japon_costa_rica,2022,Costa Rica,Keysher Fuller,,81,False,False
+2022_belgica_marruecos,2022,Marruecos,Romain Saïss,,73,False,False
+2022_belgica_marruecos,2022,Marruecos,+2' Zakaria Aboukhlal,,90+2,False,False
+2022_croacia_canada,2022,Canadá,Alphonso Davies,,2,False,False
+2022_croacia_canada,2022,Croacia,Andrej Kramarić,,36,False,False
+2022_croacia_canada,2022,Croacia,Marko Livaja,,44,False,False
+2022_croacia_canada,2022,Croacia,Andrej Kramarić,,70,False,False
+2022_croacia_canada,2022,Croacia,+4' Lovro Majer,,90+4,False,False
+2022_espana_alemania,2022,España,Álvaro Morata,,62,False,False
+2022_espana_alemania,2022,Alemania,Niclas Füllkrug,,83,False,False
+2022_camerun_serbia,2022,Camerún,Jean-Charles Castelletto,,29,False,False
+2022_camerun_serbia,2022,Serbia,+1' Strahinja Pavlovic,,45+1,False,False
+2022_camerun_serbia,2022,Serbia,+3' Sergej Milinković-Savić,,45+3,False,False
+2022_camerun_serbia,2022,Serbia,Aleksandar Mitrović,,53,False,False
+2022_camerun_serbia,2022,Camerún,Vincent Aboubakar,,63,False,False
+2022_camerun_serbia,2022,Camerún,Eric Maxim Choupo Moting,,66,False,False
+2022_corea_del_sur_ghana,2022,Ghana,Mohammed Salisu,,24,False,False
+2022_corea_del_sur_ghana,2022,Ghana,Mohammed Kudus,,34,False,False
+2022_corea_del_sur_ghana,2022,Corea del Sur,Gue-sung Cho,,58,False,False
+2022_corea_del_sur_ghana,2022,Corea del Sur,Gue-sung Cho,,61,False,False
+2022_corea_del_sur_ghana,2022,Ghana,Mohammed Kudus,,68,False,False
+2022_brasil_suiza,2022,Brasil,Casemiro,,83,False,False
+2022_portugal_uruguay,2022,Portugal,Bruno Fernandes,,54,False,False
+2022_portugal_uruguay,2022,Portugal,+3' Bruno Fernandes,,90+3,False,False
+2022_holanda_catar,2022,Paises Bajos,Cody Gakpo,,26,False,False
+2022_holanda_catar,2022,Paises Bajos,Frenkie de Jong,,49,False,False
+2022_ecuador_senegal,2022,Senegal,Ismaïla Sarr,,44,False,False
+2022_ecuador_senegal,2022,Ecuador,Moisés Caicedo,,67,False,False
+2022_ecuador_senegal,2022,Senegal,Kalidou Koulibaly,,70,False,False
+2022_gales_inglaterra,2022,Inglaterra,Marcus Rashford,,50,False,False
+2022_gales_inglaterra,2022,Inglaterra,Phil Foden,,51,False,False
+2022_gales_inglaterra,2022,Inglaterra,Marcus Rashford,,68,False,False
+2022_iran_estados_unidos,2022,Estados Unidos,Christian Pulisic,,38,False,False
+2022_australia_dinamarca,2022,Australia,Mathew Leckie,,60,False,False
+2022_tunez_francia,2022,Túnez,Wahbi Khazri,,58,False,False
+2022_arabia_saudita_mexico,2022,México,Henry Martin,,47,False,False
+2022_arabia_saudita_mexico,2022,México,Luis Chávez,,52,False,False
+2022_arabia_saudita_mexico,2022,Arabia Saudita,+5' Salem Al-Dawsari,,90+5,False,False
+2022_polonia_argentina,2022,Argentina,Alexis Mac Allister,,46,False,False
+2022_polonia_argentina,2022,Argentina,Julian Alvarez,,67,False,False
+2022_canada_marruecos,2022,Marruecos,Hakim Ziyech,,4,False,False
+2022_canada_marruecos,2022,Marruecos,Youssef En-Nesyri,,23,False,False
+2022_canada_marruecos,2022,Canadá,Nayef Aguerd (en contra),,40,False,True
+2022_japon_espana,2022,España,Álvaro Morata,,11,False,False
+2022_japon_espana,2022,Japón,Ritsu Doan,,48,False,False
+2022_japon_espana,2022,Japón,Ao Tanaka,,51,False,False
+2022_costa_rica_alemania,2022,Alemania,Serge Gnabry,,10,False,False
+2022_costa_rica_alemania,2022,Costa Rica,Yeltsin Tejeda,,58,False,False
+2022_costa_rica_alemania,2022,Costa Rica,Juan Pablo Vargas,,70,False,False
+2022_costa_rica_alemania,2022,Alemania,Kai Havertz,,73,False,False
+2022_costa_rica_alemania,2022,Alemania,Kai Havertz,,85,False,False
+2022_costa_rica_alemania,2022,Alemania,Niclas Füllkrug,,89,False,False
+2022_ghana_uruguay,2022,Uruguay,Giorgian De Arrascaeta,,26,False,False
+2022_ghana_uruguay,2022,Uruguay,Giorgian De Arrascaeta,,32,False,False
+2022_corea_del_sur_portugal,2022,Portugal,Ricardo Horta,,5,False,False
+2022_corea_del_sur_portugal,2022,Corea del Sur,Young-Gwon Kim,,27,False,False
+2022_corea_del_sur_portugal,2022,Corea del Sur,+1' Hee-chan Hwang,,90+1,False,False
+2022_serbia_suiza,2022,Suiza,Xherdan Shaqiri,,20,False,False
+2022_serbia_suiza,2022,Serbia,Aleksandar Mitrović,,26,False,False
+2022_serbia_suiza,2022,Serbia,Dusan Vlahovic,,35,False,False
+2022_serbia_suiza,2022,Suiza,Breel Embolo,,44,False,False
+2022_serbia_suiza,2022,Suiza,Remo Freuler,,48,False,False
+2022_camerun_brasil,2022,Camerún,+2' Vincent Aboubakar,,90+2,False,False
+2022_holanda_estados_unidos,2022,Paises Bajos,Memphis Depay,,10,False,False
+2022_holanda_estados_unidos,2022,Paises Bajos,+1' Daley Blind,,45+1,False,False
+2022_holanda_estados_unidos,2022,Estados Unidos,Haji Wright,,76,False,False
+2022_holanda_estados_unidos,2022,Paises Bajos,Denzel Dumfries,,81,False,False
+2022_argentina_australia,2022,Argentina,Lionel Messi,,35,False,False
+2022_argentina_australia,2022,Argentina,Julian Alvarez,,57,False,False
+2022_argentina_australia,2022,Australia,Enzo Fernandez (en contra),,77,False,True
+2022_inglaterra_senegal,2022,Inglaterra,Jordan Henderson,,38,False,False
+2022_inglaterra_senegal,2022,Inglaterra,+3' Harry Kane,,45+3,False,False
+2022_inglaterra_senegal,2022,Inglaterra,Bukayo Saka,,57,False,False
+2022_francia_polonia,2022,Francia,Olivier Giroud,,44,False,False
+2022_francia_polonia,2022,Francia,Kylian Mbappé,,74,False,False
+2022_francia_polonia,2022,Francia,+1' Kylian Mbappé,,90+1,False,False
+2022_francia_polonia,2022,Polonia,+9' Robert Lewandowski,,90+9,True,False
+2022_japon_croacia,2022,Japón,Daizen Maeda,,43,False,False
+2022_japon_croacia,2022,Croacia,Ivan Perisic,,55,False,False
+2022_brasil_corea_del_sur,2022,Brasil,Vinicius Junior,,7,False,False
+2022_brasil_corea_del_sur,2022,Brasil,Neymar Jr.,,13,False,False
+2022_brasil_corea_del_sur,2022,Brasil,Richarlison,,29,False,False
+2022_brasil_corea_del_sur,2022,Brasil,Lucas Paqueta,,36,False,False
+2022_brasil_corea_del_sur,2022,Corea del Sur,Seung-ho Paik,,76,False,False
+2022_portugal_suiza,2022,Portugal,Gonçalo Ramos,,17,False,False
+2022_portugal_suiza,2022,Portugal,Pepe,,33,False,False
+2022_portugal_suiza,2022,Portugal,Gonçalo Ramos,,51,False,False
+2022_portugal_suiza,2022,Portugal,Raphaël Guerreiro,,55,False,False
+2022_portugal_suiza,2022,Suiza,Manuel Akanji,,58,False,False
+2022_portugal_suiza,2022,Portugal,Gonçalo Ramos,,67,False,False
+2022_portugal_suiza,2022,Portugal,+2' Rafael Leão,,90+2,False,False
+2022_holanda_argentina,2022,Argentina,Nahuel Molina,,35,False,False
+2022_holanda_argentina,2022,Argentina,Lionel Messi,,73,True,False
+2022_holanda_argentina,2022,Paises Bajos,Wout Weghorst,,83,False,False
+2022_holanda_argentina,2022,Paises Bajos,+11' Wout Weghorst,,90+11,False,False
+2022_croacia_brasil,2022,Brasil,+1' Neymar Jr.,,105+1,False,False
+2022_croacia_brasil,2022,Croacia,Bruno Petkovic,,117,False,False
+2022_inglaterra_francia,2022,Francia,Aurélien Tchouaméni,,17,False,False
+2022_inglaterra_francia,2022,Inglaterra,Harry Kane,,54,True,False
+2022_inglaterra_francia,2022,Francia,Olivier Giroud,,78,False,False
+2022_marruecos_portugal,2022,Marruecos,Youssef En-Nesyri,,42,False,False
+2022_argentina_croacia,2022,Argentina,Lionel Messi,,34,True,False
+2022_argentina_croacia,2022,Argentina,Julian Alvarez,,39,False,False
+2022_argentina_croacia,2022,Argentina,Julian Alvarez,,69,False,False
+2022_francia_marruecos,2022,Francia,Théo Hernandez,,5,False,False
+2022_francia_marruecos,2022,Francia,Randal Kolo Muani,,79,False,False
+2022_croacia_marruecos,2022,Croacia,Josko Gvardiol,,7,False,False
+2022_croacia_marruecos,2022,Marruecos,Achraf Dari,,9,False,False
+2022_croacia_marruecos,2022,Croacia,Mislav Orsic,,42,False,False
+2022_argentina_francia,2022,Argentina,Lionel Messi,,23,True,False
+2022_argentina_francia,2022,Argentina,Angel Di Maria,,36,False,False
+2022_argentina_francia,2022,Francia,Kylian Mbappé,,80,True,False
+2022_argentina_francia,2022,Francia,Kylian Mbappé,,81,False,False
+2022_argentina_francia,2022,Argentina,Lionel Messi,,108,False,False
+2022_argentina_francia,2022,Francia,Kylian Mbappé,,118,True,False
+2018_rusia_arabia_saudita,2018,Rusia,Yury Gazinsky,,12,False,False
+2018_rusia_arabia_saudita,2018,Rusia,Denis Cheryshev,,43,False,False
+2018_rusia_arabia_saudita,2018,Rusia,Artem Dzyuba,,71,False,False
+2018_rusia_arabia_saudita,2018,Rusia,+1' Denis Cheryshev,,90+1,False,False
+2018_rusia_arabia_saudita,2018,Rusia,+4' Aleksandr Golovin,,90+4,False,False
+2018_egipto_uruguay,2018,Uruguay,José María Giménez,,89,False,False
+2018_portugal_espana,2018,Portugal,Cristiano Ronaldo,,4,True,False
+2018_portugal_espana,2018,España,Diego Costa,,24,False,False
+2018_portugal_espana,2018,Portugal,Cristiano Ronaldo,,44,False,False
+2018_portugal_espana,2018,España,Diego Costa,,55,False,False
+2018_portugal_espana,2018,España,Nacho,,58,False,False
+2018_portugal_espana,2018,Portugal,Cristiano Ronaldo,,88,False,False
+2018_marruecos_iran,2018,Irán,+5' Aziz Bouhaddouz (en contra),,90+5,False,True
+2018_francia_australia,2018,Francia,Antoine Griezmann,,58,True,False
+2018_francia_australia,2018,Australia,Mile Jedinak,,62,True,False
+2018_francia_australia,2018,Francia,Aziz Behich (en contra),,81,False,True
+2018_peru_dinamarca,2018,Dinamarca,Yussuf Yurary Poulsen,,59,False,False
+2018_argentina_islandia,2018,Argentina,Sergio Agüero,,19,False,False
+2018_argentina_islandia,2018,Islandia,Alfred Finnbogason,,23,False,False
+2018_croacia_nigeria,2018,Croacia,Oghenekaro Etebo (en contra),,32,False,True
+2018_croacia_nigeria,2018,Croacia,Luka Modric,,71,True,False
+2018_brasil_suiza,2018,Brasil,Philippe Coutinho,,20,False,False
+2018_brasil_suiza,2018,Suiza,Steven Zuber,,50,False,False
+2018_costa_rica_serbia,2018,Serbia,Aleksandar Kolarov,,56,False,False
+2018_alemania_mexico,2018,México,Hirving Lozano,,35,False,False
+2018_suecia_corea_del_sur,2018,Suecia,Andreas Granqvist,,65,True,False
+2018_belgica_panama,2018,Bélgica,Dries Mertens,,47,False,False
+2018_belgica_panama,2018,Bélgica,Romelu Lukaku,,69,False,False
+2018_belgica_panama,2018,Bélgica,Romelu Lukaku,,75,False,False
+2018_tunez_inglaterra,2018,Inglaterra,Harry Kane,,11,False,False
+2018_tunez_inglaterra,2018,Túnez,Ferjani Sassi,,35,True,False
+2018_tunez_inglaterra,2018,Inglaterra,+1' Harry Kane,,90+1,False,False
+2018_polonia_senegal,2018,Senegal,Thiago Cionek (en contra),,37,False,True
+2018_polonia_senegal,2018,Senegal,M'Baye Niang,,60,False,False
+2018_polonia_senegal,2018,Polonia,Grzegorz Krychowiak,,86,False,False
+2018_colombia_japon,2018,Japón,Shinji Kagawa,,6,True,False
+2018_colombia_japon,2018,Colombia,Juan Quintero,,39,False,False
+2018_colombia_japon,2018,Japón,Yuya Osako,,73,False,False
+2018_rusia_egipto,2018,Rusia,Ahmed Fathy (en contra),,47,False,True
+2018_rusia_egipto,2018,Rusia,Denis Cheryshev,,59,False,False
+2018_rusia_egipto,2018,Rusia,Artem Dzyuba,,62,False,False
+2018_rusia_egipto,2018,Egipto,Mohamed Salah,,73,True,False
+2018_uruguay_arabia_saudita,2018,Uruguay,Luis Suarez,,23,False,False
+2018_portugal_marruecos,2018,Portugal,Cristiano Ronaldo,,4,False,False
+2018_iran_espana,2018,España,Diego Costa,,54,False,False
+2018_francia_peru,2018,Francia,Kylian Mbappé,,34,False,False
+2018_dinamarca_australia,2018,Dinamarca,Christian Eriksen,,7,False,False
+2018_dinamarca_australia,2018,Australia,Mile Jedinak,,38,True,False
+2018_argentina_croacia,2018,Croacia,Ante Rebic,,53,False,False
+2018_argentina_croacia,2018,Croacia,Luka Modric,,80,False,False
+2018_argentina_croacia,2018,Croacia,+1' Ivan Rakitic,,90+1,False,False
+2018_nigeria_islandia,2018,Nigeria,Ahmed Musa,,49,False,False
+2018_nigeria_islandia,2018,Nigeria,Ahmed Musa,,75,False,False
+2018_brasil_costa_rica,2018,Brasil,+1' Philippe Coutinho,,90+1,False,False
+2018_brasil_costa_rica,2018,Brasil,+7' Neymar Jr.,,90+7,False,False
+2018_serbia_suiza,2018,Serbia,Aleksandar Mitrović,,5,False,False
+2018_serbia_suiza,2018,Suiza,Granit Xhaka,,52,False,False
+2018_serbia_suiza,2018,Suiza,Xherdan Shaqiri,,90,False,False
+2018_alemania_suecia,2018,Suecia,Ola Toivonen,,32,False,False
+2018_alemania_suecia,2018,Alemania,Marco Reus,,48,False,False
+2018_alemania_suecia,2018,Alemania,+5' Toni Kroos,,90+5,False,False
+2018_corea_del_sur_mexico,2018,México,Carlos Vela,,26,True,False
+2018_corea_del_sur_mexico,2018,México,Javier Hernandez,,66,False,False
+2018_corea_del_sur_mexico,2018,Corea del Sur,+3' Heung-Min Son,,90+3,False,False
+2018_belgica_tunez,2018,Bélgica,Eden Hazard,,6,True,False
+2018_belgica_tunez,2018,Bélgica,Romelu Lukaku,,16,False,False
+2018_belgica_tunez,2018,Túnez,Dylan Bronn,,18,False,False
+2018_belgica_tunez,2018,Bélgica,+3' Romelu Lukaku,,45+3,False,False
+2018_belgica_tunez,2018,Bélgica,Eden Hazard,,51,False,False
+2018_belgica_tunez,2018,Bélgica,Michy Batshuayi,,90,False,False
+2018_belgica_tunez,2018,Túnez,+3' Wahbi Khazri,,90+3,False,False
+2018_inglaterra_panama,2018,Inglaterra,John Stones,,8,False,False
+2018_inglaterra_panama,2018,Inglaterra,Harry Kane,,22,True,False
+2018_inglaterra_panama,2018,Inglaterra,Jesse Lingard,,36,False,False
+2018_inglaterra_panama,2018,Inglaterra,John Stones,,40,False,False
+2018_inglaterra_panama,2018,Inglaterra,+1' Harry Kane,,45+1,True,False
+2018_inglaterra_panama,2018,Inglaterra,Harry Kane,,62,False,False
+2018_inglaterra_panama,2018,Panamá,Felipe Baloy,,78,False,False
+2018_polonia_colombia,2018,Colombia,Yerry Mina,,40,False,False
+2018_polonia_colombia,2018,Colombia,Radamel Falcao,,70,False,False
+2018_polonia_colombia,2018,Colombia,Juan Guillermo Cuadrado,,75,False,False
+2018_japon_senegal,2018,Senegal,Sadio Mané,,11,False,False
+2018_japon_senegal,2018,Japón,Takashi Inui,,34,False,False
+2018_japon_senegal,2018,Senegal,Moussa Wagué,,71,False,False
+2018_japon_senegal,2018,Japón,Keisuke Honda,,78,False,False
+2018_uruguay_rusia,2018,Uruguay,Luis Suarez,,10,False,False
+2018_uruguay_rusia,2018,Uruguay,Denis Cheryshev (en contra),,23,False,True
+2018_uruguay_rusia,2018,Uruguay,Edinson Cavani,,90,False,False
+2018_arabia_saudita_egipto,2018,Egipto,Mohamed Salah,,22,False,False
+2018_arabia_saudita_egipto,2018,Arabia Saudita,+6' Salman Al-Faraj,,45+6,True,False
+2018_arabia_saudita_egipto,2018,Arabia Saudita,+5' Salem Al-Dawsari,,90+5,False,False
+2018_iran_portugal,2018,Portugal,Ricardo Quaresma,,45,False,False
+2018_iran_portugal,2018,Irán,+3' Karim Ansarifard,,90+3,True,False
+2018_espana_marruecos,2018,Marruecos,Khalid Boutaïb,,14,False,False
+2018_espana_marruecos,2018,España,Isco,,19,False,False
+2018_espana_marruecos,2018,Marruecos,Youssef En-Nesyri,,81,False,False
+2018_espana_marruecos,2018,España,+1' Iago Aspas,,90+1,False,False
+2018_australia_peru,2018,Perú,André Carrillo,,18,False,False
+2018_australia_peru,2018,Perú,Paolo Guerrero,,50,False,False
+2018_nigeria_argentina,2018,Argentina,Lionel Messi,,14,False,False
+2018_nigeria_argentina,2018,Nigeria,Victor Moses,,51,True,False
+2018_nigeria_argentina,2018,Argentina,Marcos Rojo,,86,False,False
+2018_islandia_croacia,2018,Croacia,Milan Badelj,,53,False,False
+2018_islandia_croacia,2018,Islandia,Gylfi Sigurdsson,,76,True,False
+2018_islandia_croacia,2018,Croacia,Ivan Perisic,,90,False,False
+2018_serbia_brasil,2018,Brasil,Paulinho,,36,False,False
+2018_serbia_brasil,2018,Brasil,Thiago Silva,,68,False,False
+2018_suiza_costa_rica,2018,Suiza,Blerim Dzemaili,,31,False,False
+2018_suiza_costa_rica,2018,Costa Rica,Kendall Waston,,56,False,False
+2018_suiza_costa_rica,2018,Suiza,Josip Drmic,,88,False,False
+2018_suiza_costa_rica,2018,Costa Rica,+3' Yann Sommer (en contra),,90+3,False,True
+2018_corea_del_sur_alemania,2018,Corea del Sur,+3' Young-Gwon Kim,,90+3,False,False
+2018_corea_del_sur_alemania,2018,Corea del Sur,+6' Heung-Min Son,,90+6,False,False
+2018_mexico_suecia,2018,Suecia,Ludwig Augustinsson,,50,False,False
+2018_mexico_suecia,2018,Suecia,Andreas Granqvist,,62,True,False
+2018_mexico_suecia,2018,Suecia,Edson Álvarez (en contra),,74,False,True
+2018_inglaterra_belgica,2018,Bélgica,Adnan Januzaj,,51,False,False
+2018_panama_tunez,2018,Panamá,Yassine Meriah (en contra),,33,False,True
+2018_panama_tunez,2018,Túnez,Fakhreddine Ben Youssef,,51,False,False
+2018_panama_tunez,2018,Túnez,Wahbi Khazri,,66,False,False
+2018_japon_polonia,2018,Polonia,Jan Bednarek,,59,False,False
+2018_senegal_colombia,2018,Colombia,Yerry Mina,,74,False,False
+2018_uruguay_portugal,2018,Uruguay,Edinson Cavani,,7,False,False
+2018_uruguay_portugal,2018,Portugal,Pepe,,55,False,False
+2018_uruguay_portugal,2018,Uruguay,Edinson Cavani,,62,False,False
+2018_francia_argentina,2018,Francia,Antoine Griezmann,,13,True,False
+2018_francia_argentina,2018,Argentina,Angel Di Maria,,41,False,False
+2018_francia_argentina,2018,Argentina,Gabriel Mercado,,48,False,False
+2018_francia_argentina,2018,Francia,Benjamin Pavard,,57,False,False
+2018_francia_argentina,2018,Francia,Kylian Mbappé,,64,False,False
+2018_francia_argentina,2018,Francia,Kylian Mbappé,,68,False,False
+2018_francia_argentina,2018,Argentina,+3' Sergio Agüero,,90+3,False,False
+2018_espana_rusia,2018,España,Sergei Ignashevich (en contra),,12,False,True
+2018_espana_rusia,2018,Rusia,Artem Dzyuba,,41,True,False
+2018_croacia_dinamarca,2018,Dinamarca,Mathias Jørgensen,,1,False,False
+2018_croacia_dinamarca,2018,Croacia,Mario Mandzukic,,4,False,False
+2018_brasil_mexico,2018,Brasil,Neymar Jr.,,51,False,False
+2018_brasil_mexico,2018,Brasil,Roberto Firmino,,88,False,False
+2018_belgica_japon,2018,Japón,Genki Haraguchi,,48,False,False
+2018_belgica_japon,2018,Japón,Takashi Inui,,52,False,False
+2018_belgica_japon,2018,Bélgica,Jan Vertonghen,,69,False,False
+2018_belgica_japon,2018,Bélgica,Marouane Fellaini,,74,False,False
+2018_belgica_japon,2018,Bélgica,+4' Nacer Chadli,,90+4,False,False
+2018_suecia_suiza,2018,Suecia,Emil Forsberg,,66,False,False
+2018_colombia_inglaterra,2018,Inglaterra,Harry Kane,,57,True,False
+2018_colombia_inglaterra,2018,Colombia,+3' Yerry Mina,,90+3,False,False
+2018_uruguay_francia,2018,Francia,Raphael Varane,,40,False,False
+2018_uruguay_francia,2018,Francia,Antoine Griezmann,,61,False,False
+2018_brasil_belgica,2018,Bélgica,Fernandinho (en contra),,13,False,True
+2018_brasil_belgica,2018,Bélgica,Kevin De Bruyne,,31,False,False
+2018_brasil_belgica,2018,Brasil,Renato Augusto,,76,False,False
+2018_rusia_croacia,2018,Rusia,Denis Cheryshev,,31,False,False
+2018_rusia_croacia,2018,Croacia,Andrej Kramarić,,39,False,False
+2018_rusia_croacia,2018,Croacia,Domagoj Vida,,101,False,False
+2018_rusia_croacia,2018,Rusia,Mário Fernandes,,115,False,False
+2018_suecia_inglaterra,2018,Inglaterra,Harry Maguire,,30,False,False
+2018_suecia_inglaterra,2018,Inglaterra,Dele Alli,,59,False,False
+2018_francia_belgica,2018,Francia,Samuel Umtiti,,51,False,False
+2018_croacia_inglaterra,2018,Inglaterra,Kieran Trippier,,5,False,False
+2018_croacia_inglaterra,2018,Croacia,Ivan Perisic,,68,False,False
+2018_croacia_inglaterra,2018,Croacia,Mario Mandzukic,,109,False,False
+2018_belgica_inglaterra,2018,Bélgica,Thomas Meunier,,4,False,False
+2018_belgica_inglaterra,2018,Bélgica,Eden Hazard,,82,False,False
+2018_francia_croacia,2018,Francia,Mario Mandzukic (en contra),,18,False,True
+2018_francia_croacia,2018,Croacia,Ivan Perisic,,28,False,False
+2018_francia_croacia,2018,Francia,Antoine Griezmann,,38,True,False
+2018_francia_croacia,2018,Francia,Paul Pogba,,59,False,False
+2018_francia_croacia,2018,Francia,Kylian Mbappé,,65,False,False
+2018_francia_croacia,2018,Croacia,Mario Mandzukic,,69,False,False
+2014_brasil_croacia,2014,Croacia,Marcelo (en contra),,11,False,True
+2014_brasil_croacia,2014,Brasil,Neymar Jr.,,29,False,False
+2014_brasil_croacia,2014,Brasil,Neymar Jr.,,71,True,False
+2014_brasil_croacia,2014,Brasil,+1' Oscar,,90+1,False,False
+2014_mexico_camerun,2014,México,Oribe Peralta,,61,False,False
+2014_espana_holanda,2014,España,Xabi Alonso,,27,True,False
+2014_espana_holanda,2014,Paises Bajos,Robin Van Persie,,44,False,False
+2014_espana_holanda,2014,Paises Bajos,Arjen Robben,,53,False,False
+2014_espana_holanda,2014,Paises Bajos,Stefan de Vrij,,65,False,False
+2014_espana_holanda,2014,Paises Bajos,Robin Van Persie,,72,False,False
+2014_espana_holanda,2014,Paises Bajos,Arjen Robben,,80,False,False
+2014_chile_australia,2014,Chile,Alexis Sanchez,,12,False,False
+2014_chile_australia,2014,Chile,Jorge Valdivia,,14,False,False
+2014_chile_australia,2014,Australia,Tim Cahill,,35,False,False
+2014_chile_australia,2014,Chile,+2' Jean Beausejour,,90+2,False,False
+2014_colombia_grecia,2014,Colombia,Pablo Armero,,5,False,False
+2014_colombia_grecia,2014,Colombia,Teófilo Gutiérrez,,58,False,False
+2014_colombia_grecia,2014,Colombia,+3' James Rodríguez,,90+3,False,False
+2014_costa_de_marfil_japon,2014,Japón,Keisuke Honda,,16,False,False
+2014_costa_de_marfil_japon,2014,Costa de Marfil,Wilfried Bony,,64,False,False
+2014_costa_de_marfil_japon,2014,Costa de Marfil,Gervinho,,66,False,False
+2014_uruguay_costa_rica,2014,Uruguay,Edinson Cavani,,24,True,False
+2014_uruguay_costa_rica,2014,Costa Rica,Joel Campbell,,54,False,False
+2014_uruguay_costa_rica,2014,Costa Rica,Óscar Duarte,,57,False,False
+2014_uruguay_costa_rica,2014,Costa Rica,Marco Ureña,,84,False,False
+2014_inglaterra_italia,2014,Italia,Claudio Marchisio,,35,False,False
+2014_inglaterra_italia,2014,Inglaterra,Daniel Sturridge,,37,False,False
+2014_inglaterra_italia,2014,Italia,Mario Balotelli,,50,False,False
+2014_suiza_ecuador,2014,Ecuador,Enner Valencia,,22,False,False
+2014_suiza_ecuador,2014,Suiza,Admir Mehmedi,,48,False,False
+2014_suiza_ecuador,2014,Suiza,+3' Haris Seferovic,,90+3,False,False
+2014_francia_honduras,2014,Francia,Karim Benzema,,45,True,False
+2014_francia_honduras,2014,Francia,Noel Valladares (en contra),,48,False,True
+2014_francia_honduras,2014,Francia,Karim Benzema,,72,False,False
+2014_argentina_bosnia_herzegovina,2014,Argentina,Sead Kolasinac (en contra),,3,False,True
+2014_argentina_bosnia_herzegovina,2014,Argentina,Lionel Messi,,65,False,False
+2014_argentina_bosnia_herzegovina,2014,Bosnia-Herzegovina,Vedad Ibisevic,,84,False,False
+2014_alemania_portugal,2014,Alemania,Thomas Müller,,12,True,False
+2014_alemania_portugal,2014,Alemania,Mats Hummels,,32,False,False
+2014_alemania_portugal,2014,Alemania,+1' Thomas Müller,,45+1,False,False
+2014_alemania_portugal,2014,Alemania,Thomas Müller,,78,False,False
+2014_ghana_estados_unidos,2014,Estados Unidos,Clint Dempsey,,1,False,False
+2014_ghana_estados_unidos,2014,Ghana,Andre Ayew,,82,False,False
+2014_ghana_estados_unidos,2014,Estados Unidos,John Anthony Brooks,,86,False,False
+2014_belgica_argelia,2014,Argelia,Sofiane Feghouli,,25,True,False
+2014_belgica_argelia,2014,Bélgica,Marouane Fellaini,,70,False,False
+2014_belgica_argelia,2014,Bélgica,Dries Mertens,,80,False,False
+2014_rusia_corea_del_sur,2014,Corea del Sur,Keun-Ho Lee,,68,False,False
+2014_rusia_corea_del_sur,2014,Rusia,Alexander Kerzhakov,,74,False,False
+2014_camerun_croacia,2014,Croacia,Ivica Olic,,11,False,False
+2014_camerun_croacia,2014,Croacia,Ivan Perisic,,48,False,False
+2014_camerun_croacia,2014,Croacia,Mario Mandzukic,,61,False,False
+2014_camerun_croacia,2014,Croacia,Mario Mandzukic,,73,False,False
+2014_espana_chile,2014,Chile,Eduardo Vargas,,20,False,False
+2014_espana_chile,2014,Chile,Charles Aránguiz,,43,False,False
+2014_australia_holanda,2014,Paises Bajos,Arjen Robben,,20,False,False
+2014_australia_holanda,2014,Australia,Tim Cahill,,21,False,False
+2014_australia_holanda,2014,Australia,Mile Jedinak,,54,True,False
+2014_australia_holanda,2014,Paises Bajos,Robin Van Persie,,58,False,False
+2014_australia_holanda,2014,Paises Bajos,Memphis Depay,,68,False,False
+2014_colombia_costa_de_marfil,2014,Colombia,James Rodríguez,,64,False,False
+2014_colombia_costa_de_marfil,2014,Colombia,Juan Quintero,,70,False,False
+2014_colombia_costa_de_marfil,2014,Costa de Marfil,Gervinho,,73,False,False
+2014_uruguay_inglaterra,2014,Uruguay,Luis Suarez,,39,False,False
+2014_uruguay_inglaterra,2014,Inglaterra,Wayne Rooney,,75,False,False
+2014_uruguay_inglaterra,2014,Uruguay,Luis Suarez,,85,False,False
+2014_italia_costa_rica,2014,Costa Rica,Bryan Ruiz,,44,False,False
+2014_suiza_francia,2014,Francia,Olivier Giroud,,17,False,False
+2014_suiza_francia,2014,Francia,Blaise Matuidi,,18,False,False
+2014_suiza_francia,2014,Francia,Mathieu Valbuena,,40,False,False
+2014_suiza_francia,2014,Francia,Karim Benzema,,67,False,False
+2014_suiza_francia,2014,Francia,Moussa Sissoko,,73,False,False
+2014_suiza_francia,2014,Suiza,Blerim Dzemaili,,81,False,False
+2014_suiza_francia,2014,Suiza,Granit Xhaka,,87,False,False
+2014_honduras_ecuador,2014,Honduras,Carlo Costly,,31,False,False
+2014_honduras_ecuador,2014,Ecuador,Enner Valencia,,34,False,False
+2014_honduras_ecuador,2014,Ecuador,Enner Valencia,,65,False,False
+2014_argentina_iran,2014,Argentina,+1' Lionel Messi,,90+1,False,False
+2014_nigeria_bosnia_herzegovina,2014,Nigeria,Peter Odemwingie,,29,False,False
+2014_alemania_ghana,2014,Alemania,Mario Götze,,51,False,False
+2014_alemania_ghana,2014,Ghana,Andre Ayew,,54,False,False
+2014_alemania_ghana,2014,Ghana,Asamoah Gyan,,63,False,False
+2014_alemania_ghana,2014,Alemania,Miroslav Klose,,71,False,False
+2014_estados_unidos_portugal,2014,Portugal,Nani,,5,False,False
+2014_estados_unidos_portugal,2014,Estados Unidos,Jermaine Jones,,64,False,False
+2014_estados_unidos_portugal,2014,Estados Unidos,Clint Dempsey,,81,False,False
+2014_estados_unidos_portugal,2014,Portugal,+5' Silvestre Varela,,90+5,False,False
+2014_belgica_rusia,2014,Bélgica,Divock Origi,,88,False,False
+2014_corea_del_sur_argelia,2014,Argelia,Islam Slimani,,26,False,False
+2014_corea_del_sur_argelia,2014,Argelia,Rafik Halliche,,28,False,False
+2014_corea_del_sur_argelia,2014,Argelia,Abdelmoumene Djabou,,38,False,False
+2014_corea_del_sur_argelia,2014,Corea del Sur,Heung-Min Son,,50,False,False
+2014_corea_del_sur_argelia,2014,Argelia,Yacine Brahimi,,62,False,False
+2014_corea_del_sur_argelia,2014,Corea del Sur,Ja-Cheol Koo,,72,False,False
+2014_camerun_brasil,2014,Brasil,Neymar Jr.,,17,False,False
+2014_camerun_brasil,2014,Camerún,Joel Matip,,26,False,False
+2014_camerun_brasil,2014,Brasil,Neymar Jr.,,34,False,False
+2014_camerun_brasil,2014,Brasil,Fred,,49,False,False
+2014_camerun_brasil,2014,Brasil,Fernandinho,,84,False,False
+2014_croacia_mexico,2014,México,Rafael Marquez,,72,False,False
+2014_croacia_mexico,2014,México,Andres Guardado,,75,False,False
+2014_croacia_mexico,2014,México,Javier Hernandez,,82,False,False
+2014_croacia_mexico,2014,Croacia,Ivan Perisic,,87,False,False
+2014_australia_espana,2014,España,David Villa,,36,False,False
+2014_australia_espana,2014,España,Fernando Torres,,69,False,False
+2014_australia_espana,2014,España,Juan Mata,,82,False,False
+2014_holanda_chile,2014,Paises Bajos,Leroy Fer,,77,False,False
+2014_holanda_chile,2014,Paises Bajos,Memphis Depay,,90,False,False
+2014_japon_colombia,2014,Colombia,Juan Guillermo Cuadrado,,17,True,False
+2014_japon_colombia,2014,Japón,+1' Shinji Okazaki,,45+1,False,False
+2014_japon_colombia,2014,Colombia,Jackson Martinez,,55,False,False
+2014_japon_colombia,2014,Colombia,Jackson Martinez,,82,False,False
+2014_japon_colombia,2014,Colombia,James Rodríguez,,90,False,False
+2014_grecia_costa_de_marfil,2014,Grecia,Andreas Samaris,,42,False,False
+2014_grecia_costa_de_marfil,2014,Costa de Marfil,Wilfried Bony,,74,False,False
+2014_grecia_costa_de_marfil,2014,Grecia,+3' Georgios Samaras,,90+3,True,False
+2014_italia_uruguay,2014,Uruguay,Diego Godin,,81,False,False
+2014_honduras_suiza,2014,Suiza,Xherdan Shaqiri,,6,False,False
+2014_honduras_suiza,2014,Suiza,Xherdan Shaqiri,,31,False,False
+2014_honduras_suiza,2014,Suiza,Xherdan Shaqiri,,71,False,False
+2014_nigeria_argentina,2014,Argentina,Lionel Messi,,3,False,False
+2014_nigeria_argentina,2014,Nigeria,Ahmed Musa,,4,False,False
+2014_nigeria_argentina,2014,Argentina,+1' Lionel Messi,,45+1,False,False
+2014_nigeria_argentina,2014,Nigeria,Ahmed Musa,,47,False,False
+2014_nigeria_argentina,2014,Argentina,Marcos Rojo,,50,False,False
+2014_bosnia_herzegovina_iran,2014,Bosnia-Herzegovina,Edin Dzeko,,23,False,False
+2014_bosnia_herzegovina_iran,2014,Bosnia-Herzegovina,Miralem Pjanic,,59,False,False
+2014_bosnia_herzegovina_iran,2014,Irán,Reza Ghoochannejhad,,82,False,False
+2014_bosnia_herzegovina_iran,2014,Bosnia-Herzegovina,Avdija Vrsajevic,,83,False,False
+2014_estados_unidos_alemania,2014,Alemania,Thomas Müller,,55,False,False
+2014_portugal_ghana,2014,Portugal,John Boye (en contra),,31,False,True
+2014_portugal_ghana,2014,Ghana,Asamoah Gyan,,57,False,False
+2014_portugal_ghana,2014,Portugal,Cristiano Ronaldo,,80,False,False
+2014_corea_del_sur_belgica,2014,Bélgica,Jan Vertonghen,,78,False,False
+2014_argelia_rusia,2014,Rusia,Alexander Kokorin,,6,False,False
+2014_argelia_rusia,2014,Argelia,Islam Slimani,,60,False,False
+2014_brasil_chile,2014,Brasil,David Luiz,,18,False,False
+2014_brasil_chile,2014,Chile,Alexis Sanchez,,32,False,False
+2014_colombia_uruguay,2014,Colombia,James Rodríguez,,28,False,False
+2014_colombia_uruguay,2014,Colombia,James Rodríguez,,50,False,False
+2014_holanda_mexico,2014,México,Giovani dos Santos,,48,False,False
+2014_holanda_mexico,2014,Paises Bajos,Wesley Sneijder,,88,False,False
+2014_holanda_mexico,2014,Paises Bajos,+4' Klaas Jan Huntelaar,,90+4,True,False
+2014_costa_rica_grecia,2014,Costa Rica,Bryan Ruiz,,52,False,False
+2014_costa_rica_grecia,2014,Grecia,+1' Sokratis Papastathopoulos,,90+1,False,False
+2014_francia_nigeria,2014,Francia,Paul Pogba,,79,False,False
+2014_francia_nigeria,2014,Francia,+2' Joseph Yobo (en contra),,90+2,False,True
+2014_alemania_argelia,2014,Alemania,André Schürrle,,92,False,False
+2014_alemania_argelia,2014,Alemania,+2' Mesut Ozil,,120+2,False,False
+2014_alemania_argelia,2014,Argelia,+4' Abdelmoumene Djabou,,120+4,False,False
+2014_argentina_suiza,2014,Argentina,Angel Di Maria,,118,False,False
+2014_belgica_estados_unidos,2014,Bélgica,Kevin De Bruyne,,93,False,False
+2014_belgica_estados_unidos,2014,Bélgica,Romelu Lukaku,,105,False,False
+2014_belgica_estados_unidos,2014,Estados Unidos,Julian Green,,107,False,False
+2014_brasil_colombia,2014,Brasil,Thiago Silva,,7,False,False
+2014_brasil_colombia,2014,Brasil,David Luiz,,69,False,False
+2014_brasil_colombia,2014,Colombia,James Rodríguez,,80,True,False
+2014_francia_alemania,2014,Alemania,Mats Hummels,,13,False,False
+2014_argentina_belgica,2014,Argentina,Gonzalo Higuain,,8,False,False
+2014_brasil_alemania,2014,Alemania,Thomas Müller,,11,False,False
+2014_brasil_alemania,2014,Alemania,Miroslav Klose,,23,False,False
+2014_brasil_alemania,2014,Alemania,Toni Kroos,,24,False,False
+2014_brasil_alemania,2014,Alemania,Toni Kroos,,26,False,False
+2014_brasil_alemania,2014,Alemania,Sami Khedira,,29,False,False
+2014_brasil_alemania,2014,Alemania,André Schürrle,,69,False,False
+2014_brasil_alemania,2014,Alemania,André Schürrle,,79,False,False
+2014_brasil_alemania,2014,Brasil,Oscar,,90,False,False
+2014_brasil_holanda,2014,Paises Bajos,Robin Van Persie,,3,True,False
+2014_brasil_holanda,2014,Paises Bajos,Daley Blind,,17,False,False
+2014_brasil_holanda,2014,Paises Bajos,+1' Georginio Wijnaldum,,90+1,False,False
+2014_alemania_argentina,2014,Alemania,Mario Götze,,113,False,False
+2010_sudafrica_mexico,2010,Sudáfrica,Siphiwe Tshabalala,,55,False,False
+2010_sudafrica_mexico,2010,México,Rafael Marquez,,79,False,False
+2010_argentina_nigeria,2010,Argentina,Gabriel Heinze,,6,False,False
+2010_corea_del_sur_grecia,2010,Corea del Sur,Jung Soo Lee,,7,False,False
+2010_corea_del_sur_grecia,2010,Corea del Sur,Ji Sung Park,,52,False,False
+2010_inglaterra_estados_unidos,2010,Inglaterra,Steven Gerrard,,4,False,False
+2010_inglaterra_estados_unidos,2010,Estados Unidos,Clint Dempsey,,40,False,False
+2010_argelia_eslovenia,2010,Eslovenia,Robert Koren,,79,False,False
+2010_alemania_australia,2010,Alemania,Lukas Podolski,,8,False,False
+2010_alemania_australia,2010,Alemania,Miroslav Klose,,26,False,False
+2010_alemania_australia,2010,Alemania,Thomas Müller,,68,False,False
+2010_alemania_australia,2010,Alemania,Cacau,,70,False,False
+2010_serbia_ghana,2010,Ghana,Asamoah Gyan,,85,True,False
+2010_holanda_dinamarca,2010,Paises Bajos,Daniel Agger (en contra),,46,False,True
+2010_holanda_dinamarca,2010,Paises Bajos,Dirk Kuyt,,85,False,False
+2010_japon_camerun,2010,Japón,Keisuke Honda,,39,False,False
+2010_italia_paraguay,2010,Paraguay,Antolin Alcaraz,,39,False,False
+2010_italia_paraguay,2010,Italia,Daniele De Rossi,,63,False,False
+2010_nueva_zelanda_eslovaquia,2010,Eslovaquia,Robert Vittek,,50,False,False
+2010_nueva_zelanda_eslovaquia,2010,Nueva Zelanda,+3' Winston Reid,,90+3,False,False
+2010_honduras_chile,2010,Chile,Jean Beausejour,,34,False,False
+2010_espana_suiza,2010,Suiza,Gelson Fernandes,,52,False,False
+2010_sudafrica_uruguay,2010,Uruguay,Diego Forlan,,24,False,False
+2010_sudafrica_uruguay,2010,Uruguay,Diego Forlan,,80,True,False
+2010_sudafrica_uruguay,2010,Uruguay,+5' Alvaro Pereira,,90+5,False,False
+2010_francia_mexico,2010,México,Javier Hernandez,,64,False,False
+2010_francia_mexico,2010,México,Cuauhtemoc Blanco,,79,True,False
+2010_grecia_nigeria,2010,Nigeria,Kalu Uche,,16,False,False
+2010_grecia_nigeria,2010,Grecia,Dimitrios Salpingidis,,44,False,False
+2010_grecia_nigeria,2010,Grecia,Vasileios Torosidis,,71,False,False
+2010_argentina_corea_del_sur,2010,Argentina,Chu Young Park (en contra),,17,False,True
+2010_argentina_corea_del_sur,2010,Argentina,Gonzalo Higuain,,33,False,False
+2010_argentina_corea_del_sur,2010,Corea del Sur,+1' Chung-yong Lee,,45+1,False,False
+2010_argentina_corea_del_sur,2010,Argentina,Gonzalo Higuain,,76,False,False
+2010_argentina_corea_del_sur,2010,Argentina,Gonzalo Higuain,,80,False,False
+2010_alemania_serbia,2010,Serbia,Milan Jovanovic,,38,False,False
+2010_eslovenia_estados_unidos,2010,Eslovenia,Valter Birsa,,13,False,False
+2010_eslovenia_estados_unidos,2010,Eslovenia,Zlatan Ljubijankic,,42,False,False
+2010_eslovenia_estados_unidos,2010,Estados Unidos,Landon Donovan,,48,False,False
+2010_eslovenia_estados_unidos,2010,Estados Unidos,Michael Bradley,,82,False,False
+2010_ghana_australia,2010,Australia,Brett Holman,,11,False,False
+2010_ghana_australia,2010,Ghana,Asamoah Gyan,,25,True,False
+2010_holanda_japon,2010,Paises Bajos,Wesley Sneijder,,53,False,False
+2010_camerun_dinamarca,2010,Camerún,Samuel Eto'o,,10,False,False
+2010_camerun_dinamarca,2010,Dinamarca,Nicklas Bendtner,,33,False,False
+2010_camerun_dinamarca,2010,Dinamarca,Dennis Rommedahl,,61,False,False
+2010_eslovaquia_paraguay,2010,Paraguay,Enrique Vera,,27,False,False
+2010_eslovaquia_paraguay,2010,Paraguay,Cristian Riveros,,86,False,False
+2010_italia_nueva_zelanda,2010,Nueva Zelanda,Shane Smeltz,,7,False,False
+2010_italia_nueva_zelanda,2010,Italia,Vincenzo Iaquinta,,29,True,False
+2010_brasil_costa_de_marfil,2010,Brasil,Luis Fabiano,,25,False,False
+2010_brasil_costa_de_marfil,2010,Brasil,Luis Fabiano,,50,False,False
+2010_brasil_costa_de_marfil,2010,Brasil,Elano,,62,False,False
+2010_brasil_costa_de_marfil,2010,Costa de Marfil,Didier Drogba,,79,False,False
+2010_portugal_corea_del_norte,2010,Portugal,Raul Meireles,,29,False,False
+2010_portugal_corea_del_norte,2010,Portugal,Simao,,53,False,False
+2010_portugal_corea_del_norte,2010,Portugal,Hugo Almeida,,56,False,False
+2010_portugal_corea_del_norte,2010,Portugal,Tiago,,60,False,False
+2010_portugal_corea_del_norte,2010,Portugal,Liedson,,81,False,False
+2010_portugal_corea_del_norte,2010,Portugal,Cristiano Ronaldo,,87,False,False
+2010_portugal_corea_del_norte,2010,Portugal,Tiago,,89,False,False
+2010_chile_suiza,2010,Chile,Mark Gonzalez,,75,False,False
+2010_espana_honduras,2010,España,David Villa,,17,False,False
+2010_espana_honduras,2010,España,David Villa,,51,False,False
+2010_mexico_uruguay,2010,Uruguay,Luis Suarez,,43,False,False
+2010_francia_sudafrica,2010,Sudáfrica,Bongani Khumalo,,20,False,False
+2010_francia_sudafrica,2010,Sudáfrica,Katlego Mphela,,37,False,False
+2010_francia_sudafrica,2010,Francia,Florent Malouda,,70,False,False
+2010_nigeria_corea_del_sur,2010,Nigeria,Kalu Uche,,12,False,False
+2010_nigeria_corea_del_sur,2010,Corea del Sur,Jung Soo Lee,,38,False,False
+2010_nigeria_corea_del_sur,2010,Corea del Sur,Chu Young Park,,49,False,False
+2010_nigeria_corea_del_sur,2010,Nigeria,Yakubu Aiyegbeni,,69,True,False
+2010_grecia_argentina,2010,Argentina,Martin Demichelis,,77,False,False
+2010_grecia_argentina,2010,Argentina,Martin Palermo,,89,False,False
+2010_eslovenia_inglaterra,2010,Inglaterra,Jermain Defoe,,23,False,False
+2010_estados_unidos_argelia,2010,Estados Unidos,+1' Landon Donovan,,90+1,False,False
+2010_ghana_alemania,2010,Alemania,Mesut Ozil,,60,False,False
+2010_australia_serbia,2010,Australia,Tim Cahill,,69,False,False
+2010_australia_serbia,2010,Australia,Brett Holman,,73,False,False
+2010_australia_serbia,2010,Serbia,Marko Pantelic,,84,False,False
+2010_eslovaquia_italia,2010,Eslovaquia,Robert Vittek,,25,False,False
+2010_eslovaquia_italia,2010,Eslovaquia,Robert Vittek,,73,False,False
+2010_eslovaquia_italia,2010,Italia,Antonio Di Natale,,81,False,False
+2010_eslovaquia_italia,2010,Eslovaquia,Kamil Kopunek,,89,False,False
+2010_eslovaquia_italia,2010,Italia,+2' Fabio Quagliarella,,90+2,False,False
+2010_dinamarca_japon,2010,Japón,Keisuke Honda,,17,False,False
+2010_dinamarca_japon,2010,Japón,Yasuhito Endo,,30,False,False
+2010_dinamarca_japon,2010,Dinamarca,Jon Dahl Tomasson,,81,False,False
+2010_dinamarca_japon,2010,Japón,Shinji Okazaki,,87,False,False
+2010_camerun_holanda,2010,Paises Bajos,Robin Van Persie,,36,False,False
+2010_camerun_holanda,2010,Camerún,Samuel Eto'o,,65,True,False
+2010_camerun_holanda,2010,Paises Bajos,Klaas Jan Huntelaar,,83,False,False
+2010_corea_del_norte_costa_de_marfil,2010,Costa de Marfil,Yaya Toure,,14,False,False
+2010_corea_del_norte_costa_de_marfil,2010,Costa de Marfil,Romaric,,20,False,False
+2010_corea_del_norte_costa_de_marfil,2010,Costa de Marfil,Salomon Kalou,,82,False,False
+2010_chile_espana,2010,España,David Villa,,24,False,False
+2010_chile_espana,2010,España,Andrés Iniesta,,37,False,False
+2010_chile_espana,2010,Chile,Rodrigo Millar,,47,False,False
+2010_uruguay_corea_del_sur,2010,Uruguay,Luis Suarez,,8,False,False
+2010_uruguay_corea_del_sur,2010,Corea del Sur,Chung-yong Lee,,68,False,False
+2010_uruguay_corea_del_sur,2010,Uruguay,Luis Suarez,,80,False,False
+2010_estados_unidos_ghana,2010,Ghana,Kevin Prince Boateng,,5,False,False
+2010_estados_unidos_ghana,2010,Estados Unidos,Landon Donovan,,62,False,False
+2010_estados_unidos_ghana,2010,Ghana,Asamoah Gyan,,93,False,False
+2010_alemania_inglaterra,2010,Alemania,Miroslav Klose,,20,False,False
+2010_alemania_inglaterra,2010,Alemania,Lukas Podolski,,32,False,False
+2010_alemania_inglaterra,2010,Inglaterra,Matt Upson,,37,False,False
+2010_alemania_inglaterra,2010,Alemania,Thomas Müller,,67,False,False
+2010_alemania_inglaterra,2010,Alemania,Thomas Müller,,70,False,False
+2010_argentina_mexico,2010,Argentina,Carlos Tevez,,26,False,False
+2010_argentina_mexico,2010,Argentina,Gonzalo Higuain,,33,False,False
+2010_argentina_mexico,2010,Argentina,Carlos Tevez,,52,False,False
+2010_argentina_mexico,2010,México,Javier Hernandez,,71,False,False
+2010_holanda_eslovaquia,2010,Paises Bajos,Arjen Robben,,18,False,False
+2010_holanda_eslovaquia,2010,Paises Bajos,Wesley Sneijder,,84,False,False
+2010_holanda_eslovaquia,2010,Eslovaquia,+4' Robert Vittek,,90+4,True,False
+2010_brasil_chile,2010,Brasil,Juan,,35,False,False
+2010_brasil_chile,2010,Brasil,Luis Fabiano,,38,False,False
+2010_brasil_chile,2010,Brasil,Robinho,,59,False,False
+2010_espana_portugal,2010,España,David Villa,,63,False,False
+2010_holanda_brasil,2010,Brasil,Robinho,,10,False,False
+2010_holanda_brasil,2010,Paises Bajos,Wesley Sneijder,,53,False,False
+2010_holanda_brasil,2010,Paises Bajos,Wesley Sneijder,,68,False,False
+2010_uruguay_ghana,2010,Ghana,+2' Sulley Muntari,,45+2,False,False
+2010_uruguay_ghana,2010,Uruguay,Diego Forlan,,55,False,False
+2010_argentina_alemania,2010,Alemania,Thomas Müller,,3,False,False
+2010_argentina_alemania,2010,Alemania,Miroslav Klose,,68,False,False
+2010_argentina_alemania,2010,Alemania,Arne Friedrich,,74,False,False
+2010_argentina_alemania,2010,Alemania,Miroslav Klose,,89,False,False
+2010_paraguay_espana,2010,España,David Villa,,83,False,False
+2010_uruguay_holanda,2010,Paises Bajos,Giovanni Van Bronckhorst,,18,False,False
+2010_uruguay_holanda,2010,Uruguay,Diego Forlan,,41,False,False
+2010_uruguay_holanda,2010,Paises Bajos,Wesley Sneijder,,70,False,False
+2010_uruguay_holanda,2010,Paises Bajos,Arjen Robben,,73,False,False
+2010_uruguay_holanda,2010,Uruguay,+2' Maximiliano Pereira,,90+2,False,False
+2010_alemania_espana,2010,España,Carles Puyol,,73,False,False
+2010_uruguay_alemania,2010,Alemania,Thomas Müller,,19,False,False
+2010_uruguay_alemania,2010,Uruguay,Edinson Cavani,,28,False,False
+2010_uruguay_alemania,2010,Uruguay,Diego Forlan,,51,False,False
+2010_uruguay_alemania,2010,Alemania,Marcell Jansen,,56,False,False
+2010_uruguay_alemania,2010,Alemania,Sami Khedira,,82,False,False
+2010_holanda_espana,2010,España,Andrés Iniesta,,116,False,False
+2006_alemania_costa_rica,2006,Alemania,Philipp Lahm,,6,False,False
+2006_alemania_costa_rica,2006,Costa Rica,Paulo Wanchope,,12,False,False
+2006_alemania_costa_rica,2006,Alemania,Miroslav Klose,,17,False,False
+2006_alemania_costa_rica,2006,Alemania,Miroslav Klose,,61,False,False
+2006_alemania_costa_rica,2006,Costa Rica,Paulo Wanchope,,73,False,False
+2006_alemania_costa_rica,2006,Alemania,Torsten Frings,,87,False,False
+2006_polonia_ecuador,2006,Ecuador,Carlos Tenorio,,24,False,False
+2006_polonia_ecuador,2006,Ecuador,Agustin Delgado,,80,False,False
+2006_inglaterra_paraguay,2006,Inglaterra,Carlos Gamarra (en contra),,3,False,True
+2006_argentina_costa_de_marfil,2006,Argentina,Hernan Crespo,,24,False,False
+2006_argentina_costa_de_marfil,2006,Argentina,Javier Saviola,,38,False,False
+2006_argentina_costa_de_marfil,2006,Costa de Marfil,Didier Drogba,,82,False,False
+2006_serbia_y_montenegro_holanda,2006,Paises Bajos,Arjen Robben,,18,False,False
+2006_mexico_iran,2006,México,Omar Bravo,,28,False,False
+2006_mexico_iran,2006,Irán,Yahya Golmohammadi,,36,False,False
+2006_mexico_iran,2006,México,Omar Bravo,,76,False,False
+2006_mexico_iran,2006,México,Zinha,,79,False,False
+2006_angola_portugal,2006,Portugal,Pauleta,,4,False,False
+2006_italia_ghana,2006,Italia,Andrea Pirlo,,40,False,False
+2006_italia_ghana,2006,Italia,Vincenzo Iaquinta,,83,False,False
+2006_estados_unidos_republica_checa,2006,República Checa,Jan Koller,,5,False,False
+2006_estados_unidos_republica_checa,2006,República Checa,Tomas Rosicky,,36,False,False
+2006_estados_unidos_republica_checa,2006,República Checa,Tomas Rosicky,,76,False,False
+2006_australia_japon,2006,Japón,Shunsuke Nakamura,,26,False,False
+2006_australia_japon,2006,Australia,Tim Cahill,,84,False,False
+2006_australia_japon,2006,Australia,Tim Cahill,,89,False,False
+2006_australia_japon,2006,Australia,+2' John Aloisi,,90+2,False,False
+2006_brasil_croacia,2006,Brasil,Kaká,,44,False,False
+2006_corea_del_sur_togo,2006,Togo,Mohamed Kader,,31,False,False
+2006_corea_del_sur_togo,2006,Corea del Sur,Chun Soo Lee,,54,False,False
+2006_corea_del_sur_togo,2006,Corea del Sur,Jung Hwan Ahn,,72,False,False
+2006_espana_ucrania,2006,España,Xabi Alonso,,13,False,False
+2006_espana_ucrania,2006,España,David Villa,,17,False,False
+2006_espana_ucrania,2006,España,David Villa,,48,True,False
+2006_espana_ucrania,2006,España,Fernando Torres,,81,False,False
+2006_tunez_arabia_saudita,2006,Túnez,Zied Jaziri,,23,False,False
+2006_tunez_arabia_saudita,2006,Arabia Saudita,Yasser Al Kahtani,,57,False,False
+2006_tunez_arabia_saudita,2006,Arabia Saudita,Sami Al Jaber,,84,False,False
+2006_tunez_arabia_saudita,2006,Túnez,+2' Radhi Jaidi,,90+2,False,False
+2006_alemania_polonia,2006,Alemania,+1' Oliver Neuville,,90+1,False,False
+2006_ecuador_costa_rica,2006,Ecuador,Carlos Tenorio,,8,False,False
+2006_ecuador_costa_rica,2006,Ecuador,Agustin Delgado,,54,False,False
+2006_ecuador_costa_rica,2006,Ecuador,+2' Ivan Kaviedes,,90+2,False,False
+2006_inglaterra_trinidad_y_tobago,2006,Inglaterra,Peter Crouch,,83,False,False
+2006_inglaterra_trinidad_y_tobago,2006,Inglaterra,+1' Steven Gerrard,,90+1,False,False
+2006_suecia_paraguay,2006,Suecia,Fredrik Ljungberg,,89,False,False
+2006_argentina_serbia_y_montenegro,2006,Argentina,Maxi Rodriguez,,6,False,False
+2006_argentina_serbia_y_montenegro,2006,Argentina,Esteban Cambiasso,,31,False,False
+2006_argentina_serbia_y_montenegro,2006,Argentina,Maxi Rodriguez,,41,False,False
+2006_argentina_serbia_y_montenegro,2006,Argentina,Hernan Crespo,,78,False,False
+2006_argentina_serbia_y_montenegro,2006,Argentina,Carlos Tevez,,84,False,False
+2006_argentina_serbia_y_montenegro,2006,Argentina,Lionel Messi,,88,False,False
+2006_holanda_costa_de_marfil,2006,Paises Bajos,Robin Van Persie,,23,False,False
+2006_holanda_costa_de_marfil,2006,Paises Bajos,Ruud Van Nistelrooij,,27,False,False
+2006_holanda_costa_de_marfil,2006,Costa de Marfil,Bakary Kone,,38,False,False
+2006_portugal_iran,2006,Portugal,Deco,,63,False,False
+2006_portugal_iran,2006,Portugal,Cristiano Ronaldo,,80,True,False
+2006_italia_estados_unidos,2006,Italia,Alberto Gilardino,,22,False,False
+2006_italia_estados_unidos,2006,Estados Unidos,Cristian Zaccardo (en contra),,27,False,True
+2006_republica_checa_ghana,2006,Ghana,Asamoah Gyan,,2,False,False
+2006_republica_checa_ghana,2006,Ghana,Sulley Muntari,,82,False,False
+2006_brasil_australia,2006,Brasil,Adriano,,49,False,False
+2006_brasil_australia,2006,Brasil,Fred,,90,False,False
+2006_francia_corea_del_sur,2006,Francia,Thierry Henry,,9,False,False
+2006_francia_corea_del_sur,2006,Corea del Sur,Ji Sung Park,,81,False,False
+2006_togo_suiza,2006,Suiza,Alexander Frei,,16,False,False
+2006_togo_suiza,2006,Suiza,Tranquillo Barnetta,,88,False,False
+2006_espana_tunez,2006,Túnez,Jaouhar Mnari,,8,False,False
+2006_espana_tunez,2006,España,Raul,,71,False,False
+2006_espana_tunez,2006,España,Fernando Torres,,76,False,False
+2006_espana_tunez,2006,España,+1' Fernando Torres,,90+1,True,False
+2006_arabia_saudita_ucrania,2006,Ucrania,Andriy Rusol,,4,False,False
+2006_arabia_saudita_ucrania,2006,Ucrania,Serhiy Rebrov,,36,False,False
+2006_arabia_saudita_ucrania,2006,Ucrania,Andriy Shevchenko,,46,False,False
+2006_arabia_saudita_ucrania,2006,Ucrania,Maksym Kalinichenko,,84,False,False
+2006_ecuador_alemania,2006,Alemania,Miroslav Klose,,4,False,False
+2006_ecuador_alemania,2006,Alemania,Miroslav Klose,,44,False,False
+2006_ecuador_alemania,2006,Alemania,Lukas Podolski,,57,False,False
+2006_costa_rica_polonia,2006,Costa Rica,Ronald Gomez,,25,False,False
+2006_costa_rica_polonia,2006,Polonia,Bartosz Bosacki,,33,False,False
+2006_costa_rica_polonia,2006,Polonia,Bartosz Bosacki,,66,False,False
+2006_suecia_inglaterra,2006,Inglaterra,Joe Cole,,34,False,False
+2006_suecia_inglaterra,2006,Suecia,Marcus Allback,,51,False,False
+2006_suecia_inglaterra,2006,Inglaterra,Steven Gerrard,,85,False,False
+2006_suecia_inglaterra,2006,Suecia,Henrik Larsson,,90,False,False
+2006_paraguay_trinidad_y_tobago,2006,Paraguay,Brent Sancho (en contra),,25,False,True
+2006_paraguay_trinidad_y_tobago,2006,Paraguay,Nelson Cuevas,,86,False,False
+2006_costa_de_marfil_serbia_y_montenegro,2006,Serbia y Montenegro,Nikola Zigic,,10,False,False
+2006_costa_de_marfil_serbia_y_montenegro,2006,Serbia y Montenegro,Sasa Ilic,,20,False,False
+2006_costa_de_marfil_serbia_y_montenegro,2006,Costa de Marfil,Aruna Dindane,,37,True,False
+2006_costa_de_marfil_serbia_y_montenegro,2006,Costa de Marfil,Aruna Dindane,,67,False,False
+2006_costa_de_marfil_serbia_y_montenegro,2006,Costa de Marfil,Bonaventure Kalou,,86,True,False
+2006_portugal_mexico,2006,Portugal,Maniche,,6,False,False
+2006_portugal_mexico,2006,Portugal,Simao,,24,True,False
+2006_portugal_mexico,2006,México,Jose Fonseca,,29,False,False
+2006_iran_angola,2006,Angola,Flavio,,60,False,False
+2006_iran_angola,2006,Irán,Sohrab Bakhtiarizadeh,,75,False,False
+2006_republica_checa_italia,2006,Italia,Marco Materazzi,,26,False,False
+2006_republica_checa_italia,2006,Italia,Filippo Inzaghi,,87,False,False
+2006_ghana_estados_unidos,2006,Ghana,Haminu Draman,,22,False,False
+2006_ghana_estados_unidos,2006,Estados Unidos,Clint Dempsey,,43,False,False
+2006_ghana_estados_unidos,2006,Ghana,+2' Stephen Appiah,,45+2,True,False
+2006_japon_brasil,2006,Japón,Keiji Tamada,,34,False,False
+2006_japon_brasil,2006,Brasil,+1' Ronaldo,,45+1,False,False
+2006_japon_brasil,2006,Brasil,Juninho Pernambucano,,53,False,False
+2006_japon_brasil,2006,Brasil,Gilberto Melo,,59,False,False
+2006_japon_brasil,2006,Brasil,Ronaldo,,81,False,False
+2006_croacia_australia,2006,Croacia,Darijo Srna,,2,False,False
+2006_croacia_australia,2006,Australia,Craig Moore,,38,True,False
+2006_croacia_australia,2006,Croacia,Niko Kovac,,56,False,False
+2006_croacia_australia,2006,Australia,Harry Kewell,,79,False,False
+2006_togo_francia,2006,Francia,Patrick Vieira,,55,False,False
+2006_togo_francia,2006,Francia,Thierry Henry,,61,False,False
+2006_suiza_corea_del_sur,2006,Suiza,Philippe Senderos,,23,False,False
+2006_suiza_corea_del_sur,2006,Suiza,Alexander Frei,,77,False,False
+2006_arabia_saudita_espana,2006,España,Juanito,,36,False,False
+2006_ucrania_tunez,2006,Ucrania,Andriy Shevchenko,,70,True,False
+2006_alemania_suecia,2006,Alemania,Lukas Podolski,,4,False,False
+2006_alemania_suecia,2006,Alemania,Lukas Podolski,,12,False,False
+2006_argentina_mexico,2006,México,Rafael Marquez,,6,False,False
+2006_argentina_mexico,2006,Argentina,Hernan Crespo,,10,False,False
+2006_argentina_mexico,2006,Argentina,Maxi Rodriguez,,98,False,False
+2006_inglaterra_ecuador,2006,Inglaterra,David Beckham,,60,False,False
+2006_portugal_holanda,2006,Portugal,Maniche,,23,False,False
+2006_italia_australia,2006,Italia,+5' Francesco Totti,,90+5,True,False
+2006_brasil_ghana,2006,Brasil,Ronaldo,,5,False,False
+2006_brasil_ghana,2006,Brasil,+1' Adriano,,45+1,False,False
+2006_brasil_ghana,2006,Brasil,Ze Roberto,,84,False,False
+2006_espana_francia,2006,España,David Villa,,28,True,False
+2006_espana_francia,2006,Francia,Franck Ribery,,41,False,False
+2006_espana_francia,2006,Francia,Patrick Vieira,,83,False,False
+2006_espana_francia,2006,Francia,+2' Zinedine Zidane,,90+2,False,False
+2006_alemania_argentina,2006,Argentina,Roberto Ayala,,49,False,False
+2006_alemania_argentina,2006,Alemania,Miroslav Klose,,80,False,False
+2006_italia_ucrania,2006,Italia,Gianluca Zambrotta,,6,False,False
+2006_italia_ucrania,2006,Italia,Luca Toni,,59,False,False
+2006_italia_ucrania,2006,Italia,Luca Toni,,69,False,False
+2006_brasil_francia,2006,Francia,Thierry Henry,,57,False,False
+2006_alemania_italia,2006,Italia,Fabio Grosso,,119,False,False
+2006_alemania_italia,2006,Italia,Alessandro Del Piero,,121,False,False
+2006_portugal_francia,2006,Francia,Zinedine Zidane,,33,True,False
+2006_alemania_portugal,2006,Alemania,Bastian Schweinsteiger,,56,False,False
+2006_alemania_portugal,2006,Alemania,Petit (en contra),,60,False,True
+2006_alemania_portugal,2006,Alemania,Bastian Schweinsteiger,,78,False,False
+2006_alemania_portugal,2006,Portugal,Nuno Gomes,,88,False,False
+2006_italia_francia,2006,Francia,Zinedine Zidane,,7,True,False
+2006_italia_francia,2006,Italia,Marco Materazzi,,19,False,False
+2002_francia_senegal,2002,Senegal,Bouba Diop,,30,False,False
+2002_irlanda_camerun,2002,Camerún,Patrick Mboma,,39,False,False
+2002_irlanda_camerun,2002,Irlanda,Matt Holland,,52,False,False
+2002_uruguay_dinamarca,2002,Dinamarca,Jon Dahl Tomasson,,45,False,False
+2002_uruguay_dinamarca,2002,Uruguay,Dario Rodriguez,,47,False,False
+2002_uruguay_dinamarca,2002,Dinamarca,Jon Dahl Tomasson,,83,False,False
+2002_alemania_arabia_saudita,2002,Alemania,Miroslav Klose,,20,False,False
+2002_alemania_arabia_saudita,2002,Alemania,Miroslav Klose,,25,False,False
+2002_alemania_arabia_saudita,2002,Alemania,Michael Ballack,,40,False,False
+2002_alemania_arabia_saudita,2002,Alemania,+1' Carsten Jancker,,45+1,False,False
+2002_alemania_arabia_saudita,2002,Alemania,Miroslav Klose,,70,False,False
+2002_alemania_arabia_saudita,2002,Alemania,Thomas Linke,,73,False,False
+2002_alemania_arabia_saudita,2002,Alemania,Oliver Bierhoff,,84,False,False
+2002_alemania_arabia_saudita,2002,Alemania,+1' Bernd Schneider,,90+1,False,False
+2002_inglaterra_suecia,2002,Inglaterra,Sol Campbell,,24,False,False
+2002_inglaterra_suecia,2002,Suecia,Niclas Alexandersson,,59,False,False
+2002_paraguay_sudafrica,2002,Paraguay,Roque Santa Cruz,,39,False,False
+2002_paraguay_sudafrica,2002,Paraguay,Francisco Arce,,55,False,False
+2002_paraguay_sudafrica,2002,Sudáfrica,Teboho Mokoena,,63,False,False
+2002_paraguay_sudafrica,2002,Sudáfrica,+1' Quinton Fortune,,90+1,True,False
+2002_argentina_nigeria,2002,Argentina,Gabriel Batistuta,,63,False,False
+2002_espana_eslovenia,2002,España,Raul,,44,False,False
+2002_espana_eslovenia,2002,España,Juan Carlos Valeron,,74,False,False
+2002_espana_eslovenia,2002,Eslovenia,Sebastijan Cimirotic,,82,False,False
+2002_espana_eslovenia,2002,España,Fernando Hierro,,87,True,False
+2002_croacia_mexico,2002,México,Cuauhtemoc Blanco,,60,True,False
+2002_brasil_turquia,2002,Turquía,+2' Hasan Sas,,45+2,False,False
+2002_brasil_turquia,2002,Brasil,Ronaldo,,50,False,False
+2002_brasil_turquia,2002,Brasil,Rivaldo,,87,True,False
+2002_italia_ecuador,2002,Italia,Christian Vieri,,7,False,False
+2002_italia_ecuador,2002,Italia,Christian Vieri,,27,False,False
+2002_china_costa_rica,2002,Costa Rica,Ronald Gomez,,61,False,False
+2002_china_costa_rica,2002,Costa Rica,Mauricio Wright,,65,False,False
+2002_japon_belgica,2002,Bélgica,Marc Wilmots,,57,False,False
+2002_japon_belgica,2002,Japón,Takayuki Suzuki,,59,False,False
+2002_japon_belgica,2002,Japón,Junichi Inamoto,,67,False,False
+2002_japon_belgica,2002,Bélgica,Peter Van Der Heyden,,75,False,False
+2002_corea_del_sur_polonia,2002,Corea del Sur,Sun Hong Hwang,,26,False,False
+2002_corea_del_sur_polonia,2002,Corea del Sur,Sang Chul Yoo,,53,False,False
+2002_rusia_tunez,2002,Rusia,Egor Titov,,59,False,False
+2002_rusia_tunez,2002,Rusia,Valeri Karpin,,64,True,False
+2002_estados_unidos_portugal,2002,Estados Unidos,John O'Brien,,4,False,False
+2002_estados_unidos_portugal,2002,Estados Unidos,Jorge Costa (en contra),,29,False,True
+2002_estados_unidos_portugal,2002,Estados Unidos,Brian Mcbride,,36,False,False
+2002_estados_unidos_portugal,2002,Portugal,Beto,,39,False,False
+2002_estados_unidos_portugal,2002,Portugal,Jeff Agoos (en contra),,71,False,True
+2002_alemania_irlanda,2002,Alemania,Miroslav Klose,,19,False,False
+2002_alemania_irlanda,2002,Irlanda,+2' Robbie Keane,,90+2,False,False
+2002_camerun_arabia_saudita,2002,Camerún,Samuel Eto'o,,66,False,False
+2002_dinamarca_senegal,2002,Dinamarca,Jon Dahl Tomasson,,16,True,False
+2002_dinamarca_senegal,2002,Senegal,Salif Diao,,52,False,False
+2002_suecia_nigeria,2002,Nigeria,Julius Aghahowa,,27,False,False
+2002_suecia_nigeria,2002,Suecia,Henrik Larsson,,35,False,False
+2002_suecia_nigeria,2002,Suecia,Henrik Larsson,,63,True,False
+2002_espana_paraguay,2002,Paraguay,Carles Puyol (en contra),,10,False,True
+2002_espana_paraguay,2002,España,Fernando Morientes,,53,False,False
+2002_espana_paraguay,2002,España,Fernando Morientes,,69,False,False
+2002_espana_paraguay,2002,España,Fernando Hierro,,83,True,False
+2002_argentina_inglaterra,2002,Inglaterra,David Beckham,,44,True,False
+2002_sudafrica_eslovenia,2002,Sudáfrica,Siyabonga Nomvethe,,4,False,False
+2002_italia_croacia,2002,Italia,Christian Vieri,,55,False,False
+2002_italia_croacia,2002,Croacia,Ivica Olic,,73,False,False
+2002_italia_croacia,2002,Croacia,Milan Rapaic,,76,False,False
+2002_brasil_china,2002,Brasil,Roberto Carlos,,15,False,False
+2002_brasil_china,2002,Brasil,Rivaldo,,32,False,False
+2002_brasil_china,2002,Brasil,Ronaldinho,,45,True,False
+2002_brasil_china,2002,Brasil,Ronaldo,,55,False,False
+2002_mexico_ecuador,2002,Ecuador,Agustin Delgado,,5,False,False
+2002_mexico_ecuador,2002,México,Jared Borgetti,,28,False,False
+2002_mexico_ecuador,2002,México,Gerardo Torrado,,57,False,False
+2002_costa_rica_turquia,2002,Turquía,Emre Belozoglu,,56,False,False
+2002_costa_rica_turquia,2002,Costa Rica,Winston Parks,,86,False,False
+2002_japon_rusia,2002,Japón,Junichi Inamoto,,51,False,False
+2002_corea_del_sur_estados_unidos,2002,Estados Unidos,Clint Mathis,,24,False,False
+2002_corea_del_sur_estados_unidos,2002,Corea del Sur,Jung Hwan Ahn,,78,False,False
+2002_tunez_belgica,2002,Bélgica,Marc Wilmots,,13,False,False
+2002_tunez_belgica,2002,Túnez,Raouf Bouzaiene,,17,False,False
+2002_portugal_polonia,2002,Portugal,Pauleta,,14,False,False
+2002_portugal_polonia,2002,Portugal,Pauleta,,65,False,False
+2002_portugal_polonia,2002,Portugal,Pauleta,,77,False,False
+2002_portugal_polonia,2002,Portugal,Rui Costa,,88,False,False
+2002_dinamarca_francia,2002,Dinamarca,Dennis Rommedahl,,22,False,False
+2002_dinamarca_francia,2002,Dinamarca,Jon Dahl Tomasson,,67,False,False
+2002_senegal_uruguay,2002,Senegal,Khalilou Fadiga,,20,True,False
+2002_senegal_uruguay,2002,Senegal,Bouba Diop,,26,False,False
+2002_senegal_uruguay,2002,Senegal,Bouba Diop,,38,False,False
+2002_senegal_uruguay,2002,Uruguay,Richard Morales,,46,False,False
+2002_senegal_uruguay,2002,Uruguay,Diego Forlan,,69,False,False
+2002_senegal_uruguay,2002,Uruguay,Alvaro Recoba,,88,True,False
+2002_camerun_alemania,2002,Alemania,Marco Bode,,50,False,False
+2002_camerun_alemania,2002,Alemania,Miroslav Klose,,79,False,False
+2002_arabia_saudita_irlanda,2002,Irlanda,Robbie Keane,,7,False,False
+2002_arabia_saudita_irlanda,2002,Irlanda,Gary Breen,,61,False,False
+2002_arabia_saudita_irlanda,2002,Irlanda,Damien Duff,,87,False,False
+2002_suecia_argentina,2002,Suecia,Anders Svensson,,59,False,False
+2002_suecia_argentina,2002,Argentina,Hernan Crespo,,88,False,False
+2002_sudafrica_espana,2002,España,Raul,,4,False,False
+2002_sudafrica_espana,2002,Sudáfrica,Benni Mccarthy,,31,False,False
+2002_sudafrica_espana,2002,España,+1' Gaizka Mendieta,,45+1,False,False
+2002_sudafrica_espana,2002,Sudáfrica,Lucas Radebe,,53,False,False
+2002_sudafrica_espana,2002,España,Raul,,56,False,False
+2002_eslovenia_paraguay,2002,Eslovenia,+1' Milenko Acimovic,,45+1,False,False
+2002_eslovenia_paraguay,2002,Paraguay,Nelson Cuevas,,65,False,False
+2002_eslovenia_paraguay,2002,Paraguay,Jorge Campos,,73,False,False
+2002_eslovenia_paraguay,2002,Paraguay,Nelson Cuevas,,84,False,False
+2002_costa_rica_brasil,2002,Brasil,Ronaldo,,10,False,False
+2002_costa_rica_brasil,2002,Brasil,Ronaldo,,13,False,False
+2002_costa_rica_brasil,2002,Brasil,Edmilson,,38,False,False
+2002_costa_rica_brasil,2002,Costa Rica,Paulo Wanchope,,39,False,False
+2002_costa_rica_brasil,2002,Costa Rica,Ronald Gomez,,56,False,False
+2002_costa_rica_brasil,2002,Brasil,Rivaldo,,62,False,False
+2002_costa_rica_brasil,2002,Brasil,Junior,,64,False,False
+2002_turquia_china,2002,Turquía,Hasan Sas,,6,False,False
+2002_turquia_china,2002,Turquía,Bulent Korkmaz,,9,False,False
+2002_turquia_china,2002,Turquía,Umit Davala,,85,False,False
+2002_mexico_italia,2002,México,Jared Borgetti,,34,False,False
+2002_mexico_italia,2002,Italia,Alessandro Del Piero,,85,False,False
+2002_ecuador_croacia,2002,Ecuador,Edison Mendez,,48,False,False
+2002_tunez_japon,2002,Japón,Hiroaki Morishima,,48,False,False
+2002_tunez_japon,2002,Japón,Hidetoshi Nakata,,75,False,False
+2002_belgica_rusia,2002,Bélgica,Johan Walem,,7,False,False
+2002_belgica_rusia,2002,Rusia,Vladimir Beschastnykh,,52,False,False
+2002_belgica_rusia,2002,Bélgica,Wesley Sonck,,78,False,False
+2002_belgica_rusia,2002,Bélgica,Marc Wilmots,,82,False,False
+2002_belgica_rusia,2002,Rusia,Dmitri Sychev,,88,False,False
+2002_portugal_corea_del_sur,2002,Corea del Sur,Ji Sung Park,,70,False,False
+2002_polonia_estados_unidos,2002,Polonia,Emmanuel Olisadebe,,3,False,False
+2002_polonia_estados_unidos,2002,Polonia,Pawel Kryszalowicz,,5,False,False
+2002_polonia_estados_unidos,2002,Polonia,Marcin Zewlakow,,66,False,False
+2002_polonia_estados_unidos,2002,Estados Unidos,Landon Donovan,,83,False,False
+2002_alemania_paraguay,2002,Alemania,Oliver Neuville,,88,False,False
+2002_dinamarca_inglaterra,2002,Inglaterra,Rio Ferdinand,,5,False,False
+2002_dinamarca_inglaterra,2002,Inglaterra,Michael Owen,,22,False,False
+2002_dinamarca_inglaterra,2002,Inglaterra,Emile Heskey,,44,False,False
+2002_suecia_senegal,2002,Suecia,Henrik Larsson,,11,False,False
+2002_suecia_senegal,2002,Senegal,Henri Camara,,37,False,False
+2002_suecia_senegal,2002,Senegal,Henri Camara,,14,False,False
+2002_espana_irlanda,2002,España,Fernando Morientes,,8,False,False
+2002_espana_irlanda,2002,Irlanda,Robbie Keane,,90,True,False
+2002_brasil_belgica,2002,Brasil,Rivaldo,,67,False,False
+2002_brasil_belgica,2002,Brasil,Ronaldo,,87,False,False
+2002_japon_turquia,2002,Turquía,Umit Davala,,12,False,False
+2002_corea_del_sur_italia,2002,Italia,Christian Vieri,,18,False,False
+2002_corea_del_sur_italia,2002,Corea del Sur,Ki Hyeon Seol,,88,False,False
+2002_corea_del_sur_italia,2002,Corea del Sur,Jung Hwan Ahn,,117,False,False
+2002_inglaterra_brasil,2002,Inglaterra,Michael Owen,,23,False,False
+2002_inglaterra_brasil,2002,Brasil,+2' Rivaldo,,45+2,False,False
+2002_inglaterra_brasil,2002,Brasil,Ronaldinho,,50,False,False
+2002_alemania_estados_unidos,2002,Alemania,Michael Ballack,,39,False,False
+2002_senegal_turquia,2002,Turquía,Ilhan Mansiz,,4,False,False
+2002_alemania_corea_del_sur,2002,Alemania,Michael Ballack,,75,False,False
+2002_brasil_turquia_2,2002,Brasil,Ronaldo,,49,False,False
+2002_corea_del_sur_turquia,2002,Turquía,Hakan Sukur,,1,False,False
+2002_corea_del_sur_turquia,2002,Corea del Sur,Eul Yong Lee,,9,False,False
+2002_corea_del_sur_turquia,2002,Turquía,Ilhan Mansiz,,13,False,False
+2002_corea_del_sur_turquia,2002,Turquía,Ilhan Mansiz,,32,False,False
+2002_corea_del_sur_turquia,2002,Corea del Sur,+3' Chong Gug Song,,90+3,False,False
+2002_alemania_brasil,2002,Brasil,Ronaldo,,67,False,False
+2002_alemania_brasil,2002,Brasil,Ronaldo,,79,False,False
+1998_brasil_escocia,1998,Brasil,Cesar Sampaio,,5,False,False
+1998_brasil_escocia,1998,Escocia,John Collins,,38,True,False
+1998_brasil_escocia,1998,Brasil,Tom Boyd (en contra),,74,False,True
+1998_marruecos_noruega,1998,Marruecos,Mustafa El Hadji,,37,False,False
+1998_marruecos_noruega,1998,Noruega,+1' Youssef Chippo (en contra),,45+1,False,True
+1998_marruecos_noruega,1998,Marruecos,Abdeljalil Hadda,,60,False,False
+1998_marruecos_noruega,1998,Noruega,Dan Eggen,,61,False,False
+1998_camerun_austria,1998,Camerún,Pierre Njanka,,77,False,False
+1998_camerun_austria,1998,Austria,+1' Toni Polster,,90+1,False,False
+1998_italia_chile,1998,Italia,Christian Vieri,,11,False,False
+1998_italia_chile,1998,Chile,+3' Marcelo Salas,,45+3,False,False
+1998_italia_chile,1998,Chile,Marcelo Salas,,48,False,False
+1998_italia_chile,1998,Italia,Roberto Baggio,,84,True,False
+1998_arabia_saudita_dinamarca,1998,Dinamarca,Marc Rieper,,69,False,False
+1998_francia_sudafrica,1998,Francia,Christophe Dugarry,,36,False,False
+1998_francia_sudafrica,1998,Francia,Pierre Issa (en contra),,77,False,True
+1998_francia_sudafrica,1998,Francia,+2' Thierry Henry,,90+2,False,False
+1998_corea_del_sur_mexico,1998,Corea del Sur,Seok Ju Ha,,27,False,False
+1998_corea_del_sur_mexico,1998,México,Ricardo Pelaez Linares,,50,False,False
+1998_corea_del_sur_mexico,1998,México,Luis Hernandez,,75,False,False
+1998_corea_del_sur_mexico,1998,México,Luis Hernandez,,84,False,False
+1998_espana_nigeria,1998,España,Fernando Hierro,,21,False,False
+1998_espana_nigeria,1998,Nigeria,Mutiu Adepoju,,24,False,False
+1998_espana_nigeria,1998,España,Raul,,47,False,False
+1998_espana_nigeria,1998,Nigeria,Andoni Zubizarreta (en contra),,73,False,True
+1998_espana_nigeria,1998,Nigeria,Sunday Oliseh,,78,False,False
+1998_jamaica_croacia,1998,Croacia,Mario Stanic,,27,False,False
+1998_jamaica_croacia,1998,Jamaica,Robert Earle,,45,False,False
+1998_jamaica_croacia,1998,Croacia,Robert Prosinecki,,53,False,False
+1998_jamaica_croacia,1998,Croacia,Davor Suker,,69,False,False
+1998_rf_de_yugoslavia_iran,1998,RF de Yugoslavia,Sinisa Mihajlovic,,73,False,False
+1998_argentina_japon,1998,Argentina,Gabriel Batistuta,,28,False,False
+1998_alemania_estados_unidos,1998,Alemania,Andreas Moeller,,10,False,False
+1998_alemania_estados_unidos,1998,Alemania,Juergen Klinsmann,,67,False,False
+1998_rumania_colombia,1998,Rumania,+1' Adrian Ilie,,45+1,False,False
+1998_inglaterra_tunez,1998,Inglaterra,Alan Shearer,,42,False,False
+1998_inglaterra_tunez,1998,Inglaterra,Paul Scholes,,89,False,False
+1998_escocia_noruega,1998,Noruega,Havard Flo,,46,False,False
+1998_escocia_noruega,1998,Escocia,Craig Burley,,66,False,False
+1998_brasil_marruecos,1998,Brasil,Ronaldo,,9,False,False
+1998_brasil_marruecos,1998,Brasil,+2' Rivaldo,,45+2,False,False
+1998_brasil_marruecos,1998,Brasil,Bebeto,,50,False,False
+1998_chile_austria,1998,Chile,Marcelo Salas,,70,False,False
+1998_chile_austria,1998,Austria,+2' Ivica Vastic,,90+2,False,False
+1998_italia_camerun,1998,Italia,Luigi Di Biagio,,7,False,False
+1998_italia_camerun,1998,Italia,Christian Vieri,,75,False,False
+1998_italia_camerun,1998,Italia,Christian Vieri,,89,False,False
+1998_francia_arabia_saudita,1998,Francia,Thierry Henry,,37,False,False
+1998_francia_arabia_saudita,1998,Francia,David Trezeguet,,68,False,False
+1998_francia_arabia_saudita,1998,Francia,Thierry Henry,,78,False,False
+1998_francia_arabia_saudita,1998,Francia,Bixente Lizarazu,,85,False,False
+1998_sudafrica_dinamarca,1998,Dinamarca,Allan Nielsen,,12,False,False
+1998_sudafrica_dinamarca,1998,Sudáfrica,Benni Mccarthy,,51,False,False
+1998_nigeria_bulgaria,1998,Nigeria,Victor Ikpeba,,28,False,False
+1998_holanda_corea_del_sur,1998,Paises Bajos,Phillip Cocu,,37,False,False
+1998_holanda_corea_del_sur,1998,Paises Bajos,Marc Overmars,,41,False,False
+1998_holanda_corea_del_sur,1998,Paises Bajos,Dennis Bergkamp,,71,False,False
+1998_holanda_corea_del_sur,1998,Paises Bajos,Pierre Van Hooijdonk,,78,False,False
+1998_holanda_corea_del_sur,1998,Paises Bajos,Ronald De Boer,,83,False,False
+1998_belgica_mexico,1998,Bélgica,Marc Wilmots,,42,False,False
+1998_belgica_mexico,1998,Bélgica,Marc Wilmots,,47,False,False
+1998_belgica_mexico,1998,México,Alberto Garcia Aspe,,55,True,False
+1998_belgica_mexico,1998,México,Cuauhtemoc Blanco,,62,False,False
+1998_japon_croacia,1998,Croacia,Davor Suker,,77,False,False
+1998_argentina_jamaica,1998,Argentina,Ariel Ortega,,31,False,False
+1998_argentina_jamaica,1998,Argentina,Ariel Ortega,,55,False,False
+1998_argentina_jamaica,1998,Argentina,Gabriel Batistuta,,73,False,False
+1998_argentina_jamaica,1998,Argentina,Gabriel Batistuta,,78,False,False
+1998_argentina_jamaica,1998,Argentina,Gabriel Batistuta,,83,True,False
+1998_alemania_rf_de_yugoslavia,1998,RF de Yugoslavia,Predrag Mijatovic,,13,False,False
+1998_alemania_rf_de_yugoslavia,1998,RF de Yugoslavia,Dragan Stojkovic,,52,False,False
+1998_alemania_rf_de_yugoslavia,1998,Alemania,Sinisa Mihajlovic (en contra),,72,False,True
+1998_alemania_rf_de_yugoslavia,1998,Alemania,Oliver Bierhoff,,78,False,False
+1998_estados_unidos_iran,1998,Irán,Hamid Estili,,41,False,False
+1998_estados_unidos_iran,1998,Irán,Mehdi Mahdavikia,,83,False,False
+1998_estados_unidos_iran,1998,Estados Unidos,Brian Mcbride,,87,False,False
+1998_colombia_tunez,1998,Colombia,Leider Preciado,,82,False,False
+1998_rumania_inglaterra,1998,Rumania,Viorel Moldovan,,46,False,False
+1998_rumania_inglaterra,1998,Inglaterra,Michael Owen,,81,False,False
+1998_rumania_inglaterra,1998,Rumania,Dan Petrescu,,90,False,False
+1998_italia_austria,1998,Italia,Christian Vieri,,48,False,False
+1998_italia_austria,1998,Italia,Roberto Baggio,,90,False,False
+1998_italia_austria,1998,Austria,+2' Andreas Herzog,,90+2,True,False
+1998_escocia_marruecos,1998,Marruecos,Salaheddine Bassir,,23,False,False
+1998_escocia_marruecos,1998,Marruecos,Abdeljalil Hadda,,46,False,False
+1998_escocia_marruecos,1998,Marruecos,Salaheddine Bassir,,85,False,False
+1998_brasil_noruega,1998,Brasil,Bebeto,,78,False,False
+1998_brasil_noruega,1998,Noruega,Tore Andre Flo,,83,False,False
+1998_brasil_noruega,1998,Noruega,Kjetil Rekdal,,89,True,False
+1998_chile_camerun,1998,Chile,Jose Sierra,,20,False,False
+1998_chile_camerun,1998,Camerún,Patrick Mboma,,56,False,False
+1998_espana_bulgaria,1998,España,Fernando Hierro,,6,True,False
+1998_espana_bulgaria,1998,España,Luis Enrique,,18,False,False
+1998_espana_bulgaria,1998,España,Fernando Morientes,,55,False,False
+1998_espana_bulgaria,1998,Bulgaria,Emil Kostadinov,,58,False,False
+1998_espana_bulgaria,1998,España,Fernando Morientes,,81,False,False
+1998_espana_bulgaria,1998,España,Georgi Bachev (en contra),,88,False,True
+1998_espana_bulgaria,1998,España,+4' Kiko,,90+4,False,False
+1998_francia_dinamarca,1998,Francia,Youri Djorkaeff,,12,True,False
+1998_francia_dinamarca,1998,Dinamarca,Michael Laudrup,,42,True,False
+1998_francia_dinamarca,1998,Francia,Emmanuel Petit,,56,False,False
+1998_nigeria_paraguay,1998,Paraguay,Celso Ayala,,1,False,False
+1998_nigeria_paraguay,1998,Nigeria,Wilson Oruma,,11,False,False
+1998_nigeria_paraguay,1998,Paraguay,Miguel Benitez,,58,False,False
+1998_nigeria_paraguay,1998,Paraguay,Jose Cardozo,,86,False,False
+1998_sudafrica_arabia_saudita,1998,Sudáfrica,Shaun Bartlett,,18,False,False
+1998_sudafrica_arabia_saudita,1998,Arabia Saudita,+2' Sami Al Jaber,,45+2,True,False
+1998_sudafrica_arabia_saudita,1998,Arabia Saudita,Youssef Al Tunayan,,74,True,False
+1998_sudafrica_arabia_saudita,1998,Sudáfrica,+3' Shaun Bartlett,,90+3,True,False
+1998_belgica_corea_del_sur,1998,Bélgica,Luc Nilis,,7,False,False
+1998_belgica_corea_del_sur,1998,Corea del Sur,Sang Chul Yoo,,72,False,False
+1998_holanda_mexico,1998,Paises Bajos,Phillip Cocu,,4,False,False
+1998_holanda_mexico,1998,Paises Bajos,Ronald De Boer,,18,False,False
+1998_holanda_mexico,1998,México,Ricardo Pelaez Linares,,75,False,False
+1998_holanda_mexico,1998,México,+4' Luis Hernandez,,90+4,False,False
+1998_alemania_iran,1998,Alemania,Oliver Bierhoff,,50,False,False
+1998_alemania_iran,1998,Alemania,Juergen Klinsmann,,57,False,False
+1998_estados_unidos_rf_de_yugoslavia,1998,RF de Yugoslavia,Slobodan Komljenovic,,3,False,False
+1998_rumania_tunez,1998,Túnez,Skander Souayah,,12,True,False
+1998_rumania_tunez,1998,Rumania,Viorel Moldovan,,71,False,False
+1998_colombia_inglaterra,1998,Inglaterra,Darren Anderton,,20,False,False
+1998_colombia_inglaterra,1998,Inglaterra,David Beckham,,29,False,False
+1998_japon_jamaica,1998,Jamaica,Theodore Whitmore,,39,False,False
+1998_japon_jamaica,1998,Jamaica,Theodore Whitmore,,54,False,False
+1998_japon_jamaica,1998,Japón,Masashi Nakayama,,74,False,False
+1998_argentina_croacia,1998,Argentina,Mauricio Pineda,,36,False,False
+1998_brasil_chile,1998,Brasil,Cesar Sampaio,,11,False,False
+1998_brasil_chile,1998,Brasil,Cesar Sampaio,,27,False,False
+1998_brasil_chile,1998,Brasil,+1' Ronaldo,,45+1,True,False
+1998_brasil_chile,1998,Chile,Marcelo Salas,,68,False,False
+1998_brasil_chile,1998,Brasil,Ronaldo,,70,False,False
+1998_italia_noruega,1998,Italia,Christian Vieri,,18,False,False
+1998_nigeria_dinamarca,1998,Dinamarca,Peter Moller,,3,False,False
+1998_nigeria_dinamarca,1998,Dinamarca,Brian Laudrup,,12,False,False
+1998_nigeria_dinamarca,1998,Dinamarca,Ebbe Sand,,60,False,False
+1998_nigeria_dinamarca,1998,Dinamarca,Thomas Helveg,,76,False,False
+1998_nigeria_dinamarca,1998,Nigeria,Tijani Babangida,,78,False,False
+1998_francia_paraguay,1998,Francia,Laurent Blanc,,113,False,False
+1998_alemania_mexico,1998,México,Luis Hernandez,,47,False,False
+1998_alemania_mexico,1998,Alemania,Juergen Klinsmann,,75,False,False
+1998_alemania_mexico,1998,Alemania,Oliver Bierhoff,,86,False,False
+1998_holanda_rf_de_yugoslavia,1998,Paises Bajos,Dennis Bergkamp,,38,False,False
+1998_holanda_rf_de_yugoslavia,1998,RF de Yugoslavia,Slobodan Komljenovic,,48,False,False
+1998_holanda_rf_de_yugoslavia,1998,Paises Bajos,+2' Edgar Davids,,90+2,False,False
+1998_argentina_inglaterra,1998,Argentina,Gabriel Batistuta,,6,True,False
+1998_argentina_inglaterra,1998,Inglaterra,Alan Shearer,,10,True,False
+1998_argentina_inglaterra,1998,Inglaterra,Michael Owen,,16,False,False
+1998_argentina_inglaterra,1998,Argentina,+1' Javier Zanetti,,45+1,False,False
+1998_rumania_croacia,1998,Croacia,+2' Davor Suker,,45+2,True,False
+1998_brasil_dinamarca,1998,Dinamarca,Martin Jorgensen,,2,False,False
+1998_brasil_dinamarca,1998,Brasil,Bebeto,,11,False,False
+1998_brasil_dinamarca,1998,Brasil,Rivaldo,,27,False,False
+1998_brasil_dinamarca,1998,Dinamarca,Brian Laudrup,,50,False,False
+1998_brasil_dinamarca,1998,Brasil,Rivaldo,,60,False,False
+1998_alemania_croacia,1998,Croacia,+3' Robert Jarni,,45+3,False,False
+1998_alemania_croacia,1998,Croacia,Goran Vlaovic,,80,False,False
+1998_alemania_croacia,1998,Croacia,Davor Suker,,85,False,False
+1998_holanda_argentina,1998,Paises Bajos,Patrick Kluivert,,12,False,False
+1998_holanda_argentina,1998,Argentina,Claudio Lopez,,17,False,False
+1998_holanda_argentina,1998,Paises Bajos,Dennis Bergkamp,,89,False,False
+1998_brasil_holanda,1998,Brasil,Ronaldo,,46,False,False
+1998_brasil_holanda,1998,Paises Bajos,Patrick Kluivert,,87,False,False
+1998_francia_croacia,1998,Croacia,Davor Suker,,46,False,False
+1998_francia_croacia,1998,Francia,Lilian Thuram,,47,False,False
+1998_francia_croacia,1998,Francia,Lilian Thuram,,69,False,False
+1998_holanda_croacia,1998,Croacia,Robert Prosinecki,,13,False,False
+1998_holanda_croacia,1998,Paises Bajos,Boudewijn Zenden,,21,False,False
+1998_holanda_croacia,1998,Croacia,Davor Suker,,35,False,False
+1998_brasil_francia,1998,Francia,Zinedine Zidane,,27,False,False
+1998_brasil_francia,1998,Francia,+1' Zinedine Zidane,,45+1,False,False
+1998_brasil_francia,1998,Francia,Emmanuel Petit,,90,False,False
+1994_alemania_bolivia,1994,Alemania,Juergen Klinsmann,,61,False,False
+1994_espana_corea_del_sur,1994,España,Julio Salinas,,51,False,False
+1994_espana_corea_del_sur,1994,España,Goikoetxea,,55,False,False
+1994_espana_corea_del_sur,1994,Corea del Sur,Myung Bo Hong,,85,False,False
+1994_espana_corea_del_sur,1994,Corea del Sur,Jung Won Seo,,90,False,False
+1994_estados_unidos_suiza,1994,Suiza,Georges Bregy,,39,False,False
+1994_estados_unidos_suiza,1994,Estados Unidos,Eric Wynalda,,44,False,False
+1994_italia_irlanda,1994,Irlanda,Ray Houghton,,11,False,False
+1994_colombia_rumania,1994,Rumania,Florin Raducioiu,,15,False,False
+1994_colombia_rumania,1994,Rumania,Gheorghe Hagi,,34,False,False
+1994_colombia_rumania,1994,Colombia,Adolfo Valencia,,43,False,False
+1994_colombia_rumania,1994,Rumania,Florin Raducioiu,,89,False,False
+1994_belgica_marruecos,1994,Bélgica,Marc De Grijse,,11,False,False
+1994_noruega_mexico,1994,Noruega,Kjetil Rekdal,,84,False,False
+1994_camerun_suecia,1994,Suecia,Roger Ljung,,8,False,False
+1994_camerun_suecia,1994,Camerún,David Embe,,31,False,False
+1994_camerun_suecia,1994,Camerún,Francois Omam-Biyik,,47,False,False
+1994_camerun_suecia,1994,Suecia,Martin Dahlin,,75,False,False
+1994_brasil_rusia,1994,Brasil,Romario,,26,False,False
+1994_brasil_rusia,1994,Brasil,Rai,,52,True,False
+1994_holanda_arabia_saudita,1994,Arabia Saudita,Fuad Amin,,18,False,False
+1994_holanda_arabia_saudita,1994,Paises Bajos,Wim Jonk,,50,False,False
+1994_holanda_arabia_saudita,1994,Paises Bajos,Gaston Taument,,86,False,False
+1994_argentina_grecia,1994,Argentina,Gabriel Batistuta,,2,False,False
+1994_argentina_grecia,1994,Argentina,Gabriel Batistuta,,44,False,False
+1994_argentina_grecia,1994,Argentina,Diego Maradona,,60,False,False
+1994_argentina_grecia,1994,Argentina,Gabriel Batistuta,,90,True,False
+1994_alemania_espana,1994,España,Goikoetxea,,14,False,False
+1994_alemania_espana,1994,Alemania,Juergen Klinsmann,,48,False,False
+1994_nigeria_bulgaria,1994,Nigeria,Rasheed Yekini,,21,False,False
+1994_nigeria_bulgaria,1994,Nigeria,Daniel Amokachi,,43,False,False
+1994_nigeria_bulgaria,1994,Nigeria,Emmanuel Amunike,,55,False,False
+1994_rumania_suiza,1994,Suiza,Alain Sutter,,16,False,False
+1994_rumania_suiza,1994,Rumania,Gheorghe Hagi,,35,False,False
+1994_rumania_suiza,1994,Suiza,Stephane Chapuisat,,52,False,False
+1994_rumania_suiza,1994,Suiza,Adrian Knup,,65,False,False
+1994_rumania_suiza,1994,Suiza,Adrian Knup,,72,False,False
+1994_estados_unidos_colombia,1994,Estados Unidos,Andres Escobar (en contra),,35,False,True
+1994_estados_unidos_colombia,1994,Estados Unidos,Earnie Stewart,,52,False,False
+1994_estados_unidos_colombia,1994,Colombia,Adolfo Valencia,,90,False,False
+1994_italia_noruega,1994,Italia,Dino Baggio,,69,False,False
+1994_mexico_irlanda,1994,México,Luis Garcia,,42,False,False
+1994_mexico_irlanda,1994,México,Luis Garcia,,65,False,False
+1994_mexico_irlanda,1994,Irlanda,John Aldridge,,84,False,False
+1994_brasil_camerun,1994,Brasil,Romario,,39,False,False
+1994_brasil_camerun,1994,Brasil,Marcio Santos,,66,False,False
+1994_brasil_camerun,1994,Brasil,Bebeto,,73,False,False
+1994_suecia_rusia,1994,Rusia,Oleg Salenko,,4,True,False
+1994_suecia_rusia,1994,Suecia,Tomas Brolin,,37,True,False
+1994_suecia_rusia,1994,Suecia,Martin Dahlin,,59,False,False
+1994_suecia_rusia,1994,Suecia,Martin Dahlin,,81,False,False
+1994_belgica_holanda,1994,Bélgica,Philippe Albert,,65,False,False
+1994_arabia_saudita_marruecos,1994,Arabia Saudita,Sami Al Jaber,,7,True,False
+1994_arabia_saudita_marruecos,1994,Marruecos,Mohammed Chaouch,,26,False,False
+1994_arabia_saudita_marruecos,1994,Arabia Saudita,Fuad Amin,,45,False,False
+1994_argentina_nigeria,1994,Nigeria,Samson Siasia,,8,False,False
+1994_argentina_nigeria,1994,Argentina,Claudio Caniggia,,21,False,False
+1994_argentina_nigeria,1994,Argentina,Claudio Caniggia,,28,False,False
+1994_bulgaria_grecia,1994,Bulgaria,Hristo Stoichkov,,5,True,False
+1994_bulgaria_grecia,1994,Bulgaria,Hristo Stoichkov,,55,True,False
+1994_bulgaria_grecia,1994,Bulgaria,Iordan Letchkov,,65,False,False
+1994_bulgaria_grecia,1994,Bulgaria,Daniel Borimirov,,90,False,False
+1994_estados_unidos_rumania,1994,Rumania,Dan Petrescu,,18,False,False
+1994_suiza_colombia,1994,Colombia,Herman Gaviria,,44,False,False
+1994_suiza_colombia,1994,Colombia,John Lozano,,90,False,False
+1994_bolivia_espana,1994,España,Pep Guardiola,,19,True,False
+1994_bolivia_espana,1994,España,Jose Luis Caminero,,66,False,False
+1994_bolivia_espana,1994,Bolivia,Erwin Sanchez,,67,False,False
+1994_bolivia_espana,1994,España,Jose Luis Caminero,,70,False,False
+1994_alemania_corea_del_sur,1994,Alemania,Juergen Klinsmann,,12,False,False
+1994_alemania_corea_del_sur,1994,Alemania,Karlheinz Riedle,,20,False,False
+1994_alemania_corea_del_sur,1994,Alemania,Juergen Klinsmann,,37,False,False
+1994_alemania_corea_del_sur,1994,Corea del Sur,Sun Hong Hwang,,52,False,False
+1994_alemania_corea_del_sur,1994,Corea del Sur,Myung Bo Hong,,63,False,False
+1994_italia_mexico,1994,Italia,Daniele Massaro,,48,False,False
+1994_italia_mexico,1994,México,Marcelino Bernal,,57,False,False
+1994_rusia_camerun,1994,Rusia,Oleg Salenko,,15,False,False
+1994_rusia_camerun,1994,Rusia,Oleg Salenko,,41,False,False
+1994_rusia_camerun,1994,Rusia,Oleg Salenko,,44,True,False
+1994_rusia_camerun,1994,Camerún,Roger Milla,,46,False,False
+1994_rusia_camerun,1994,Rusia,Oleg Salenko,,72,False,False
+1994_rusia_camerun,1994,Rusia,Oleg Salenko,,75,False,False
+1994_rusia_camerun,1994,Rusia,Dmitri Radchenko,,81,False,False
+1994_brasil_suecia,1994,Suecia,Kennet Andersson,,23,False,False
+1994_brasil_suecia,1994,Brasil,Romario,,46,False,False
+1994_marruecos_holanda,1994,Paises Bajos,Dennis Bergkamp,,43,False,False
+1994_marruecos_holanda,1994,Marruecos,Hassan Nader,,47,False,False
+1994_marruecos_holanda,1994,Paises Bajos,Bryan Roy,,77,False,False
+1994_belgica_arabia_saudita,1994,Arabia Saudita,Said Al Owayran,,5,False,False
+1994_grecia_nigeria,1994,Nigeria,Finidi George,,45,False,False
+1994_grecia_nigeria,1994,Nigeria,Daniel Amokachi,,90,False,False
+1994_argentina_bulgaria,1994,Bulgaria,Hristo Stoichkov,,61,False,False
+1994_argentina_bulgaria,1994,Bulgaria,Nasko Sirakov,,90,False,False
+1994_alemania_belgica,1994,Alemania,Rudi Voeller,,6,False,False
+1994_alemania_belgica,1994,Bélgica,Georges Grun,,8,False,False
+1994_alemania_belgica,1994,Alemania,Juergen Klinsmann,,11,False,False
+1994_alemania_belgica,1994,Alemania,Rudi Voeller,,40,False,False
+1994_alemania_belgica,1994,Bélgica,Philippe Albert,,90,False,False
+1994_espana_suiza,1994,España,Fernando Hierro,,15,False,False
+1994_espana_suiza,1994,España,Luis Enrique,,74,False,False
+1994_espana_suiza,1994,España,Txiki Beguiristain,,86,True,False
+1994_arabia_saudita_suecia,1994,Suecia,Martin Dahlin,,6,False,False
+1994_arabia_saudita_suecia,1994,Suecia,Kennet Andersson,,51,False,False
+1994_arabia_saudita_suecia,1994,Arabia Saudita,Fahad Al Ghesheyan,,85,False,False
+1994_arabia_saudita_suecia,1994,Suecia,Kennet Andersson,,88,False,False
+1994_rumania_argentina,1994,Rumania,Ilie Dumitrescu,,11,False,False
+1994_rumania_argentina,1994,Argentina,Gabriel Batistuta,,16,True,False
+1994_rumania_argentina,1994,Rumania,Ilie Dumitrescu,,18,False,False
+1994_rumania_argentina,1994,Rumania,Gheorghe Hagi,,58,False,False
+1994_rumania_argentina,1994,Argentina,Abel Balbo,,75,False,False
+1994_holanda_irlanda,1994,Paises Bajos,Dennis Bergkamp,,11,False,False
+1994_holanda_irlanda,1994,Paises Bajos,Wim Jonk,,41,False,False
+1994_brasil_estados_unidos,1994,Brasil,Bebeto,,72,False,False
+1994_nigeria_italia,1994,Nigeria,Emmanuel Amunike,,25,False,False
+1994_nigeria_italia,1994,Italia,Roberto Baggio,,89,False,False
+1994_nigeria_italia,1994,Italia,Roberto Baggio,,100,True,False
+1994_mexico_bulgaria,1994,Bulgaria,Hristo Stoichkov,,6,False,False
+1994_mexico_bulgaria,1994,México,Alberto Garcia Aspe,,18,True,False
+1994_italia_espana,1994,Italia,Dino Baggio,,25,False,False
+1994_italia_espana,1994,España,Jose Luis Caminero,,58,False,False
+1994_italia_espana,1994,Italia,Roberto Baggio,,87,False,False
+1994_holanda_brasil,1994,Brasil,Romario,,53,False,False
+1994_holanda_brasil,1994,Brasil,Bebeto,,63,False,False
+1994_holanda_brasil,1994,Paises Bajos,Dennis Bergkamp,,64,False,False
+1994_holanda_brasil,1994,Paises Bajos,Aron Winter,,76,False,False
+1994_holanda_brasil,1994,Brasil,Branco,,81,False,False
+1994_bulgaria_alemania,1994,Alemania,Lothar Matthaeus,,47,True,False
+1994_bulgaria_alemania,1994,Bulgaria,Hristo Stoichkov,,75,False,False
+1994_bulgaria_alemania,1994,Bulgaria,Iordan Letchkov,,78,False,False
+1994_rumania_suecia,1994,Suecia,Tomas Brolin,,78,False,False
+1994_rumania_suecia,1994,Rumania,Florin Raducioiu,,88,False,False
+1994_rumania_suecia,1994,Rumania,Florin Raducioiu,,101,False,False
+1994_rumania_suecia,1994,Suecia,Kennet Andersson,,115,False,False
+1994_bulgaria_italia,1994,Italia,Roberto Baggio,,20,False,False
+1994_bulgaria_italia,1994,Italia,Roberto Baggio,,25,False,False
+1994_bulgaria_italia,1994,Bulgaria,Hristo Stoichkov,,44,True,False
+1994_suecia_brasil,1994,Brasil,Romario,,80,False,False
+1994_suecia_bulgaria,1994,Suecia,Tomas Brolin,,8,False,False
+1994_suecia_bulgaria,1994,Suecia,Hakan Mild,,30,False,False
+1994_suecia_bulgaria,1994,Suecia,Henrik Larsson,,37,False,False
+1994_suecia_bulgaria,1994,Suecia,Kennet Andersson,,40,False,False
+1990_argentina_camerun,1990,Camerún,Francois Omam-Biyik,,67,False,False
+1990_urss_rumania,1990,Rumania,Marius Lacatus,,41,False,False
+1990_urss_rumania,1990,Rumania,Marius Lacatus,,55,True,False
+1990_italia_austria,1990,Italia,Salvatore Schillaci,,78,False,False
+1990_emiratos_arabes_colombia,1990,Colombia,Bernardo Redin,,50,False,False
+1990_emiratos_arabes_colombia,1990,Colombia,Carlos Valderrama,,85,False,False
+1990_estados_unidos_checoslovaquia,1990,Checoslovaquia,Tomas Skuhravy,,26,False,False
+1990_estados_unidos_checoslovaquia,1990,Checoslovaquia,Michal Bilek,,40,True,False
+1990_estados_unidos_checoslovaquia,1990,Checoslovaquia,Ivan Hasek,,50,False,False
+1990_estados_unidos_checoslovaquia,1990,Estados Unidos,Paul Caligiuri,,60,False,False
+1990_estados_unidos_checoslovaquia,1990,Checoslovaquia,Tomas Skuhravy,,78,False,False
+1990_estados_unidos_checoslovaquia,1990,Checoslovaquia,Milan Luhovy,,90,False,False
+1990_brasil_suecia,1990,Brasil,Careca,,40,False,False
+1990_brasil_suecia,1990,Brasil,Careca,,63,False,False
+1990_brasil_suecia,1990,Suecia,Tomas Brolin,,79,False,False
+1990_alemania_occidental_yugoslavia,1990,Alemania Occidental,Lothar Matthaeus,,28,False,False
+1990_alemania_occidental_yugoslavia,1990,Alemania Occidental,Juergen Klinsmann,,39,False,False
+1990_alemania_occidental_yugoslavia,1990,Yugoslavia,Davor Jozic,,55,False,False
+1990_alemania_occidental_yugoslavia,1990,Alemania Occidental,Lothar Matthaeus,,64,False,False
+1990_alemania_occidental_yugoslavia,1990,Alemania Occidental,Rudi Voeller,,70,False,False
+1990_costa_rica_escocia,1990,Costa Rica,Juan Cayasso,,49,False,False
+1990_inglaterra_irlanda,1990,Inglaterra,Gary Lineker,,9,False,False
+1990_inglaterra_irlanda,1990,Irlanda,Kevin Sheedy,,73,False,False
+1990_belgica_corea_del_sur,1990,Bélgica,Marc De Grijse,,53,False,False
+1990_belgica_corea_del_sur,1990,Bélgica,Michel De Wolf,,64,False,False
+1990_holanda_egipto,1990,Paises Bajos,Wim Kieft,,58,False,False
+1990_holanda_egipto,1990,Egipto,Magdy Abedelghani,,83,True,False
+1990_argentina_urss,1990,Argentina,Pedro Troglio,,27,False,False
+1990_argentina_urss,1990,Argentina,Jorge Burruchaga,,79,False,False
+1990_yugoslavia_colombia,1990,Yugoslavia,Davor Jozic,,75,False,False
+1990_italia_estados_unidos,1990,Italia,Giuseppe Giannini,,11,False,False
+1990_camerun_rumania,1990,Camerún,Roger Milla,,76,False,False
+1990_camerun_rumania,1990,Camerún,Roger Milla,,86,False,False
+1990_camerun_rumania,1990,Rumania,Gavril Balint,,88,False,False
+1990_austria_checoslovaquia,1990,Checoslovaquia,Michal Bilek,,31,True,False
+1990_alemania_occidental_emiratos_arabes,1990,Alemania Occidental,Rudi Voeller,,35,False,False
+1990_alemania_occidental_emiratos_arabes,1990,Alemania Occidental,Juergen Klinsmann,,37,False,False
+1990_alemania_occidental_emiratos_arabes,1990,Emiratos Arabes,Khalid Ismail,,46,False,False
+1990_alemania_occidental_emiratos_arabes,1990,Alemania Occidental,Lothar Matthaeus,,47,False,False
+1990_alemania_occidental_emiratos_arabes,1990,Alemania Occidental,Uwe Bein,,58,False,False
+1990_alemania_occidental_emiratos_arabes,1990,Alemania Occidental,Rudi Voeller,,75,False,False
+1990_brasil_costa_rica,1990,Brasil,Muller,,33,False,False
+1990_suecia_escocia,1990,Escocia,Stuart Mccall,,11,False,False
+1990_suecia_escocia,1990,Escocia,Mo Johnston,,81,True,False
+1990_suecia_escocia,1990,Suecia,Glenn Stromberg,,86,False,False
+1990_belgica_uruguay,1990,Bélgica,Leo Clijsters,,15,False,False
+1990_belgica_uruguay,1990,Bélgica,Enzo Scifo,,24,False,False
+1990_belgica_uruguay,1990,Bélgica,Jan Ceulemans,,47,False,False
+1990_belgica_uruguay,1990,Uruguay,Pablo Bengoechea,,73,False,False
+1990_corea_del_sur_espana,1990,España,Michel,,23,False,False
+1990_corea_del_sur_espana,1990,Corea del Sur,Bo Kwan Hwang,,43,False,False
+1990_corea_del_sur_espana,1990,España,Michel,,61,False,False
+1990_corea_del_sur_espana,1990,España,Michel,,81,False,False
+1990_argentina_rumania,1990,Argentina,Pedro Monzon,,62,False,False
+1990_argentina_rumania,1990,Rumania,Gavril Balint,,68,False,False
+1990_camerun_urss,1990,URSS,Oleg Protasov,,20,False,False
+1990_camerun_urss,1990,URSS,Andrei Zygmantovich,,29,False,False
+1990_camerun_urss,1990,URSS,Aleksandr Zavarov,,52,False,False
+1990_camerun_urss,1990,URSS,Igor Dobrovolskyi,,63,False,False
+1990_alemania_occidental_colombia,1990,Alemania Occidental,Pierre Littbarski,,88,False,False
+1990_alemania_occidental_colombia,1990,Colombia,Freddy Rincon,,90,False,False
+1990_yugoslavia_emiratos_arabes,1990,Yugoslavia,Safet Susic,,5,False,False
+1990_yugoslavia_emiratos_arabes,1990,Yugoslavia,Darko Pancev,,9,False,False
+1990_yugoslavia_emiratos_arabes,1990,Emiratos Arabes,Ali Thani Jumaa,,22,False,False
+1990_yugoslavia_emiratos_arabes,1990,Yugoslavia,Darko Pancev,,46,False,False
+1990_yugoslavia_emiratos_arabes,1990,Yugoslavia,Robert Prosinecki,,90,False,False
+1990_italia_checoslovaquia,1990,Italia,Salvatore Schillaci,,9,False,False
+1990_italia_checoslovaquia,1990,Italia,Roberto Baggio,,78,False,False
+1990_austria_estados_unidos,1990,Austria,Andeas Ogris,,49,False,False
+1990_austria_estados_unidos,1990,Austria,Gerhard Rodax,,63,False,False
+1990_austria_estados_unidos,1990,Estados Unidos,Bruce Murray,,83,False,False
+1990_brasil_escocia,1990,Brasil,Muller,,81,False,False
+1990_suecia_costa_rica,1990,Suecia,Johnny Ekstrom,,32,False,False
+1990_suecia_costa_rica,1990,Costa Rica,Roger Flores,,75,False,False
+1990_suecia_costa_rica,1990,Costa Rica,Hernan Medford,,87,False,False
+1990_belgica_espana,1990,España,Michel,,26,True,False
+1990_belgica_espana,1990,Bélgica,Patrick Vervoort,,29,False,False
+1990_belgica_espana,1990,España,Alberto Gorriz,,38,False,False
+1990_corea_del_sur_uruguay,1990,Uruguay,Daniel Fonseca,,90,False,False
+1990_inglaterra_egipto,1990,Inglaterra,Mark Wright,,58,False,False
+1990_irlanda_holanda,1990,Paises Bajos,Ruud Gullit,,11,False,False
+1990_irlanda_holanda,1990,Irlanda,Niall Quinn,,71,False,False
+1990_camerun_colombia,1990,Camerún,Roger Milla,,106,False,False
+1990_camerun_colombia,1990,Camerún,Roger Milla,,109,False,False
+1990_camerun_colombia,1990,Colombia,Bernardo Redin,,115,False,False
+1990_checoslovaquia_costa_rica,1990,Checoslovaquia,Tomas Skuhravy,,12,False,False
+1990_checoslovaquia_costa_rica,1990,Costa Rica,Ronald Gonzalez,,54,False,False
+1990_checoslovaquia_costa_rica,1990,Checoslovaquia,Tomas Skuhravy,,63,False,False
+1990_checoslovaquia_costa_rica,1990,Checoslovaquia,Lubos Kubik,,75,False,False
+1990_checoslovaquia_costa_rica,1990,Checoslovaquia,Tomas Skuhravy,,82,False,False
+1990_brasil_argentina,1990,Argentina,Claudio Caniggia,,80,False,False
+1990_alemania_occidental_holanda,1990,Alemania Occidental,Juergen Klinsmann,,51,False,False
+1990_alemania_occidental_holanda,1990,Alemania Occidental,Andreas Brehme,,82,False,False
+1990_alemania_occidental_holanda,1990,Paises Bajos,Ronald Koeman,,89,True,False
+1990_italia_uruguay,1990,Italia,Salvatore Schillaci,,65,False,False
+1990_italia_uruguay,1990,Italia,Aldo Serena,,85,False,False
+1990_espana_yugoslavia,1990,Yugoslavia,Dragan Stojkovic,,78,False,False
+1990_espana_yugoslavia,1990,España,Julio Salinas,,83,False,False
+1990_espana_yugoslavia,1990,Yugoslavia,Dragan Stojkovic,,92,False,False
+1990_inglaterra_belgica,1990,Inglaterra,David Platt,,119,False,False
+1990_italia_irlanda,1990,Italia,Salvatore Schillaci,,38,False,False
+1990_alemania_occidental_checoslovaquia,1990,Alemania Occidental,Lothar Matthaeus,,25,True,False
+1990_camerun_inglaterra,1990,Inglaterra,David Platt,,25,False,False
+1990_camerun_inglaterra,1990,Camerún,Emmanuel Kunde,,61,True,False
+1990_camerun_inglaterra,1990,Camerún,Eugene Ekeke,,65,False,False
+1990_camerun_inglaterra,1990,Inglaterra,Gary Lineker,,83,True,False
+1990_camerun_inglaterra,1990,Inglaterra,Gary Lineker,,105,True,False
+1990_italia_argentina,1990,Italia,Salvatore Schillaci,,17,False,False
+1990_italia_argentina,1990,Argentina,Claudio Caniggia,,67,False,False
+1990_inglaterra_alemania_occidental,1990,Alemania Occidental,Andreas Brehme,,60,False,False
+1990_inglaterra_alemania_occidental,1990,Inglaterra,Gary Lineker,,80,False,False
+1990_italia_inglaterra,1990,Italia,Roberto Baggio,,71,False,False
+1990_italia_inglaterra,1990,Inglaterra,David Platt,,81,False,False
+1990_italia_inglaterra,1990,Italia,Salvatore Schillaci,,86,True,False
+1990_argentina_alemania_occidental,1990,Alemania Occidental,Andreas Brehme,,85,True,False
+1986_bulgaria_italia,1986,Italia,Alessandro Altobelli,,43,False,False
+1986_bulgaria_italia,1986,Bulgaria,Nasko Sirakov,,85,False,False
+1986_espana_brasil,1986,Brasil,Socrates,,62,False,False
+1986_canada_francia,1986,Francia,Jean-Pierre Papin,,79,False,False
+1986_argentina_corea_del_sur,1986,Argentina,Jorge Valdano,,6,False,False
+1986_argentina_corea_del_sur,1986,Argentina,Oscar Ruggeri,,18,False,False
+1986_argentina_corea_del_sur,1986,Argentina,Jorge Valdano,,46,False,False
+1986_argentina_corea_del_sur,1986,Corea del Sur,Chang Sun Park,,73,False,False
+1986_urss_hungria,1986,URSS,Pavel Yakovenko,,2,False,False
+1986_urss_hungria,1986,URSS,Sergei Aleinikov,,4,False,False
+1986_urss_hungria,1986,URSS,Igor Belanov,,24,True,False
+1986_urss_hungria,1986,URSS,Ivan Yaremchuk,,66,False,False
+1986_urss_hungria,1986,URSS,Laszlo Dajka (en contra),,73,False,True
+1986_urss_hungria,1986,URSS,Sergei Rodionov,,80,False,False
+1986_belgica_mexico,1986,México,Fernando Quirarte,,23,False,False
+1986_belgica_mexico,1986,México,Hugo Sánchez,,39,False,False
+1986_belgica_mexico,1986,Bélgica,Erwin Vandenbergh,,45,False,False
+1986_portugal_inglaterra,1986,Portugal,Carlos Manuel,,75,False,False
+1986_argelia_irlanda_del_norte,1986,Irlanda del Norte,Norman Whiteside,,6,False,False
+1986_argelia_irlanda_del_norte,1986,Argelia,Djamel Zidane,,59,False,False
+1986_escocia_dinamarca,1986,Dinamarca,Preben Elkjaer Larsen,,57,False,False
+1986_uruguay_alemania_occidental,1986,Uruguay,Antonio Alzamendi,,4,False,False
+1986_uruguay_alemania_occidental,1986,Alemania Occidental,Klaus Allofs,,84,False,False
+1986_paraguay_iraq,1986,Paraguay,Julio Cesar Romero,,35,False,False
+1986_francia_urss,1986,URSS,Vasili Rats,,53,False,False
+1986_francia_urss,1986,Francia,Luis Fernandez,,62,False,False
+1986_corea_del_sur_bulgaria,1986,Bulgaria,Plamen Getov,,11,False,False
+1986_corea_del_sur_bulgaria,1986,Corea del Sur,Jong Boo Kim,,70,False,False
+1986_italia_argentina,1986,Italia,Alessandro Altobelli,,6,True,False
+1986_italia_argentina,1986,Argentina,Diego Maradona,,34,False,False
+1986_hungria_canada,1986,Hungría,Marton Esterhazy,,2,False,False
+1986_hungria_canada,1986,Hungría,Lajos Detari,,75,False,False
+1986_brasil_argelia,1986,Brasil,Careca,,66,False,False
+1986_mexico_paraguay,1986,México,Luis Flores,,3,False,False
+1986_mexico_paraguay,1986,Paraguay,Julio Cesar Romero,,85,False,False
+1986_polonia_portugal,1986,Polonia,Wlodimierz Smolarek,,68,False,False
+1986_irlanda_del_norte_espana,1986,España,Emilio Butragueño,,2,False,False
+1986_irlanda_del_norte_espana,1986,España,Julio Salinas,,18,False,False
+1986_irlanda_del_norte_espana,1986,Irlanda del Norte,Colin Clarke,,47,False,False
+1986_iraq_belgica,1986,Bélgica,Enzo Scifo,,16,False,False
+1986_iraq_belgica,1986,Bélgica,Nico Claesen,,21,True,False
+1986_iraq_belgica,1986,Iraq,Ahmed Radhi,,59,False,False
+1986_alemania_occidental_escocia,1986,Escocia,Gordon Strachan,,18,False,False
+1986_alemania_occidental_escocia,1986,Alemania Occidental,Rudi Voeller,,22,False,False
+1986_alemania_occidental_escocia,1986,Alemania Occidental,Klaus Allofs,,50,False,False
+1986_dinamarca_uruguay,1986,Dinamarca,Preben Elkjaer Larsen,,11,False,False
+1986_dinamarca_uruguay,1986,Dinamarca,Soren Lerby,,41,False,False
+1986_dinamarca_uruguay,1986,Uruguay,Enzo Francescoli,,45,True,False
+1986_dinamarca_uruguay,1986,Dinamarca,Michael Laudrup,,52,False,False
+1986_dinamarca_uruguay,1986,Dinamarca,Preben Elkjaer Larsen,,67,False,False
+1986_dinamarca_uruguay,1986,Dinamarca,Preben Elkjaer Larsen,,80,False,False
+1986_dinamarca_uruguay,1986,Dinamarca,Jesper Olsen,,88,False,False
+1986_urss_canada,1986,URSS,Oleg Blokhin,,58,False,False
+1986_urss_canada,1986,URSS,Aleksandr Zavarov,,74,False,False
+1986_hungria_francia,1986,Francia,Yannick Stopyra,,29,False,False
+1986_hungria_francia,1986,Francia,Jean Tigana,,62,False,False
+1986_hungria_francia,1986,Francia,Dominique Rocheteau,,84,False,False
+1986_corea_del_sur_italia,1986,Italia,Alessandro Altobelli,,17,False,False
+1986_corea_del_sur_italia,1986,Corea del Sur,Soon Ho Choi,,62,False,False
+1986_corea_del_sur_italia,1986,Italia,Alessandro Altobelli,,73,False,False
+1986_corea_del_sur_italia,1986,Italia,Kwang Rae Cho (en contra),,82,False,True
+1986_corea_del_sur_italia,1986,Corea del Sur,Jung Moo Huh,,83,False,False
+1986_argentina_bulgaria,1986,Argentina,Jorge Valdano,,3,False,False
+1986_argentina_bulgaria,1986,Argentina,Jorge Burruchaga,,76,False,False
+1986_paraguay_belgica,1986,Bélgica,Frank Vercauteren,,30,False,False
+1986_paraguay_belgica,1986,Paraguay,Roberto Cabañas,,50,False,False
+1986_paraguay_belgica,1986,Bélgica,Daniel Veyt,,59,False,False
+1986_paraguay_belgica,1986,Paraguay,Roberto Cabañas,,76,False,False
+1986_inglaterra_polonia,1986,Inglaterra,Gary Lineker,,9,False,False
+1986_inglaterra_polonia,1986,Inglaterra,Gary Lineker,,14,False,False
+1986_inglaterra_polonia,1986,Inglaterra,Gary Lineker,,34,False,False
+1986_portugal_marruecos,1986,Marruecos,Abdelrazzak Khairi,,19,False,False
+1986_portugal_marruecos,1986,Marruecos,Abdelrazzak Khairi,,27,False,False
+1986_portugal_marruecos,1986,Marruecos,Abdelkarim Krimau,,62,False,False
+1986_portugal_marruecos,1986,Portugal,Diamantino,,79,False,False
+1986_iraq_mexico,1986,México,Fernando Quirarte,,54,False,False
+1986_irlanda_del_norte_brasil,1986,Brasil,Careca,,15,False,False
+1986_irlanda_del_norte_brasil,1986,Brasil,Josimar,,42,False,False
+1986_irlanda_del_norte_brasil,1986,Brasil,Careca,,87,False,False
+1986_argelia_espana,1986,España,Ramon Maria Caldere,,15,False,False
+1986_argelia_espana,1986,España,Ramon Maria Caldere,,68,False,False
+1986_argelia_espana,1986,España,Eloy,,70,False,False
+1986_dinamarca_alemania_occidental,1986,Dinamarca,Jesper Olsen,,43,True,False
+1986_dinamarca_alemania_occidental,1986,Dinamarca,John Eriksen,,62,False,False
+1986_urss_belgica,1986,URSS,Igor Belanov,,27,False,False
+1986_urss_belgica,1986,Bélgica,Enzo Scifo,,56,False,False
+1986_urss_belgica,1986,URSS,Igor Belanov,,70,False,False
+1986_urss_belgica,1986,Bélgica,Jan Ceulemans,,77,False,False
+1986_urss_belgica,1986,Bélgica,Stephane Demol,,102,False,False
+1986_urss_belgica,1986,Bélgica,Nico Claesen,,110,False,False
+1986_urss_belgica,1986,URSS,Igor Belanov,,111,True,False
+1986_mexico_bulgaria,1986,México,Manuel Negrete,,34,False,False
+1986_mexico_bulgaria,1986,México,Raul Servin,,61,False,False
+1986_brasil_polonia,1986,Brasil,Socrates,,30,True,False
+1986_brasil_polonia,1986,Brasil,Josimar,,55,False,False
+1986_brasil_polonia,1986,Brasil,Edinho,,79,False,False
+1986_brasil_polonia,1986,Brasil,Careca,,83,True,False
+1986_argentina_uruguay,1986,Argentina,Pedro Pasculli,,42,False,False
+1986_marruecos_alemania_occidental,1986,Alemania Occidental,Lothar Matthaeus,,87,False,False
+1986_italia_francia,1986,Francia,Michel Platini,,15,False,False
+1986_italia_francia,1986,Francia,Yannick Stopyra,,57,False,False
+1986_dinamarca_espana,1986,Dinamarca,Jesper Olsen,,33,True,False
+1986_dinamarca_espana,1986,España,Emilio Butragueño,,43,False,False
+1986_dinamarca_espana,1986,España,Emilio Butragueño,,56,False,False
+1986_dinamarca_espana,1986,España,Goikoetxea,,68,True,False
+1986_dinamarca_espana,1986,España,Emilio Butragueño,,80,False,False
+1986_dinamarca_espana,1986,España,Emilio Butragueño,,89,True,False
+1986_inglaterra_paraguay,1986,Inglaterra,Gary Lineker,,31,False,False
+1986_inglaterra_paraguay,1986,Inglaterra,Peter Beardsley,,56,False,False
+1986_inglaterra_paraguay,1986,Inglaterra,Gary Lineker,,73,False,False
+1986_brasil_francia,1986,Brasil,Careca,,17,False,False
+1986_brasil_francia,1986,Francia,Michel Platini,,40,False,False
+1986_belgica_espana,1986,Bélgica,Jan Ceulemans,,35,False,False
+1986_belgica_espana,1986,España,Juan Antonio Senor,,85,False,False
+1986_argentina_inglaterra,1986,Argentina,Diego Maradona,,51,False,False
+1986_argentina_inglaterra,1986,Argentina,Diego Maradona,,54,False,False
+1986_argentina_inglaterra,1986,Inglaterra,Gary Lineker,,80,False,False
+1986_argentina_belgica,1986,Argentina,Diego Maradona,,51,False,False
+1986_argentina_belgica,1986,Argentina,Diego Maradona,,63,False,False
+1986_alemania_occidental_francia,1986,Alemania Occidental,Andreas Brehme,,9,False,False
+1986_alemania_occidental_francia,1986,Alemania Occidental,Rudi Voeller,,89,False,False
+1986_belgica_francia,1986,Bélgica,Jan Ceulemans,,11,False,False
+1986_belgica_francia,1986,Francia,Jean-Marc Ferreri,,27,False,False
+1986_belgica_francia,1986,Francia,Jean-Pierre Papin,,43,False,False
+1986_belgica_francia,1986,Bélgica,Nico Claesen,,73,False,False
+1986_belgica_francia,1986,Francia,Bernard Genghini,,104,False,False
+1986_belgica_francia,1986,Francia,Manuel Amoros,,111,True,False
+1986_argentina_alemania_occidental,1986,Argentina,Jose Brown,,23,False,False
+1986_argentina_alemania_occidental,1986,Argentina,Jorge Valdano,,55,False,False
+1986_argentina_alemania_occidental,1986,Alemania Occidental,Karl-Heinz Rummenigge,,74,False,False
+1986_argentina_alemania_occidental,1986,Alemania Occidental,Rudi Voeller,,80,False,False
+1986_argentina_alemania_occidental,1986,Argentina,Jorge Burruchaga,,83,False,False
+1982_argentina_belgica,1982,Bélgica,Erwin Vandenbergh,,62,False,False
+1982_brasil_urss,1982,URSS,Andrei Bal,,34,False,False
+1982_brasil_urss,1982,Brasil,Socrates,,75,False,False
+1982_brasil_urss,1982,Brasil,Eder,,88,False,False
+1982_escocia_nueva_zelanda,1982,Escocia,Kenny Dalglish,,18,False,False
+1982_escocia_nueva_zelanda,1982,Escocia,John Wark,,29,False,False
+1982_escocia_nueva_zelanda,1982,Escocia,John Wark,,32,False,False
+1982_escocia_nueva_zelanda,1982,Nueva Zelanda,Steve Sumner,,54,False,False
+1982_escocia_nueva_zelanda,1982,Nueva Zelanda,Steve Wooddin,,64,False,False
+1982_escocia_nueva_zelanda,1982,Escocia,John Robertson,,73,False,False
+1982_escocia_nueva_zelanda,1982,Escocia,Steve Archibald,,79,False,False
+1982_hungria_el_salvador,1982,Hungría,Tibor Nyilasi,,4,False,False
+1982_hungria_el_salvador,1982,Hungría,Gabor Poloskei,,11,False,False
+1982_hungria_el_salvador,1982,Hungría,Laszlo Fazekas,,23,False,False
+1982_hungria_el_salvador,1982,Hungría,Jozsef Toth,,50,False,False
+1982_hungria_el_salvador,1982,Hungría,Laszlo Fazekas,,54,False,False
+1982_hungria_el_salvador,1982,El Salvador,Luis Ramirez,,64,False,False
+1982_hungria_el_salvador,1982,Hungría,Laszlo Kiss,,69,False,False
+1982_hungria_el_salvador,1982,Hungría,Lazar Szentes,,70,False,False
+1982_hungria_el_salvador,1982,Hungría,Laszlo Kiss,,72,False,False
+1982_hungria_el_salvador,1982,Hungría,Laszlo Kiss,,76,False,False
+1982_hungria_el_salvador,1982,Hungría,Tibor Nyilasi,,83,False,False
+1982_alemania_occidental_argelia,1982,Argelia,Rabah Madjer,,54,False,False
+1982_alemania_occidental_argelia,1982,Alemania Occidental,Karl-Heinz Rummenigge,,67,False,False
+1982_alemania_occidental_argelia,1982,Argelia,Lakhdar Belloumi,,68,False,False
+1982_espana_honduras,1982,Honduras,Hector Zelaya,,7,False,False
+1982_espana_honduras,1982,España,Lopez Ufarte,,65,True,False
+1982_inglaterra_francia,1982,Inglaterra,Bryan Robson,,1,False,False
+1982_inglaterra_francia,1982,Francia,Gerard Soler,,24,False,False
+1982_inglaterra_francia,1982,Inglaterra,Bryan Robson,,67,False,False
+1982_inglaterra_francia,1982,Inglaterra,Paul Mariner,,83,False,False
+1982_checoslovaquia_kuwait,1982,Checoslovaquia,Antonin Panenka,,21,True,False
+1982_checoslovaquia_kuwait,1982,Kuwait,Faisal Al Dakhil,,57,False,False
+1982_chile_austria,1982,Austria,Walter Schachner,,22,False,False
+1982_argentina_hungria,1982,Argentina,Daniel Bertoni,,26,False,False
+1982_argentina_hungria,1982,Argentina,Diego Maradona,,28,False,False
+1982_argentina_hungria,1982,Argentina,Diego Maradona,,57,False,False
+1982_argentina_hungria,1982,Argentina,Osvaldo Ardiles,,60,False,False
+1982_argentina_hungria,1982,Hungría,Gabor Poloskei,,76,False,False
+1982_italia_peru,1982,Italia,Bruno Conti,,18,False,False
+1982_italia_peru,1982,Perú,Ruben Diaz,,83,False,False
+1982_brasil_escocia,1982,Escocia,David Narey,,18,False,False
+1982_brasil_escocia,1982,Brasil,Zico,,33,False,False
+1982_brasil_escocia,1982,Brasil,Oscar,,48,False,False
+1982_brasil_escocia,1982,Brasil,Eder,,63,False,False
+1982_brasil_escocia,1982,Brasil,Falcao,,87,False,False
+1982_belgica_el_salvador,1982,Bélgica,Ludo Coeck,,19,False,False
+1982_urss_nueva_zelanda,1982,URSS,Yuri Gavrilov,,24,False,False
+1982_urss_nueva_zelanda,1982,URSS,Oleg Blokhin,,48,False,False
+1982_urss_nueva_zelanda,1982,URSS,Sergei Baltacha,,68,False,False
+1982_espana_yugoslavia,1982,Yugoslavia,Ivan Gudelj,,10,False,False
+1982_espana_yugoslavia,1982,España,Juanito,,14,True,False
+1982_espana_yugoslavia,1982,España,Enrique Saura,,66,False,False
+1982_inglaterra_checoslovaquia,1982,Inglaterra,Trevor Francis,,62,False,False
+1982_inglaterra_checoslovaquia,1982,Inglaterra,Jozef Barmos (en contra),,66,False,True
+1982_alemania_occidental_chile,1982,Alemania Occidental,Karl-Heinz Rummenigge,,9,False,False
+1982_alemania_occidental_chile,1982,Alemania Occidental,Karl-Heinz Rummenigge,,57,False,False
+1982_alemania_occidental_chile,1982,Alemania Occidental,Karl-Heinz Rummenigge,,66,False,False
+1982_alemania_occidental_chile,1982,Alemania Occidental,Uwe Reinders,,83,False,False
+1982_alemania_occidental_chile,1982,Chile,Gustavo Moscoso,,90,False,False
+1982_honduras_irlanda_del_norte,1982,Irlanda del Norte,Gerry Armstrong,,9,False,False
+1982_honduras_irlanda_del_norte,1982,Honduras,Eduardo Laing,,60,False,False
+1982_francia_kuwait,1982,Francia,Bernard Genghini,,31,False,False
+1982_francia_kuwait,1982,Francia,Michel Platini,,43,False,False
+1982_francia_kuwait,1982,Francia,Didier Six,,48,False,False
+1982_francia_kuwait,1982,Kuwait,Abdulaziz Al Balushi,,75,False,False
+1982_francia_kuwait,1982,Francia,Maxime Bossis,,89,False,False
+1982_argelia_austria,1982,Austria,Walter Schachner,,55,False,False
+1982_argelia_austria,1982,Austria,Hans Krankl,,67,False,False
+1982_urss_escocia,1982,Escocia,Joe Jordan,,15,False,False
+1982_urss_escocia,1982,URSS,Aleksandr Chivadze,,59,False,False
+1982_urss_escocia,1982,URSS,Ramaz Shengelia,,84,False,False
+1982_urss_escocia,1982,Escocia,Graeme Souness,,86,False,False
+1982_belgica_hungria,1982,Hungría,Jozsef Varga,,27,False,False
+1982_belgica_hungria,1982,Bélgica,Alex Czerniatynski,,76,False,False
+1982_polonia_peru,1982,Polonia,Wlodimierz Smolarek,,55,False,False
+1982_polonia_peru,1982,Polonia,Grzegorz Lato,,58,False,False
+1982_polonia_peru,1982,Polonia,Zbigniew Boniek,,61,False,False
+1982_polonia_peru,1982,Polonia,Andrzej Buncol,,68,False,False
+1982_polonia_peru,1982,Polonia,Wlodzimierz Ciolek,,76,False,False
+1982_polonia_peru,1982,Perú,Guillermo La Rosa,,83,False,False
+1982_italia_camerun,1982,Italia,Francesco Graziani,,60,False,False
+1982_italia_camerun,1982,Camerún,Gregoire Mbida,,61,False,False
+1982_argentina_el_salvador,1982,Argentina,Daniel Passarella,,22,True,False
+1982_argentina_el_salvador,1982,Argentina,Daniel Bertoni,,54,False,False
+1982_brasil_nueva_zelanda,1982,Brasil,Zico,,28,False,False
+1982_brasil_nueva_zelanda,1982,Brasil,Zico,,31,False,False
+1982_brasil_nueva_zelanda,1982,Brasil,Falcao,,64,False,False
+1982_brasil_nueva_zelanda,1982,Brasil,Serginho,,70,False,False
+1982_honduras_yugoslavia,1982,Yugoslavia,Vladimir Petrovic,,88,True,False
+1982_francia_checoslovaquia,1982,Francia,Didier Six,,66,False,False
+1982_francia_checoslovaquia,1982,Checoslovaquia,Antonin Panenka,,84,True,False
+1982_argelia_chile,1982,Argelia,Salah Assad,,7,False,False
+1982_argelia_chile,1982,Argelia,Salah Assad,,31,False,False
+1982_argelia_chile,1982,Argelia,Tedj Bensaoula,,35,False,False
+1982_argelia_chile,1982,Chile,Miguel Neira,,59,True,False
+1982_argelia_chile,1982,Chile,Juan Letelier,,73,False,False
+1982_irlanda_del_norte_espana,1982,Irlanda del Norte,Gerry Armstrong,,47,False,False
+1982_alemania_occidental_austria,1982,Alemania Occidental,Horst Hrubesch,,10,False,False
+1982_inglaterra_kuwait,1982,Inglaterra,Trevor Francis,,27,False,False
+1982_austria_francia,1982,Francia,Bernard Genghini,,39,False,False
+1982_polonia_belgica,1982,Polonia,Zbigniew Boniek,,4,False,False
+1982_polonia_belgica,1982,Polonia,Zbigniew Boniek,,26,False,False
+1982_polonia_belgica,1982,Polonia,Zbigniew Boniek,,53,False,False
+1982_italia_argentina,1982,Italia,Marco Tardelli,,57,False,False
+1982_italia_argentina,1982,Italia,Antonio Cabrini,,67,False,False
+1982_italia_argentina,1982,Argentina,Daniel Passarella,,83,False,False
+1982_belgica_urss,1982,URSS,Khoren Oganesian,,48,False,False
+1982_austria_irlanda_del_norte,1982,Irlanda del Norte,Billy Hamilton,,27,False,False
+1982_austria_irlanda_del_norte,1982,Austria,Bruno Pezzey,,50,False,False
+1982_austria_irlanda_del_norte,1982,Austria,Reinhold Hintermaier,,68,False,False
+1982_austria_irlanda_del_norte,1982,Irlanda del Norte,Billy Hamilton,,75,False,False
+1982_argentina_brasil,1982,Brasil,Zico,,11,False,False
+1982_argentina_brasil,1982,Brasil,Serginho,,66,False,False
+1982_argentina_brasil,1982,Brasil,Junior,,75,False,False
+1982_argentina_brasil,1982,Argentina,Ramon Diaz,,89,False,False
+1982_alemania_occidental_espana,1982,Alemania Occidental,Pierre Littbarski,,50,False,False
+1982_alemania_occidental_espana,1982,Alemania Occidental,Klaus Fischer,,75,False,False
+1982_alemania_occidental_espana,1982,España,Jesus Zamora,,82,False,False
+1982_francia_irlanda_del_norte,1982,Francia,Alain Giresse,,33,False,False
+1982_francia_irlanda_del_norte,1982,Francia,Dominique Rocheteau,,46,False,False
+1982_francia_irlanda_del_norte,1982,Francia,Dominique Rocheteau,,68,False,False
+1982_francia_irlanda_del_norte,1982,Irlanda del Norte,Gerry Armstrong,,75,False,False
+1982_francia_irlanda_del_norte,1982,Francia,Alain Giresse,,80,False,False
+1982_italia_brasil,1982,Italia,Paolo Rossi,,5,False,False
+1982_italia_brasil,1982,Brasil,Socrates,,12,False,False
+1982_italia_brasil,1982,Italia,Paolo Rossi,,25,False,False
+1982_italia_brasil,1982,Brasil,Falcao,,68,False,False
+1982_italia_brasil,1982,Italia,Paolo Rossi,,74,False,False
+1982_alemania_occidental_francia,1982,Alemania Occidental,Pierre Littbarski,,17,False,False
+1982_alemania_occidental_francia,1982,Francia,Michel Platini,,26,True,False
+1982_alemania_occidental_francia,1982,Francia,Marius Tresor,,92,False,False
+1982_alemania_occidental_francia,1982,Francia,Alain Giresse,,98,False,False
+1982_alemania_occidental_francia,1982,Alemania Occidental,Karl-Heinz Rummenigge,,102,False,False
+1982_alemania_occidental_francia,1982,Alemania Occidental,Klaus Fischer,,108,False,False
+1982_polonia_italia,1982,Italia,Paolo Rossi,,22,False,False
+1982_polonia_italia,1982,Italia,Paolo Rossi,,73,False,False
+1982_polonia_francia,1982,Francia,Rene Girard,,13,False,False
+1982_polonia_francia,1982,Polonia,Andrzej Szarmach,,40,False,False
+1982_polonia_francia,1982,Polonia,Stefan Majewski,,44,False,False
+1982_polonia_francia,1982,Polonia,Janusz Kupcewicz,,46,False,False
+1982_polonia_francia,1982,Francia,Alain Couriol,,72,False,False
+1982_italia_alemania_occidental,1982,Italia,Paolo Rossi,,57,False,False
+1982_italia_alemania_occidental,1982,Italia,Marco Tardelli,,69,False,False
+1982_italia_alemania_occidental,1982,Italia,Alessandro Altobelli,,81,False,False
+1982_italia_alemania_occidental,1982,Alemania Occidental,Paul Breitner,,83,False,False
+1978_tunez_mexico,1978,México,Arturo Vasquez,,45,True,False
+1978_tunez_mexico,1978,Túnez,Ali Kaabi,,55,False,False
+1978_tunez_mexico,1978,Túnez,Nejib Ghommidh,,79,False,False
+1978_tunez_mexico,1978,Túnez,Mokhtar Douieb,,87,False,False
+1978_italia_francia,1978,Francia,Bernard Lacombe,,1,False,False
+1978_italia_francia,1978,Italia,Paolo Rossi,,29,False,False
+1978_italia_francia,1978,Italia,Renato Zaccarelli,,54,False,False
+1978_argentina_hungria,1978,Hungría,Karoly Csapo,,10,False,False
+1978_argentina_hungria,1978,Argentina,Leopoldo Luque,,15,False,False
+1978_argentina_hungria,1978,Argentina,Daniel Bertoni,,83,False,False
+1978_holanda_iran,1978,Paises Bajos,Rob Rensenbrink,,40,True,False
+1978_holanda_iran,1978,Paises Bajos,Rob Rensenbrink,,62,False,False
+1978_holanda_iran,1978,Paises Bajos,Rob Rensenbrink,,79,True,False
+1978_austria_espana,1978,Austria,Walter Schachner,,9,False,False
+1978_austria_espana,1978,España,Dani,,21,False,False
+1978_austria_espana,1978,Austria,Hans Krankl,,76,False,False
+1978_peru_escocia,1978,Escocia,Joe Jordan,,14,False,False
+1978_peru_escocia,1978,Perú,Cesar Cueto,,43,False,False
+1978_peru_escocia,1978,Perú,Teofilo Cubillas,,71,False,False
+1978_peru_escocia,1978,Perú,Teofilo Cubillas,,77,False,False
+1978_suecia_brasil,1978,Suecia,Thomas Sjoberg,,37,False,False
+1978_suecia_brasil,1978,Brasil,Reinaldo,,45,False,False
+1978_alemania_occidental_mexico,1978,Alemania Occidental,Dieter Mueller,,15,False,False
+1978_alemania_occidental_mexico,1978,Alemania Occidental,Hansi Mueller,,30,False,False
+1978_alemania_occidental_mexico,1978,Alemania Occidental,Karl-Heinz Rummenigge,,38,False,False
+1978_alemania_occidental_mexico,1978,Alemania Occidental,Heinz Flohe,,44,False,False
+1978_alemania_occidental_mexico,1978,Alemania Occidental,Karl-Heinz Rummenigge,,73,False,False
+1978_alemania_occidental_mexico,1978,Alemania Occidental,Heinz Flohe,,89,False,False
+1978_argentina_francia,1978,Argentina,Daniel Passarella,,45,True,False
+1978_argentina_francia,1978,Francia,Michel Platini,,60,False,False
+1978_argentina_francia,1978,Argentina,Leopoldo Luque,,73,False,False
+1978_polonia_tunez,1978,Polonia,Grzegorz Lato,,43,False,False
+1978_italia_hungria,1978,Italia,Paolo Rossi,,34,False,False
+1978_italia_hungria,1978,Italia,Roberto Bettega,,36,False,False
+1978_italia_hungria,1978,Italia,Romeo Benetti,,60,False,False
+1978_italia_hungria,1978,Hungría,Andras Toth,,81,True,False
+1978_escocia_iran,1978,Escocia,Andranik Eskandarian (en contra),,43,False,True
+1978_escocia_iran,1978,Irán,Iraj Danayfar,,60,False,False
+1978_austria_suecia,1978,Austria,Hans Krankl,,42,True,False
+1978_italia_argentina,1978,Italia,Roberto Bettega,,67,False,False
+1978_francia_hungria,1978,Francia,Christian Lopez,,22,False,False
+1978_francia_hungria,1978,Francia,Marc Berdoll,,37,False,False
+1978_francia_hungria,1978,Hungría,Sandor Zombori,,41,False,False
+1978_francia_hungria,1978,Francia,Dominique Rocheteau,,42,False,False
+1978_polonia_mexico,1978,Polonia,Zbigniew Boniek,,43,False,False
+1978_polonia_mexico,1978,México,Victor Rangel,,52,False,False
+1978_polonia_mexico,1978,Polonia,Kazimierz Deyna,,56,False,False
+1978_polonia_mexico,1978,Polonia,Zbigniew Boniek,,84,False,False
+1978_peru_iran,1978,Perú,Jose Velasquez,,2,False,False
+1978_peru_iran,1978,Perú,Teofilo Cubillas,,36,True,False
+1978_peru_iran,1978,Perú,Teofilo Cubillas,,39,True,False
+1978_peru_iran,1978,Irán,Hassan Rowshan,,41,False,False
+1978_peru_iran,1978,Perú,Teofilo Cubillas,,79,False,False
+1978_espana_suecia,1978,España,Juan Manuel Asensi,,75,False,False
+1978_escocia_holanda,1978,Paises Bajos,Rob Rensenbrink,,34,True,False
+1978_escocia_holanda,1978,Escocia,Kenny Dalglish,,44,False,False
+1978_escocia_holanda,1978,Escocia,Archie Gemmill,,47,True,False
+1978_escocia_holanda,1978,Escocia,Archie Gemmill,,68,False,False
+1978_escocia_holanda,1978,Paises Bajos,Johnny Rep,,71,False,False
+1978_brasil_austria,1978,Brasil,Roberto Dinamite,,40,False,False
+1978_holanda_austria,1978,Paises Bajos,Ernie Brandts,,6,False,False
+1978_holanda_austria,1978,Paises Bajos,Rob Rensenbrink,,35,True,False
+1978_holanda_austria,1978,Paises Bajos,Johnny Rep,,36,False,False
+1978_holanda_austria,1978,Paises Bajos,Johnny Rep,,53,False,False
+1978_holanda_austria,1978,Austria,Erich Obermayer,,79,False,False
+1978_holanda_austria,1978,Paises Bajos,Willy Van De Kerkhof,,82,False,False
+1978_brasil_peru,1978,Brasil,Dirceu,,15,False,False
+1978_brasil_peru,1978,Brasil,Dirceu,,28,False,False
+1978_brasil_peru,1978,Brasil,Zico,,73,True,False
+1978_argentina_polonia,1978,Argentina,Mario Kempes,,16,False,False
+1978_argentina_polonia,1978,Argentina,Mario Kempes,,71,False,False
+1978_polonia_peru,1978,Polonia,Andrzej Szarmach,,65,False,False
+1978_alemania_occidental_holanda,1978,Alemania Occidental,Ruediger Abramczik,,3,False,False
+1978_alemania_occidental_holanda,1978,Paises Bajos,Arie Haan,,27,False,False
+1978_alemania_occidental_holanda,1978,Alemania Occidental,Dieter Mueller,,70,False,False
+1978_alemania_occidental_holanda,1978,Paises Bajos,Rene Van De Kerkhof,,84,False,False
+1978_italia_austria,1978,Italia,Paolo Rossi,,14,False,False
+1978_argentina_peru,1978,Argentina,Mario Kempes,,21,False,False
+1978_argentina_peru,1978,Argentina,Alberto Tarantini,,43,False,False
+1978_argentina_peru,1978,Argentina,Mario Kempes,,48,False,False
+1978_argentina_peru,1978,Argentina,Leopoldo Luque,,50,False,False
+1978_argentina_peru,1978,Argentina,Rene Houseman,,67,False,False
+1978_argentina_peru,1978,Argentina,Leopoldo Luque,,72,False,False
+1978_holanda_italia,1978,Italia,Ernie Brandts (en contra),,18,False,True
+1978_holanda_italia,1978,Paises Bajos,Ernie Brandts,,50,False,False
+1978_holanda_italia,1978,Paises Bajos,Arie Haan,,75,False,False
+1978_brasil_polonia,1978,Brasil,Nelinho,,12,False,False
+1978_brasil_polonia,1978,Polonia,Grzegorz Lato,,45,False,False
+1978_brasil_polonia,1978,Brasil,Roberto Dinamite,,57,False,False
+1978_brasil_polonia,1978,Brasil,Roberto Dinamite,,63,False,False
+1978_austria_alemania_occidental,1978,Alemania Occidental,Karl-Heinz Rummenigge,,19,False,False
+1978_austria_alemania_occidental,1978,Austria,Berti Vogts (en contra),,59,False,True
+1978_austria_alemania_occidental,1978,Austria,Hans Krankl,,66,False,False
+1978_austria_alemania_occidental,1978,Alemania Occidental,Bernd Hoelzenbein,,68,False,False
+1978_austria_alemania_occidental,1978,Austria,Hans Krankl,,87,False,False
+1978_brasil_italia,1978,Italia,Franco Causio,,38,False,False
+1978_brasil_italia,1978,Brasil,Nelinho,,64,False,False
+1978_brasil_italia,1978,Brasil,Dirceu,,72,False,False
+1978_argentina_holanda,1978,Argentina,Mario Kempes,,38,False,False
+1978_argentina_holanda,1978,Paises Bajos,Dick Nanninga,,82,False,False
+1978_argentina_holanda,1978,Argentina,Mario Kempes,,105,False,False
+1978_argentina_holanda,1978,Argentina,Daniel Bertoni,,116,False,False
+1974_alemania_occidental_chile,1974,Alemania Occidental,Paul Breitner,,18,False,False
+1974_alemania_oriental_australia,1974,Alemania Oriental,Colin Curran (en contra),,58,False,True
+1974_alemania_oriental_australia,1974,Alemania Oriental,Joachim Streich,,72,False,False
+1974_zaire_escocia,1974,Escocia,Peter Lorimer,,26,False,False
+1974_zaire_escocia,1974,Escocia,Joe Jordan,,34,False,False
+1974_polonia_argentina,1974,Polonia,Grzegorz Lato,,7,False,False
+1974_polonia_argentina,1974,Polonia,Andrzej Szarmach,,8,False,False
+1974_polonia_argentina,1974,Argentina,Ramon Heredia,,60,False,False
+1974_polonia_argentina,1974,Polonia,Grzegorz Lato,,62,False,False
+1974_polonia_argentina,1974,Argentina,Carlos Babington,,66,False,False
+1974_italia_haiti,1974,Haití,Emmanuel Sanon,,46,False,False
+1974_italia_haiti,1974,Italia,Gianni Rivera,,52,False,False
+1974_italia_haiti,1974,Italia,Romeo Benetti,,66,False,False
+1974_italia_haiti,1974,Italia,Pietro Anastasi,,79,False,False
+1974_uruguay_holanda,1974,Paises Bajos,Johnny Rep,,7,False,False
+1974_uruguay_holanda,1974,Paises Bajos,Johnny Rep,,86,False,False
+1974_australia_alemania_occidental,1974,Alemania Occidental,Wolfgang Overath,,12,False,False
+1974_australia_alemania_occidental,1974,Alemania Occidental,Bernd Cullmann,,34,False,False
+1974_australia_alemania_occidental,1974,Alemania Occidental,Gerd Mueller,,53,False,False
+1974_yugoslavia_zaire,1974,Yugoslavia,Dusan Bajevic,,8,False,False
+1974_yugoslavia_zaire,1974,Yugoslavia,Dragan Dzajic,,14,False,False
+1974_yugoslavia_zaire,1974,Yugoslavia,Ivica Surjak,,18,False,False
+1974_yugoslavia_zaire,1974,Yugoslavia,Josip Katalinski,,22,False,False
+1974_yugoslavia_zaire,1974,Yugoslavia,Dusan Bajevic,,30,False,False
+1974_yugoslavia_zaire,1974,Yugoslavia,Vladislav Bogicevic,,35,False,False
+1974_yugoslavia_zaire,1974,Yugoslavia,Branko Oblak,,61,False,False
+1974_yugoslavia_zaire,1974,Yugoslavia,Ilija Petkovic,,65,False,False
+1974_yugoslavia_zaire,1974,Yugoslavia,Dusan Bajevic,,81,False,False
+1974_chile_alemania_oriental,1974,Alemania Oriental,Martin Hoffmann,,55,False,False
+1974_chile_alemania_oriental,1974,Chile,Sergio Ahumada,,69,False,False
+1974_argentina_italia,1974,Argentina,Rene Houseman,,19,False,False
+1974_argentina_italia,1974,Italia,Roberto Perfumo (en contra),,35,False,True
+1974_haiti_polonia,1974,Polonia,Grzegorz Lato,,17,False,False
+1974_haiti_polonia,1974,Polonia,Kazimierz Deyna,,18,False,False
+1974_haiti_polonia,1974,Polonia,Andrzej Szarmach,,30,False,False
+1974_haiti_polonia,1974,Polonia,Jerzy Gorgon,,31,False,False
+1974_haiti_polonia,1974,Polonia,Andrzej Szarmach,,34,False,False
+1974_haiti_polonia,1974,Polonia,Andrzej Szarmach,,50,False,False
+1974_haiti_polonia,1974,Polonia,Grzegorz Lato,,87,False,False
+1974_bulgaria_uruguay,1974,Bulgaria,Hristo Bonev,,75,False,False
+1974_bulgaria_uruguay,1974,Uruguay,Ricardo Pavoni,,87,False,False
+1974_zaire_brasil,1974,Brasil,Jairzinho,,12,False,False
+1974_zaire_brasil,1974,Brasil,Rivelino,,66,False,False
+1974_zaire_brasil,1974,Brasil,Valdomiro,,79,False,False
+1974_alemania_oriental_alemania_occidental,1974,Alemania Oriental,Juergen Sparwasser,,77,False,False
+1974_escocia_yugoslavia,1974,Yugoslavia,Stanislav Karasi,,81,False,False
+1974_escocia_yugoslavia,1974,Escocia,Joe Jordan,,88,False,False
+1974_polonia_italia,1974,Polonia,Andrzej Szarmach,,38,False,False
+1974_polonia_italia,1974,Polonia,Kazimierz Deyna,,44,False,False
+1974_polonia_italia,1974,Italia,Fabio Capello,,85,False,False
+1974_argentina_haiti,1974,Argentina,Hector Yazalde,,15,False,False
+1974_argentina_haiti,1974,Argentina,Rene Houseman,,18,False,False
+1974_argentina_haiti,1974,Argentina,Ruben Ayala,,55,False,False
+1974_argentina_haiti,1974,Haití,Emmanuel Sanon,,63,False,False
+1974_argentina_haiti,1974,Argentina,Hector Yazalde,,68,False,False
+1974_bulgaria_holanda,1974,Paises Bajos,Johan Neeskens,,5,True,False
+1974_bulgaria_holanda,1974,Paises Bajos,Johan Neeskens,,45,True,False
+1974_bulgaria_holanda,1974,Paises Bajos,Johnny Rep,,71,False,False
+1974_bulgaria_holanda,1974,Bulgaria,Ruud Krol (en contra),,78,False,True
+1974_bulgaria_holanda,1974,Paises Bajos,Theo De Jong,,88,False,False
+1974_suecia_uruguay,1974,Suecia,Ralf Edstrom,,46,False,False
+1974_suecia_uruguay,1974,Suecia,Roland Sandberg,,74,False,False
+1974_suecia_uruguay,1974,Suecia,Ralf Edstrom,,77,False,False
+1974_suecia_polonia,1974,Polonia,Grzegorz Lato,,43,False,False
+1974_yugoslavia_alemania_occidental,1974,Alemania Occidental,Paul Breitner,,39,False,False
+1974_yugoslavia_alemania_occidental,1974,Alemania Occidental,Gerd Mueller,,82,False,False
+1974_holanda_argentina,1974,Paises Bajos,Johan Cruyff,,10,False,False
+1974_holanda_argentina,1974,Paises Bajos,Ruud Krol,,25,False,False
+1974_holanda_argentina,1974,Paises Bajos,Johnny Rep,,73,False,False
+1974_holanda_argentina,1974,Paises Bajos,Johan Cruyff,,90,False,False
+1974_brasil_alemania_oriental,1974,Brasil,Rivelino,,60,False,False
+1974_alemania_oriental_holanda,1974,Paises Bajos,Johan Neeskens,,7,False,False
+1974_alemania_oriental_holanda,1974,Paises Bajos,Rob Rensenbrink,,59,False,False
+1974_argentina_brasil,1974,Brasil,Rivelino,,32,False,False
+1974_argentina_brasil,1974,Argentina,Miguel Brindisi,,35,False,False
+1974_argentina_brasil,1974,Brasil,Jairzinho,,49,False,False
+1974_polonia_yugoslavia,1974,Polonia,Kazimierz Deyna,,24,True,False
+1974_polonia_yugoslavia,1974,Yugoslavia,Stanislav Karasi,,43,False,False
+1974_polonia_yugoslavia,1974,Polonia,Grzegorz Lato,,62,False,False
+1974_alemania_occidental_suecia,1974,Suecia,Ralf Edstrom,,24,False,False
+1974_alemania_occidental_suecia,1974,Alemania Occidental,Wolfgang Overath,,51,False,False
+1974_alemania_occidental_suecia,1974,Alemania Occidental,Rainer Bonhof,,52,False,False
+1974_alemania_occidental_suecia,1974,Suecia,Roland Sandberg,,53,False,False
+1974_alemania_occidental_suecia,1974,Alemania Occidental,Juergen Grabowski,,76,False,False
+1974_alemania_occidental_suecia,1974,Alemania Occidental,Uli Hoeness,,89,True,False
+1974_suecia_yugoslavia,1974,Yugoslavia,Ivica Surjak,,27,False,False
+1974_suecia_yugoslavia,1974,Suecia,Ralf Edstrom,,29,False,False
+1974_suecia_yugoslavia,1974,Suecia,Conny Torstensson,,85,False,False
+1974_argentina_alemania_oriental,1974,Alemania Oriental,Joachim Streich,,14,False,False
+1974_argentina_alemania_oriental,1974,Argentina,Rene Houseman,,20,False,False
+1974_polonia_alemania_occidental,1974,Alemania Occidental,Gerd Mueller,,76,False,False
+1974_holanda_brasil,1974,Paises Bajos,Johan Neeskens,,50,False,False
+1974_holanda_brasil,1974,Paises Bajos,Johan Cruyff,,65,False,False
+1974_brasil_polonia,1974,Polonia,Grzegorz Lato,,76,False,False
+1974_holanda_alemania_occidental,1974,Paises Bajos,Johan Neeskens,,2,True,False
+1974_holanda_alemania_occidental,1974,Alemania Occidental,Paul Breitner,,25,True,False
+1974_holanda_alemania_occidental,1974,Alemania Occidental,Gerd Mueller,,43,False,False
+1970_inglaterra_rumania,1970,Inglaterra,Geoff Hurst,,65,False,False
+1970_uruguay_israel,1970,Uruguay,Ildo Maneiro,,23,False,False
+1970_uruguay_israel,1970,Uruguay,Juan Mujica,,50,False,False
+1970_peru_bulgaria,1970,Bulgaria,Dinko Dermendzhiev,,13,False,False
+1970_peru_bulgaria,1970,Bulgaria,Hristo Bonev,,49,False,False
+1970_peru_bulgaria,1970,Perú,Alberto Gallardo,,50,False,False
+1970_peru_bulgaria,1970,Perú,Hector Chumpitaz,,55,False,False
+1970_peru_bulgaria,1970,Perú,Teofilo Cubillas,,73,False,False
+1970_italia_suecia,1970,Italia,Angelo Domenghini,,10,False,False
+1970_alemania_occidental_marruecos,1970,Marruecos,Houmane Jarir,,21,False,False
+1970_alemania_occidental_marruecos,1970,Alemania Occidental,Uwe Seeler,,56,False,False
+1970_alemania_occidental_marruecos,1970,Alemania Occidental,Gerd Mueller,,80,False,False
+1970_belgica_el_salvador,1970,Bélgica,Wilfried Van Moer,,12,False,False
+1970_belgica_el_salvador,1970,Bélgica,Wilfried Van Moer,,54,False,False
+1970_belgica_el_salvador,1970,Bélgica,Raoul Lambert,,79,True,False
+1970_brasil_checoslovaquia,1970,Checoslovaquia,Ladislav Petras,,11,False,False
+1970_brasil_checoslovaquia,1970,Brasil,Rivelino,,24,False,False
+1970_brasil_checoslovaquia,1970,Brasil,Pelé,,59,False,False
+1970_brasil_checoslovaquia,1970,Brasil,Jairzinho,,61,False,False
+1970_brasil_checoslovaquia,1970,Brasil,Jairzinho,,83,False,False
+1970_peru_marruecos,1970,Perú,Teofilo Cubillas,,65,False,False
+1970_peru_marruecos,1970,Perú,Roberto Challe,,67,False,False
+1970_peru_marruecos,1970,Perú,Teofilo Cubillas,,75,False,False
+1970_rumania_checoslovaquia,1970,Checoslovaquia,Ladislav Petras,,5,False,False
+1970_rumania_checoslovaquia,1970,Rumania,Alexandru Neagu,,52,False,False
+1970_rumania_checoslovaquia,1970,Rumania,Florea Dumitrache,,75,True,False
+1970_urss_belgica,1970,URSS,Anatoly Bishovets,,14,False,False
+1970_urss_belgica,1970,URSS,Kakhi Asatiani,,57,False,False
+1970_urss_belgica,1970,URSS,Anatoly Bishovets,,63,False,False
+1970_urss_belgica,1970,URSS,Vitali Khmelnitski,,76,False,False
+1970_urss_belgica,1970,Bélgica,Raoul Lambert,,86,False,False
+1970_suecia_israel,1970,Suecia,Tom Turesson,,53,False,False
+1970_suecia_israel,1970,Israel,Mordechai Spiegler,,56,False,False
+1970_mexico_el_salvador,1970,México,Javier Valdivia,,45,False,False
+1970_mexico_el_salvador,1970,México,Javier Valdivia,,46,False,False
+1970_mexico_el_salvador,1970,México,Javier Fragoso,,58,False,False
+1970_mexico_el_salvador,1970,México,Juan Ignacio Basaguren,,83,False,False
+1970_alemania_occidental_bulgaria,1970,Bulgaria,Asparukh Nikodimov,,12,False,False
+1970_alemania_occidental_bulgaria,1970,Alemania Occidental,Stan Libuda,,20,False,False
+1970_alemania_occidental_bulgaria,1970,Alemania Occidental,Gerd Mueller,,27,False,False
+1970_alemania_occidental_bulgaria,1970,Alemania Occidental,Gerd Mueller,,52,True,False
+1970_alemania_occidental_bulgaria,1970,Alemania Occidental,Uwe Seeler,,70,False,False
+1970_alemania_occidental_bulgaria,1970,Alemania Occidental,Gerd Mueller,,88,False,False
+1970_alemania_occidental_bulgaria,1970,Bulgaria,Todor Kolev,,89,False,False
+1970_brasil_inglaterra,1970,Brasil,Jairzinho,,59,False,False
+1970_urss_el_salvador,1970,URSS,Anatoly Bishovets,,51,False,False
+1970_urss_el_salvador,1970,URSS,Anatoly Bishovets,,74,False,False
+1970_suecia_uruguay,1970,Suecia,Ove Grahn,,90,False,False
+1970_alemania_occidental_peru,1970,Alemania Occidental,Gerd Mueller,,19,False,False
+1970_alemania_occidental_peru,1970,Alemania Occidental,Gerd Mueller,,26,False,False
+1970_alemania_occidental_peru,1970,Alemania Occidental,Gerd Mueller,,39,False,False
+1970_alemania_occidental_peru,1970,Perú,Teofilo Cubillas,,44,False,False
+1970_brasil_rumania,1970,Brasil,Pelé,,19,False,False
+1970_brasil_rumania,1970,Brasil,Jairzinho,,22,False,False
+1970_brasil_rumania,1970,Rumania,Florea Dumitrache,,34,False,False
+1970_brasil_rumania,1970,Brasil,Pelé,,67,False,False
+1970_brasil_rumania,1970,Rumania,Emerich Dembrovschi,,84,False,False
+1970_bulgaria_marruecos,1970,Bulgaria,Dobromir Zhechev,,40,False,False
+1970_bulgaria_marruecos,1970,Marruecos,Mahjoub Ghazouani,,61,False,False
+1970_inglaterra_checoslovaquia,1970,Inglaterra,Allan Clarke,,50,True,False
+1970_mexico_belgica,1970,México,Gustavo Pena,,14,True,False
+1970_alemania_occidental_inglaterra,1970,Inglaterra,Alan Mullery,,31,False,False
+1970_alemania_occidental_inglaterra,1970,Inglaterra,Martin Peters,,49,False,False
+1970_alemania_occidental_inglaterra,1970,Alemania Occidental,Franz Beckenbauer,,68,False,False
+1970_alemania_occidental_inglaterra,1970,Alemania Occidental,Uwe Seeler,,76,False,False
+1970_alemania_occidental_inglaterra,1970,Alemania Occidental,Gerd Mueller,,108,False,False
+1970_italia_mexico,1970,México,Jose Gonzalez,,13,False,False
+1970_italia_mexico,1970,Italia,Gustavo Pena (en contra),,25,False,True
+1970_italia_mexico,1970,Italia,Gigi Riva,,63,False,False
+1970_italia_mexico,1970,Italia,Gianni Rivera,,70,False,False
+1970_italia_mexico,1970,Italia,Gigi Riva,,76,False,False
+1970_uruguay_urss,1970,Uruguay,Victor Esparrago,,116,False,False
+1970_brasil_peru,1970,Brasil,Rivelino,,11,False,False
+1970_brasil_peru,1970,Brasil,Tostao,,15,False,False
+1970_brasil_peru,1970,Perú,Alberto Gallardo,,28,False,False
+1970_brasil_peru,1970,Brasil,Tostao,,52,False,False
+1970_brasil_peru,1970,Perú,Teofilo Cubillas,,70,False,False
+1970_brasil_peru,1970,Brasil,Jairzinho,,75,False,False
+1970_uruguay_brasil,1970,Uruguay,Luis Cubilla,,19,False,False
+1970_uruguay_brasil,1970,Brasil,Clodoaldo,,44,False,False
+1970_uruguay_brasil,1970,Brasil,Jairzinho,,76,False,False
+1970_uruguay_brasil,1970,Brasil,Rivelino,,89,False,False
+1970_italia_alemania_occidental,1970,Italia,Roberto Boninsegna,,8,False,False
+1970_italia_alemania_occidental,1970,Alemania Occidental,Karl-Heinz Schnellinger,,90,False,False
+1970_italia_alemania_occidental,1970,Alemania Occidental,Gerd Mueller,,94,False,False
+1970_italia_alemania_occidental,1970,Italia,Tarcisio Burgnich,,98,False,False
+1970_italia_alemania_occidental,1970,Italia,Gigi Riva,,104,False,False
+1970_italia_alemania_occidental,1970,Alemania Occidental,Gerd Mueller,,110,False,False
+1970_italia_alemania_occidental,1970,Italia,Gianni Rivera,,111,False,False
+1970_uruguay_alemania_occidental,1970,Alemania Occidental,Wolfgang Overath,,26,False,False
+1970_brasil_italia,1970,Brasil,Pelé,,18,False,False
+1970_brasil_italia,1970,Italia,Roberto Boninsegna,,37,False,False
+1970_brasil_italia,1970,Brasil,Gerson,,66,False,False
+1970_brasil_italia,1970,Brasil,Jairzinho,,71,False,False
+1970_brasil_italia,1970,Brasil,Carlos Alberto,,86,False,False
+1966_alemania_occidental_suiza,1966,Alemania Occidental,Sigi Held,,15,False,False
+1966_alemania_occidental_suiza,1966,Alemania Occidental,Helmut Haller,,20,False,False
+1966_alemania_occidental_suiza,1966,Alemania Occidental,Franz Beckenbauer,,39,False,False
+1966_alemania_occidental_suiza,1966,Alemania Occidental,Franz Beckenbauer,,52,False,False
+1966_alemania_occidental_suiza,1966,Alemania Occidental,Helmut Haller,,77,True,False
+1966_urss_corea_del_norte,1966,URSS,Eduard Malofeyev,,31,False,False
+1966_urss_corea_del_norte,1966,URSS,Anatoli Banishevski,,33,False,False
+1966_urss_corea_del_norte,1966,URSS,Eduard Malofeyev,,88,False,False
+1966_brasil_bulgaria,1966,Brasil,Pelé,,15,False,False
+1966_brasil_bulgaria,1966,Brasil,Garrincha,,63,False,False
+1966_francia_mexico,1966,México,Enrique Borja,,48,False,False
+1966_francia_mexico,1966,Francia,Gerard Hausser,,62,False,False
+1966_italia_chile,1966,Italia,Sandro Mazzola,,8,False,False
+1966_italia_chile,1966,Italia,Paolo Barison,,88,False,False
+1966_portugal_hungria,1966,Portugal,Jose Augusto,,2,False,False
+1966_portugal_hungria,1966,Hungría,Ferenc Bene,,60,False,False
+1966_portugal_hungria,1966,Portugal,Jose Augusto,,67,False,False
+1966_portugal_hungria,1966,Portugal,Jose Torres,,90,False,False
+1966_argentina_espana,1966,Argentina,Luis Artime,,65,False,False
+1966_argentina_espana,1966,España,Pirri,,71,False,False
+1966_argentina_espana,1966,Argentina,Luis Artime,,79,False,False
+1966_uruguay_francia,1966,Francia,Hector De Bourgoing,,15,True,False
+1966_uruguay_francia,1966,Uruguay,Pedro Rocha,,26,False,False
+1966_uruguay_francia,1966,Uruguay,Julio Cortes,,31,False,False
+1966_hungria_brasil,1966,Hungría,Ferenc Bene,,2,False,False
+1966_hungria_brasil,1966,Brasil,Tostao,,14,False,False
+1966_hungria_brasil,1966,Hungría,Janos Farkas,,64,False,False
+1966_hungria_brasil,1966,Hungría,Kalman Meszoly,,73,True,False
+1966_espana_suiza,1966,Suiza,Rene Quentin,,28,False,False
+1966_espana_suiza,1966,España,Manuel Sanchis,,57,False,False
+1966_espana_suiza,1966,España,Amancio,,75,False,False
+1966_corea_del_norte_chile,1966,Chile,Ruben Marcos,,26,True,False
+1966_corea_del_norte_chile,1966,Corea del Norte,Seung Zin Pak,,88,False,False
+1966_portugal_bulgaria,1966,Portugal,Ivan Vutsov (en contra),,17,False,True
+1966_portugal_bulgaria,1966,Portugal,Eusebio,,38,False,False
+1966_portugal_bulgaria,1966,Portugal,Jose Torres,,81,False,False
+1966_urss_italia,1966,URSS,Igor Chislenko,,57,False,False
+1966_inglaterra_mexico,1966,Inglaterra,Bobby Charlton,,37,False,False
+1966_inglaterra_mexico,1966,Inglaterra,Roger Hunt,,75,False,False
+1966_portugal_brasil,1966,Portugal,Simoes,,15,False,False
+1966_portugal_brasil,1966,Portugal,Eusebio,,27,False,False
+1966_portugal_brasil,1966,Brasil,Rildo,,73,False,False
+1966_portugal_brasil,1966,Portugal,Eusebio,,85,False,False
+1966_argentina_suiza,1966,Argentina,Luis Artime,,53,False,False
+1966_argentina_suiza,1966,Argentina,Ermindo Onega,,81,False,False
+1966_corea_del_norte_italia,1966,Corea del Norte,Doo Ik Pak,,42,False,False
+1966_inglaterra_francia,1966,Inglaterra,Roger Hunt,,38,False,False
+1966_inglaterra_francia,1966,Inglaterra,Roger Hunt,,75,False,False
+1966_alemania_occidental_espana,1966,España,Jose Maria Fuste,,22,False,False
+1966_alemania_occidental_espana,1966,Alemania Occidental,Lothar Emmerich,,38,False,False
+1966_alemania_occidental_espana,1966,Alemania Occidental,Uwe Seeler,,84,False,False
+1966_urss_chile,1966,URSS,Valeriy Porkuyan,,28,False,False
+1966_urss_chile,1966,Chile,Ruben Marcos,,32,False,False
+1966_urss_chile,1966,URSS,Valeriy Porkuyan,,85,False,False
+1966_hungria_bulgaria,1966,Bulgaria,Georgi Asparukhov,,15,False,False
+1966_hungria_bulgaria,1966,Hungría,Ivan Davidov (en contra),,43,False,True
+1966_hungria_bulgaria,1966,Hungría,Kalman Meszoly,,45,False,False
+1966_hungria_bulgaria,1966,Hungría,Ferenc Bene,,54,False,False
+1966_portugal_corea_del_norte,1966,Corea del Norte,Seung Zin Pak,,1,False,False
+1966_portugal_corea_del_norte,1966,Corea del Norte,Dong Woon Li,,22,False,False
+1966_portugal_corea_del_norte,1966,Corea del Norte,Seung Kook Yang,,25,False,False
+1966_portugal_corea_del_norte,1966,Portugal,Eusebio,,27,False,False
+1966_portugal_corea_del_norte,1966,Portugal,Eusebio,,43,True,False
+1966_portugal_corea_del_norte,1966,Portugal,Eusebio,,56,False,False
+1966_portugal_corea_del_norte,1966,Portugal,Eusebio,,59,True,False
+1966_portugal_corea_del_norte,1966,Portugal,Jose Augusto,,80,False,False
+1966_inglaterra_argentina,1966,Inglaterra,Geoff Hurst,,78,False,False
+1966_alemania_occidental_uruguay,1966,Alemania Occidental,Helmut Haller,,11,False,False
+1966_alemania_occidental_uruguay,1966,Alemania Occidental,Franz Beckenbauer,,70,False,False
+1966_alemania_occidental_uruguay,1966,Alemania Occidental,Uwe Seeler,,75,False,False
+1966_alemania_occidental_uruguay,1966,Alemania Occidental,Helmut Haller,,83,False,False
+1966_urss_hungria,1966,URSS,Igor Chislenko,,5,False,False
+1966_urss_hungria,1966,URSS,Valeriy Porkuyan,,46,False,False
+1966_urss_hungria,1966,Hungría,Ferenc Bene,,57,False,False
+1966_alemania_occidental_urss,1966,Alemania Occidental,Helmut Haller,,43,False,False
+1966_alemania_occidental_urss,1966,Alemania Occidental,Franz Beckenbauer,,67,False,False
+1966_alemania_occidental_urss,1966,URSS,Valeriy Porkuyan,,88,False,False
+1966_inglaterra_portugal,1966,Inglaterra,Bobby Charlton,,30,False,False
+1966_inglaterra_portugal,1966,Inglaterra,Bobby Charlton,,80,False,False
+1966_inglaterra_portugal,1966,Portugal,Eusebio,,82,True,False
+1966_portugal_urss,1966,Portugal,Eusebio,,12,True,False
+1966_portugal_urss,1966,URSS,Eduard Malofeyev,,43,False,False
+1966_portugal_urss,1966,Portugal,Jose Torres,,89,False,False
+1966_inglaterra_alemania_occidental,1966,Alemania Occidental,Helmut Haller,,12,False,False
+1966_inglaterra_alemania_occidental,1966,Inglaterra,Geoff Hurst,,18,False,False
+1966_inglaterra_alemania_occidental,1966,Inglaterra,Martin Peters,,78,False,False
+1966_inglaterra_alemania_occidental,1966,Alemania Occidental,Wolfgang Weber,,89,False,False
+1966_inglaterra_alemania_occidental,1966,Inglaterra,Geoff Hurst,,101,False,False
+1966_inglaterra_alemania_occidental,1966,Inglaterra,Geoff Hurst,,120,False,False
+1962_uruguay_colombia,1962,Colombia,Francisco Zuluaga,,19,True,False
+1962_uruguay_colombia,1962,Uruguay,Luis Cubilla,,56,False,False
+1962_uruguay_colombia,1962,Uruguay,Jose Sasia,,75,False,False
+1962_brasil_mexico,1962,Brasil,Zagallo,,56,False,False
+1962_brasil_mexico,1962,Brasil,Pelé,,73,False,False
+1962_chile_suiza,1962,Suiza,Rolf Wuethrich,,6,False,False
+1962_chile_suiza,1962,Chile,Leonel Sanchez,,44,False,False
+1962_chile_suiza,1962,Chile,Jaime Ramirez,,51,False,False
+1962_chile_suiza,1962,Chile,Leonel Sanchez,,55,False,False
+1962_argentina_bulgaria,1962,Argentina,Hector Facundo,,4,False,False
+1962_checoslovaquia_espana,1962,Checoslovaquia,Josef Stibranyi,,80,False,False
+1962_urss_yugoslavia,1962,URSS,Valentin Ivanov,,51,False,False
+1962_urss_yugoslavia,1962,URSS,Viktor Ponedelnik,,83,False,False
+1962_hungria_inglaterra,1962,Hungría,Lajos Tichy,,17,False,False
+1962_hungria_inglaterra,1962,Inglaterra,Ron Flowers,,60,True,False
+1962_hungria_inglaterra,1962,Hungría,Florian Albert,,71,False,False
+1962_chile_italia,1962,Chile,Jaime Ramirez,,73,False,False
+1962_chile_italia,1962,Chile,Jorge Toro,,87,False,False
+1962_yugoslavia_uruguay,1962,Uruguay,Angel Cabrera,,19,False,False
+1962_yugoslavia_uruguay,1962,Yugoslavia,Josip Skoblar,,25,True,False
+1962_yugoslavia_uruguay,1962,Yugoslavia,Milan Galic,,29,False,False
+1962_yugoslavia_uruguay,1962,Yugoslavia,Drazen Jerkovic,,49,False,False
+1962_inglaterra_argentina,1962,Inglaterra,Ron Flowers,,17,True,False
+1962_inglaterra_argentina,1962,Inglaterra,Bobby Charlton,,42,False,False
+1962_inglaterra_argentina,1962,Inglaterra,Jimmy Greaves,,67,False,False
+1962_inglaterra_argentina,1962,Argentina,Jose Sanfilippo,,81,False,False
+1962_hungria_bulgaria,1962,Hungría,Florian Albert,,1,False,False
+1962_hungria_bulgaria,1962,Hungría,Florian Albert,,6,False,False
+1962_hungria_bulgaria,1962,Hungría,Lajos Tichy,,8,False,False
+1962_hungria_bulgaria,1962,Hungría,Erno Solymosi,,12,False,False
+1962_hungria_bulgaria,1962,Hungría,Florian Albert,,53,False,False
+1962_hungria_bulgaria,1962,Bulgaria,Georgi Sokolov,,64,False,False
+1962_hungria_bulgaria,1962,Hungría,Lajos Tichy,,70,False,False
+1962_urss_colombia,1962,URSS,Valentin Ivanov,,8,False,False
+1962_urss_colombia,1962,URSS,Igor Chislenko,,10,False,False
+1962_urss_colombia,1962,URSS,Valentin Ivanov,,11,False,False
+1962_urss_colombia,1962,Colombia,German Aceros,,21,False,False
+1962_urss_colombia,1962,URSS,Viktor Ponedelnik,,56,False,False
+1962_urss_colombia,1962,Colombia,Marcos Coll,,68,False,False
+1962_urss_colombia,1962,Colombia,Antonio Rada,,72,False,False
+1962_urss_colombia,1962,Colombia,Marino Klinger,,76,False,False
+1962_espana_mexico,1962,España,Joaquin Peiro,,90,False,False
+1962_alemania_occidental_suiza,1962,Alemania Occidental,Albert Bruells,,45,False,False
+1962_alemania_occidental_suiza,1962,Alemania Occidental,Uwe Seeler,,59,False,False
+1962_alemania_occidental_suiza,1962,Suiza,Heinz Schneiter,,73,False,False
+1962_alemania_occidental_chile,1962,Alemania Occidental,Horst Szymaniak,,21,True,False
+1962_alemania_occidental_chile,1962,Alemania Occidental,Uwe Seeler,,82,False,False
+1962_urss_uruguay,1962,URSS,Aleksei Mamykin,,38,False,False
+1962_urss_uruguay,1962,Uruguay,Jose Sasia,,54,False,False
+1962_urss_uruguay,1962,URSS,Valentin Ivanov,,89,False,False
+1962_brasil_espana,1962,España,Adelardo,,35,False,False
+1962_brasil_espana,1962,Brasil,Amarildo,,72,False,False
+1962_brasil_espana,1962,Brasil,Amarildo,,86,False,False
+1962_yugoslavia_colombia,1962,Yugoslavia,Milan Galic,,20,False,False
+1962_yugoslavia_colombia,1962,Yugoslavia,Drazen Jerkovic,,25,False,False
+1962_yugoslavia_colombia,1962,Yugoslavia,Milan Galic,,61,False,False
+1962_yugoslavia_colombia,1962,Yugoslavia,Vojislav Melic,,82,False,False
+1962_yugoslavia_colombia,1962,Yugoslavia,Drazen Jerkovic,,87,False,False
+1962_mexico_checoslovaquia,1962,Checoslovaquia,Vaclav Masek,,1,False,False
+1962_mexico_checoslovaquia,1962,México,Isidoro Diaz,,12,False,False
+1962_mexico_checoslovaquia,1962,México,Alfredo Del Aguila,,29,False,False
+1962_mexico_checoslovaquia,1962,México,Hector Hernandez,,90,True,False
+1962_italia_suiza,1962,Italia,Bruno Mora,,2,False,False
+1962_italia_suiza,1962,Italia,Giacomo Bulgarelli,,65,False,False
+1962_italia_suiza,1962,Italia,Giacomo Bulgarelli,,67,False,False
+1962_brasil_inglaterra,1962,Brasil,Garrincha,,31,False,False
+1962_brasil_inglaterra,1962,Inglaterra,Gerry Hitchens,,38,False,False
+1962_brasil_inglaterra,1962,Brasil,Vava,,53,False,False
+1962_brasil_inglaterra,1962,Brasil,Garrincha,,59,False,False
+1962_checoslovaquia_hungria,1962,Checoslovaquia,Adolf Scherer,,13,False,False
+1962_yugoslavia_alemania_occidental,1962,Yugoslavia,Petar Radakovic,,85,False,False
+1962_chile_urss,1962,Chile,Leonel Sanchez,,11,False,False
+1962_chile_urss,1962,URSS,Igor Chislenko,,26,False,False
+1962_chile_urss,1962,Chile,Eladio Rojas,,29,False,False
+1962_yugoslavia_checoslovaquia,1962,Checoslovaquia,Josef Kadraba,,48,False,False
+1962_yugoslavia_checoslovaquia,1962,Yugoslavia,Drazen Jerkovic,,69,False,False
+1962_yugoslavia_checoslovaquia,1962,Checoslovaquia,Adolf Scherer,,80,False,False
+1962_yugoslavia_checoslovaquia,1962,Checoslovaquia,Adolf Scherer,,84,True,False
+1962_chile_brasil,1962,Brasil,Garrincha,,9,False,False
+1962_chile_brasil,1962,Brasil,Garrincha,,32,False,False
+1962_chile_brasil,1962,Chile,Jorge Toro,,42,False,False
+1962_chile_brasil,1962,Brasil,Vava,,47,False,False
+1962_chile_brasil,1962,Chile,Leonel Sanchez,,61,True,False
+1962_chile_brasil,1962,Brasil,Vava,,78,False,False
+1962_chile_yugoslavia,1962,Chile,Eladio Rojas,,90,False,False
+1962_brasil_checoslovaquia_2,1962,Checoslovaquia,Josef Masopust,,15,False,False
+1962_brasil_checoslovaquia_2,1962,Brasil,Amarildo,,17,False,False
+1962_brasil_checoslovaquia_2,1962,Brasil,Zito,,69,False,False
+1962_brasil_checoslovaquia_2,1962,Brasil,Vava,,78,False,False
+1958_hungria_gales,1958,Hungría,Jozsef Bozsik,,5,False,False
+1958_hungria_gales,1958,Gales,John Charles,,27,False,False
+1958_irlanda_del_norte_checoslovaquia,1958,Irlanda del Norte,Wilbur Cush,,20,False,False
+1958_brasil_austria,1958,Brasil,Jose Altafini,,38,False,False
+1958_brasil_austria,1958,Brasil,Nilton Santos,,49,False,False
+1958_brasil_austria,1958,Brasil,Jose Altafini,,89,False,False
+1958_francia_paraguay,1958,Paraguay,Florencio Amarilla,,20,False,False
+1958_francia_paraguay,1958,Francia,Just Fontaine,,24,False,False
+1958_francia_paraguay,1958,Francia,Just Fontaine,,30,False,False
+1958_francia_paraguay,1958,Paraguay,Florencio Amarilla,,44,True,False
+1958_francia_paraguay,1958,Paraguay,Jorge Romero,,50,False,False
+1958_francia_paraguay,1958,Francia,Roger Piantoni,,52,False,False
+1958_francia_paraguay,1958,Francia,Maryan Wisnieski,,61,False,False
+1958_francia_paraguay,1958,Francia,Just Fontaine,,67,False,False
+1958_francia_paraguay,1958,Francia,Raymond Kopa,,70,False,False
+1958_francia_paraguay,1958,Francia,Jean Vincent,,83,False,False
+1958_argentina_alemania_occidental,1958,Argentina,Omar Oreste Corbatta,,2,False,False
+1958_argentina_alemania_occidental,1958,Alemania Occidental,Helmut Rahn,,32,False,False
+1958_argentina_alemania_occidental,1958,Alemania Occidental,Uwe Seeler,,40,False,False
+1958_argentina_alemania_occidental,1958,Alemania Occidental,Helmut Rahn,,79,False,False
+1958_urss_inglaterra,1958,URSS,Nikita Simonyan,,13,False,False
+1958_urss_inglaterra,1958,URSS,Aleksandr Ivanov,,55,False,False
+1958_urss_inglaterra,1958,Inglaterra,Derek Kevan,,66,False,False
+1958_urss_inglaterra,1958,Inglaterra,Tom Finney,,85,True,False
+1958_yugoslavia_escocia,1958,Yugoslavia,Aleksandar Petakovic,,6,False,False
+1958_yugoslavia_escocia,1958,Escocia,Jimmy Murray,,49,False,False
+1958_suecia_mexico,1958,Suecia,Agne Simonsson,,17,False,False
+1958_suecia_mexico,1958,Suecia,Nils Liedholm,,57,True,False
+1958_suecia_mexico,1958,Suecia,Agne Simonsson,,64,False,False
+1958_yugoslavia_francia,1958,Francia,Just Fontaine,,4,False,False
+1958_yugoslavia_francia,1958,Yugoslavia,Aleksandar Petakovic,,16,False,False
+1958_yugoslavia_francia,1958,Yugoslavia,Toza Veselinovic,,63,False,False
+1958_yugoslavia_francia,1958,Francia,Just Fontaine,,85,False,False
+1958_yugoslavia_francia,1958,Yugoslavia,Toza Veselinovic,,88,False,False
+1958_paraguay_escocia,1958,Paraguay,Juan Aguero,,4,False,False
+1958_paraguay_escocia,1958,Escocia,Jackie Mudie,,24,False,False
+1958_paraguay_escocia,1958,Paraguay,Cayetano Re,,45,False,False
+1958_paraguay_escocia,1958,Paraguay,Jose Parodi,,73,False,False
+1958_paraguay_escocia,1958,Escocia,Bobby Collins,,76,False,False
+1958_mexico_gales,1958,Gales,Ivor Allchurch,,32,False,False
+1958_mexico_gales,1958,México,Jaime Belmonte,,89,False,False
+1958_alemania_occidental_checoslovaquia,1958,Checoslovaquia,Milan Dvorak,,24,True,False
+1958_alemania_occidental_checoslovaquia,1958,Checoslovaquia,Zdenek Zikan,,43,False,False
+1958_alemania_occidental_checoslovaquia,1958,Alemania Occidental,Hans Schaefer,,59,False,False
+1958_alemania_occidental_checoslovaquia,1958,Alemania Occidental,Helmut Rahn,,70,False,False
+1958_urss_austria,1958,URSS,Anatoli Ilyin,,15,False,False
+1958_urss_austria,1958,URSS,Valentin Ivanov,,63,False,False
+1958_argentina_irlanda_del_norte,1958,Irlanda del Norte,Peter Mcparland,,3,False,False
+1958_argentina_irlanda_del_norte,1958,Argentina,Omar Oreste Corbatta,,38,True,False
+1958_argentina_irlanda_del_norte,1958,Argentina,Norberto Menendez,,55,False,False
+1958_argentina_irlanda_del_norte,1958,Argentina,Ludovico Avio,,59,False,False
+1958_suecia_hungria,1958,Suecia,Kurt Hamrin,,34,False,False
+1958_suecia_hungria,1958,Suecia,Kurt Hamrin,,55,False,False
+1958_suecia_hungria,1958,Hungría,Lajos Tichy,,77,False,False
+1958_francia_escocia,1958,Francia,Raymond Kopa,,22,False,False
+1958_francia_escocia,1958,Francia,Just Fontaine,,44,False,False
+1958_francia_escocia,1958,Escocia,Sammy Baird,,66,False,False
+1958_alemania_occidental_irlanda_del_norte,1958,Irlanda del Norte,Peter Mcparland,,19,False,False
+1958_alemania_occidental_irlanda_del_norte,1958,Alemania Occidental,Helmut Rahn,,20,False,False
+1958_alemania_occidental_irlanda_del_norte,1958,Irlanda del Norte,Peter Mcparland,,60,False,False
+1958_alemania_occidental_irlanda_del_norte,1958,Alemania Occidental,Uwe Seeler,,79,False,False
+1958_paraguay_yugoslavia,1958,Yugoslavia,Radivoje Ognjanovic,,12,False,False
+1958_paraguay_yugoslavia,1958,Paraguay,Jose Parodi,,20,False,False
+1958_paraguay_yugoslavia,1958,Yugoslavia,Toza Veselinovic,,29,False,False
+1958_paraguay_yugoslavia,1958,Paraguay,Juan Aguero,,49,False,False
+1958_paraguay_yugoslavia,1958,Yugoslavia,Zdravko Rajkov,,73,False,False
+1958_paraguay_yugoslavia,1958,Paraguay,Jorge Romero,,80,False,False
+1958_brasil_urss,1958,Brasil,Vava,,3,False,False
+1958_brasil_urss,1958,Brasil,Vava,,77,False,False
+1958_inglaterra_austria,1958,Austria,Karl Koller,,16,False,False
+1958_inglaterra_austria,1958,Inglaterra,John Haynes,,56,False,False
+1958_inglaterra_austria,1958,Austria,Alfred Koerner,,70,False,False
+1958_inglaterra_austria,1958,Inglaterra,Derek Kevan,,73,False,False
+1958_hungria_mexico,1958,Hungría,Lajos Tichy,,19,False,False
+1958_hungria_mexico,1958,Hungría,Lajos Tichy,,46,False,False
+1958_hungria_mexico,1958,Hungría,Karoly Sandor,,54,False,False
+1958_hungria_mexico,1958,Hungría,Jozsef Bencsis,,69,False,False
+1958_checoslovaquia_argentina,1958,Checoslovaquia,Milan Dvorak,,8,False,False
+1958_checoslovaquia_argentina,1958,Checoslovaquia,Zdenek Zikan,,17,False,False
+1958_checoslovaquia_argentina,1958,Checoslovaquia,Vaclav Hovorka,,40,False,False
+1958_checoslovaquia_argentina,1958,Argentina,Omar Oreste Corbatta,,65,True,False
+1958_checoslovaquia_argentina,1958,Checoslovaquia,Jiri Feureisl,,69,False,False
+1958_checoslovaquia_argentina,1958,Checoslovaquia,Zdenek Zikan,,82,False,False
+1958_checoslovaquia_argentina,1958,Checoslovaquia,Vaclav Hovorka,,89,False,False
+1958_irlanda_del_norte_checoslovaquia_2,1958,Checoslovaquia,Zdenek Zikan,,19,False,False
+1958_irlanda_del_norte_checoslovaquia_2,1958,Irlanda del Norte,Peter Mcparland,,44,False,False
+1958_irlanda_del_norte_checoslovaquia_2,1958,Irlanda del Norte,Peter Mcparland,,99,False,False
+1958_gales_hungria,1958,Hungría,Lajos Tichy,,33,False,False
+1958_gales_hungria,1958,Gales,Ivor Allchurch,,35,False,False
+1958_gales_hungria,1958,Gales,Terry Medwin,,76,False,False
+1958_urss_inglaterra_2,1958,URSS,Anatoli Ilyin,,68,False,False
+1958_francia_irlanda_del_norte,1958,Francia,Maryan Wisnieski,,22,False,False
+1958_francia_irlanda_del_norte,1958,Francia,Just Fontaine,,55,False,False
+1958_francia_irlanda_del_norte,1958,Francia,Just Fontaine,,63,False,False
+1958_francia_irlanda_del_norte,1958,Francia,Roger Piantoni,,68,False,False
+1958_alemania_occidental_yugoslavia,1958,Alemania Occidental,Helmut Rahn,,12,False,False
+1958_brasil_gales,1958,Brasil,Pelé,,66,False,False
+1958_suecia_urss,1958,Suecia,Kurt Hamrin,,49,False,False
+1958_suecia_urss,1958,Suecia,Agne Simonsson,,88,False,False
+1958_alemania_occidental_suecia,1958,Alemania Occidental,Hans Schaefer,,24,False,False
+1958_alemania_occidental_suecia,1958,Suecia,Lennart Skoglund,,32,False,False
+1958_alemania_occidental_suecia,1958,Suecia,Gunnar Gren,,81,False,False
+1958_alemania_occidental_suecia,1958,Suecia,Kurt Hamrin,,88,False,False
+1958_francia_brasil,1958,Brasil,Vava,,2,False,False
+1958_francia_brasil,1958,Francia,Just Fontaine,,9,False,False
+1958_francia_brasil,1958,Brasil,Didi,,39,False,False
+1958_francia_brasil,1958,Brasil,Pelé,,52,False,False
+1958_francia_brasil,1958,Brasil,Pelé,,64,False,False
+1958_francia_brasil,1958,Brasil,Pelé,,75,False,False
+1958_francia_brasil,1958,Francia,Roger Piantoni,,83,False,False
+1958_alemania_occidental_francia,1958,Francia,Just Fontaine,,16,False,False
+1958_alemania_occidental_francia,1958,Alemania Occidental,Hans Ciesclarczyk,,18,False,False
+1958_alemania_occidental_francia,1958,Francia,Raymond Kopa,,27,True,False
+1958_alemania_occidental_francia,1958,Francia,Just Fontaine,,36,False,False
+1958_alemania_occidental_francia,1958,Francia,Yvon Douis,,50,False,False
+1958_alemania_occidental_francia,1958,Alemania Occidental,Helmut Rahn,,52,False,False
+1958_alemania_occidental_francia,1958,Francia,Just Fontaine,,78,False,False
+1958_alemania_occidental_francia,1958,Alemania Occidental,Hans Schaefer,,84,False,False
+1958_alemania_occidental_francia,1958,Francia,Just Fontaine,,89,False,False
+1958_suecia_brasil,1958,Suecia,Nils Liedholm,,4,False,False
+1958_suecia_brasil,1958,Brasil,Vava,,9,False,False
+1958_suecia_brasil,1958,Brasil,Vava,,32,False,False
+1958_suecia_brasil,1958,Brasil,Pelé,,55,False,False
+1958_suecia_brasil,1958,Brasil,Zagallo,,68,False,False
+1958_suecia_brasil,1958,Suecia,Agne Simonsson,,80,False,False
+1958_suecia_brasil,1958,Brasil,Pelé,,90,False,False
+1954_yugoslavia_francia,1954,Yugoslavia,Milos Milutinovic,,15,False,False
+1954_austria_escocia,1954,Austria,Erich Probst,,33,False,False
+1954_uruguay_checoslovaquia,1954,Uruguay,Oscar Miguez,,71,False,False
+1954_uruguay_checoslovaquia,1954,Uruguay,Juan Schiaffino,,84,False,False
+1954_brasil_mexico,1954,Brasil,Baltazar,,23,False,False
+1954_brasil_mexico,1954,Brasil,Didi,,30,False,False
+1954_brasil_mexico,1954,Brasil,Pinga,,34,False,False
+1954_brasil_mexico,1954,Brasil,Pinga,,43,False,False
+1954_brasil_mexico,1954,Brasil,Julinho,,69,False,False
+1954_hungria_corea_del_sur,1954,Hungría,Ferenc Puskas,,12,False,False
+1954_hungria_corea_del_sur,1954,Hungría,Mihaly Lantos,,18,False,False
+1954_hungria_corea_del_sur,1954,Hungría,Sandor Kocsis,,24,False,False
+1954_hungria_corea_del_sur,1954,Hungría,Sandor Kocsis,,36,False,False
+1954_hungria_corea_del_sur,1954,Hungría,Sandor Kocsis,,50,False,False
+1954_hungria_corea_del_sur,1954,Hungría,Zoltan Czibor,,59,False,False
+1954_hungria_corea_del_sur,1954,Hungría,Peter Palotas,,75,False,False
+1954_hungria_corea_del_sur,1954,Hungría,Peter Palotas,,83,False,False
+1954_hungria_corea_del_sur,1954,Hungría,Ferenc Puskas,,89,False,False
+1954_inglaterra_belgica,1954,Bélgica,Leopold Anoul,,5,False,False
+1954_inglaterra_belgica,1954,Inglaterra,Ivor Broadis,,26,False,False
+1954_inglaterra_belgica,1954,Inglaterra,Nat Lofthouse,,36,False,False
+1954_inglaterra_belgica,1954,Inglaterra,Ivor Broadis,,63,False,False
+1954_inglaterra_belgica,1954,Bélgica,Rik Coppens,,67,False,False
+1954_inglaterra_belgica,1954,Bélgica,Leopold Anoul,,71,False,False
+1954_inglaterra_belgica,1954,Inglaterra,Nat Lofthouse,,91,False,False
+1954_inglaterra_belgica,1954,Bélgica,Jimmy Dickinson (en contra),,94,False,True
+1954_alemania_occidental_turquia,1954,Turquía,Mamat Suat,,2,False,False
+1954_alemania_occidental_turquia,1954,Alemania Occidental,Hans Schaefer,,14,False,False
+1954_alemania_occidental_turquia,1954,Alemania Occidental,Berni Klodt,,52,False,False
+1954_alemania_occidental_turquia,1954,Alemania Occidental,Ottmar Walter,,60,False,False
+1954_alemania_occidental_turquia,1954,Alemania Occidental,Max Morlock,,84,False,False
+1954_suiza_italia,1954,Suiza,Robert Ballaman,,18,False,False
+1954_suiza_italia,1954,Italia,Giampiero Boniperti,,44,False,False
+1954_suiza_italia,1954,Suiza,Sepp Huegi,,78,False,False
+1954_francia_mexico,1954,Francia,Jean Vincent,,19,False,False
+1954_francia_mexico,1954,Francia,Raul Cardenas (en contra),,46,False,True
+1954_francia_mexico,1954,México,Jose Lamadrid,,54,False,False
+1954_francia_mexico,1954,México,Tomas Balcazar,,85,False,False
+1954_francia_mexico,1954,Francia,Raymond Kopa,,88,True,False
+1954_brasil_yugoslavia,1954,Yugoslavia,Branko Zebec,,48,False,False
+1954_brasil_yugoslavia,1954,Brasil,Didi,,69,False,False
+1954_austria_checoslovaquia,1954,Austria,Ernst Stojaspal,,3,False,False
+1954_austria_checoslovaquia,1954,Austria,Erich Probst,,4,False,False
+1954_austria_checoslovaquia,1954,Austria,Erich Probst,,21,False,False
+1954_austria_checoslovaquia,1954,Austria,Erich Probst,,24,False,False
+1954_austria_checoslovaquia,1954,Austria,Ernst Stojaspal,,65,False,False
+1954_uruguay_escocia,1954,Uruguay,Carlos Borges,,17,False,False
+1954_uruguay_escocia,1954,Uruguay,Oscar Miguez,,30,False,False
+1954_uruguay_escocia,1954,Uruguay,Carlos Borges,,47,False,False
+1954_uruguay_escocia,1954,Uruguay,Julio Abbadie,,54,False,False
+1954_uruguay_escocia,1954,Uruguay,Carlos Borges,,57,False,False
+1954_uruguay_escocia,1954,Uruguay,Oscar Miguez,,83,False,False
+1954_uruguay_escocia,1954,Uruguay,Julio Abbadie,,85,False,False
+1954_hungria_alemania_occidental,1954,Hungría,Sandor Kocsis,,3,False,False
+1954_hungria_alemania_occidental,1954,Hungría,Ferenc Puskas,,17,False,False
+1954_hungria_alemania_occidental,1954,Hungría,Sandor Kocsis,,21,False,False
+1954_hungria_alemania_occidental,1954,Alemania Occidental,Alfred Pfaff,,25,False,False
+1954_hungria_alemania_occidental,1954,Hungría,Nandor Hidegkuti,,52,False,False
+1954_hungria_alemania_occidental,1954,Hungría,Nandor Hidegkuti,,54,False,False
+1954_hungria_alemania_occidental,1954,Hungría,Sandor Kocsis,,69,False,False
+1954_hungria_alemania_occidental,1954,Hungría,Jozsef Toth,,75,False,False
+1954_hungria_alemania_occidental,1954,Alemania Occidental,Helmut Rahn,,77,False,False
+1954_hungria_alemania_occidental,1954,Hungría,Sandor Kocsis,,78,False,False
+1954_hungria_alemania_occidental,1954,Alemania Occidental,Richard Herrmann,,84,False,False
+1954_turquia_corea_del_sur,1954,Turquía,Mamat Suat,,10,False,False
+1954_turquia_corea_del_sur,1954,Turquía,Lefter Kucukandonyadis,,18,False,False
+1954_turquia_corea_del_sur,1954,Turquía,Mamat Suat,,30,False,False
+1954_turquia_corea_del_sur,1954,Turquía,Sargun Burhan,,37,False,False
+1954_turquia_corea_del_sur,1954,Turquía,Sargun Burhan,,64,False,False
+1954_turquia_corea_del_sur,1954,Turquía,Sargun Burhan,,70,False,False
+1954_turquia_corea_del_sur,1954,Turquía,Erol Keskin,,76,False,False
+1954_inglaterra_suiza,1954,Inglaterra,Jimmy Mullen,,43,False,False
+1954_inglaterra_suiza,1954,Inglaterra,Dennis Wilshaw,,69,False,False
+1954_italia_belgica,1954,Italia,Egisto Pandolfini,,41,True,False
+1954_italia_belgica,1954,Italia,Carlo Galli,,48,False,False
+1954_italia_belgica,1954,Italia,Amleto Frignani,,58,False,False
+1954_italia_belgica,1954,Italia,Benito Lorenzi,,78,False,False
+1954_italia_belgica,1954,Bélgica,Leopold Anoul,,81,False,False
+1954_suiza_italia_2,1954,Suiza,Sepp Huegi,,14,False,False
+1954_suiza_italia_2,1954,Suiza,Robert Ballaman,,48,False,False
+1954_suiza_italia_2,1954,Italia,Fulvio Nesti,,67,False,False
+1954_suiza_italia_2,1954,Suiza,Sepp Huegi,,85,False,False
+1954_suiza_italia_2,1954,Suiza,Jackie Fatton,,90,False,False
+1954_alemania_occidental_turquia_2,1954,Alemania Occidental,Ottmar Walter,,7,False,False
+1954_alemania_occidental_turquia_2,1954,Alemania Occidental,Hans Schaefer,,12,False,False
+1954_alemania_occidental_turquia_2,1954,Turquía,Mustafa Erton,,21,False,False
+1954_alemania_occidental_turquia_2,1954,Alemania Occidental,Max Morlock,,30,False,False
+1954_alemania_occidental_turquia_2,1954,Alemania Occidental,Max Morlock,,60,False,False
+1954_alemania_occidental_turquia_2,1954,Alemania Occidental,Fritz Walter,,62,False,False
+1954_alemania_occidental_turquia_2,1954,Alemania Occidental,Max Morlock,,77,False,False
+1954_alemania_occidental_turquia_2,1954,Alemania Occidental,Hans Schaefer,,79,False,False
+1954_alemania_occidental_turquia_2,1954,Turquía,Lefter Kucukandonyadis,,82,False,False
+1954_uruguay_inglaterra,1954,Uruguay,Carlos Borges,,5,False,False
+1954_uruguay_inglaterra,1954,Inglaterra,Nat Lofthouse,,16,False,False
+1954_uruguay_inglaterra,1954,Uruguay,Obdulio Varela,,39,False,False
+1954_uruguay_inglaterra,1954,Uruguay,Juan Schiaffino,,46,False,False
+1954_uruguay_inglaterra,1954,Inglaterra,Tom Finney,,67,False,False
+1954_uruguay_inglaterra,1954,Uruguay,Javier Ambrois,,78,False,False
+1954_austria_suiza,1954,Suiza,Robert Ballaman,,16,False,False
+1954_austria_suiza,1954,Suiza,Sepp Huegi,,17,False,False
+1954_austria_suiza,1954,Suiza,Sepp Huegi,,19,False,False
+1954_austria_suiza,1954,Austria,Theodor Wagner,,25,False,False
+1954_austria_suiza,1954,Austria,Robert Koerner,,26,False,False
+1954_austria_suiza,1954,Austria,Theodor Wagner,,27,False,False
+1954_austria_suiza,1954,Austria,Ernst Ocwirk,,32,False,False
+1954_austria_suiza,1954,Austria,Robert Koerner,,34,False,False
+1954_austria_suiza,1954,Suiza,Robert Ballaman,,39,False,False
+1954_austria_suiza,1954,Austria,Theodor Wagner,,53,False,False
+1954_austria_suiza,1954,Suiza,Sepp Huegi,,58,False,False
+1954_austria_suiza,1954,Austria,Erich Probst,,76,False,False
+1954_hungria_brasil,1954,Hungría,Nandor Hidegkuti,,4,False,False
+1954_hungria_brasil,1954,Hungría,Sandor Kocsis,,7,False,False
+1954_hungria_brasil,1954,Brasil,Djalma Santos,,18,True,False
+1954_hungria_brasil,1954,Hungría,Mihaly Lantos,,60,True,False
+1954_hungria_brasil,1954,Brasil,Julinho,,65,False,False
+1954_hungria_brasil,1954,Hungría,Sandor Kocsis,,88,False,False
+1954_alemania_occidental_yugoslavia,1954,Alemania Occidental,Ivan Horvat (en contra),,9,False,True
+1954_alemania_occidental_yugoslavia,1954,Alemania Occidental,Helmut Rahn,,85,False,False
+1954_hungria_uruguay,1954,Hungría,Zoltan Czibor,,13,False,False
+1954_hungria_uruguay,1954,Hungría,Nandor Hidegkuti,,46,False,False
+1954_hungria_uruguay,1954,Uruguay,Juan Hohberg,,75,False,False
+1954_hungria_uruguay,1954,Uruguay,Juan Hohberg,,86,False,False
+1954_hungria_uruguay,1954,Hungría,Sandor Kocsis,,111,False,False
+1954_hungria_uruguay,1954,Hungría,Sandor Kocsis,,116,False,False
+1954_alemania_occidental_austria,1954,Alemania Occidental,Hans Schaefer,,31,False,False
+1954_alemania_occidental_austria,1954,Alemania Occidental,Max Morlock,,47,False,False
+1954_alemania_occidental_austria,1954,Austria,Erich Probst,,51,False,False
+1954_alemania_occidental_austria,1954,Alemania Occidental,Fritz Walter,,54,True,False
+1954_alemania_occidental_austria,1954,Alemania Occidental,Ottmar Walter,,61,False,False
+1954_alemania_occidental_austria,1954,Alemania Occidental,Fritz Walter,,64,True,False
+1954_alemania_occidental_austria,1954,Alemania Occidental,Ottmar Walter,,89,False,False
+1954_uruguay_austria,1954,Austria,Ernst Stojaspal,,16,True,False
+1954_uruguay_austria,1954,Uruguay,Juan Hohberg,,22,False,False
+1954_uruguay_austria,1954,Austria,Luis Cruz (en contra),,59,False,True
+1954_uruguay_austria,1954,Austria,Ernst Ocwirk,,89,False,False
+1954_hungria_alemania_occidental_2,1954,Hungría,Ferenc Puskas,,6,False,False
+1954_hungria_alemania_occidental_2,1954,Hungría,Zoltan Czibor,,8,False,False
+1954_hungria_alemania_occidental_2,1954,Alemania Occidental,Max Morlock,,10,False,False
+1954_hungria_alemania_occidental_2,1954,Alemania Occidental,Helmut Rahn,,18,False,False
+1954_hungria_alemania_occidental_2,1954,Alemania Occidental,Helmut Rahn,,84,False,False
+1950_brasil_mexico,1950,Brasil,Ademir,,30,False,False
+1950_brasil_mexico,1950,Brasil,Jair,,65,False,False
+1950_brasil_mexico,1950,Brasil,Baltazar,,71,False,False
+1950_brasil_mexico,1950,Brasil,Ademir,,79,False,False
+1950_suecia_italia,1950,Italia,Riccardo Carapellese,,7,False,False
+1950_suecia_italia,1950,Suecia,Hans Jeppsson,,25,False,False
+1950_suecia_italia,1950,Suecia,Sune Andersson,,34,False,False
+1950_suecia_italia,1950,Suecia,Hans Jeppsson,,69,False,False
+1950_suecia_italia,1950,Italia,Ermes Muccinelli,,79,False,False
+1950_yugoslavia_suiza,1950,Yugoslavia,Rajko Mitic,,59,False,False
+1950_yugoslavia_suiza,1950,Yugoslavia,Kosta Tomasevic,,70,False,False
+1950_yugoslavia_suiza,1950,Yugoslavia,Tihomir Ognjanov,,84,False,False
+1950_inglaterra_chile,1950,Inglaterra,Stan Mortensen,,39,False,False
+1950_inglaterra_chile,1950,Inglaterra,Wilf Mannion,,51,False,False
+1950_espana_estados_unidos,1950,Estados Unidos,Gino Pariani,,17,False,False
+1950_espana_estados_unidos,1950,España,Silvestre Igoa,,81,False,False
+1950_espana_estados_unidos,1950,España,Estanislao Basora,,83,False,False
+1950_espana_estados_unidos,1950,España,Zarra,,89,False,False
+1950_yugoslavia_mexico,1950,Yugoslavia,Stjepan Bobek,,20,False,False
+1950_yugoslavia_mexico,1950,Yugoslavia,Zeljko Cajkovski,,23,False,False
+1950_yugoslavia_mexico,1950,Yugoslavia,Zeljko Cajkovski,,51,False,False
+1950_yugoslavia_mexico,1950,Yugoslavia,Kosta Tomasevic,,81,False,False
+1950_yugoslavia_mexico,1950,México,Hector Ortiz,,89,True,False
+1950_brasil_suiza,1950,Brasil,Alfredo Ii,,3,False,False
+1950_brasil_suiza,1950,Suiza,Jackie Fatton,,17,False,False
+1950_brasil_suiza,1950,Brasil,Baltazar,,32,False,False
+1950_brasil_suiza,1950,Suiza,Jackie Fatton,,88,False,False
+1950_suecia_paraguay,1950,Suecia,Stig Sundqvist,,17,False,False
+1950_suecia_paraguay,1950,Suecia,Karl-Erik Palmer,,26,False,False
+1950_suecia_paraguay,1950,Paraguay,Cesar Lopez Fretes,,35,False,False
+1950_suecia_paraguay,1950,Paraguay,Atilio Lopez,,74,False,False
+1950_estados_unidos_inglaterra,1950,Estados Unidos,Joe Gaetjens,,38,False,False
+1950_espana_chile,1950,España,Estanislao Basora,,17,False,False
+1950_espana_chile,1950,España,Zarra,,30,False,False
+1950_brasil_yugoslavia,1950,Brasil,Ademir,,4,False,False
+1950_brasil_yugoslavia,1950,Brasil,Zizinho,,69,False,False
+1950_uruguay_bolivia,1950,Uruguay,Oscar Miguez,,14,False,False
+1950_uruguay_bolivia,1950,Uruguay,Ernesto Vidal,,18,False,False
+1950_uruguay_bolivia,1950,Uruguay,Juan Schiaffino,,23,False,False
+1950_uruguay_bolivia,1950,Uruguay,Oscar Miguez,,40,False,False
+1950_uruguay_bolivia,1950,Uruguay,Oscar Miguez,,51,False,False
+1950_uruguay_bolivia,1950,Uruguay,Juan Schiaffino,,54,False,False
+1950_uruguay_bolivia,1950,Uruguay,Julio Perez,,83,False,False
+1950_uruguay_bolivia,1950,Uruguay,Alcides Ghiggia,,87,False,False
+1950_suiza_mexico,1950,Suiza,Rene Bader,,10,False,False
+1950_suiza_mexico,1950,Suiza,Kiki Antenen,,44,False,False
+1950_suiza_mexico,1950,México,Horacio Casarin,,89,False,False
+1950_espana_inglaterra,1950,España,Zarra,,48,False,False
+1950_chile_estados_unidos,1950,Chile,Jorge Robledo,,16,False,False
+1950_chile_estados_unidos,1950,Chile,Atilio Cremaschi,,32,False,False
+1950_chile_estados_unidos,1950,Estados Unidos,Frank Wallace,,47,False,False
+1950_chile_estados_unidos,1950,Estados Unidos,Joe Maca,,48,True,False
+1950_chile_estados_unidos,1950,Chile,Andres Prieto,,54,False,False
+1950_chile_estados_unidos,1950,Chile,Atilio Cremaschi,,60,False,False
+1950_chile_estados_unidos,1950,Chile,Fernando Riera,,82,False,False
+1950_italia_paraguay,1950,Italia,Riccardo Carapellese,,12,False,False
+1950_italia_paraguay,1950,Italia,Egisto Pandolfini,,63,False,False
+1950_brasil_suecia,1950,Brasil,Ademir,,17,False,False
+1950_brasil_suecia,1950,Brasil,Ademir,,36,False,False
+1950_brasil_suecia,1950,Brasil,Chico,,39,False,False
+1950_brasil_suecia,1950,Brasil,Ademir,,52,False,False
+1950_brasil_suecia,1950,Brasil,Ademir,,58,False,False
+1950_brasil_suecia,1950,Suecia,Sune Andersson,,67,True,False
+1950_brasil_suecia,1950,Brasil,Maneca,,85,False,False
+1950_brasil_suecia,1950,Brasil,Chico,,88,False,False
+1950_uruguay_espana,1950,Uruguay,Alcides Ghiggia,,29,False,False
+1950_uruguay_espana,1950,España,Estanislao Basora,,37,False,False
+1950_uruguay_espana,1950,España,Estanislao Basora,,39,False,False
+1950_uruguay_espana,1950,Uruguay,Obdulio Varela,,73,False,False
+1950_uruguay_suecia,1950,Suecia,Karl-Erik Palmer,,5,False,False
+1950_uruguay_suecia,1950,Uruguay,Alcides Ghiggia,,39,False,False
+1950_uruguay_suecia,1950,Suecia,Stig Sundqvist,,40,False,False
+1950_uruguay_suecia,1950,Uruguay,Oscar Miguez,,77,False,False
+1950_uruguay_suecia,1950,Uruguay,Oscar Miguez,,85,False,False
+1950_brasil_espana,1950,Brasil,Ademir,,15,False,False
+1950_brasil_espana,1950,Brasil,Jair,,21,False,False
+1950_brasil_espana,1950,Brasil,Chico,,31,False,False
+1950_brasil_espana,1950,Brasil,Chico,,55,False,False
+1950_brasil_espana,1950,Brasil,Ademir,,57,False,False
+1950_brasil_espana,1950,Brasil,Zizinho,,67,False,False
+1950_brasil_espana,1950,España,Silvestre Igoa,,71,False,False
+1950_suecia_espana,1950,Suecia,Stig Sundqvist,,15,False,False
+1950_suecia_espana,1950,Suecia,Bror Mellberg,,33,False,False
+1950_suecia_espana,1950,Suecia,Karl-Erik Palmer,,80,False,False
+1950_suecia_espana,1950,España,Zarra,,82,False,False
+1950_uruguay_brasil,1950,Brasil,Friaca,,47,False,False
+1950_uruguay_brasil,1950,Uruguay,Juan Schiaffino,,66,False,False
+1950_uruguay_brasil,1950,Uruguay,Alcides Ghiggia,,79,False,False
+1938_suiza_alemania,1938,Alemania,Josef Gauchel,,29,False,False
+1938_suiza_alemania,1938,Suiza,Andre Abegglen,,43,False,False
+1938_francia_belgica,1938,Francia,Emile Veinante,,1,False,False
+1938_francia_belgica,1938,Francia,Jean Nicolas,,16,False,False
+1938_francia_belgica,1938,Bélgica,Henri Isemborghs,,38,False,False
+1938_francia_belgica,1938,Francia,Jean Nicolas,,69,False,False
+1938_italia_noruega,1938,Italia,Pietro Ferraris,,2,False,False
+1938_italia_noruega,1938,Noruega,Arne Brustad,,83,False,False
+1938_italia_noruega,1938,Italia,Silvio Piola,,94,False,False
+1938_brasil_polonia,1938,Brasil,Leonidas,,18,False,False
+1938_brasil_polonia,1938,Polonia,Fryedryk Szerfke,,23,True,False
+1938_brasil_polonia,1938,Brasil,Romeu,,25,False,False
+1938_brasil_polonia,1938,Brasil,Peracio,,44,False,False
+1938_brasil_polonia,1938,Polonia,Ernest Wilimowski,,53,False,False
+1938_brasil_polonia,1938,Polonia,Ernest Wilimowski,,59,False,False
+1938_brasil_polonia,1938,Brasil,Peracio,,71,False,False
+1938_brasil_polonia,1938,Polonia,Ernest Wilimowski,,89,False,False
+1938_brasil_polonia,1938,Brasil,Leonidas,,93,False,False
+1938_brasil_polonia,1938,Brasil,Leonidas,,104,False,False
+1938_brasil_polonia,1938,Polonia,Ernest Wilimowski,,118,False,False
+1938_hungria_indias_orientales,1938,Hungría,Vilmos Kohut,,13,False,False
+1938_hungria_indias_orientales,1938,Hungría,Geza Toldi,,15,False,False
+1938_hungria_indias_orientales,1938,Hungría,Gyorgy Sarosi,,28,False,False
+1938_hungria_indias_orientales,1938,Hungría,Gyula Zsengeller,,35,False,False
+1938_hungria_indias_orientales,1938,Hungría,Gyula Zsengeller,,76,False,False
+1938_hungria_indias_orientales,1938,Hungría,Gyorgy Sarosi,,89,False,False
+1938_checoslovaquia_holanda,1938,Checoslovaquia,Josef Kostalek,,93,False,False
+1938_checoslovaquia_holanda,1938,Checoslovaquia,Oldrich Nejedly,,111,False,False
+1938_checoslovaquia_holanda,1938,Checoslovaquia,Josef Zeman,,118,False,False
+1938_cuba_rumania,1938,Rumania,Silviu Bindea,,35,False,False
+1938_cuba_rumania,1938,Cuba,Hector Socorro,,44,False,False
+1938_cuba_rumania,1938,Cuba,Jose Magrina,,69,False,False
+1938_cuba_rumania,1938,Rumania,Iuliu Baratky,,88,False,False
+1938_cuba_rumania,1938,Cuba,Hector Socorro,,103,False,False
+1938_cuba_rumania,1938,Rumania,Stefan Dobay,,105,False,False
+1938_suiza_alemania_2,1938,Alemania,Wilhelm Hahnemann,,8,False,False
+1938_suiza_alemania_2,1938,Alemania,Ernst Loertscher (en contra),,22,False,True
+1938_suiza_alemania_2,1938,Suiza,Eugen Walachek,,42,False,False
+1938_suiza_alemania_2,1938,Suiza,Fredy Bickel,,64,False,False
+1938_suiza_alemania_2,1938,Suiza,Andre Abegglen,,75,False,False
+1938_suiza_alemania_2,1938,Suiza,Andre Abegglen,,78,False,False
+1938_cuba_rumania_2,1938,Rumania,Stefan Dobay,,28,False,False
+1938_cuba_rumania_2,1938,Cuba,Hector Socorro,,51,False,False
+1938_cuba_rumania_2,1938,Cuba,Tomas Fernandez,,53,False,False
+1938_cuba_suecia,1938,Suecia,Tore Keller,,9,False,False
+1938_cuba_suecia,1938,Suecia,Gustav Wetterstrom,,32,False,False
+1938_cuba_suecia,1938,Suecia,Gustav Wetterstrom,,37,False,False
+1938_cuba_suecia,1938,Suecia,Gustav Wetterstrom,,44,False,False
+1938_cuba_suecia,1938,Suecia,Tore Keller,,80,False,False
+1938_cuba_suecia,1938,Suecia,Tore Keller,,81,False,False
+1938_cuba_suecia,1938,Suecia,Arne Nyberg,,84,False,False
+1938_cuba_suecia,1938,Suecia,Harry Andersson,,90,False,False
+1938_italia_francia,1938,Italia,Gino Colaussi,,9,False,False
+1938_italia_francia,1938,Francia,Oscar Heisserer,,10,False,False
+1938_italia_francia,1938,Italia,Silvio Piola,,51,False,False
+1938_italia_francia,1938,Italia,Silvio Piola,,72,False,False
+1938_hungria_suiza,1938,Hungría,Gyorgy Sarosi,,40,False,False
+1938_hungria_suiza,1938,Hungría,Gyula Zsengeller,,89,False,False
+1938_brasil_checoslovaquia,1938,Brasil,Leonidas,,30,False,False
+1938_brasil_checoslovaquia,1938,Checoslovaquia,Oldrich Nejedly,,65,True,False
+1938_brasil_checoslovaquia_2,1938,Checoslovaquia,Vlastimil Kopecky,,25,False,False
+1938_brasil_checoslovaquia_2,1938,Brasil,Leonidas,,57,False,False
+1938_brasil_checoslovaquia_2,1938,Brasil,Roberto,,63,False,False
+1938_hungria_suecia,1938,Suecia,Arne Nyberg,,1,False,False
+1938_hungria_suecia,1938,Hungría,Sven Jacobsson (en contra),,19,False,True
+1938_hungria_suecia,1938,Hungría,Ferenc Sas,,37,False,False
+1938_hungria_suecia,1938,Hungría,Gyula Zsengeller,,39,False,False
+1938_hungria_suecia,1938,Hungría,Gyorgy Sarosi,,65,False,False
+1938_hungria_suecia,1938,Hungría,Gyula Zsengeller,,85,False,False
+1938_brasil_italia,1938,Italia,Gino Colaussi,,51,False,False
+1938_brasil_italia,1938,Italia,Giuseppe Meazza,,60,True,False
+1938_brasil_italia,1938,Brasil,Romeu,,87,False,False
+1938_brasil_suecia,1938,Suecia,Sven Jonasson,,28,False,False
+1938_brasil_suecia,1938,Suecia,Arne Nyberg,,38,False,False
+1938_brasil_suecia,1938,Brasil,Romeu,,44,False,False
+1938_brasil_suecia,1938,Brasil,Leonidas,,63,False,False
+1938_brasil_suecia,1938,Brasil,Leonidas,,74,False,False
+1938_brasil_suecia,1938,Brasil,Peracio,,80,False,False
+1938_italia_hungria,1938,Italia,Gino Colaussi,,6,False,False
+1938_italia_hungria,1938,Hungría,Pal Titkos,,8,False,False
+1938_italia_hungria,1938,Italia,Silvio Piola,,16,False,False
+1938_italia_hungria,1938,Italia,Gino Colaussi,,35,False,False
+1938_italia_hungria,1938,Hungría,Gyorgy Sarosi,,70,False,False
+1938_italia_hungria,1938,Italia,Silvio Piola,,82,False,False
+1934_alemania_belgica,1934,Alemania,Stanislaus Kobierski,,25,False,False
+1934_alemania_belgica,1934,Bélgica,Bernard Voorhoof,,29,False,False
+1934_alemania_belgica,1934,Bélgica,Bernard Voorhoof,,43,False,False
+1934_alemania_belgica,1934,Alemania,Otto Siffling,,49,False,False
+1934_alemania_belgica,1934,Alemania,Edmund Conen,,66,False,False
+1934_alemania_belgica,1934,Alemania,Edmund Conen,,70,False,False
+1934_alemania_belgica,1934,Alemania,Edmund Conen,,87,False,False
+1934_suecia_argentina,1934,Argentina,Ernesto Belis,,4,False,False
+1934_suecia_argentina,1934,Suecia,Sven Jonasson,,9,False,False
+1934_suecia_argentina,1934,Argentina,Alberto Galateo,,48,False,False
+1934_suecia_argentina,1934,Suecia,Sven Jonasson,,67,False,False
+1934_suecia_argentina,1934,Suecia,Knut Kroon,,79,False,False
+1934_italia_estados_unidos,1934,Italia,Angelo Schiavio,,18,False,False
+1934_italia_estados_unidos,1934,Italia,Raimundo Orsi,,20,False,False
+1934_italia_estados_unidos,1934,Italia,Angelo Schiavio,,29,False,False
+1934_italia_estados_unidos,1934,Estados Unidos,Aldo Donelli,,57,False,False
+1934_italia_estados_unidos,1934,Italia,Giovanni Ferrari,,63,False,False
+1934_italia_estados_unidos,1934,Italia,Angelo Schiavio,,64,False,False
+1934_italia_estados_unidos,1934,Italia,Raimundo Orsi,,69,False,False
+1934_italia_estados_unidos,1934,Italia,Giuseppe Meazza,,90,False,False
+1934_hungria_egipto,1934,Hungría,Pal Teleki,,11,False,False
+1934_hungria_egipto,1934,Hungría,Geza Toldi,,27,False,False
+1934_hungria_egipto,1934,Egipto,Abdulrahman Fawzi,,31,False,False
+1934_hungria_egipto,1934,Egipto,Abdulrahman Fawzi,,39,False,False
+1934_hungria_egipto,1934,Hungría,Jeno Vincze,,53,False,False
+1934_hungria_egipto,1934,Hungría,Geza Toldi,,61,False,False
+1934_espana_brasil,1934,España,Iraragorri,,18,True,False
+1934_espana_brasil,1934,España,Iraragorri,,25,False,False
+1934_espana_brasil,1934,España,Isidro Langara,,29,False,False
+1934_espana_brasil,1934,Brasil,Leonidas,,55,False,False
+1934_checoslovaquia_rumania,1934,Rumania,Stefan Dobay,,11,False,False
+1934_checoslovaquia_rumania,1934,Checoslovaquia,Antonin Puc,,50,False,False
+1934_checoslovaquia_rumania,1934,Checoslovaquia,Oldrich Nejedly,,67,False,False
+1934_suiza_holanda,1934,Suiza,Leopold Kielholz,,7,False,False
+1934_suiza_holanda,1934,Paises Bajos,Kick Smit,,19,False,False
+1934_suiza_holanda,1934,Suiza,Leopold Kielholz,,43,False,False
+1934_suiza_holanda,1934,Suiza,Andre Abegglen,,69,False,False
+1934_suiza_holanda,1934,Paises Bajos,Leen Vente,,84,False,False
+1934_austria_francia,1934,Francia,Jean Nicolas,,18,False,False
+1934_austria_francia,1934,Austria,Matthias Sindelar,,44,False,False
+1934_austria_francia,1934,Austria,Toni Schall,,93,False,False
+1934_austria_francia,1934,Austria,Josef Bican,,109,False,False
+1934_austria_francia,1934,Francia,Georges Verriest,,116,True,False
+1934_checoslovaquia_suiza,1934,Suiza,Leopold Kielholz,,18,False,False
+1934_checoslovaquia_suiza,1934,Checoslovaquia,Frantisek Svoboda,,24,False,False
+1934_checoslovaquia_suiza,1934,Checoslovaquia,Frantisek Svoboda,,49,False,False
+1934_checoslovaquia_suiza,1934,Suiza,Willy Jaeggi,,78,False,False
+1934_checoslovaquia_suiza,1934,Checoslovaquia,Oldrich Nejedly,,82,False,False
+1934_austria_hungria,1934,Austria,Johann Horvath,,8,False,False
+1934_austria_hungria,1934,Austria,Karl Zischek,,51,False,False
+1934_austria_hungria,1934,Hungría,Gyorgy Sarosi,,60,True,False
+1934_alemania_suecia,1934,Alemania,Karl Hohmann,,60,False,False
+1934_alemania_suecia,1934,Alemania,Karl Hohmann,,63,False,False
+1934_alemania_suecia,1934,Suecia,Gosta Dunker,,82,False,False
+1934_italia_espana,1934,España,Luis Regueiro,,30,False,False
+1934_italia_espana,1934,Italia,Giovanni Ferrari,,44,False,False
+1934_italia_espana_2,1934,Italia,Giuseppe Meazza,,11,False,False
+1934_checoslovaquia_alemania,1934,Checoslovaquia,Oldrich Nejedly,,21,False,False
+1934_checoslovaquia_alemania,1934,Alemania,Rudolf Noack,,62,False,False
+1934_checoslovaquia_alemania,1934,Checoslovaquia,Oldrich Nejedly,,69,False,False
+1934_checoslovaquia_alemania,1934,Checoslovaquia,Oldrich Nejedly,,80,False,False
+1934_italia_austria,1934,Italia,Enrique Guaita,,19,False,False
+1934_austria_alemania,1934,Alemania,Ernest Lehner,,1,False,False
+1934_austria_alemania,1934,Alemania,Edmund Conen,,27,False,False
+1934_austria_alemania,1934,Austria,Johann Horvath,,28,False,False
+1934_austria_alemania,1934,Alemania,Ernest Lehner,,42,False,False
+1934_austria_alemania,1934,Austria,Karl Sesta,,54,False,False
+1934_italia_checoslovaquia,1934,Checoslovaquia,Antonin Puc,,76,False,False
+1934_italia_checoslovaquia,1934,Italia,Raimundo Orsi,,81,False,False
+1934_italia_checoslovaquia,1934,Italia,Angelo Schiavio,,95,False,False
+1930_francia_mexico,1930,Francia,Lucien Laurent,,19,False,False
+1930_francia_mexico,1930,Francia,Marcel Langiller,,40,False,False
+1930_francia_mexico,1930,Francia,Andre Maschinot,,43,False,False
+1930_francia_mexico,1930,México,Juan Carreno,,70,False,False
+1930_francia_mexico,1930,Francia,Andre Maschinot,,87,False,False
+1930_estados_unidos_belgica,1930,Estados Unidos,Bart Mcghee,,23,False,False
+1930_estados_unidos_belgica,1930,Estados Unidos,Tom Florie,,45,False,False
+1930_estados_unidos_belgica,1930,Estados Unidos,Bert Patenaude,,69,False,False
+1930_rumania_peru,1930,Rumania,Adalbert Desu,,1,False,False
+1930_rumania_peru,1930,Perú,Luis Souza,,75,False,False
+1930_rumania_peru,1930,Rumania,Constantin Stanciu,,79,False,False
+1930_rumania_peru,1930,Rumania,Nicolae Kovacs,,89,False,False
+1930_yugoslavia_brasil,1930,Yugoslavia,Aleksandar Tirnanic,,21,False,False
+1930_yugoslavia_brasil,1930,Yugoslavia,Ivica Bek,,30,False,False
+1930_yugoslavia_brasil,1930,Brasil,Preguinho,,62,False,False
+1930_argentina_francia,1930,Argentina,Luis Monti,,81,False,False
+1930_chile_mexico,1930,Chile,Carlos Vidal,,3,False,False
+1930_chile_mexico,1930,Chile,Manuel Rosas (en contra),,51,False,True
+1930_chile_mexico,1930,Chile,Carlos Vidal,,65,False,False
+1930_yugoslavia_bolivia,1930,Yugoslavia,Ivica Bek,,60,False,False
+1930_yugoslavia_bolivia,1930,Yugoslavia,Blagoje Marjanovic,,65,False,False
+1930_yugoslavia_bolivia,1930,Yugoslavia,Ivica Bek,,67,False,False
+1930_yugoslavia_bolivia,1930,Yugoslavia,Djordje Vujadinovic,,85,False,False
+1930_estados_unidos_paraguay,1930,Estados Unidos,Bert Patenaude,,10,False,False
+1930_estados_unidos_paraguay,1930,Estados Unidos,Bert Patenaude,,15,False,False
+1930_estados_unidos_paraguay,1930,Estados Unidos,Bert Patenaude,,50,False,False
+1930_uruguay_peru,1930,Uruguay,Hector Castro,,60,False,False
+1930_argentina_mexico,1930,Argentina,Guillermo Stabile,,8,False,False
+1930_argentina_mexico,1930,Argentina,Adolfo Zumelzu,,12,False,False
+1930_argentina_mexico,1930,Argentina,Guillermo Stabile,,17,False,False
+1930_argentina_mexico,1930,México,Manuel Rosas,,42,True,False
+1930_argentina_mexico,1930,Argentina,Francisco Varallo,,53,False,False
+1930_argentina_mexico,1930,Argentina,Adolfo Zumelzu,,55,False,False
+1930_argentina_mexico,1930,México,Manuel Rosas,,65,False,False
+1930_argentina_mexico,1930,México,Roberto Gayon,,75,False,False
+1930_argentina_mexico,1930,Argentina,Guillermo Stabile,,80,False,False
+1930_chile_francia,1930,Chile,Guillermo Subiabre,,65,False,False
+1930_paraguay_belgica,1930,Paraguay,Luis Vargas Pena,,40,False,False
+1930_brasil_bolivia,1930,Brasil,Moderato,,37,False,False
+1930_brasil_bolivia,1930,Brasil,Preguinho,,67,False,False
+1930_brasil_bolivia,1930,Brasil,Moderato,,73,False,False
+1930_brasil_bolivia,1930,Brasil,Preguinho,,83,False,False
+1930_uruguay_rumania,1930,Uruguay,Pablo Dorado,,7,False,False
+1930_uruguay_rumania,1930,Uruguay,Hector Scarone,,24,False,False
+1930_uruguay_rumania,1930,Uruguay,Juan Anselmo,,30,False,False
+1930_uruguay_rumania,1930,Uruguay,Pedro Cea,,35,False,False
+1930_argentina_chile,1930,Argentina,Guillermo Stabile,,12,False,False
+1930_argentina_chile,1930,Argentina,Guillermo Stabile,,13,False,False
+1930_argentina_chile,1930,Chile,Guillermo Subiabre,,15,False,False
+1930_argentina_chile,1930,Argentina,Mario Evaristo,,51,False,False
+1930_argentina_estados_unidos,1930,Argentina,Luis Monti,,20,False,False
+1930_argentina_estados_unidos,1930,Argentina,Alejandro Scopelli,,56,False,False
+1930_argentina_estados_unidos,1930,Argentina,Guillermo Stabile,,69,False,False
+1930_argentina_estados_unidos,1930,Argentina,Carlos Peucelle,,80,False,False
+1930_argentina_estados_unidos,1930,Argentina,Carlos Peucelle,,85,False,False
+1930_argentina_estados_unidos,1930,Argentina,Guillermo Stabile,,87,False,False
+1930_argentina_estados_unidos,1930,Estados Unidos,Jim Brown,,89,False,False
+1930_uruguay_yugoslavia,1930,Yugoslavia,Branislav Sekulic,,4,False,False
+1930_uruguay_yugoslavia,1930,Uruguay,Pedro Cea,,18,False,False
+1930_uruguay_yugoslavia,1930,Uruguay,Juan Anselmo,,20,False,False
+1930_uruguay_yugoslavia,1930,Uruguay,Juan Anselmo,,31,False,False
+1930_uruguay_yugoslavia,1930,Uruguay,Victoriano Iriarte,,61,False,False
+1930_uruguay_yugoslavia,1930,Uruguay,Pedro Cea,,67,False,False
+1930_uruguay_yugoslavia,1930,Uruguay,Pedro Cea,,72,False,False
+1930_argentina_uruguay,1930,Uruguay,Pablo Dorado,,12,False,False
+1930_argentina_uruguay,1930,Argentina,Carlos Peucelle,,20,False,False
+1930_argentina_uruguay,1930,Argentina,Guillermo Stabile,,37,False,False
+1930_argentina_uruguay,1930,Uruguay,Pedro Cea,,57,False,False
+1930_argentina_uruguay,1930,Uruguay,Victoriano Iriarte,,68,False,False
+1930_argentina_uruguay,1930,Uruguay,Hector Castro,,89,False,False
