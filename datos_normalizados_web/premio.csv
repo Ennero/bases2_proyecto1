@@ -1,0 +1,108 @@
+﻿anio,premio,tipo_destinatario,jugador,jugador_slug,seleccion
+2022,Balón de Oro,jugador,Lionel Messi,lionel_messi,Argentina
+2022,Balón de Plata,jugador,Kylian Mbappé,kylian_mbappe,Francia
+2022,Balón de Bronce,jugador,Luka Modric,luka_modric,Croacia
+2022,Botín de Oro,jugador,Kylian Mbappé,kylian_mbappe,Francia
+2022,Botín de Plata,jugador,Lionel Messi,lionel_messi,Argentina
+2022,Botín de Bronce,jugador,Olivier Giroud,olivier_giroud,Francia
+2022,Guante de Oro,jugador,Emiliano Martinez,emiliano_martinez,Argentina
+2022,Mejor Jugador Joven,jugador,Enzo Fernandez,enzo_fernandez,Argentina
+2022,FIFA Fair Play,seleccion,,,Inglaterra
+2018,Balón de Oro,jugador,Luka Modric,luka_modric,Croacia
+2018,Balón de Plata,jugador,Eden Hazard,eden_hazard,Bélgica
+2018,Balón de Bronce,jugador,Antoine Griezmann,antoine_griezmann,Francia
+2018,Botín de Oro,jugador,Harry Kane,harry_kane,Inglaterra
+2018,Botín de Plata,jugador,Antoine Griezmann,antoine_griezmann,Francia
+2018,Botín de Bronce,jugador,Romelu Lukaku,romelu_lukaku,Bélgica
+2018,Guante de Oro,jugador,Thibaut Courtois,thibaut_courtois,Bélgica
+2018,Mejor Jugador Joven,jugador,Kylian Mbappé,kylian_mbappe,Francia
+2018,FIFA Fair Play,seleccion,,,España
+2014,Balón de Oro,jugador,Lionel Messi,lionel_messi,Argentina
+2014,Balón de Plata,jugador,Thomas Müller,thomas_mueller,Alemania
+2014,Balón de Bronce,jugador,Arjen Robben,arjen_robben,Paises Bajos
+2014,Botín de Oro,jugador,James Rodríguez,james_rodriguez,Colombia
+2014,Botín de Plata,jugador,Thomas Müller,thomas_mueller,Alemania
+2014,Botín de Bronce,jugador,Neymar Jr.,neymar,Brasil
+2014,Guante de Oro,jugador,Manuel Neuer,manuel_neuer,Alemania
+2014,Mejor Jugador Joven,jugador,Paul Pogba,paul_pogba,Francia
+2014,FIFA Fair Play,seleccion,,,Colombia
+2010,Balón de Oro,jugador,Diego Forlan,diego_forlan,Uruguay
+2010,Balón de Plata,jugador,Wesley Sneijder,wesley_sneijder,Paises Bajos
+2010,Balón de Bronce,jugador,David Villa,david_villa,España
+2010,Botín de Oro,jugador,Thomas Müller,thomas_mueller,Alemania
+2010,Botín de Plata,jugador,David Villa,david_villa,España
+2010,Botín de Bronce,jugador,Wesley Sneijder,wesley_sneijder,Paises Bajos
+2010,Guante de Oro,jugador,Iker Casillas,iker_casillas,España
+2010,Mejor Jugador Joven,jugador,Thomas Müller,thomas_mueller,Alemania
+2010,FIFA Fair Play,seleccion,,,España
+2006,Balón de Oro,jugador,Zinedine Zidane,zinedine_zidane,Francia
+2006,Balón de Plata,jugador,Fabio Cannavaro,fabio_cannavaro,Italia
+2006,Balón de Bronce,jugador,Andrea Pirlo,andrea_pirlo,Italia
+2006,Botín de Oro,jugador,Miroslav Klose,miroslav_klose,Alemania
+2006,Botín de Plata,jugador,Hernan Crespo,hernan_crespo,Argentina
+2006,Botín de Bronce,jugador,Ronaldo,ronaldo,Brasil
+2006,Guante de Oro,jugador,Gianluigi Buffon,gianluigi_buffon,Italia
+2006,Mejor Jugador Joven,jugador,Lukas Podolski,lukas_podolski,Alemania
+2006,FIFA Fair Play,seleccion,,,Brasil
+2006,Equipo Más Entretenido,seleccion,,,Portugal
+2002,Balón de Oro,jugador,Oliver Kahn,oliver_kahn,Alemania
+2002,Balón de Plata,jugador,Ronaldo,ronaldo,Brasil
+2002,Balón de Bronce,jugador,Myung Bo Hong,myung_bo_hong,Corea del Sur
+2002,Botín de Oro,jugador,Ronaldo,ronaldo,Brasil
+2002,Guante de Oro,jugador,Oliver Kahn,oliver_kahn,Alemania
+2002,Mejor Jugador Joven,jugador,Landon Donovan,landon_donovan,Estados Unidos
+2002,FIFA Fair Play,seleccion,,,Bélgica
+2002,Equipo Más Entretenido,seleccion,,,Corea del Sur
+1998,Balón de Oro,jugador,Ronaldo,ronaldo,Brasil
+1998,Balón de Plata,jugador,Davor Suker,davor_suker,Croacia
+1998,Balón de Bronce,jugador,Lilian Thuram,lilian_thuram,Francia
+1998,Botín de Oro,jugador,Davor Suker,davor_suker,Croacia
+1998,Guante de Oro,jugador,Fabien Barthez,fabien_barthez,Francia
+1998,Mejor Jugador Joven,jugador,Michael Owen,michael_owen,Inglaterra
+1998,FIFA Fair Play,seleccion,,,Francia
+1998,Equipo Más Entretenido,seleccion,,,Francia
+1994,Balón de Oro,jugador,Romario,romario,Brasil
+1994,Balón de Plata,jugador,Roberto Baggio,roberto_baggio,Italia
+1994,Balón de Bronce,jugador,Hristo Stoichkov,hristo_stoichkov,Bulgaria
+1994,Botín de Oro,jugador,Oleg Salenko,oleg_salenko,Rusia
+1994,Guante de Oro,jugador,Michel Preudhomme,michel_preudhomme,Bélgica
+1994,Mejor Jugador Joven,jugador,Marc Overmars,marc_overmars,Paises Bajos
+1994,FIFA Fair Play,seleccion,,,Brasil
+1994,Equipo Más Entretenido,seleccion,,,Brasil
+1990,Balón de Oro,jugador,Salvatore Schillaci,salvatore_schillaci,Italia
+1990,Balón de Plata,jugador,Lothar Matthaeus,lothar_matthaeus,Alemania Occidental
+1990,Balón de Bronce,jugador,Diego Maradona,diego_maradona,Argentina
+1990,Botín de Oro,jugador,Salvatore Schillaci,salvatore_schillaci,Italia
+1990,Mejor Jugador Joven,jugador,Robert Prosinecki,robert_prosinecki,Yugoslavia
+1990,FIFA Fair Play,seleccion,,,Inglaterra
+1986,Balón de Oro,jugador,Diego Maradona,diego_maradona,Argentina
+1986,Balón de Plata,jugador,Harald Schumacher,harald_schumacher,Alemania Occidental
+1986,Balón de Bronce,jugador,Preben Elkjaer Larsen,preben_elkjaer_larsen,Dinamarca
+1986,Botín de Oro,jugador,Gary Lineker,gary_lineker,Inglaterra
+1986,Mejor Jugador Joven,jugador,Enzo Scifo,enzo_scifo,Bélgica
+1986,FIFA Fair Play,seleccion,,,Brasil
+1982,Balón de Oro,jugador,Paolo Rossi,paolo_rossi,Italia
+1982,Balón de Plata,jugador,Falcao,falcao,Brasil
+1982,Balón de Bronce,jugador,Karl-Heinz Rummenigge,karl_heinz_rummenigge,Alemania Occidental
+1982,Botín de Oro,jugador,Paolo Rossi,paolo_rossi,Italia
+1982,Mejor Jugador Joven,jugador,Manuel Amoros,manuel_amoros,Francia
+1982,FIFA Fair Play,seleccion,,,Brasil
+1978,Botín de Oro,jugador,Mario Kempes,mario_kempes,Argentina
+1978,Mejor Jugador Joven,jugador,Antonio Cabrini,antonio_cabrini,Italia
+1978,FIFA Fair Play,seleccion,,,Argentina
+1974,Botín de Oro,jugador,Grzegorz Lato,grzegorz_lato,Polonia
+1974,Mejor Jugador Joven,jugador,Wladyslaw Zmuda,wladyslaw_zmuda,Polonia
+1970,Botín de Oro,jugador,Gerd Mueller,gerd_mueller,Alemania Occidental
+1970,Mejor Jugador Joven,jugador,Teofilo Cubillas,teofilo_cubillas,Perú
+1970,FIFA Fair Play,seleccion,,,Perú
+1966,Botín de Oro,jugador,Eusebio,eusebio,Portugal
+1966,Mejor Jugador Joven,jugador,Franz Beckenbauer,franz_beckenbauer,Alemania Occidental
+1962,Botín de Oro,jugador,Florian Albert,florian_albert,Hungría
+1962,Mejor Jugador Joven,jugador,Florian Albert,florian_albert,Hungría
+1958,Botín de Oro,jugador,Just Fontaine,just_fontaine,Francia
+1958,Mejor Jugador Joven,jugador,Pelé,pele,Brasil
+1954,Botín de Oro,jugador,Sandor Kocsis,sandor_kocsis,Hungría
+1950,Botín de Oro,jugador,Ademir,ademir,Brasil
+1938,Botín de Oro,jugador,Leonidas,leonidas,Brasil
+1934,Botín de Oro,jugador,Oldrich Nejedly,oldrich_nejedly,Checoslovaquia
+1930,Botín de Oro,jugador,Guillermo Stabile,guillermo_stabile,Argentina

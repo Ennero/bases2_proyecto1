@@ -212,8 +212,10 @@ psql -h <host> -U <user> -d <database> -f py/db/postgres_schema.sql
 Revisa las variables `\set` del inicio, por ejemplo:
 
 ```sql
-\set f_partidos 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/partido.csv'
+\set f_partidos 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados_web/partido.csv'
 ```
+
+Si prefieres cargar la salida obtenida desde el espejo local, cambia esas rutas a `datos_normalizados_local`.
 
 ### 3. Ejecutar el ETL
 

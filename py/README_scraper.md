@@ -1,6 +1,6 @@
 # Scraper normalizado de Mundiales
 
-El script principal es `py/scraping_normalizado.py`.
+El script principal y único flujo de extracción vigente es `py/scraping_normalizado.py`.
 
 Genera CSV listos para cargarse en una base relacional y ahora puede trabajar en dos modos:
 
