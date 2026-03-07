@@ -1,6 +1,6 @@
 Project mundiales_model {
   database_type: 'PostgreSQL'
-  Note: 'Modelo alineado con postgres_schema.sql y sin prefijo wc'
+  Note: 'Modelo alineado con postgres_schema.sql, nombres en singular y sin prefijo wc'
 }
 
 Enum tipo_tarjeta {
@@ -26,15 +26,15 @@ Enum rol_plantel {
 }
 
 Enum source_table_resolucion {
-  goles
-  tarjetas
-  cambios_entrada
-  cambios_salida
-  apariciones_partido
-  penales
+  gol
+  tarjeta
+  cambio_entrada
+  cambio_salida
+  aparicion_partido
+  penal
 }
 
-Table mundiales {
+Table mundial {
   anio integer [pk]
   sede text
   campeon text
@@ -47,7 +47,7 @@ Table mundiales {
   promedio_gol decimal(6,2)
 }
 
-Table selecciones {
+Table seleccion {
   seleccion_id bigint [pk, increment]
   slug text [not null, unique]
   nombre text [not null]
@@ -63,14 +63,14 @@ Table selecciones {
   posicion_historica text
 }
 
-Table selecciones_alias {
+Table seleccion_alias {
   alias_slug text [pk]
   alias_nombre text [not null]
   seleccion_id bigint [not null]
   notas text
 }
 
-Table jugadores {
+Table jugador {
   jugador_id bigint [pk, increment]
   slug text [unique]
   nombre text [not null]
@@ -91,7 +91,7 @@ Table jugadores {
   promedio_gol decimal(6,2)
 }
 
-Table partidos {
+Table partido {
   partido_id bigint [pk, increment]
   slug text [not null, unique]
   anio integer [not null]
@@ -107,7 +107,7 @@ Table partidos {
   resultado_penales text
 }
 
-Table apariciones_partido {
+Table aparicion_partido {
   aparicion_id bigint [pk, increment]
   partido_slug text [not null]
   anio integer [not null]
@@ -126,7 +126,7 @@ Table apariciones_partido {
   }
 }
 
-Table goles {
+Table gol {
   gol_id bigint [pk, increment]
   partido_slug text [not null]
   anio integer [not null]
@@ -140,7 +140,7 @@ Table goles {
   es_autogol boolean [not null, default: false]
 }
 
-Table tarjetas {
+Table tarjeta {
   tarjeta_id bigint [pk, increment]
   partido_slug text [not null]
   anio integer [not null]
@@ -153,7 +153,7 @@ Table tarjetas {
   minuto text
 }
 
-Table cambios {
+Table cambio {
   cambio_id bigint [pk, increment]
   partido_slug text [not null]
   anio integer [not null]
@@ -168,7 +168,7 @@ Table cambios {
   minuto text
 }
 
-Table penales {
+Table penal {
   penal_id bigint [pk, increment]
   partido_slug text [not null]
   anio integer [not null]
@@ -185,7 +185,7 @@ Table penales {
   }
 }
 
-Table grupos {
+Table grupo {
   grupo_id bigint [pk, increment]
   anio integer [not null]
   grupo text [not null]
@@ -207,7 +207,7 @@ Table grupos {
   }
 }
 
-Table posiciones_finales {
+Table posicion_final {
   posicion_final_id bigint [pk, increment]
   anio integer [not null]
   posicion integer [not null]
@@ -219,7 +219,7 @@ Table posiciones_finales {
   }
 }
 
-Table goleadores {
+Table goleador {
   goleador_id bigint [pk, increment]
   anio integer [not null]
   jugador text [not null]
@@ -234,7 +234,7 @@ Table goleadores {
   }
 }
 
-Table premios {
+Table premio {
   premio_id bigint [pk, increment]
   anio integer [not null]
   premio text [not null]
@@ -251,7 +251,7 @@ Table premios {
   }
 }
 
-Table planteles {
+Table plantel {
   plantel_id bigint [pk, increment]
   anio integer [not null]
   seleccion_nombre text
@@ -274,7 +274,7 @@ Table planteles {
   }
 }
 
-Table participaciones_mundial {
+Table participacion_mundial {
   participacion_id bigint [pk, increment]
   anio integer [not null]
   seleccion_nombre text [not null]
@@ -321,57 +321,57 @@ Table resolucion_identidad_jugador {
   }
 }
 
-Ref: selecciones_alias.seleccion_id > selecciones.seleccion_id
-Ref: jugadores.seleccion_id > selecciones.seleccion_id
-Ref: partidos.anio > mundiales.anio
-Ref: partidos.local_seleccion_id > selecciones.seleccion_id
-Ref: partidos.visitante_seleccion_id > selecciones.seleccion_id
-Ref: apariciones_partido.partido_slug > partidos.slug
-Ref: apariciones_partido.anio > mundiales.anio
-Ref: apariciones_partido.seleccion_id > selecciones.seleccion_id
-Ref: apariciones_partido.jugador_slug > jugadores.slug
-Ref: apariciones_partido.jugador_id > jugadores.jugador_id
-Ref: goles.partido_slug > partidos.slug
-Ref: goles.anio > mundiales.anio
-Ref: goles.seleccion_id > selecciones.seleccion_id
-Ref: goles.jugador_slug > jugadores.slug
-Ref: goles.jugador_id > jugadores.jugador_id
-Ref: tarjetas.partido_slug > partidos.slug
-Ref: tarjetas.anio > mundiales.anio
-Ref: tarjetas.seleccion_id > selecciones.seleccion_id
-Ref: tarjetas.jugador_slug > jugadores.slug
-Ref: tarjetas.jugador_id > jugadores.jugador_id
-Ref: cambios.partido_slug > partidos.slug
-Ref: cambios.anio > mundiales.anio
-Ref: cambios.seleccion_id > selecciones.seleccion_id
-Ref: cambios.sale_slug > jugadores.slug
-Ref: cambios.sale_jugador_id > jugadores.jugador_id
-Ref: cambios.entra_slug > jugadores.slug
-Ref: cambios.entra_jugador_id > jugadores.jugador_id
-Ref: penales.partido_slug > partidos.slug
-Ref: penales.anio > mundiales.anio
-Ref: penales.seleccion_id > selecciones.seleccion_id
-Ref: penales.jugador_slug > jugadores.slug
-Ref: penales.jugador_id > jugadores.jugador_id
-Ref: grupos.anio > mundiales.anio
-Ref: grupos.seleccion_id > selecciones.seleccion_id
-Ref: posiciones_finales.anio > mundiales.anio
-Ref: posiciones_finales.seleccion_id > selecciones.seleccion_id
-Ref: goleadores.anio > mundiales.anio
-Ref: goleadores.jugador_slug > jugadores.slug
-Ref: goleadores.jugador_id > jugadores.jugador_id
-Ref: goleadores.seleccion_id > selecciones.seleccion_id
-Ref: premios.anio > mundiales.anio
-Ref: premios.jugador_slug > jugadores.slug
-Ref: premios.jugador_id > jugadores.jugador_id
-Ref: premios.seleccion_id > selecciones.seleccion_id
-Ref: planteles.anio > mundiales.anio
-Ref: planteles.seleccion_id > selecciones.seleccion_id
-Ref: planteles.jugador_slug > jugadores.slug
-Ref: planteles.jugador_id > jugadores.jugador_id
-Ref: participaciones_mundial.anio > mundiales.anio
-Ref: participaciones_mundial.seleccion_id > selecciones.seleccion_id
-Ref: resolucion_identidad_jugador.partido_slug > partidos.slug
-Ref: resolucion_identidad_jugador.anio > mundiales.anio
-Ref: resolucion_identidad_jugador.jugador_id_resuelto > jugadores.jugador_id
-Ref: resolucion_identidad_jugador.jugador_slug_resuelto > jugadores.slug
+Ref: seleccion_alias.seleccion_id > seleccion.seleccion_id
+Ref: jugador.seleccion_id > seleccion.seleccion_id
+Ref: partido.anio > mundial.anio
+Ref: partido.local_seleccion_id > seleccion.seleccion_id
+Ref: partido.visitante_seleccion_id > seleccion.seleccion_id
+Ref: aparicion_partido.partido_slug > partido.slug
+Ref: aparicion_partido.anio > mundial.anio
+Ref: aparicion_partido.seleccion_id > seleccion.seleccion_id
+Ref: aparicion_partido.jugador_slug > jugador.slug
+Ref: aparicion_partido.jugador_id > jugador.jugador_id
+Ref: gol.partido_slug > partido.slug
+Ref: gol.anio > mundial.anio
+Ref: gol.seleccion_id > seleccion.seleccion_id
+Ref: gol.jugador_slug > jugador.slug
+Ref: gol.jugador_id > jugador.jugador_id
+Ref: tarjeta.partido_slug > partido.slug
+Ref: tarjeta.anio > mundial.anio
+Ref: tarjeta.seleccion_id > seleccion.seleccion_id
+Ref: tarjeta.jugador_slug > jugador.slug
+Ref: tarjeta.jugador_id > jugador.jugador_id
+Ref: cambio.partido_slug > partido.slug
+Ref: cambio.anio > mundial.anio
+Ref: cambio.seleccion_id > seleccion.seleccion_id
+Ref: cambio.sale_slug > jugador.slug
+Ref: cambio.sale_jugador_id > jugador.jugador_id
+Ref: cambio.entra_slug > jugador.slug
+Ref: cambio.entra_jugador_id > jugador.jugador_id
+Ref: penal.partido_slug > partido.slug
+Ref: penal.anio > mundial.anio
+Ref: penal.seleccion_id > seleccion.seleccion_id
+Ref: penal.jugador_slug > jugador.slug
+Ref: penal.jugador_id > jugador.jugador_id
+Ref: grupo.anio > mundial.anio
+Ref: grupo.seleccion_id > seleccion.seleccion_id
+Ref: posicion_final.anio > mundial.anio
+Ref: posicion_final.seleccion_id > seleccion.seleccion_id
+Ref: goleador.anio > mundial.anio
+Ref: goleador.jugador_slug > jugador.slug
+Ref: goleador.jugador_id > jugador.jugador_id
+Ref: goleador.seleccion_id > seleccion.seleccion_id
+Ref: premio.anio > mundial.anio
+Ref: premio.jugador_slug > jugador.slug
+Ref: premio.jugador_id > jugador.jugador_id
+Ref: premio.seleccion_id > seleccion.seleccion_id
+Ref: plantel.anio > mundial.anio
+Ref: plantel.seleccion_id > seleccion.seleccion_id
+Ref: plantel.jugador_slug > jugador.slug
+Ref: plantel.jugador_id > jugador.jugador_id
+Ref: participacion_mundial.anio > mundial.anio
+Ref: participacion_mundial.seleccion_id > seleccion.seleccion_id
+Ref: resolucion_identidad_jugador.partido_slug > partido.slug
+Ref: resolucion_identidad_jugador.anio > mundial.anio
+Ref: resolucion_identidad_jugador.jugador_id_resuelto > jugador.jugador_id
+Ref: resolucion_identidad_jugador.jugador_slug_resuelto > jugador.slug

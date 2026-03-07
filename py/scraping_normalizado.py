@@ -598,12 +598,12 @@ def extraer_partidos(fuente: FuenteDatos, anios: list[int], carpeta: str) -> Non
                 print(f"    Error detalle {partido['slug']}: {error}")
             partidos.append(fila_partido)
 
-    guardar_csv(deduplicar(partidos, ("slug",)), "partidos.csv", carpeta)
-    guardar_csv(deduplicar(goles, ("partido_slug", "equipo", "jugador", "minuto", "es_penal", "es_autogol")), "goles.csv", carpeta)
-    guardar_csv(deduplicar(apariciones, ("partido_slug", "equipo", "jugador_nombre", "seccion")), "apariciones_partido.csv", carpeta)
-    guardar_csv(deduplicar(tarjetas, ("partido_slug", "equipo", "jugador", "tipo", "minuto")), "tarjetas.csv", carpeta)
-    guardar_csv(deduplicar(cambios, ("partido_slug", "equipo", "sale", "entra", "minuto")), "cambios.csv", carpeta)
-    guardar_csv(deduplicar(penales, ("partido_slug", "equipo", "orden")), "penales.csv", carpeta)
+    guardar_csv(deduplicar(partidos, ("slug",)), "partido.csv", carpeta)
+    guardar_csv(deduplicar(goles, ("partido_slug", "equipo", "jugador", "minuto", "es_penal", "es_autogol")), "gol.csv", carpeta)
+    guardar_csv(deduplicar(apariciones, ("partido_slug", "equipo", "jugador_nombre", "seccion")), "aparicion_partido.csv", carpeta)
+    guardar_csv(deduplicar(tarjetas, ("partido_slug", "equipo", "jugador", "tipo", "minuto")), "tarjeta.csv", carpeta)
+    guardar_csv(deduplicar(cambios, ("partido_slug", "equipo", "sale", "entra", "minuto")), "cambio.csv", carpeta)
+    guardar_csv(deduplicar(penales, ("partido_slug", "equipo", "orden")), "penal.csv", carpeta)
 
 
 def extraer_grupos(fuente: FuenteDatos, anios: list[int], carpeta: str) -> None:
@@ -654,7 +654,7 @@ def extraer_grupos(fuente: FuenteDatos, anios: list[int], carpeta: str) -> None:
                         })
         print(f"  {anio}: grupos procesados")
 
-    guardar_csv(deduplicar(filas, ("anio", "grupo", "seleccion")), "grupos.csv", carpeta)
+    guardar_csv(deduplicar(filas, ("anio", "grupo", "seleccion")), "grupo.csv", carpeta)
 
 
 def extraer_posiciones_finales(fuente: FuenteDatos, anios: list[int], carpeta: str) -> None:
@@ -680,7 +680,7 @@ def extraer_posiciones_finales(fuente: FuenteDatos, anios: list[int], carpeta: s
                     "posicion": posicion,
                     "seleccion": seleccion,
                 })
-    guardar_csv(deduplicar(filas, ("anio", "posicion", "seleccion")), "posiciones_finales.csv", carpeta)
+    guardar_csv(deduplicar(filas, ("anio", "posicion", "seleccion")), "posicion_final.csv", carpeta)
 
 
 def extraer_goleadores(fuente: FuenteDatos, anios: list[int], carpeta: str) -> None:
@@ -714,7 +714,7 @@ def extraer_goleadores(fuente: FuenteDatos, anios: list[int], carpeta: str) -> N
                 "seleccion": obtener_nombre_seleccion_desde_imagen(fila),
                 "goles": goles,
             })
-    guardar_csv(deduplicar(filas, ("anio", "jugador_slug", "seleccion")), "goleadores.csv", carpeta)
+    guardar_csv(deduplicar(filas, ("anio", "jugador_slug", "seleccion")), "goleador.csv", carpeta)
 
 
 def extraer_premios(fuente: FuenteDatos, anios: list[int], carpeta: str) -> None:
@@ -755,7 +755,7 @@ def extraer_premios(fuente: FuenteDatos, anios: list[int], carpeta: str) -> None
                     "jugador_slug": "",
                     "seleccion": limpiar_texto(link_seleccion.get_text()),
                 })
-    guardar_csv(deduplicar(filas, ("anio", "premio", "tipo_destinatario", "jugador_slug", "seleccion")), "premios.csv", carpeta)
+    guardar_csv(deduplicar(filas, ("anio", "premio", "tipo_destinatario", "jugador_slug", "seleccion")), "premio.csv", carpeta)
 
 
 def extraer_planteles(fuente: FuenteDatos, anios: list[int], carpeta: str) -> None:
@@ -862,7 +862,7 @@ def extraer_planteles(fuente: FuenteDatos, anios: list[int], carpeta: str) -> No
                         "rol": rol_actual,
                     })
         print(f"  {anio}: {len(procesados)} planteles")
-    guardar_csv(deduplicar(filas, ("anio", "seleccion_slug", "jugador_slug", "jugador", "rol")), "planteles.csv", carpeta)
+    guardar_csv(deduplicar(filas, ("anio", "seleccion_slug", "jugador_slug", "jugador", "rol")), "plantel.csv", carpeta)
 
 
 def extraer_selecciones(fuente: FuenteDatos, carpeta: str) -> None:
@@ -972,8 +972,8 @@ def extraer_selecciones(fuente: FuenteDatos, carpeta: str) -> None:
         if indice % 10 == 0:
             print(f"    {indice}/{len(hrefs_unicos)} selecciones")
 
-    guardar_csv(deduplicar(selecciones, ("slug",)), "selecciones.csv", carpeta)
-    guardar_csv(deduplicar(participaciones, ("anio", "seleccion_slug")), "participaciones_mundial.csv", carpeta)
+    guardar_csv(deduplicar(selecciones, ("slug",)), "seleccion.csv", carpeta)
+    guardar_csv(deduplicar(participaciones, ("anio", "seleccion_slug")), "participacion_mundial.csv", carpeta)
 
 
 def extraer_jugadores(fuente: FuenteDatos, carpeta: str, limite: int = 0) -> None:
@@ -1090,7 +1090,7 @@ def extraer_jugadores(fuente: FuenteDatos, carpeta: str, limite: int = 0) -> Non
         if indice % 100 == 0:
             print(f"    {indice}/{len(hrefs)} jugadores")
 
-    guardar_csv(deduplicar(filas, ("slug",)), "jugadores.csv", carpeta)
+    guardar_csv(deduplicar(filas, ("slug",)), "jugador.csv", carpeta)
 
 
 def extraer_mundiales_info(fuente: FuenteDatos, anios: list[int], carpeta: str) -> None:
@@ -1157,7 +1157,7 @@ def extraer_mundiales_info(fuente: FuenteDatos, anios: list[int], carpeta: str) 
         filas.append(fila)
         print(f"  {anio}: {fila['campeon'] or 'sin campeón'}")
 
-    guardar_csv(deduplicar(filas, ("anio",)), "mundiales.csv", carpeta)
+    guardar_csv(deduplicar(filas, ("anio",)), "mundial.csv", carpeta)
 
 
 SECCIONES = {

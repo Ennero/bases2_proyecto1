@@ -21,7 +21,7 @@ AS $$
     );
 $$;
 
-CREATE TABLE IF NOT EXISTS mundiales (
+CREATE TABLE IF NOT EXISTS mundial (
     anio integer PRIMARY KEY,
     sede text,
     campeon text,
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS mundiales (
     promedio_gol numeric(6,2)
 );
 
-CREATE TABLE IF NOT EXISTS selecciones (
+CREATE TABLE IF NOT EXISTS seleccion (
     seleccion_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     slug text NOT NULL UNIQUE,
     nombre text NOT NULL,
@@ -50,20 +50,20 @@ CREATE TABLE IF NOT EXISTS selecciones (
     posicion_historica text
 );
 
-CREATE TABLE IF NOT EXISTS selecciones_alias (
+CREATE TABLE IF NOT EXISTS seleccion_alias (
     alias_slug text PRIMARY KEY,
     alias_nombre text NOT NULL,
-    seleccion_id bigint NOT NULL REFERENCES selecciones(seleccion_id),
+    seleccion_id bigint NOT NULL REFERENCES seleccion(seleccion_id),
     notas text
 );
 
-CREATE TABLE IF NOT EXISTS jugadores (
+CREATE TABLE IF NOT EXISTS jugador (
     jugador_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     slug text UNIQUE,
     nombre text NOT NULL,
     nombre_completo text,
     seleccion_nombre text,
-    seleccion_id bigint REFERENCES selecciones(seleccion_id),
+    seleccion_id bigint REFERENCES seleccion(seleccion_id),
     fecha_nacimiento text,
     lugar_nacimiento text,
     posicion text,
@@ -78,30 +78,30 @@ CREATE TABLE IF NOT EXISTS jugadores (
     promedio_gol numeric(6,2)
 );
 
-CREATE TABLE IF NOT EXISTS partidos (
+CREATE TABLE IF NOT EXISTS partido (
     partido_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     slug text NOT NULL UNIQUE,
-    anio integer NOT NULL REFERENCES mundiales(anio),
+    anio integer NOT NULL REFERENCES mundial(anio),
     fecha text,
     etapa text,
     local_nombre text NOT NULL,
     visitante_nombre text NOT NULL,
-    local_seleccion_id bigint REFERENCES selecciones(seleccion_id),
-    visitante_seleccion_id bigint REFERENCES selecciones(seleccion_id),
+    local_seleccion_id bigint REFERENCES seleccion(seleccion_id),
+    visitante_seleccion_id bigint REFERENCES seleccion(seleccion_id),
     resultado text,
     tiempo_extra boolean,
     penales boolean,
     resultado_penales text
 );
 
-CREATE TABLE IF NOT EXISTS apariciones_partido (
+CREATE TABLE IF NOT EXISTS aparicion_partido (
     aparicion_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    partido_slug text NOT NULL REFERENCES partidos(slug),
-    anio integer NOT NULL REFERENCES mundiales(anio),
+    partido_slug text NOT NULL REFERENCES partido(slug),
+    anio integer NOT NULL REFERENCES mundial(anio),
     equipo_nombre text NOT NULL,
-    seleccion_id bigint REFERENCES selecciones(seleccion_id),
-    jugador_slug text REFERENCES jugadores(slug),
-    jugador_id bigint REFERENCES jugadores(jugador_id),
+    seleccion_id bigint REFERENCES seleccion(seleccion_id),
+    jugador_slug text REFERENCES jugador(slug),
+    jugador_id bigint REFERENCES jugador(jugador_id),
     jugador_nombre text NOT NULL,
     posicion text,
     camiseta text,
@@ -110,69 +110,69 @@ CREATE TABLE IF NOT EXISTS apariciones_partido (
     UNIQUE (partido_slug, equipo_nombre, jugador_nombre, seccion)
 );
 
-CREATE TABLE IF NOT EXISTS goles (
+CREATE TABLE IF NOT EXISTS gol (
     gol_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    partido_slug text NOT NULL REFERENCES partidos(slug),
-    anio integer NOT NULL REFERENCES mundiales(anio),
+    partido_slug text NOT NULL REFERENCES partido(slug),
+    anio integer NOT NULL REFERENCES mundial(anio),
     equipo_nombre text NOT NULL,
-    seleccion_id bigint REFERENCES selecciones(seleccion_id),
+    seleccion_id bigint REFERENCES seleccion(seleccion_id),
     jugador text NOT NULL,
-    jugador_slug text REFERENCES jugadores(slug),
-    jugador_id bigint REFERENCES jugadores(jugador_id),
+    jugador_slug text REFERENCES jugador(slug),
+    jugador_id bigint REFERENCES jugador(jugador_id),
     minuto text,
     es_penal boolean NOT NULL DEFAULT false,
     es_autogol boolean NOT NULL DEFAULT false
 );
 
-CREATE TABLE IF NOT EXISTS tarjetas (
+CREATE TABLE IF NOT EXISTS tarjeta (
     tarjeta_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    partido_slug text NOT NULL REFERENCES partidos(slug),
-    anio integer NOT NULL REFERENCES mundiales(anio),
+    partido_slug text NOT NULL REFERENCES partido(slug),
+    anio integer NOT NULL REFERENCES mundial(anio),
     jugador text NOT NULL,
-    jugador_slug text REFERENCES jugadores(slug),
-    jugador_id bigint REFERENCES jugadores(jugador_id),
+    jugador_slug text REFERENCES jugador(slug),
+    jugador_id bigint REFERENCES jugador(jugador_id),
     equipo_nombre text NOT NULL,
-    seleccion_id bigint REFERENCES selecciones(seleccion_id),
+    seleccion_id bigint REFERENCES seleccion(seleccion_id),
     tipo text NOT NULL CHECK (tipo IN ('amarilla', 'roja')),
     minuto text
 );
 
-CREATE TABLE IF NOT EXISTS cambios (
+CREATE TABLE IF NOT EXISTS cambio (
     cambio_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    partido_slug text NOT NULL REFERENCES partidos(slug),
-    anio integer NOT NULL REFERENCES mundiales(anio),
+    partido_slug text NOT NULL REFERENCES partido(slug),
+    anio integer NOT NULL REFERENCES mundial(anio),
     equipo_nombre text NOT NULL,
-    seleccion_id bigint REFERENCES selecciones(seleccion_id),
+    seleccion_id bigint REFERENCES seleccion(seleccion_id),
     sale text,
-    sale_slug text REFERENCES jugadores(slug),
-    sale_jugador_id bigint REFERENCES jugadores(jugador_id),
+    sale_slug text REFERENCES jugador(slug),
+    sale_jugador_id bigint REFERENCES jugador(jugador_id),
     entra text,
-    entra_slug text REFERENCES jugadores(slug),
-    entra_jugador_id bigint REFERENCES jugadores(jugador_id),
+    entra_slug text REFERENCES jugador(slug),
+    entra_jugador_id bigint REFERENCES jugador(jugador_id),
     minuto text
 );
 
-CREATE TABLE IF NOT EXISTS penales (
+CREATE TABLE IF NOT EXISTS penal (
     penal_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    partido_slug text NOT NULL REFERENCES partidos(slug),
-    anio integer NOT NULL REFERENCES mundiales(anio),
+    partido_slug text NOT NULL REFERENCES partido(slug),
+    anio integer NOT NULL REFERENCES mundial(anio),
     equipo_nombre text NOT NULL,
-    seleccion_id bigint REFERENCES selecciones(seleccion_id),
+    seleccion_id bigint REFERENCES seleccion(seleccion_id),
     orden integer NOT NULL,
     jugador text NOT NULL,
-    jugador_slug text REFERENCES jugadores(slug),
-    jugador_id bigint REFERENCES jugadores(jugador_id),
+    jugador_slug text REFERENCES jugador(slug),
+    jugador_id bigint REFERENCES jugador(jugador_id),
     resultado text NOT NULL,
     UNIQUE (partido_slug, equipo_nombre, orden)
 );
 
-CREATE TABLE IF NOT EXISTS grupos (
+CREATE TABLE IF NOT EXISTS grupo (
     grupo_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    anio integer NOT NULL REFERENCES mundiales(anio),
+    anio integer NOT NULL REFERENCES mundial(anio),
     grupo text NOT NULL,
     posicion integer,
     seleccion_nombre text NOT NULL,
-    seleccion_id bigint REFERENCES selecciones(seleccion_id),
+    seleccion_id bigint REFERENCES seleccion(seleccion_id),
     pts integer,
     pj integer,
     pg integer,
@@ -185,54 +185,54 @@ CREATE TABLE IF NOT EXISTS grupos (
     UNIQUE (anio, grupo, seleccion_nombre)
 );
 
-CREATE TABLE IF NOT EXISTS posiciones_finales (
+CREATE TABLE IF NOT EXISTS posicion_final (
     posicion_final_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    anio integer NOT NULL REFERENCES mundiales(anio),
+    anio integer NOT NULL REFERENCES mundial(anio),
     posicion integer NOT NULL,
     seleccion_nombre text NOT NULL,
-    seleccion_id bigint REFERENCES selecciones(seleccion_id),
+    seleccion_id bigint REFERENCES seleccion(seleccion_id),
     UNIQUE (anio, posicion, seleccion_nombre)
 );
 
-CREATE TABLE IF NOT EXISTS goleadores (
+CREATE TABLE IF NOT EXISTS goleador (
     goleador_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    anio integer NOT NULL REFERENCES mundiales(anio),
+    anio integer NOT NULL REFERENCES mundial(anio),
     jugador text NOT NULL,
-    jugador_slug text REFERENCES jugadores(slug),
-    jugador_id bigint REFERENCES jugadores(jugador_id),
+    jugador_slug text REFERENCES jugador(slug),
+    jugador_id bigint REFERENCES jugador(jugador_id),
     seleccion_nombre text,
-    seleccion_id bigint REFERENCES selecciones(seleccion_id),
+    seleccion_id bigint REFERENCES seleccion(seleccion_id),
     goles integer,
     UNIQUE (anio, jugador, seleccion_nombre)
 );
 
-CREATE TABLE IF NOT EXISTS premios (
+CREATE TABLE IF NOT EXISTS premio (
     premio_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    anio integer NOT NULL REFERENCES mundiales(anio),
+    anio integer NOT NULL REFERENCES mundial(anio),
     premio text NOT NULL,
     tipo_destinatario text NOT NULL CHECK (tipo_destinatario IN ('jugador', 'seleccion')),
     jugador text,
-    jugador_slug text REFERENCES jugadores(slug),
-    jugador_id bigint REFERENCES jugadores(jugador_id),
+    jugador_slug text REFERENCES jugador(slug),
+    jugador_id bigint REFERENCES jugador(jugador_id),
     seleccion_nombre text,
-    seleccion_id bigint REFERENCES selecciones(seleccion_id),
+    seleccion_id bigint REFERENCES seleccion(seleccion_id),
     destinatario_key text GENERATED ALWAYS AS (
         coalesce(nullif(jugador_slug, ''), nullif(jugador, ''), slugify_name(nullif(seleccion_nombre, '')), '')
     ) STORED,
     UNIQUE (anio, premio, tipo_destinatario, destinatario_key)
 );
 
-CREATE TABLE IF NOT EXISTS planteles (
+CREATE TABLE IF NOT EXISTS plantel (
     plantel_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    anio integer NOT NULL REFERENCES mundiales(anio),
+    anio integer NOT NULL REFERENCES mundial(anio),
     seleccion_nombre text,
     seleccion_slug text,
     seleccion_key text GENERATED ALWAYS AS (coalesce(nullif(seleccion_slug, ''), nullif(seleccion_nombre, ''), '')) STORED,
-    seleccion_id bigint REFERENCES selecciones(seleccion_id),
+    seleccion_id bigint REFERENCES seleccion(seleccion_id),
     jugador text NOT NULL,
-    jugador_slug text REFERENCES jugadores(slug),
+    jugador_slug text REFERENCES jugador(slug),
     jugador_key text GENERATED ALWAYS AS (coalesce(nullif(jugador_slug, ''), nullif(jugador, ''), '')) STORED,
-    jugador_id bigint REFERENCES jugadores(jugador_id),
+    jugador_id bigint REFERENCES jugador(jugador_id),
     posicion text,
     camiseta text,
     fecha_nacimiento text,
@@ -242,13 +242,13 @@ CREATE TABLE IF NOT EXISTS planteles (
     UNIQUE (anio, jugador_key, seleccion_key, rol)
 );
 
-CREATE TABLE IF NOT EXISTS participaciones_mundial (
+CREATE TABLE IF NOT EXISTS participacion_mundial (
     participacion_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    anio integer NOT NULL REFERENCES mundiales(anio),
+    anio integer NOT NULL REFERENCES mundial(anio),
     seleccion_nombre text NOT NULL,
     seleccion_slug text,
     seleccion_key text GENERATED ALWAYS AS (coalesce(nullif(seleccion_slug, ''), slugify_name(nullif(seleccion_nombre, '')), '')) STORED,
-    seleccion_id bigint REFERENCES selecciones(seleccion_id),
+    seleccion_id bigint REFERENCES seleccion(seleccion_id),
     posicion integer,
     etapa text,
     pts integer,
@@ -265,26 +265,26 @@ CREATE TABLE IF NOT EXISTS participaciones_mundial (
 
 CREATE TABLE IF NOT EXISTS resolucion_identidad_jugador (
     resolucion_id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    source_table text NOT NULL CHECK (source_table IN ('goles', 'tarjetas', 'cambios_entrada', 'cambios_salida', 'apariciones_partido', 'penales')),
+    source_table text NOT NULL CHECK (source_table IN ('gol', 'tarjeta', 'cambio_entrada', 'cambio_salida', 'aparicion_partido', 'penal')),
     source_pk bigint,
-    partido_slug text NOT NULL REFERENCES partidos(slug),
-    anio integer NOT NULL REFERENCES mundiales(anio),
+    partido_slug text NOT NULL REFERENCES partido(slug),
+    anio integer NOT NULL REFERENCES mundial(anio),
     equipo_nombre text,
     equipo_key text GENERATED ALWAYS AS (coalesce(equipo_nombre, '')) STORED,
     jugador_nombre_raw text NOT NULL,
     jugador_slug_raw text,
     minuto text,
     minuto_key text GENERATED ALWAYS AS (coalesce(minuto, '')) STORED,
-    jugador_id_resuelto bigint REFERENCES jugadores(jugador_id),
-    jugador_slug_resuelto text REFERENCES jugadores(slug),
+    jugador_id_resuelto bigint REFERENCES jugador(jugador_id),
+    jugador_slug_resuelto text REFERENCES jugador(slug),
     metodo text NOT NULL DEFAULT 'manual',
     confianza numeric(5,2),
     notas text,
     UNIQUE (source_table, partido_slug, equipo_key, jugador_nombre_raw, minuto_key)
 );
 
-CREATE OR REPLACE VIEW v_jugadores_sin_slug AS
-SELECT 'goles'::text AS source_table,
+CREATE OR REPLACE VIEW v_jugador_sin_slug AS
+SELECT 'gol'::text AS source_table,
        g.gol_id::bigint AS source_pk,
        g.partido_slug,
        g.anio,
@@ -292,10 +292,10 @@ SELECT 'goles'::text AS source_table,
        g.jugador AS jugador_nombre,
        g.jugador_slug,
        g.minuto
-FROM goles g
+FROM gol g
 WHERE g.jugador_slug IS NULL OR btrim(g.jugador_slug) = ''
 UNION ALL
-SELECT 'tarjetas'::text,
+SELECT 'tarjeta'::text,
        t.tarjeta_id::bigint,
        t.partido_slug,
        t.anio,
@@ -303,10 +303,10 @@ SELECT 'tarjetas'::text,
        t.jugador,
        t.jugador_slug,
        t.minuto
-FROM tarjetas t
+FROM tarjeta t
 WHERE t.jugador_slug IS NULL OR btrim(t.jugador_slug) = ''
 UNION ALL
-SELECT 'cambios_entrada'::text,
+SELECT 'cambio_entrada'::text,
        c.cambio_id::bigint,
        c.partido_slug,
        c.anio,
@@ -314,12 +314,12 @@ SELECT 'cambios_entrada'::text,
        c.entra,
        c.entra_slug,
        c.minuto
-FROM cambios c
+FROM cambio c
 WHERE c.entra IS NOT NULL
   AND btrim(c.entra) <> ''
   AND (c.entra_slug IS NULL OR btrim(c.entra_slug) = '')
 UNION ALL
-SELECT 'cambios_salida'::text,
+SELECT 'cambio_salida'::text,
        c.cambio_id::bigint,
        c.partido_slug,
        c.anio,
@@ -327,12 +327,12 @@ SELECT 'cambios_salida'::text,
        c.sale,
        c.sale_slug,
        c.minuto
-FROM cambios c
+FROM cambio c
 WHERE c.sale IS NOT NULL
   AND btrim(c.sale) <> ''
   AND (c.sale_slug IS NULL OR btrim(c.sale_slug) = '')
 UNION ALL
-SELECT 'apariciones_partido'::text,
+SELECT 'aparicion_partido'::text,
        a.aparicion_id::bigint,
        a.partido_slug,
        a.anio,
@@ -340,11 +340,11 @@ SELECT 'apariciones_partido'::text,
        a.jugador_nombre,
        a.jugador_slug,
        NULL::text AS minuto
-FROM apariciones_partido a
+FROM aparicion_partido a
 WHERE a.seccion <> 'entrenador'
   AND (a.jugador_slug IS NULL OR btrim(a.jugador_slug) = '')
 UNION ALL
-SELECT 'penales'::text,
+SELECT 'penal'::text,
        p.penal_id::bigint,
        p.partido_slug,
        p.anio,
@@ -352,37 +352,37 @@ SELECT 'penales'::text,
        p.jugador,
        p.jugador_slug,
        NULL::text AS minuto
-FROM penales p
+FROM penal p
 WHERE p.jugador_slug IS NULL OR btrim(p.jugador_slug) = '';
 
-CREATE INDEX IF NOT EXISTS idx_partidos_anio ON partidos(anio);
-CREATE INDEX IF NOT EXISTS idx_partidos_local_sel ON partidos(local_seleccion_id);
-CREATE INDEX IF NOT EXISTS idx_partidos_visitante_sel ON partidos(visitante_seleccion_id);
+CREATE INDEX IF NOT EXISTS idx_partido_anio ON partido(anio);
+CREATE INDEX IF NOT EXISTS idx_partido_local_sel ON partido(local_seleccion_id);
+CREATE INDEX IF NOT EXISTS idx_partido_visitante_sel ON partido(visitante_seleccion_id);
 
-CREATE INDEX IF NOT EXISTS idx_apariciones_partido_slug ON apariciones_partido(partido_slug);
-CREATE INDEX IF NOT EXISTS idx_apariciones_jugador_slug ON apariciones_partido(jugador_slug);
-CREATE INDEX IF NOT EXISTS idx_apariciones_jugador_id ON apariciones_partido(jugador_id);
+CREATE INDEX IF NOT EXISTS idx_aparicion_partido_slug ON aparicion_partido(partido_slug);
+CREATE INDEX IF NOT EXISTS idx_aparicion_jugador_slug ON aparicion_partido(jugador_slug);
+CREATE INDEX IF NOT EXISTS idx_aparicion_jugador_id ON aparicion_partido(jugador_id);
 
-CREATE INDEX IF NOT EXISTS idx_goles_partido_slug ON goles(partido_slug);
-CREATE INDEX IF NOT EXISTS idx_goles_jugador_slug ON goles(jugador_slug);
-CREATE INDEX IF NOT EXISTS idx_goles_jugador_id ON goles(jugador_id);
+CREATE INDEX IF NOT EXISTS idx_gol_partido_slug ON gol(partido_slug);
+CREATE INDEX IF NOT EXISTS idx_gol_jugador_slug ON gol(jugador_slug);
+CREATE INDEX IF NOT EXISTS idx_gol_jugador_id ON gol(jugador_id);
 
-CREATE INDEX IF NOT EXISTS idx_tarjetas_partido_slug ON tarjetas(partido_slug);
-CREATE INDEX IF NOT EXISTS idx_tarjetas_jugador_slug ON tarjetas(jugador_slug);
-CREATE INDEX IF NOT EXISTS idx_tarjetas_jugador_id ON tarjetas(jugador_id);
+CREATE INDEX IF NOT EXISTS idx_tarjeta_partido_slug ON tarjeta(partido_slug);
+CREATE INDEX IF NOT EXISTS idx_tarjeta_jugador_slug ON tarjeta(jugador_slug);
+CREATE INDEX IF NOT EXISTS idx_tarjeta_jugador_id ON tarjeta(jugador_id);
 
-CREATE INDEX IF NOT EXISTS idx_cambios_partido_slug ON cambios(partido_slug);
-CREATE INDEX IF NOT EXISTS idx_cambios_entra_slug ON cambios(entra_slug);
-CREATE INDEX IF NOT EXISTS idx_cambios_sale_slug ON cambios(sale_slug);
+CREATE INDEX IF NOT EXISTS idx_cambio_partido_slug ON cambio(partido_slug);
+CREATE INDEX IF NOT EXISTS idx_cambio_entra_slug ON cambio(entra_slug);
+CREATE INDEX IF NOT EXISTS idx_cambio_sale_slug ON cambio(sale_slug);
 
-CREATE INDEX IF NOT EXISTS idx_penales_partido_slug ON penales(partido_slug);
-CREATE INDEX IF NOT EXISTS idx_penales_jugador_slug ON penales(jugador_slug);
+CREATE INDEX IF NOT EXISTS idx_penal_partido_slug ON penal(partido_slug);
+CREATE INDEX IF NOT EXISTS idx_penal_jugador_slug ON penal(jugador_slug);
 
-CREATE INDEX IF NOT EXISTS idx_grupos_anio_grupo ON grupos(anio, grupo);
-CREATE INDEX IF NOT EXISTS idx_posiciones_finales_anio ON posiciones_finales(anio);
-CREATE INDEX IF NOT EXISTS idx_goleadores_anio ON goleadores(anio);
-CREATE INDEX IF NOT EXISTS idx_premios_anio ON premios(anio);
-CREATE INDEX IF NOT EXISTS idx_planteles_anio ON planteles(anio);
-CREATE INDEX IF NOT EXISTS idx_participaciones_anio ON participaciones_mundial(anio);
+CREATE INDEX IF NOT EXISTS idx_grupo_anio_grupo ON grupo(anio, grupo);
+CREATE INDEX IF NOT EXISTS idx_posicion_final_anio ON posicion_final(anio);
+CREATE INDEX IF NOT EXISTS idx_goleador_anio ON goleador(anio);
+CREATE INDEX IF NOT EXISTS idx_premio_anio ON premio(anio);
+CREATE INDEX IF NOT EXISTS idx_plantel_anio ON plantel(anio);
+CREATE INDEX IF NOT EXISTS idx_participacion_anio ON participacion_mundial(anio);
 
 COMMIT;

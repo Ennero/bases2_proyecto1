@@ -4,21 +4,21 @@
 \set ON_ERROR_STOP on
 
 -- Update these file paths before running.
-\set f_mundiales 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/mundiales.csv'
-\set f_selecciones 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/selecciones.csv'
-\set f_jugadores 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/jugadores.csv'
-\set f_partidos 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/partidos.csv'
-\set f_apariciones 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/apariciones_partido.csv'
-\set f_goles 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/goles.csv'
-\set f_tarjetas 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/tarjetas.csv'
-\set f_cambios 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/cambios.csv'
-\set f_penales 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/penales.csv'
-\set f_grupos 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/grupos.csv'
-\set f_posiciones 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/posiciones_finales.csv'
-\set f_goleadores 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/goleadores.csv'
-\set f_premios 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/premios.csv'
-\set f_planteles 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/planteles.csv'
-\set f_participaciones 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/participaciones_mundial.csv'
+\set f_mundiales 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/mundial.csv'
+\set f_selecciones 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/seleccion.csv'
+\set f_jugadores 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/jugador.csv'
+\set f_partidos 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/partido.csv'
+\set f_apariciones 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/aparicion_partido.csv'
+\set f_goles 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/gol.csv'
+\set f_tarjetas 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/tarjeta.csv'
+\set f_cambios 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/cambio.csv'
+\set f_penales 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/penal.csv'
+\set f_grupos 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/grupo.csv'
+\set f_posiciones 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/posicion_final.csv'
+\set f_goleadores 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/goleador.csv'
+\set f_premios 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/premio.csv'
+\set f_planteles 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/plantel.csv'
+\set f_participaciones 'C:/Users/Enner/Desktop/bases2_proyecto1/datos_normalizados/participacion_mundial.csv'
 
 BEGIN;
 
@@ -222,7 +222,7 @@ CREATE TEMP TABLE stg_participaciones (
 \copy stg_planteles FROM :'f_planteles' WITH (FORMAT csv, HEADER true, ENCODING 'UTF8')
 \copy stg_participaciones FROM :'f_participaciones' WITH (FORMAT csv, HEADER true, ENCODING 'UTF8')
 
-INSERT INTO mundiales (
+INSERT INTO mundial (
     anio,
     sede,
     campeon,
@@ -257,7 +257,7 @@ SET sede = EXCLUDED.sede,
     goles_total = EXCLUDED.goles_total,
     promedio_gol = EXCLUDED.promedio_gol;
 
-INSERT INTO mundiales (anio)
+INSERT INTO mundial (anio)
 SELECT DISTINCT anio FROM stg_partidos
 UNION
 SELECT DISTINCT anio FROM stg_grupos
@@ -273,7 +273,7 @@ UNION
 SELECT DISTINCT anio FROM stg_participaciones
 ON CONFLICT (anio) DO NOTHING;
 
-INSERT INTO selecciones (
+INSERT INTO seleccion (
     slug,
     nombre,
     participaciones,
@@ -314,7 +314,7 @@ SET nombre = EXCLUDED.nombre,
     subcampeonatos = EXCLUDED.subcampeonatos,
     posicion_historica = EXCLUDED.posicion_historica;
 
-INSERT INTO selecciones (slug, nombre)
+INSERT INTO seleccion (slug, nombre)
 SELECT DISTINCT slugify_name(x.nombre) AS slug, x.nombre
 FROM (
     SELECT local AS nombre FROM stg_partidos
@@ -345,15 +345,15 @@ WITH alias_map(alias_nombre, destino_slug, notas) AS (
         ('RF de Yugoslavia', 'serbia', 'Continuidad deportiva parcial'),
         ('Serbia y Montenegro', 'serbia', 'Separacion de estados')
 )
-INSERT INTO selecciones_alias (alias_slug, alias_nombre, seleccion_id, notas)
+INSERT INTO seleccion_alias (alias_slug, alias_nombre, seleccion_id, notas)
 SELECT slugify_name(am.alias_nombre), am.alias_nombre, s.seleccion_id, am.notas
 FROM alias_map am
-JOIN selecciones s ON s.slug = am.destino_slug
+JOIN seleccion s ON s.slug = am.destino_slug
 ON CONFLICT (alias_slug) DO UPDATE
 SET seleccion_id = EXCLUDED.seleccion_id,
     notas = EXCLUDED.notas;
 
-INSERT INTO jugadores (
+INSERT INTO jugador (
     slug,
     nombre,
     nombre_completo,
@@ -391,29 +391,29 @@ SELECT
     NULLIF(sj.goles, '')::integer,
     NULLIF(sj.promedio_gol, '')::numeric(6,2)
 FROM stg_jugadores sj
-LEFT JOIN selecciones s ON s.slug = slugify_name(sj.seleccion)
-LEFT JOIN selecciones_alias sa ON sa.alias_slug = slugify_name(sj.seleccion)
+LEFT JOIN seleccion s ON s.slug = slugify_name(sj.seleccion)
+LEFT JOIN seleccion_alias sa ON sa.alias_slug = slugify_name(sj.seleccion)
 WHERE sj.nombre IS NOT NULL
   AND btrim(sj.nombre) <> ''
 ON CONFLICT (slug) DO UPDATE
 SET nombre = EXCLUDED.nombre,
-    nombre_completo = COALESCE(EXCLUDED.nombre_completo, jugadores.nombre_completo),
-    seleccion_nombre = COALESCE(EXCLUDED.seleccion_nombre, jugadores.seleccion_nombre),
-    seleccion_id = COALESCE(EXCLUDED.seleccion_id, jugadores.seleccion_id),
-    fecha_nacimiento = COALESCE(EXCLUDED.fecha_nacimiento, jugadores.fecha_nacimiento),
-    lugar_nacimiento = COALESCE(EXCLUDED.lugar_nacimiento, jugadores.lugar_nacimiento),
-    posicion = COALESCE(EXCLUDED.posicion, jugadores.posicion),
-    numeros_camiseta = COALESCE(EXCLUDED.numeros_camiseta, jugadores.numeros_camiseta),
-    altura = COALESCE(EXCLUDED.altura, jugadores.altura),
-    apodo = COALESCE(EXCLUDED.apodo, jugadores.apodo),
-    sitio_web = COALESCE(EXCLUDED.sitio_web, jugadores.sitio_web),
-    redes_sociales = COALESCE(EXCLUDED.redes_sociales, jugadores.redes_sociales),
-    mundiales = COALESCE(EXCLUDED.mundiales, jugadores.mundiales),
-    partidos = COALESCE(EXCLUDED.partidos, jugadores.partidos),
-    goles = COALESCE(EXCLUDED.goles, jugadores.goles),
-    promedio_gol = COALESCE(EXCLUDED.promedio_gol, jugadores.promedio_gol);
+    nombre_completo = COALESCE(EXCLUDED.nombre_completo, jugador.nombre_completo),
+    seleccion_nombre = COALESCE(EXCLUDED.seleccion_nombre, jugador.seleccion_nombre),
+    seleccion_id = COALESCE(EXCLUDED.seleccion_id, jugador.seleccion_id),
+    fecha_nacimiento = COALESCE(EXCLUDED.fecha_nacimiento, jugador.fecha_nacimiento),
+    lugar_nacimiento = COALESCE(EXCLUDED.lugar_nacimiento, jugador.lugar_nacimiento),
+    posicion = COALESCE(EXCLUDED.posicion, jugador.posicion),
+    numeros_camiseta = COALESCE(EXCLUDED.numeros_camiseta, jugador.numeros_camiseta),
+    altura = COALESCE(EXCLUDED.altura, jugador.altura),
+    apodo = COALESCE(EXCLUDED.apodo, jugador.apodo),
+    sitio_web = COALESCE(EXCLUDED.sitio_web, jugador.sitio_web),
+    redes_sociales = COALESCE(EXCLUDED.redes_sociales, jugador.redes_sociales),
+    mundiales = COALESCE(EXCLUDED.mundiales, jugador.mundiales),
+    partidos = COALESCE(EXCLUDED.partidos, jugador.partidos),
+    goles = COALESCE(EXCLUDED.goles, jugador.goles),
+    promedio_gol = COALESCE(EXCLUDED.promedio_gol, jugador.promedio_gol);
 
-INSERT INTO jugadores (slug, nombre, seleccion_nombre, seleccion_id)
+INSERT INTO jugador (slug, nombre, seleccion_nombre, seleccion_id)
 SELECT DISTINCT
     z.jugador_slug,
     z.jugador_nombre,
@@ -438,17 +438,17 @@ FROM (
     UNION ALL
     SELECT NULLIF(jugador_slug, ''), jugador, seleccion FROM stg_premios
 ) z
-LEFT JOIN selecciones s ON s.slug = slugify_name(z.seleccion_nombre)
-LEFT JOIN selecciones_alias sa ON sa.alias_slug = slugify_name(z.seleccion_nombre)
+LEFT JOIN seleccion s ON s.slug = slugify_name(z.seleccion_nombre)
+LEFT JOIN seleccion_alias sa ON sa.alias_slug = slugify_name(z.seleccion_nombre)
 WHERE z.jugador_slug IS NOT NULL
   AND z.jugador_nombre IS NOT NULL
   AND btrim(z.jugador_nombre) <> ''
 ON CONFLICT (slug) DO UPDATE
-SET nombre = COALESCE(EXCLUDED.nombre, jugadores.nombre),
-    seleccion_nombre = COALESCE(EXCLUDED.seleccion_nombre, jugadores.seleccion_nombre),
-    seleccion_id = COALESCE(EXCLUDED.seleccion_id, jugadores.seleccion_id);
+SET nombre = COALESCE(EXCLUDED.nombre, jugador.nombre),
+    seleccion_nombre = COALESCE(EXCLUDED.seleccion_nombre, jugador.seleccion_nombre),
+    seleccion_id = COALESCE(EXCLUDED.seleccion_id, jugador.seleccion_id);
 
-INSERT INTO partidos (
+INSERT INTO partido (
     slug,
     anio,
     fecha,
@@ -476,10 +476,10 @@ SELECT
     NULLIF(sp.penales, '')::boolean,
     NULLIF(sp.resultado_penales, '')
 FROM stg_partidos sp
-LEFT JOIN selecciones sl ON sl.slug = slugify_name(sp.local)
-LEFT JOIN selecciones sv ON sv.slug = slugify_name(sp.visitante)
-LEFT JOIN selecciones_alias sal ON sal.alias_slug = slugify_name(sp.local)
-LEFT JOIN selecciones_alias sav ON sav.alias_slug = slugify_name(sp.visitante)
+LEFT JOIN seleccion sl ON sl.slug = slugify_name(sp.local)
+LEFT JOIN seleccion sv ON sv.slug = slugify_name(sp.visitante)
+LEFT JOIN seleccion_alias sal ON sal.alias_slug = slugify_name(sp.local)
+LEFT JOIN seleccion_alias sav ON sav.alias_slug = slugify_name(sp.visitante)
 WHERE sp.slug IS NOT NULL
   AND btrim(sp.slug) <> ''
 ON CONFLICT (slug) DO UPDATE
@@ -488,14 +488,14 @@ SET anio = EXCLUDED.anio,
     etapa = EXCLUDED.etapa,
     local_nombre = EXCLUDED.local_nombre,
     visitante_nombre = EXCLUDED.visitante_nombre,
-    local_seleccion_id = COALESCE(EXCLUDED.local_seleccion_id, partidos.local_seleccion_id),
-    visitante_seleccion_id = COALESCE(EXCLUDED.visitante_seleccion_id, partidos.visitante_seleccion_id),
+    local_seleccion_id = COALESCE(EXCLUDED.local_seleccion_id, partido.local_seleccion_id),
+    visitante_seleccion_id = COALESCE(EXCLUDED.visitante_seleccion_id, partido.visitante_seleccion_id),
     resultado = EXCLUDED.resultado,
     tiempo_extra = EXCLUDED.tiempo_extra,
     penales = EXCLUDED.penales,
     resultado_penales = EXCLUDED.resultado_penales;
 
-INSERT INTO apariciones_partido (
+INSERT INTO aparicion_partido (
     partido_slug,
     anio,
     equipo_nombre,
@@ -521,22 +521,22 @@ SELECT
     sa.seccion,
     COALESCE(NULLIF(sa.es_capitan, '')::boolean, false)
 FROM stg_apariciones sa
-LEFT JOIN selecciones s ON s.slug = slugify_name(sa.equipo)
-LEFT JOIN selecciones_alias sx ON sx.alias_slug = slugify_name(sa.equipo)
-LEFT JOIN jugadores j ON j.slug = NULLIF(sa.jugador_slug, '')
+LEFT JOIN seleccion s ON s.slug = slugify_name(sa.equipo)
+LEFT JOIN seleccion_alias sx ON sx.alias_slug = slugify_name(sa.equipo)
+LEFT JOIN jugador j ON j.slug = NULLIF(sa.jugador_slug, '')
 WHERE sa.partido_slug IS NOT NULL
   AND btrim(sa.partido_slug) <> ''
   AND sa.jugador_nombre IS NOT NULL
   AND btrim(sa.jugador_nombre) <> ''
 ON CONFLICT (partido_slug, equipo_nombre, jugador_nombre, seccion) DO UPDATE
-SET seleccion_id = COALESCE(EXCLUDED.seleccion_id, apariciones_partido.seleccion_id),
-    jugador_slug = COALESCE(EXCLUDED.jugador_slug, apariciones_partido.jugador_slug),
-    jugador_id = COALESCE(EXCLUDED.jugador_id, apariciones_partido.jugador_id),
-    posicion = COALESCE(EXCLUDED.posicion, apariciones_partido.posicion),
-    camiseta = COALESCE(EXCLUDED.camiseta, apariciones_partido.camiseta),
+SET seleccion_id = COALESCE(EXCLUDED.seleccion_id, aparicion_partido.seleccion_id),
+    jugador_slug = COALESCE(EXCLUDED.jugador_slug, aparicion_partido.jugador_slug),
+    jugador_id = COALESCE(EXCLUDED.jugador_id, aparicion_partido.jugador_id),
+    posicion = COALESCE(EXCLUDED.posicion, aparicion_partido.posicion),
+    camiseta = COALESCE(EXCLUDED.camiseta, aparicion_partido.camiseta),
     es_capitan = EXCLUDED.es_capitan;
 
-INSERT INTO goles (
+INSERT INTO gol (
     partido_slug,
     anio,
     equipo_nombre,
@@ -560,15 +560,15 @@ SELECT
     COALESCE(NULLIF(sg.es_penal, '')::boolean, false),
     COALESCE(NULLIF(sg.es_autogol, '')::boolean, false)
 FROM stg_goles sg
-LEFT JOIN selecciones s ON s.slug = slugify_name(sg.equipo)
-LEFT JOIN selecciones_alias sx ON sx.alias_slug = slugify_name(sg.equipo)
-LEFT JOIN jugadores j ON j.slug = NULLIF(sg.jugador_slug, '')
+LEFT JOIN seleccion s ON s.slug = slugify_name(sg.equipo)
+LEFT JOIN seleccion_alias sx ON sx.alias_slug = slugify_name(sg.equipo)
+LEFT JOIN jugador j ON j.slug = NULLIF(sg.jugador_slug, '')
 WHERE sg.partido_slug IS NOT NULL
   AND btrim(sg.partido_slug) <> ''
   AND sg.jugador IS NOT NULL
   AND btrim(sg.jugador) <> '';
 
-INSERT INTO tarjetas (
+INSERT INTO tarjeta (
     partido_slug,
     anio,
     jugador,
@@ -590,15 +590,15 @@ SELECT
     st.tipo,
     NULLIF(st.minuto, '')
 FROM stg_tarjetas st
-LEFT JOIN selecciones s ON s.slug = slugify_name(st.equipo)
-LEFT JOIN selecciones_alias sx ON sx.alias_slug = slugify_name(st.equipo)
-LEFT JOIN jugadores j ON j.slug = NULLIF(st.jugador_slug, '')
+LEFT JOIN seleccion s ON s.slug = slugify_name(st.equipo)
+LEFT JOIN seleccion_alias sx ON sx.alias_slug = slugify_name(st.equipo)
+LEFT JOIN jugador j ON j.slug = NULLIF(st.jugador_slug, '')
 WHERE st.partido_slug IS NOT NULL
   AND btrim(st.partido_slug) <> ''
   AND st.jugador IS NOT NULL
   AND btrim(st.jugador) <> '';
 
-INSERT INTO cambios (
+INSERT INTO cambio (
     partido_slug,
     anio,
     equipo_nombre,
@@ -624,14 +624,14 @@ SELECT
     je.jugador_id,
     NULLIF(sc.minuto, '')
 FROM stg_cambios sc
-LEFT JOIN selecciones s ON s.slug = slugify_name(sc.equipo)
-LEFT JOIN selecciones_alias sx ON sx.alias_slug = slugify_name(sc.equipo)
-LEFT JOIN jugadores js ON js.slug = NULLIF(sc.sale_slug, '')
-LEFT JOIN jugadores je ON je.slug = NULLIF(sc.entra_slug, '')
+LEFT JOIN seleccion s ON s.slug = slugify_name(sc.equipo)
+LEFT JOIN seleccion_alias sx ON sx.alias_slug = slugify_name(sc.equipo)
+LEFT JOIN jugador js ON js.slug = NULLIF(sc.sale_slug, '')
+LEFT JOIN jugador je ON je.slug = NULLIF(sc.entra_slug, '')
 WHERE sc.partido_slug IS NOT NULL
   AND btrim(sc.partido_slug) <> '';
 
-INSERT INTO penales (
+INSERT INTO penal (
     partido_slug,
     anio,
     equipo_nombre,
@@ -653,21 +653,21 @@ SELECT
     j.jugador_id,
     sp.resultado
 FROM stg_penales sp
-LEFT JOIN selecciones s ON s.slug = slugify_name(sp.equipo)
-LEFT JOIN selecciones_alias sx ON sx.alias_slug = slugify_name(sp.equipo)
-LEFT JOIN jugadores j ON j.slug = NULLIF(sp.jugador_slug, '')
+LEFT JOIN seleccion s ON s.slug = slugify_name(sp.equipo)
+LEFT JOIN seleccion_alias sx ON sx.alias_slug = slugify_name(sp.equipo)
+LEFT JOIN jugador j ON j.slug = NULLIF(sp.jugador_slug, '')
 WHERE sp.partido_slug IS NOT NULL
   AND btrim(sp.partido_slug) <> ''
   AND sp.jugador IS NOT NULL
   AND btrim(sp.jugador) <> ''
 ON CONFLICT (partido_slug, equipo_nombre, orden) DO UPDATE
-SET seleccion_id = COALESCE(EXCLUDED.seleccion_id, penales.seleccion_id),
+SET seleccion_id = COALESCE(EXCLUDED.seleccion_id, penal.seleccion_id),
     jugador = EXCLUDED.jugador,
-    jugador_slug = COALESCE(EXCLUDED.jugador_slug, penales.jugador_slug),
-    jugador_id = COALESCE(EXCLUDED.jugador_id, penales.jugador_id),
+    jugador_slug = COALESCE(EXCLUDED.jugador_slug, penal.jugador_slug),
+    jugador_id = COALESCE(EXCLUDED.jugador_id, penal.jugador_id),
     resultado = EXCLUDED.resultado;
 
-INSERT INTO grupos (
+INSERT INTO grupo (
     anio,
     grupo,
     posicion,
@@ -699,13 +699,13 @@ SELECT
     NULLIF(sg.dif, '')::integer,
     COALESCE(NULLIF(sg.clasificado, '')::boolean, false)
 FROM stg_grupos sg
-LEFT JOIN selecciones s ON s.slug = slugify_name(sg.seleccion)
-LEFT JOIN selecciones_alias sx ON sx.alias_slug = slugify_name(sg.seleccion)
+LEFT JOIN seleccion s ON s.slug = slugify_name(sg.seleccion)
+LEFT JOIN seleccion_alias sx ON sx.alias_slug = slugify_name(sg.seleccion)
 WHERE sg.seleccion IS NOT NULL
   AND btrim(sg.seleccion) <> ''
 ON CONFLICT (anio, grupo, seleccion_nombre) DO UPDATE
 SET posicion = EXCLUDED.posicion,
-    seleccion_id = COALESCE(EXCLUDED.seleccion_id, grupos.seleccion_id),
+    seleccion_id = COALESCE(EXCLUDED.seleccion_id, grupo.seleccion_id),
     pts = EXCLUDED.pts,
     pj = EXCLUDED.pj,
     pg = EXCLUDED.pg,
@@ -716,7 +716,7 @@ SET posicion = EXCLUDED.posicion,
     dif = EXCLUDED.dif,
     clasificado = EXCLUDED.clasificado;
 
-INSERT INTO posiciones_finales (
+INSERT INTO posicion_final (
     anio,
     posicion,
     seleccion_nombre,
@@ -728,14 +728,14 @@ SELECT
     sp.seleccion,
     COALESCE(s.seleccion_id, sx.seleccion_id)
 FROM stg_posiciones sp
-LEFT JOIN selecciones s ON s.slug = slugify_name(sp.seleccion)
-LEFT JOIN selecciones_alias sx ON sx.alias_slug = slugify_name(sp.seleccion)
+LEFT JOIN seleccion s ON s.slug = slugify_name(sp.seleccion)
+LEFT JOIN seleccion_alias sx ON sx.alias_slug = slugify_name(sp.seleccion)
 WHERE sp.seleccion IS NOT NULL
   AND btrim(sp.seleccion) <> ''
 ON CONFLICT (anio, posicion, seleccion_nombre) DO UPDATE
-SET seleccion_id = COALESCE(EXCLUDED.seleccion_id, posiciones_finales.seleccion_id);
+SET seleccion_id = COALESCE(EXCLUDED.seleccion_id, posicion_final.seleccion_id);
 
-INSERT INTO goleadores (
+INSERT INTO goleador (
     anio,
     jugador,
     jugador_slug,
@@ -753,18 +753,18 @@ SELECT
     COALESCE(s.seleccion_id, sx.seleccion_id),
     NULLIF(sg.goles, '')::integer
 FROM stg_goleadores sg
-LEFT JOIN jugadores j ON j.slug = NULLIF(sg.jugador_slug, '')
-LEFT JOIN selecciones s ON s.slug = slugify_name(sg.seleccion)
-LEFT JOIN selecciones_alias sx ON sx.alias_slug = slugify_name(sg.seleccion)
+LEFT JOIN jugador j ON j.slug = NULLIF(sg.jugador_slug, '')
+LEFT JOIN seleccion s ON s.slug = slugify_name(sg.seleccion)
+LEFT JOIN seleccion_alias sx ON sx.alias_slug = slugify_name(sg.seleccion)
 WHERE sg.jugador IS NOT NULL
   AND btrim(sg.jugador) <> ''
 ON CONFLICT (anio, jugador, seleccion_nombre) DO UPDATE
-SET jugador_slug = COALESCE(EXCLUDED.jugador_slug, goleadores.jugador_slug),
-    jugador_id = COALESCE(EXCLUDED.jugador_id, goleadores.jugador_id),
-    seleccion_id = COALESCE(EXCLUDED.seleccion_id, goleadores.seleccion_id),
+SET jugador_slug = COALESCE(EXCLUDED.jugador_slug, goleador.jugador_slug),
+    jugador_id = COALESCE(EXCLUDED.jugador_id, goleador.jugador_id),
+    seleccion_id = COALESCE(EXCLUDED.seleccion_id, goleador.seleccion_id),
     goles = EXCLUDED.goles;
 
-INSERT INTO premios (
+INSERT INTO premio (
     anio,
     premio,
     tipo_destinatario,
@@ -784,19 +784,19 @@ SELECT
     NULLIF(sp.seleccion, ''),
     COALESCE(s.seleccion_id, sx.seleccion_id)
 FROM stg_premios sp
-LEFT JOIN jugadores j ON j.slug = NULLIF(sp.jugador_slug, '')
-LEFT JOIN selecciones s ON s.slug = slugify_name(sp.seleccion)
-LEFT JOIN selecciones_alias sx ON sx.alias_slug = slugify_name(sp.seleccion)
+LEFT JOIN jugador j ON j.slug = NULLIF(sp.jugador_slug, '')
+LEFT JOIN seleccion s ON s.slug = slugify_name(sp.seleccion)
+LEFT JOIN seleccion_alias sx ON sx.alias_slug = slugify_name(sp.seleccion)
 WHERE sp.premio IS NOT NULL
   AND btrim(sp.premio) <> ''
 ON CONFLICT (anio, premio, tipo_destinatario, destinatario_key) DO UPDATE
-SET jugador = COALESCE(EXCLUDED.jugador, premios.jugador),
-    jugador_slug = COALESCE(EXCLUDED.jugador_slug, premios.jugador_slug),
-    jugador_id = COALESCE(EXCLUDED.jugador_id, premios.jugador_id),
-    seleccion_nombre = COALESCE(EXCLUDED.seleccion_nombre, premios.seleccion_nombre),
-    seleccion_id = COALESCE(EXCLUDED.seleccion_id, premios.seleccion_id);
+SET jugador = COALESCE(EXCLUDED.jugador, premio.jugador),
+    jugador_slug = COALESCE(EXCLUDED.jugador_slug, premio.jugador_slug),
+    jugador_id = COALESCE(EXCLUDED.jugador_id, premio.jugador_id),
+    seleccion_nombre = COALESCE(EXCLUDED.seleccion_nombre, premio.seleccion_nombre),
+    seleccion_id = COALESCE(EXCLUDED.seleccion_id, premio.seleccion_id);
 
-INSERT INTO planteles (
+INSERT INTO plantel (
     anio,
     seleccion_nombre,
     seleccion_slug,
@@ -826,21 +826,21 @@ SELECT
     NULLIF(sp.club, ''),
     sp.rol
 FROM stg_planteles sp
-LEFT JOIN selecciones s ON s.slug = COALESCE(NULLIF(sp.seleccion_slug, ''), slugify_name(sp.seleccion))
-LEFT JOIN selecciones_alias sx ON sx.alias_slug = COALESCE(NULLIF(sp.seleccion_slug, ''), slugify_name(sp.seleccion))
-LEFT JOIN jugadores j ON j.slug = NULLIF(sp.jugador_slug, '')
+LEFT JOIN seleccion s ON s.slug = COALESCE(NULLIF(sp.seleccion_slug, ''), slugify_name(sp.seleccion))
+LEFT JOIN seleccion_alias sx ON sx.alias_slug = COALESCE(NULLIF(sp.seleccion_slug, ''), slugify_name(sp.seleccion))
+LEFT JOIN jugador j ON j.slug = NULLIF(sp.jugador_slug, '')
 WHERE sp.jugador IS NOT NULL
   AND btrim(sp.jugador) <> ''
 ON CONFLICT (anio, jugador_key, seleccion_key, rol) DO UPDATE
-SET seleccion_id = COALESCE(EXCLUDED.seleccion_id, planteles.seleccion_id),
-    jugador_id = COALESCE(EXCLUDED.jugador_id, planteles.jugador_id),
-    posicion = COALESCE(EXCLUDED.posicion, planteles.posicion),
-    camiseta = COALESCE(EXCLUDED.camiseta, planteles.camiseta),
-    fecha_nacimiento = COALESCE(EXCLUDED.fecha_nacimiento, planteles.fecha_nacimiento),
-    altura = COALESCE(EXCLUDED.altura, planteles.altura),
-    club = COALESCE(EXCLUDED.club, planteles.club);
+SET seleccion_id = COALESCE(EXCLUDED.seleccion_id, plantel.seleccion_id),
+    jugador_id = COALESCE(EXCLUDED.jugador_id, plantel.jugador_id),
+    posicion = COALESCE(EXCLUDED.posicion, plantel.posicion),
+    camiseta = COALESCE(EXCLUDED.camiseta, plantel.camiseta),
+    fecha_nacimiento = COALESCE(EXCLUDED.fecha_nacimiento, plantel.fecha_nacimiento),
+    altura = COALESCE(EXCLUDED.altura, plantel.altura),
+    club = COALESCE(EXCLUDED.club, plantel.club);
 
-INSERT INTO participaciones_mundial (
+INSERT INTO participacion_mundial (
     anio,
     seleccion_nombre,
     seleccion_slug,
@@ -874,12 +874,12 @@ SELECT
     NULLIF(sp.dif, '')::integer,
     COALESCE(NULLIF(sp.participo, '')::boolean, true)
 FROM stg_participaciones sp
-LEFT JOIN selecciones s ON s.slug = COALESCE(NULLIF(sp.seleccion_slug, ''), slugify_name(sp.seleccion))
-LEFT JOIN selecciones_alias sx ON sx.alias_slug = COALESCE(NULLIF(sp.seleccion_slug, ''), slugify_name(sp.seleccion))
+LEFT JOIN seleccion s ON s.slug = COALESCE(NULLIF(sp.seleccion_slug, ''), slugify_name(sp.seleccion))
+LEFT JOIN seleccion_alias sx ON sx.alias_slug = COALESCE(NULLIF(sp.seleccion_slug, ''), slugify_name(sp.seleccion))
 WHERE sp.seleccion IS NOT NULL
   AND btrim(sp.seleccion) <> ''
 ON CONFLICT (anio, seleccion_key) DO UPDATE
-SET seleccion_id = COALESCE(EXCLUDED.seleccion_id, participaciones_mundial.seleccion_id),
+SET seleccion_id = COALESCE(EXCLUDED.seleccion_id, participacion_mundial.seleccion_id),
     posicion = EXCLUDED.posicion,
     etapa = EXCLUDED.etapa,
     pts = EXCLUDED.pts,
@@ -911,7 +911,7 @@ SELECT
     v.jugador_nombre,
     v.jugador_slug,
     v.minuto
-FROM v_jugadores_sin_slug v
+FROM v_jugador_sin_slug v
 ON CONFLICT (source_table, partido_slug, equipo_key, jugador_nombre_raw, minuto_key) DO NOTHING;
 
 COMMIT;

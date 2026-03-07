@@ -11,21 +11,21 @@ Genera CSV listos para cargarse en una base relacional y ahora puede trabajar en
 
 | CSV | Descripción |
 |---|---|
-| `mundiales.csv` | Resumen general por edición, incluyendo promedio de gol |
-| `selecciones.csv` | Ficha histórica resumida por selección |
-| `participaciones_mundial.csv` | Resumen por selección y mundial |
-| `jugadores.csv` | Ficha ampliada de jugador |
-| `partidos.csv` | Resultado, fecha, etapa, prórroga y penales |
-| `apariciones_partido.csv` | Titulares, ingresos, suplentes y entrenador por partido |
-| `goles.csv` | Goles por partido, incluyendo penal y autogol |
-| `tarjetas.csv` | Tarjetas amarillas y rojas |
-| `cambios.csv` | Sustituciones |
-| `penales.csv` | Ejecuciones detalladas de tandas de penales |
-| `grupos.csv` | Tabla de posiciones por grupo |
-| `posiciones_finales.csv` | Ranking final por mundial |
-| `goleadores.csv` | Goleadores por edición |
-| `premios.csv` | Premios a jugadores y selecciones |
-| `planteles.csv` | Planteles por mundial, incluyendo altura, club y entrenador |
+| `mundial.csv` | Resumen general por edición, incluyendo promedio de gol |
+| `seleccion.csv` | Ficha histórica resumida por selección |
+| `participacion_mundial.csv` | Resumen por selección y mundial |
+| `jugador.csv` | Ficha ampliada de jugador |
+| `partido.csv` | Resultado, fecha, etapa, prórroga y penales |
+| `aparicion_partido.csv` | Titulares, ingresos, suplentes y entrenador por partido |
+| `gol.csv` | Goles por partido, incluyendo penal y autogol |
+| `tarjeta.csv` | Tarjetas amarillas y rojas |
+| `cambio.csv` | Sustituciones |
+| `penal.csv` | Ejecuciones detalladas de tandas de penales |
+| `grupo.csv` | Tabla de posiciones por grupo |
+| `posicion_final.csv` | Ranking final por mundial |
+| `goleador.csv` | Goleadores por edición |
+| `premio.csv` | Premios a jugadores y selecciones |
+| `plantel.csv` | Planteles por mundial, incluyendo altura, club y entrenador |
 
 ## Dependencias
 
@@ -79,7 +79,7 @@ C:/Users/Enner/Desktop/bases2_proyecto1/.venv/Scripts/python.exe py/scraping_nor
 ## Notas del modelo de extracción
 
 - Los `slug` salen de las URLs y se usan como clave natural.
-- `penales.csv` existe solo para las tandas detalladas, no para goles de penal en tiempo regular.
-- Los autogoles se marcan en `goles.csv` mediante `es_autogol`.
+- `penal.csv` existe solo para las tandas detalladas, no para goles de penal en tiempo regular.
+- Los autogoles se marcan en `gol.csv` mediante `es_autogol`.
 - Los premios ahora distinguen si el destinatario fue un `jugador` o una `seleccion`.
 - Los planteles incluyen filas de `rol = entrenador`.
