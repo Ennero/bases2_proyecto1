@@ -11,6 +11,15 @@ La salida final ahora es estrictamente normalizada: los CSV persistidos usan lla
 
 La única excepción operativa es `resolucion_identidad_jugador.csv`, que funciona como cola de conciliación para eventos ambiguos y ahora se genera siempre aunque no tenga filas, dejando solo el encabezado.
 
+## Estado actual del modelo
+
+Con el alcance actual del proyecto, este es el esquema entidad-relación definitivo para la entrega.
+
+- `grupo` y `participacion_mundial` se conservan porque no representan el mismo hecho.
+- `grupo` guarda el desempeño de una selección dentro de la fase de grupos.
+- `participacion_mundial` resume toda la campaña de la selección en esa edición del torneo.
+- `plantel_jugador` ya no repite atributos propios del jugador como fecha de nacimiento o altura; esos datos viven solo en `jugador`.
+
 ## Inicio rápido
 
 ### 1. Preparar el entorno
@@ -51,8 +60,10 @@ Hay dos modos de trabajo:
 #### Convertir una carpeta legacy ya existente
 
 ```powershell
-.venv\Scripts\python.exe py\scraping_normalizado.py --raw-dir .\datos_normalizados_web --salida .\datos_normalizados_web
+.venv\Scripts\python.exe py\scraping_normalizado.py --raw-dir .\datos_legados --salida .\datos_normalizados_web
 ```
+
+`--raw-dir` debe apuntar a una carpeta en formato legacy. El conversor ahora rechaza carpetas que ya estén en formato normalizado final para evitar regeneraciones vacías o destructivas.
 
 ### 3. Crear la base en PostgreSQL
 
@@ -113,6 +124,61 @@ El scraper genera estos CSV:
 ## Recomendación práctica
 
 Si el objetivo es poblar la base con la versión más completa posible, usa `datos_normalizados_web` como fuente de carga. La estructura final de la base no cambia entre `web` y `local`; lo único que cambia es la completitud de los datos.
+
+## Consultas que sí soporta el modelo
+
+Sí, el esquema actual permite consultas como las que mencionaste. Algunos ejemplos:
+
+### Mundiales en los que participaron ciertos países
+
+```sql
+SELECT s.nombre AS seleccion, pm.anio
+FROM participacion_mundial pm
+JOIN seleccion s ON s.seleccion_id = pm.seleccion_id
+WHERE s.nombre IN ('Argentina', 'Brasil', 'Alemania')
+	AND pm.participo = true
+ORDER BY s.nombre, pm.anio;
+```
+
+### Cuántos mundiales jugó cada una de esas selecciones
+
+```sql
+SELECT s.nombre AS seleccion, COUNT(*) AS cantidad_mundiales
+FROM participacion_mundial pm
+JOIN seleccion s ON s.seleccion_id = pm.seleccion_id
+WHERE s.nombre IN ('Argentina', 'Brasil', 'Alemania')
+	AND pm.participo = true
+GROUP BY s.nombre
+ORDER BY cantidad_mundiales DESC, s.nombre;
+```
+
+### Goles anotados por Lionel Messi
+
+```sql
+SELECT j.nombre, COUNT(*) AS goles
+FROM gol g
+JOIN jugador j ON j.jugador_id = g.jugador_id
+WHERE j.nombre = 'Lionel Messi'
+	AND g.es_autogol = false
+GROUP BY j.nombre;
+```
+
+### Partidos jugados por Argentina
+
+```sql
+SELECT p.anio,
+			 p.fecha,
+			 p.etapa,
+			 sl.nombre AS local,
+			 p.goles_local,
+			 p.goles_visitante,
+			 sv.nombre AS visitante
+FROM partido p
+JOIN seleccion sl ON sl.seleccion_id = p.local_seleccion_id
+JOIN seleccion sv ON sv.seleccion_id = p.visitante_seleccion_id
+WHERE sl.nombre = 'Argentina' OR sv.nombre = 'Argentina'
+ORDER BY p.anio, p.partido_id;
+```
 
 ## Documentación adicional
 

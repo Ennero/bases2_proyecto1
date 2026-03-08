@@ -16,6 +16,15 @@ Este directorio contiene el esquema PostgreSQL, el ETL y el modelo lógico del p
 - Los premios y planteles se separaron por tipo para evitar tablas polimórficas o con roles mezclados.
 - La resolución manual de identidades ambiguas quedó aislada en `resolucion_identidad_jugador`.
 
+## Estado del esquema
+
+Con los requerimientos actuales, este puede considerarse el esquema entidad-relación definitivo del proyecto.
+
+- `grupo` y `participacion_mundial` no son duplicados; modelan hechos distintos.
+- `grupo` trabaja al nivel de la fase de grupos.
+- `participacion_mundial` trabaja al nivel de la edición completa del Mundial.
+- `plantel_jugador` quedó limitado a atributos propios de la convocatoria, evitando redundancias con `jugador`.
+
 ## Estructura general
 
 El modelo queda dividido en cuatro áreas:
@@ -131,6 +140,82 @@ psql -h <host> -U <user> -d <database> -f py/db/postgres_etl.sql
 ```
 
 El ETL asume un snapshot completo y por eso vacía las tablas antes de recargar.
+
+## Consultas de ejemplo
+
+### Mundiales en los que participaron ciertos países
+
+```sql
+SELECT s.nombre AS seleccion, pm.anio
+FROM participacion_mundial pm
+JOIN seleccion s ON s.seleccion_id = pm.seleccion_id
+WHERE s.nombre IN ('Argentina', 'Brasil', 'Alemania')
+	AND pm.participo = true
+ORDER BY s.nombre, pm.anio;
+```
+
+### Cuántos mundiales jugó cada selección
+
+```sql
+SELECT s.nombre AS seleccion, COUNT(*) AS cantidad_mundiales
+FROM participacion_mundial pm
+JOIN seleccion s ON s.seleccion_id = pm.seleccion_id
+WHERE s.nombre IN ('Argentina', 'Brasil', 'Alemania')
+	AND pm.participo = true
+GROUP BY s.nombre
+ORDER BY cantidad_mundiales DESC, s.nombre;
+```
+
+### Goles anotados por Lionel Messi por edición
+
+```sql
+SELECT p.anio, COUNT(*) AS goles
+FROM gol g
+JOIN partido p ON p.partido_id = g.partido_id
+JOIN jugador j ON j.jugador_id = g.jugador_id
+WHERE j.nombre = 'Lionel Messi'
+	AND g.es_autogol = false
+GROUP BY p.anio
+ORDER BY p.anio;
+```
+
+### Total de goles anotados por Lionel Messi
+
+```sql
+SELECT j.nombre, COUNT(*) AS goles
+FROM gol g
+JOIN jugador j ON j.jugador_id = g.jugador_id
+WHERE j.nombre = 'Lionel Messi'
+	AND g.es_autogol = false
+GROUP BY j.nombre;
+```
+
+### Partidos jugados por la selección de Argentina
+
+```sql
+SELECT p.anio,
+			 p.fecha,
+			 p.etapa,
+			 sl.nombre AS local,
+			 p.goles_local,
+			 p.goles_visitante,
+			 sv.nombre AS visitante
+FROM partido p
+JOIN seleccion sl ON sl.seleccion_id = p.local_seleccion_id
+JOIN seleccion sv ON sv.seleccion_id = p.visitante_seleccion_id
+WHERE sl.nombre = 'Argentina' OR sv.nombre = 'Argentina'
+ORDER BY p.anio, p.partido_id;
+```
+
+### Cantidad total de partidos jugados por Argentina
+
+```sql
+SELECT COUNT(*) AS partidos_argentina
+FROM partido p
+JOIN seleccion sl ON sl.seleccion_id = p.local_seleccion_id
+JOIN seleccion sv ON sv.seleccion_id = p.visitante_seleccion_id
+WHERE sl.nombre = 'Argentina' OR sv.nombre = 'Argentina';
+```
 
 ## Validaciones rápidas
 

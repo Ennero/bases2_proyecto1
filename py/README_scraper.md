@@ -55,10 +55,12 @@ C:/Users/Enner/Desktop/bases2_proyecto1/.venv/Scripts/python.exe py/scraping_nor
 ## Conversión de una carpeta legacy
 
 ```bash
-C:/Users/Enner/Desktop/bases2_proyecto1/.venv/Scripts/python.exe py/scraping_normalizado.py --raw-dir ./datos_normalizados_web --salida ./datos_normalizados_web
+C:/Users/Enner/Desktop/bases2_proyecto1/.venv/Scripts/python.exe py/scraping_normalizado.py --raw-dir ./datos_legados --salida ./datos_normalizados_web
 ```
 
 Ese modo lee los CSV existentes, elimina archivos obsoletos como `premio.csv` y `plantel.csv`, y deja la carpeta en el nuevo formato final.
+
+La carpeta indicada en `--raw-dir` debe ser legacy. Si apuntas a una carpeta ya normalizada, el script ahora falla explícitamente para evitar regeneraciones incorrectas.
 
 `resolucion_identidad_jugador.csv` se escribe siempre. Si no hubo ambigüedades, queda como un CSV vacío con encabezados para que el ETL no falle.
 
@@ -101,3 +103,4 @@ C:/Users/Enner/Desktop/bases2_proyecto1/.venv/Scripts/python.exe py/scraping_nor
 - Los premios quedaron separados en `premio_jugador.csv` y `premio_seleccion.csv`.
 - Los planteles quedaron separados en `plantel_jugador.csv` y `plantel_entrenador.csv`.
 - `plantel_jugador.csv` conserva solo atributos dependientes del plantel o de esa convocatoria, como posición, camiseta y club; la fecha de nacimiento y la altura quedan en `jugador.csv`.
+- `grupo.csv` y `participacion_mundial.csv` conviven porque están en distintos niveles de detalle: fase de grupos contra participación completa en la edición.
