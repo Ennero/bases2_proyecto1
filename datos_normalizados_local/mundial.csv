@@ -1,24 +1,24 @@
-﻿anio,sede,campeon,subcampeon,tercer_lugar,cuarto_lugar,equipos,partidos_jugados,goles_total,promedio_gol
-2026,,Alemania,Arabia Saudita,Argelia,Argentina,48,104,0,0.00
-2022,,Argentina,Francia,Croacia,Marruecos,32,64,172,2.69
-2018,,Francia,Croacia,Bélgica,Inglaterra,32,64,169,2.64
-2014,,Alemania,Argentina,Paises Bajos,Brasil,32,64,171,2.67
-2010,,España,Paises Bajos,Alemania,Uruguay,32,64,145,2.27
-2006,,Italia,Francia,Alemania,Portugal,32,64,147,2.30
-2002,,Brasil,Alemania,Turquía,Corea del Sur,32,64,161,2.52
-1998,,Francia,Brasil,Croacia,Paises Bajos,32,64,171,2.67
-1994,,Brasil,Italia,Suecia,Bulgaria,24,52,141,2.71
-1990,,Alemania Occidental,Argentina,Italia,Inglaterra,24,52,115,2.21
-1986,,Argentina,Alemania Occidental,Francia,Bélgica,24,52,132,2.54
-1982,,Italia,Alemania Occidental,Polonia,Francia,24,52,146,2.81
-1978,,Argentina,Paises Bajos,Brasil,Italia,16,38,102,2.68
-1974,,Alemania Occidental,Paises Bajos,Polonia,Brasil,16,38,97,2.55
-1970,,Brasil,Italia,Alemania Occidental,Uruguay,16,32,95,2.97
-1966,,Inglaterra,Alemania Occidental,Portugal,URSS,16,32,89,2.78
-1962,,Brasil,Checoslovaquia,Chile,Yugoslavia,16,32,89,2.78
-1958,,Brasil,Suecia,Francia,Alemania Occidental,16,35,126,3.60
-1954,,Alemania Occidental,Hungría,Austria,Uruguay,16,26,140,5.38
-1950,,Uruguay,Brasil,Suecia,España,13,22,88,4.00
-1938,,Italia,Hungría,Brasil,Suecia,16,18,84,4.67
-1934,,Italia,Checoslovaquia,Alemania,Austria,16,17,70,4.12
-1930,,Uruguay,Argentina,Estados Unidos,Yugoslavia,13,18,70,3.89
+﻿anio,sede,equipos,partidos_jugados,goles_total
+2026,,48,104,0
+2022,,32,64,172
+2018,,32,64,169
+2014,,32,64,171
+2010,,32,64,145
+2006,,32,64,147
+2002,,32,64,161
+1998,,32,64,171
+1994,,24,52,141
+1990,,24,52,115
+1986,,24,52,132
+1982,,24,52,146
+1978,,16,38,102
+1974,,16,38,97
+1970,,16,32,95
+1966,,16,32,89
+1962,,16,32,89
+1958,,16,35,126
+1954,,16,26,140
+1950,,13,22,88
+1938,,16,18,84
+1934,,16,17,70
+1930,,13,18,70

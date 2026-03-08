@@ -1,86 +1,145 @@
-﻿slug,nombre,participaciones,pj,pg,pe,pp,gf,gc,titulos,subcampeonatos,posicion_historica
-comparacion_dees,Comparación de las Selecciones Que Participaron En Mundiales De Fútbol,,,,,,,,,,
-alemania_oriental,Alemania Oriental,,,,,,,,,,
-alemania,Alemania,,,,,,,,,,
-angola,Angola,,,,,,,,,,
-arabia_saudita,Arabia Saudita,,,,,,,,,,
-argelia,Argelia,,,,,,,,,,
-argentina,Argentina,,,,,,,,,,
-australia,Australia,,,,,,,,,,
-austria,Austria,,,,,,,,,,
-belgica,Bélgica,,,,,,,,,,
-bolivia,Bolivia,,,,,,,,,,
-bosnia_herzegovina,Bosnia-Herzegovina,,,,,,,,,,
-brasil,Brasil,,,,,,,,,,
-bulgaria,Bulgaria,,,,,,,,,,
-cabo_verde,Cabo Verde,,,,,,,,,,
-camerun,Camerún,,,,,,,,,,
-canada,Canadá,,,,,,,,,,
-catar,Catar,,,,,,,,,,
-chile,Chile,,,,,,,,,,
-china,China,,,,,,,,,,
-colombia,Colombia,,,,,,,,,,
-corea_del_norte,Corea del Norte,,,,,,,,,,
-corea_del_sur,Corea del Sur,,,,,,,,,,
-costa_de_marfil,Costa de Marfil,,,,,,,,,,
-costa_rica,Costa Rica,,,,,,,,,,
-croacia,Croacia,,,,,,,,,,
-cuba,Cuba,,,,,,,,,,
-curazao,Curazao,,,,,,,,,,
-dinamarca,Dinamarca,,,,,,,,,,
-ecuador,Ecuador,,,,,,,,,,
-egipto,Egipto,,,,,,,,,,
-el_salvador,El Salvador,,,,,,,,,,
-emiratos_arabes,Emiratos Arabes,,,,,,,,,,
-escocia,Escocia,,,,,,,,,,
-eslovaquia,Eslovaquia,,,,,,,,,,
-eslovenia,Eslovenia,,,,,,,,,,
-espana,España,,,,,,,,,,
-estados_unidos,Estados Unidos,,,,,,,,,,
-francia,Francia,,,,,,,,,,
-gales,Gales,,,,,,,,,,
-ghana,Ghana,,,,,,,,,,
-grecia,Grecia,,,,,,,,,,
-haiti,Haití,,,,,,,,,,
-holanda,Paises Bajos,,,,,,,,,,
-honduras,Honduras,,,,,,,,,,
-hungria,Hungría,,,,,,,,,,
-indonesia,Indonesia,,,,,,,,,,
-inglaterra,Inglaterra,,,,,,,,,,
-iran,Irán,,,,,,,,,,
-iraq,Iraq,,,,,,,,,,
-irlanda_del_norte,Irlanda del Norte,,,,,,,,,,
-irlanda,Irlanda,,,,,,,,,,
-islandia,Islandia,,,,,,,,,,
-israel,Israel,,,,,,,,,,
-italia,Italia,,,,,,,,,,
-jamaica,Jamaica,,,,,,,,,,
-japon,Japón,,,,,,,,,,
-jordania,Jordania,,,,,,,,,,
-kuwait,Kuwait,,,,,,,,,,
-marruecos,Marruecos,,,,,,,,,,
-mexico,México,,,,,,,,,,
-nigeria,Nigeria,,,,,,,,,,
-noruega,Noruega,,,,,,,,,,
-nueva_zelanda,Nueva Zelanda,,,,,,,,,,
-panama,Panamá,,,,,,,,,,
-paraguay,Paraguay,,,,,,,,,,
-peru,Perú,,,,,,,,,,
-polonia,Polonia,,,,,,,,,,
-portugal,Portugal,,,,,,,,,,
-rd_congo,RD Congo,,,,,,,,,,
-republica_checa,República Checa,,,,,,,,,,
-rumania,Rumania,,,,,,,,,,
-rusia,Rusia,,,,,,,,,,
-senegal,Senegal,,,,,,,,,,
-serbia,Serbia,,,,,,,,,,
-sudafrica,Sudáfrica,,,,,,,,,,
-suecia,Suecia,,,,,,,,,,
-suiza,Suiza,,,,,,,,,,
-togo,Togo,,,,,,,,,,
-trinidad_y_tobago,Trinidad y Tobago,,,,,,,,,,
-tunez,Túnez,,,,,,,,,,
-turquia,Turquía,,,,,,,,,,
-ucrania,Ucrania,,,,,,,,,,
-uruguay,Uruguay,,,,,,,,,,
-uzbekistan,Uzbekistán,,,,,,,,,,
+﻿seleccion_id,nombre
+1,Alemania
+2,Angola
+3,Arabia Saudita
+4,Argelia
+5,Argentina
+6,Australia
+7,Austria
+8,Bolivia
+9,Bosnia-Herzegovina
+10,Brasil
+11,Bulgaria
+12,Bélgica
+13,Cabo Verde
+14,Camerún
+15,Canadá
+16,Catar
+17,Chile
+18,China
+19,Colombia
+20,Corea del Norte
+21,Corea del Sur
+22,Costa Rica
+23,Costa de Marfil
+24,Croacia
+25,Cuba
+26,Curazao
+27,Dinamarca
+28,Ecuador
+29,Egipto
+30,El Salvador
+31,Emiratos Arabes
+32,Escocia
+33,Eslovaquia
+34,Eslovenia
+35,España
+36,Estados Unidos
+37,Francia
+38,Gales
+39,Ghana
+40,Grecia
+41,Haití
+42,Honduras
+43,Hungría
+44,Indias Orientales Holand.
+45,Indonesia
+46,Inglaterra
+47,Iraq
+48,Irlanda
+49,Irlanda del Norte
+50,Irán
+51,Islandia
+52,Israel
+53,Italia
+54,Jamaica
+55,Japón
+56,Jordania
+57,Kuwait
+58,Marruecos
+59,Minuto 10
+60,Minuto 12
+61,Minuto 13
+62,Minuto 16
+63,Minuto 20
+64,Minuto 24
+65,Minuto 29
+66,Minuto 31
+67,Minuto 34
+68,Minuto 36
+69,Minuto 42
+70,Minuto 44
+71,Minuto 46
+72,Minuto 46 (en el entretiempo)
+73,Minuto 47
+74,Minuto 50
+75,Minuto 51
+76,Minuto 52
+77,Minuto 53
+78,Minuto 54
+79,Minuto 56
+80,Minuto 57
+81,Minuto 58
+82,Minuto 59
+83,Minuto 60
+84,Minuto 61
+85,Minuto 62
+86,Minuto 63
+87,Minuto 64
+88,Minuto 65
+89,Minuto 66
+90,Minuto 67
+91,Minuto 68
+92,Minuto 69
+93,Minuto 70
+94,Minuto 71
+95,Minuto 72
+96,Minuto 73
+97,Minuto 74
+98,Minuto 75
+99,Minuto 76
+100,Minuto 77
+101,Minuto 78
+102,Minuto 79
+103,Minuto 80
+104,Minuto 81
+105,Minuto 82
+106,Minuto 83
+107,Minuto 84
+108,Minuto 85
+109,Minuto 86
+110,Minuto 87
+111,Minuto 88
+112,Minuto 89
+113,Minuto 90
+114,Minuto 91
+115,Minuto 93
+116,Minuto 99
+117,México
+118,Nigeria
+119,Noruega
+120,Nueva Zelanda
+121,Paises Bajos
+122,Panamá
+123,Paraguay
+124,Perú
+125,Polonia
+126,Portugal
+127,RD Congo
+128,República Checa
+129,Rumania
+130,Rusia
+131,Senegal
+132,Serbia
+133,Sudáfrica
+134,Suecia
+135,Suiza
+136,Togo
+137,Trinidad y Tobago
+138,Turquía
+139,Túnez
+140,Ucrania
+141,Uruguay
+142,Uzbekistán
+143,Yugoslavia
+144,Zaire

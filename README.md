@@ -7,6 +7,10 @@ El flujo activo del repositorio quedó concentrado en dos piezas:
 - `py/scraping_normalizado.py`: genera los CSV normalizados.
 - `py/db/`: contiene el esquema, el ETL y el modelo lógico.
 
+La salida final ahora es estrictamente normalizada: los CSV persistidos usan llaves técnicas y relaciones separadas, sin depender de `slug` como dato final de almacenamiento.
+
+La única excepción operativa es `resolucion_identidad_jugador.csv`, que funciona como cola de conciliación para eventos ambiguos y ahora se genera siempre aunque no tenga filas, dejando solo el encabezado.
+
 ## Inicio rápido
 
 ### 1. Preparar el entorno
@@ -30,6 +34,7 @@ Hay dos modos de trabajo:
 
 - `web`: extrae directamente del sitio en vivo. Es la opción recomendada porque produce datos más completos.
 - `local`: lee los HTML ya descargados en `html_descargados`.
+- `--raw-dir`: convierte una carpeta con CSV del formato anterior al nuevo formato normalizado, sin volver a scrapear.
 
 #### Opción recomendada: extraer desde la web
 
@@ -41,6 +46,12 @@ Hay dos modos de trabajo:
 
 ```powershell
 .venv\Scripts\python.exe py\scraping_normalizado.py --origen local --html-dir .\html_descargados --salida .\datos_normalizados_local
+```
+
+#### Convertir una carpeta legacy ya existente
+
+```powershell
+.venv\Scripts\python.exe py\scraping_normalizado.py --raw-dir .\datos_normalizados_web --salida .\datos_normalizados_web
 ```
 
 ### 3. Crear la base en PostgreSQL
@@ -79,10 +90,13 @@ El scraper genera estos CSV:
 
 - `mundial.csv`
 - `seleccion.csv`
+- `seleccion_alias.csv`
 - `participacion_mundial.csv`
 - `jugador.csv`
+- `entrenador.csv`
 - `partido.csv`
 - `aparicion_partido.csv`
+- `direccion_tecnica_partido.csv`
 - `gol.csv`
 - `tarjeta.csv`
 - `cambio.csv`
@@ -90,12 +104,15 @@ El scraper genera estos CSV:
 - `grupo.csv`
 - `posicion_final.csv`
 - `goleador.csv`
-- `premio.csv`
-- `plantel.csv`
+- `premio_jugador.csv`
+- `premio_seleccion.csv`
+- `plantel_jugador.csv`
+- `plantel_entrenador.csv`
+- `resolucion_identidad_jugador.csv`
 
 ## Recomendación práctica
 
-Si el objetivo es poblar la base con la versión más completa posible, usa `datos_normalizados_web` como fuente de carga. La estructura de la base no cambia entre `web` y `local`; lo único que cambia es la completitud de los datos.
+Si el objetivo es poblar la base con la versión más completa posible, usa `datos_normalizados_web` como fuente de carga. La estructura final de la base no cambia entre `web` y `local`; lo único que cambia es la completitud de los datos.
 
 ## Documentación adicional
 

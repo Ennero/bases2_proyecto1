@@ -1,0 +1,358 @@
+﻿entrenador_id,nombre
+1,Lionel Scaloni
+2,Didier Deschamps
+3,Jorge Sampaoli
+4,Héctor Cúper
+5,Stanislav Cherchesov
+6,Óscar Tabárez
+7,Joachim Löw
+8,Alejandro Sabella
+9,Luiz Felipe Scolari
+10,Volker Finke
+11,Niko Kovac
+12,Miguel Herrera
+13,Diego Maradona
+14,Raymond Domenech
+15,Javier Aguirre
+16,Carlos Alberto Parreira
+17,Juergen Klinsmann
+18,Jose Pekerman
+19,Alexandre Guimaraes
+20,Luis Fernando Suarez
+21,Pawel Janas
+22,Rudi Voeller
+23,Morten Olsen
+24,Roger Lemerre
+25,Bruno Metsu
+26,Victor Pua
+27,Berti Vogts
+28,Zagallo
+29,Craig Brown
+30,Henri Michel
+31,Egil Olsen
+32,Francisco Maturana
+33,Bora Milutinovic
+34,Anghel Iordanescu
+35,Roy Hodgson
+36,Franz Beckenbauer
+37,Josef Hickersberger
+38,Jozef Venglos
+39,Bob Gansler
+40,Azeglio Vicini
+41,Jean Vincent
+42,Enzo Bearzot
+43,Tim
+44,Antoni Piechniczek
+45,Cesar Luis Menotti
+46,Michel Hidalgo
+47,Lajos Baroti
+48,Helmut Schoen
+49,Raymond Goethals
+50,Hernan Carrasco
+51,Raul Cardenas
+52,Gavril Kachalin
+53,Vicente Feola
+54,Henri Guerin
+55,Ignacio Trellez
+56,Ondino Viera
+57,Aymore Moreira
+58,Adolfo Pedernera
+59,Juan Carlos Corazzo
+60,Prvoslav Mihajlovic
+61,Sepp Herberger
+62,Guillermo Stabile
+63,Karel Kolsky
+64,Albert Batteaux
+65,Peter Doherty
+66,Zeze Moreira
+67,Pierre Pibarot
+68,Aleksandar Tirnanic
+69,Flavio Costa
+70,Octavio Vial
+71,Franco Andreoli
+72,Milorad Arsenijevic
+73,Félix Sánches
+74,Gustavo Alfaro
+75,Gareth Southgate
+76,Carlos Queiroz
+77,Aliou Cisse
+78,Louis Van Gaal
+79,Gregg Berhalter
+80,Rob Page
+81,Herve Renard
+82,Kasper Hjulmand
+83,Jalel Kadri
+84,Gerardo Martino
+85,Czeslaw Michniewicz
+86,Arnold Graham
+87,Walid Regragui
+88,Zlatko Dalic
+89,Hansi Flick
+90,Hajime Moriyasu
+91,Luis Enrique
+92,Roberto Martinez
+93,John Herdman
+94,Murat Yakin
+95,Rigobert Song
+96,Diego Alonso
+97,Paulo Bento
+98,Fernando Santos
+99,Otto Addo
+100,Tite
+101,Dragan Stojković
+102,Juan Antonio Pizzi
+103,Fernando Hierro
+104,Bert Van Marwijk
+105,Heimir Hallgrimsson
+106,Gernot Rohr
+107,Vladimir Petkovic
+108,Oscar Ramírez
+109,Mladen Krstajic
+110,Janne Andersson
+111,Tae-Yong Shin
+112,Hernan Gomez
+113,Akira Nishino
+114,Ricardo Gareca
+115,Age Hareide
+116,Nabil Maaloul
+117,Adam Nawalka
+118,Juan Carlos Osorio
+119,Vicente Del Bosque
+120,Ange Postecoglou
+121,Sabri Lamouchi
+122,Alberto Zaccheroni
+123,Jorge Luis Pinto
+124,Cesare Prandelli
+125,Ottmar Hitzfeld
+126,Reinaldo Rueda
+127,Safet Susic
+128,Stephen Keshi
+129,Kwesi Appiah
+130,Marc Wilmots
+131,Vahid Halilhodzic
+132,Fabio Capello
+133,Myung-Bo Hong
+134,Lars Lagerback
+135,Jung Moo Huh
+136,Otto Rehhagel
+137,Bob Bradley
+138,Rabah Saadane
+139,Matjaz Kek
+140,Pim Verbeek
+141,Radomir Antic
+142,Milovan Rajevac
+143,Takeshi Okada
+144,Paul Le Guen
+145,Marcello Lippi
+146,Ricki Herbert
+147,Vladimir Weiss
+148,Sven Göran Eriksson
+149,Dunga
+150,Jong Hun Kim
+151,Marcelo Bielsa
+152,Anibal Ruiz Leites
+153,Leo Beenhakker
+154,Ilija Petkovic
+155,Marco Van Basten
+156,Ricardo La Volpe
+157,Branko Ivankovic
+158,Ratomir Dujkovic
+159,Bruce Arena
+160,Karel Bruckner
+161,Guus Hiddink
+162,Zico
+163,Zlatko Kranjcar
+164,Koebi Kuhn
+165,Dick Advocaat
+166,Otto Pfister
+167,Luis Aragones
+168,Oleg Blokhin
+169,Luis Goncalves
+170,Marcos Paqueta
+171,Mick Mc Carthy
+172,Winnie Schaefer
+173,Nasser Al Johar
+174,Tommy Soderberg
+175,Cesare Maldini
+176,Jomo Sono
+177,Adegboye Onigbinde
+178,Jose Antonio Camacho
+179,Danilo Popivoda
+180,Mirko Jozic
+181,Senol Gunes
+182,Jerzy Engel
+183,Oleg Romantsev
+184,Ammar Souayah
+185,Antonio Oliveira
+186,Giovanni Trapattoni
+187,Philippe Troussier
+188,Robert Waseige
+189,Claude Le Roy
+190,Herbert Prohaska
+191,Nelson Acosta
+192,Mohammed Al Kharashy
+193,Bo Johansson
+194,Aime Jacquet
+195,Carpegiani
+196,Hristo Bonev
+197,Georges Leekens
+198,Pyung Seok Kim
+199,Manuel Lapuente
+200,Javier Clemente
+201,René Simoes
+202,Miroslav Blazevic
+203,Slobodan Santrac
+204,Jalal Talebi
+205,Daniel Passarella
+206,Glenn Hoddle
+207,Henryk Kasperczak
+208,Steve Sampson
+209,Xabier Azkargorta
+210,Ho Kon Kim
+211,Arrigo Sacchi
+212,Jack Charlton
+213,Paul Van Himst
+214,Abdellah Blinda
+215,Miguel Mejia Baron
+216,Tommy Svensson
+217,Pavel Sadyrin
+218,Jorge Solari
+219,Alfio Basile
+220,Alkis Panagoulias
+221,Clemens Westerhof
+222,Dimitar Penev
+223,Carlos Bilardo
+224,Valeri Nepomnyashchi
+225,Valeriy Lobanovskyi
+226,Emerich Jenei
+227,Sebastiao Lazaroni
+228,Olle Nordin
+229,Ivica Osim
+230,Andy Roxburgh
+231,Bobby Robson
+232,Guy Thys
+233,Hoe Taik Lee
+234,Mahmoud El Gohary
+235,Luis Suarez
+236,Ivan Vutsov
+237,Miguel Munoz
+238,Tele Santana
+239,Tony Waiters
+240,Jung Nam Kim
+241,Gyorgy Mezey
+242,Jose Faria
+243,Jose Torres
+244,Billy Bingham
+245,Alex Ferguson
+246,Sepp Piontek
+247,Omar Borras
+248,Cayetano Re
+249,Evaristo
+250,Kostantin Beskov
+251,Jock Stein
+252,John Adshead
+253,Kalman Meszoly
+254,Mauricio Rodriguez
+255,Jupp Derwall
+256,Rachid Mekhloufi
+257,Jose Santamaria
+258,Jose De La Paz
+259,Ron Greenwood
+260,Miljan Miljanic
+261,Luis Alberto Santibanez
+262,Georg Schmidt
+263,Jacek Gmoch
+264,Abdelmajid Chetali
+265,Jose Roca
+266,Ernst Happel
+267,Heshmat Mohadjerani
+268,Georg Ericson
+269,Claudio Coutinho
+270,Marcos Calderon
+271,Ladislao Kubala
+272,Alistair Macleod
+273,Helmut Senekowitsch
+274,Luis Alamos
+275,Georg Buschner
+276,Rale Rasic
+277,Blagoje Vidinic
+278,Willie Ormond
+279,Kazimierz Gorski
+280,Vladislao Cap
+281,Roberto Porta
+282,Rinus Michels
+283,Ferruccio Valcareggi
+284,Antoine Tassy
+285,Hristo Mladenov
+286,Alf Ramsey
+287,Alfredo Foni
+288,Nikolai Morozov
+289,Rye Hyun Myung
+290,Rudolf Vytlacil
+291,Edmondo Fabbri
+292,Otto Gloria
+293,Juan Carlos Lorenzo
+294,Jose Villalonga
+295,Fernando Riera
+296,Karl Rappan
+297,Georgi Pachedzhiev
+298,Helenio Herrera
+299,Walter Winterbottom
+300,Paolo Mazza
+301,Jimmy Murphy
+302,Josef Argauer
+303,Aurelio Gonzales
+304,George Raynor
+305,Antonio Lopez Herranz
+306,Dawson Walker
+307,Walter Nausch
+308,Juan Lopez
+309,Josef Cejp
+310,Gusztav Sebes
+311,Yung Sik Kim
+312,Alessandro Puppo
+313,Lajos Czeizler
+314,Doug Livingstone
+315,Ferruccio Novo
+316,Arturo Bucciardi
+317,Guillermo Eizaguirre
+318,Bill Jeffrey
+319,Manuel Fleitas Solich
+320,Mario Pretto
+321,Gaston Barreau
+322,Jack Butler
+323,Vittorio Pozzo
+324,Asbjorn Halvorsen
+325,Ademar Pimenta
+326,Jozef Kaluza
+327,Alfred Schaffer
+328,Johannes Van Mastenbroek
+329,Josef Meissner
+330,Robert Glendenning
+331,Jose Tapia
+332,Alexandru Savulescu
+333,Joszef Nagy
+334,Otto Nerz
+335,Hector Goetinck
+336,Felipe Pascucci
+337,Ferenc Nadas
+338,James Mcrea
+339,Amadeo Garcia Salazar
+340,Luiz Vinhaes
+341,Karel Petru
+342,Josef Uridil
+343,Heini Mueller
+344,Hugo Meisl
+345,George Kimpton
+346,Raoul Caudron
+347,Juan Luque
+348,Bob Millar
+349,Constantin Radulescu
+350,Francisco Bru
+351,Bosko Simonovic
+352,Pindaro De Carvalho
+353,Juan Tramutola
+354,Gyorgi Orth
+355,Ulises Saucedo
+356,Jose Durand Laguna
+357,Alberto Suppici

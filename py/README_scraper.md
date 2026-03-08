@@ -2,21 +2,25 @@
 
 El script principal y único flujo de extracción vigente es `py/scraping_normalizado.py`.
 
-Genera CSV listos para cargarse en una base relacional y ahora puede trabajar en dos modos:
+Genera CSV estrictamente normalizados listos para cargarse en una base relacional y puede trabajar en tres formas:
 
 - `local`: lee la carpeta `html_descargados`.
 - `web`: consulta directamente `https://www.losmundialesdefutbol.com`.
+- `--raw-dir`: transforma una carpeta de CSV legacy al nuevo formato final.
 
 ## CSV generados
 
 | CSV | Descripción |
 |---|---|
-| `mundial.csv` | Resumen general por edición, incluyendo promedio de gol |
-| `seleccion.csv` | Ficha histórica resumida por selección |
+| `mundial.csv` | Resumen general por edición |
+| `seleccion.csv` | Selecciones canónicas |
+| `seleccion_alias.csv` | Alias históricos y equivalencias de selección |
 | `participacion_mundial.csv` | Resumen por selección y mundial |
-| `jugador.csv` | Ficha ampliada de jugador |
-| `partido.csv` | Resultado, fecha, etapa, prórroga y penales |
-| `aparicion_partido.csv` | Titulares, ingresos, suplentes y entrenador por partido |
+| `jugador.csv` | Catálogo de jugadores |
+| `entrenador.csv` | Catálogo de entrenadores |
+| `partido.csv` | Hecho principal del partido con FK de selecciones |
+| `aparicion_partido.csv` | Titulares, ingresos y suplentes por partido |
+| `direccion_tecnica_partido.csv` | Entrenadores vinculados a cada partido |
 | `gol.csv` | Goles por partido, incluyendo penal y autogol |
 | `tarjeta.csv` | Tarjetas amarillas y rojas |
 | `cambio.csv` | Sustituciones |
@@ -24,8 +28,11 @@ Genera CSV listos para cargarse en una base relacional y ahora puede trabajar en
 | `grupo.csv` | Tabla de posiciones por grupo |
 | `posicion_final.csv` | Ranking final por mundial |
 | `goleador.csv` | Goleadores por edición |
-| `premio.csv` | Premios a jugadores y selecciones |
-| `plantel.csv` | Planteles por mundial, incluyendo altura, club y entrenador |
+| `premio_jugador.csv` | Premios cuyo destinatario es un jugador |
+| `premio_seleccion.csv` | Premios cuyo destinatario es una selección |
+| `plantel_jugador.csv` | Jugadores convocados por mundial |
+| `plantel_entrenador.csv` | Entrenadores del plantel por mundial |
+| `resolucion_identidad_jugador.csv` | Casos ambiguos que requieren conciliación posterior |
 
 ## Dependencias
 
@@ -44,6 +51,16 @@ Desde la raíz del proyecto:
 ```bash
 C:/Users/Enner/Desktop/bases2_proyecto1/.venv/Scripts/python.exe py/scraping_normalizado.py --origen local --html-dir ./html_descargados --salida ./datos_normalizados_local
 ```
+
+## Conversión de una carpeta legacy
+
+```bash
+C:/Users/Enner/Desktop/bases2_proyecto1/.venv/Scripts/python.exe py/scraping_normalizado.py --raw-dir ./datos_normalizados_web --salida ./datos_normalizados_web
+```
+
+Ese modo lee los CSV existentes, elimina archivos obsoletos como `premio.csv` y `plantel.csv`, y deja la carpeta en el nuevo formato final.
+
+`resolucion_identidad_jugador.csv` se escribe siempre. Si no hubo ambigüedades, queda como un CSV vacío con encabezados para que el ETL no falle.
 
 Para probar solo una parte:
 
@@ -78,8 +95,9 @@ C:/Users/Enner/Desktop/bases2_proyecto1/.venv/Scripts/python.exe py/scraping_nor
 
 ## Notas del modelo de extracción
 
-- Los `slug` salen de las URLs y se usan como clave natural.
+- Los `slug` pueden seguir existiendo internamente durante la extracción o en el formato legacy, pero ya no forman parte del modelo persistido final.
 - `penal.csv` existe solo para las tandas detalladas, no para goles de penal en tiempo regular.
 - Los autogoles se marcan en `gol.csv` mediante `es_autogol`.
-- Los premios ahora distinguen si el destinatario fue un `jugador` o una `seleccion`.
-- Los planteles incluyen filas de `rol = entrenador`.
+- Los premios quedaron separados en `premio_jugador.csv` y `premio_seleccion.csv`.
+- Los planteles quedaron separados en `plantel_jugador.csv` y `plantel_entrenador.csv`.
+- `plantel_jugador.csv` conserva solo atributos dependientes del plantel o de esa convocatoria, como posición, camiseta y club; la fecha de nacimiento y la altura quedan en `jugador.csv`.
