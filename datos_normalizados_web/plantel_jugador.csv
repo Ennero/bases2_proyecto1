@@ -1,4 +1,4 @@
-﻿anio,seleccion_id,jugador_id,posicion,camiseta,club
+anio,seleccion_id,jugador_id,posicion,camiseta,club
 2022,1,2854,AR,1,Bayern Munich (ALE)
 2022,1,3133,AR,12,Eintracht Frankfurt (ALE)
 2022,1,3134,AR,22,FC Barcelona (ESP)
@@ -2474,7 +2474,6 @@
 2010,20,4221,DF,14,Amrokgang (PRK)
 2010,20,4227,DF,16,April 25 (PRK)
 2010,20,4228,DF,21,Kyonggongop (PRK)
-2010,20,4221,MC,4,April 25 (PRK)
 2010,20,4225,MC,6,April 25 (PRK)
 2010,20,4222,MC,11,April 25 (PRK)
 2010,20,4231,MC,15,Pyongyang City (PRK)

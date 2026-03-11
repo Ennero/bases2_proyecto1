@@ -121,6 +121,27 @@ El scraper genera estos CSV:
 - `plantel_entrenador.csv`
 - `resolucion_identidad_jugador.csv`
 
+## INICIO CON DOCKER (para quienes quieran evitar la instalación local de PostgreSQL)
+
+- Requisitos
+  - Docker Desktop instalado y corriendo.
+  - Los CSV generados en `datos_normalizados_web/` (ver sección Generar los CSV).
+
+1. **Levantar la base de datos**
+
+Desde la raíz del proyecto, ejecutar:
+
+```bash
+docker compose up -d --build
+```
+
+La primera vez tarda aproximadamente 30–60 segundos mientras:
+
+Construye la imagen (PostgreSQL 16 + Python3).
+Crea todas las tablas e índices (01_schema.sql).
+Limpia y normaliza los CSV (02_fix_csvs.sh).
+Carga todos los datos (03_etl.sql).
+
 ## Recomendación práctica
 
 Si el objetivo es poblar la base con la versión más completa posible, usa `datos_normalizados_web` como fuente de carga. La estructura final de la base no cambia entre `web` y `local`; lo único que cambia es la completitud de los datos.

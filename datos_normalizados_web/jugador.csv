@@ -1,4 +1,4 @@
-﻿jugador_id,nombre,nombre_completo,fecha_nacimiento,lugar_nacimiento,altura,apodo,sitio_web,redes_sociales
+jugador_id,nombre,nombre_completo,fecha_nacimiento,lugar_nacimiento,altura,apodo,sitio_web,redes_sociales
 1,Lionel Messi,Lionel Andrés Messi,24 de junio de 1987,"Rosario, Santa Fe, Argentina","1.70 m / 5' 7""","La Pulga, Leo, Lio",http://messi.com,Instagram: @leomessi / Facebook: @leomessi / YouTube: LeoMessi
 2,Cristiano Ronaldo,Cristiano Ronaldo dos Santos Aveiro,5 de febrero de 1985,"Funchal, Madeira, Portugal","1.87 m / 6' 2""","CR7, el deseado, el bicho",http://www.cristianoronaldo.com,Twitter: @Cristiano / Instagram: @cristiano / Facebook: @Cristiano
 3,Kylian Mbappé,Kylian Mbappé Lottin,20 de diciembre de 1998,"París, Francia","1.78 m / 5' 10""",,http://kylianmbappe.com,Twitter: @KMbappe
