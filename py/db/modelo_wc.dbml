@@ -1,6 +1,6 @@
 Project mundiales_model {
-  database_type: 'PostgreSQL'
-  Note: 'Modelo estrictamente normalizado alineado con postgres_schema.sql'
+  database_type: 'SQLServer'
+  Note: 'Modelo estrictamente normalizado alineado con sqlserver_schema.sql (T-SQL)'
 }
 
 Enum tipo_tarjeta {

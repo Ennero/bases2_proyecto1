@@ -6,26 +6,23 @@ services:
     container_name: mundiales_db
     restart: unless-stopped
     environment:
-      POSTGRES_USER: mundiales
-      POSTGRES_PASSWORD: mundiales123
-      POSTGRES_DB: mundiales
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+      MSSQL_SA_PASSWORD: "Mundiales2026!"
+      MSSQL_DATABASE: "mundiales"
+    command: ["/bin/bash", "/docker/init/run_init.sh"]
     ports:
-      - "5432:5432"
+      - "1433:1433"
     volumes:
-      # Datos persistentes del contenedor
-      - postgres_data:/var/lib/postgresql/data
-      # Scripts de inicialización (orden alfabético, solo la primera vez)
-      # 01: crea tablas  |  02: limpia CSVs (bash+python)  |  03: carga datos (SQL)
-      - ./docker/init/01_schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
-      - ./docker/init/02_fix_csvs.sh:/docker-entrypoint-initdb.d/02_fix_csvs.sh
-      - ./docker/init/03_etl.sql:/docker-entrypoint-initdb.d/03_etl.sql
-      # Carpeta de CSVs montada dentro del contenedor
+      - mssql_data:/var/opt/mssql
+      - ./docker/init:/docker/init:ro
+      - ./py/db:/db_scripts:ro
       - ./datos_normalizados_web:/csv
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U mundiales -d mundiales"]
-      interval: 5s
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -C -S localhost -U sa -P \"$${MSSQL_SA_PASSWORD}\" -Q \"SELECT 1\" > /dev/null || exit 1"]
+      interval: 10s
       timeout: 5s
-      retries: 10
+      retries: 20
 
 volumes:
-  postgres_data:
+  mssql_data:

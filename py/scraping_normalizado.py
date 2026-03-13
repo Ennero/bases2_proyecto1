@@ -21,7 +21,7 @@ from urllib.parse import urlparse
 import pandas as pd
 from bs4 import BeautifulSoup, Tag
 
-from normalizacion_csv import normalizar_csv_legados
+from normalizacion_csv import normalizar_csv_intermedio
 
 
 BASE = "https://www.losmundialesdefutbol.com"
@@ -1202,12 +1202,6 @@ def main() -> None:
         help="Carpeta local con los HTML descargados",
     )
     parser.add_argument("--pausa", type=float, default=0.2, help="Pausa entre requests en modo web")
-    parser.add_argument(
-        "--raw-dir",
-        type=str,
-        default=None,
-        help="Convierte una carpeta con CSV legacy al nuevo formato normalizado sin volver a scrapear",
-    )
     args = parser.parse_args()
 
     anios = args.anio if args.anio else ANIOS
@@ -1216,33 +1210,7 @@ def main() -> None:
     salida_final = os.path.abspath(args.salida)
     os.makedirs(salida_final, exist_ok=True)
 
-    if args.raw_dir:
-        raw_dir = os.path.abspath(args.raw_dir)
-        print("=" * 60)
-        print("NORMALIZACION DE CSV LEGACY")
-        print("=" * 60)
-        print(f"  Entrada raw: {raw_dir}")
-        print(f"  Salida: {salida_final}")
-        if os.path.normcase(raw_dir) == os.path.normcase(salida_final):
-            staging_dir = tempfile.mkdtemp(prefix="_normalized_", dir=os.path.dirname(salida_final) or salida_final)
-            try:
-                normalizar_csv_legados(raw_dir, staging_dir)
-                for filename in os.listdir(salida_final):
-                    file_path = os.path.join(salida_final, filename)
-                    if os.path.isfile(file_path):
-                        os.remove(file_path)
-                for filename in os.listdir(staging_dir):
-                    shutil.move(os.path.join(staging_dir, filename), os.path.join(salida_final, filename))
-            finally:
-                shutil.rmtree(staging_dir, ignore_errors=True)
-        else:
-            normalizar_csv_legados(raw_dir, salida_final)
-        print("\n" + "=" * 60)
-        print("NORMALIZACION COMPLETADA")
-        print("=" * 60)
-        return
-
-    raw_dir = tempfile.mkdtemp(prefix="_raw_legacy_", dir=salida_final)
+    raw_dir = tempfile.mkdtemp(prefix="_raw_intermedio_", dir=salida_final)
     fuente = FuenteDatos(
         origen=args.origen,
         html_dir=os.path.abspath(args.html_dir),
@@ -1273,7 +1241,7 @@ def main() -> None:
         print("\n" + "=" * 60)
         print("NORMALIZANDO SALIDA FINAL")
         print("=" * 60)
-        normalizar_csv_legados(raw_dir, salida_final)
+        normalizar_csv_intermedio(raw_dir, salida_final)
     finally:
         fuente.cerrar()
         shutil.rmtree(raw_dir, ignore_errors=True)

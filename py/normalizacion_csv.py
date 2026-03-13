@@ -8,7 +8,7 @@ from dataclasses import dataclass, field
 import pandas as pd
 
 
-LEGACY_FILES = (
+RAW_FILES = (
     "mundial.csv",
     "seleccion.csv",
     "jugador.csv",
@@ -53,14 +53,6 @@ FINAL_FILES = (
 OBSOLETE_OUTPUT_FILES = (
     "premio.csv",
     "plantel.csv",
-)
-
-NORMALIZED_ONLY_FILES = (
-    "premio_jugador.csv",
-    "premio_seleccion.csv",
-    "plantel_jugador.csv",
-    "plantel_entrenador.csv",
-    "direccion_tecnica_partido.csv",
 )
 
 SELECCION_ALIAS_MAP = {
@@ -498,15 +490,8 @@ def _event_resolution_row(source_table: str, source_event_id: int, partido_id: i
     }
 
 
-def normalizar_csv_legados(raw_dir: str, output_dir: str) -> None:
-    legacy_present = any(os.path.exists(os.path.join(raw_dir, filename)) for filename in ("premio.csv", "plantel.csv"))
-    normalized_present = any(os.path.exists(os.path.join(raw_dir, filename)) for filename in NORMALIZED_ONLY_FILES)
-    if not legacy_present and normalized_present:
-        raise ValueError(
-            "La carpeta indicada ya parece estar en formato normalizado final; usa una carpeta legacy como entrada raw-dir."
-        )
-
-    frames = {filename: _read_optional_csv(raw_dir, filename) for filename in LEGACY_FILES}
+def normalizar_csv_intermedio(raw_dir: str, output_dir: str) -> None:
+    frames = {filename: _read_optional_csv(raw_dir, filename) for filename in RAW_FILES}
     for filename in FINAL_FILES + OBSOLETE_OUTPUT_FILES:
         output_path = os.path.join(output_dir, filename)
         if os.path.exists(output_path):

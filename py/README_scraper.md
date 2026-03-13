@@ -2,11 +2,10 @@
 
 El script principal y único flujo de extracción vigente es `py/scraping_normalizado.py`.
 
-Genera CSV estrictamente normalizados listos para cargarse en una base relacional y puede trabajar en tres formas:
+Genera CSV estrictamente normalizados listos para cargarse en una base relacional y puede trabajar en dos formas:
 
 - `local`: lee la carpeta `html_descargados`.
 - `web`: consulta directamente `https://www.losmundialesdefutbol.com`.
-- `--raw-dir`: transforma una carpeta de CSV legacy al nuevo formato final.
 
 ## CSV generados
 
@@ -52,16 +51,6 @@ Desde la raíz del proyecto:
 C:/Users/Enner/Desktop/bases2_proyecto1/.venv/Scripts/python.exe py/scraping_normalizado.py --origen local --html-dir ./html_descargados --salida ./datos_normalizados_local
 ```
 
-## Conversión de una carpeta legacy
-
-```bash
-C:/Users/Enner/Desktop/bases2_proyecto1/.venv/Scripts/python.exe py/scraping_normalizado.py --raw-dir ./datos_legados --salida ./datos_normalizados_web
-```
-
-Ese modo lee los CSV existentes, elimina archivos obsoletos como `premio.csv` y `plantel.csv`, y deja la carpeta en el nuevo formato final.
-
-La carpeta indicada en `--raw-dir` debe ser legacy. Si apuntas a una carpeta ya normalizada, el script ahora falla explícitamente para evitar regeneraciones incorrectas.
-
 `resolucion_identidad_jugador.csv` se escribe siempre. Si no hubo ambigüedades, queda como un CSV vacío con encabezados para que el ETL no falle.
 
 Para probar solo una parte:
@@ -97,7 +86,7 @@ C:/Users/Enner/Desktop/bases2_proyecto1/.venv/Scripts/python.exe py/scraping_nor
 
 ## Notas del modelo de extracción
 
-- Los `slug` pueden seguir existiendo internamente durante la extracción o en el formato legacy, pero ya no forman parte del modelo persistido final.
+- Los `slug` pueden seguir existiendo internamente durante la extracción, pero ya no forman parte del modelo persistido final.
 - `penal.csv` existe solo para las tandas detalladas, no para goles de penal en tiempo regular.
 - Los autogoles se marcan en `gol.csv` mediante `es_autogol`.
 - Los premios quedaron separados en `premio_jugador.csv` y `premio_seleccion.csv`.
