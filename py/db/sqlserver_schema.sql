@@ -247,7 +247,6 @@ CREATE TABLE dbo.posicion_final (
     posicion INT NOT NULL,
     seleccion_id BIGINT NOT NULL,
     CONSTRAINT pk_posicion_final PRIMARY KEY (anio, posicion),
-    CONSTRAINT uq_posicion_final_seleccion UNIQUE (anio, seleccion_id),
     CONSTRAINT fk_posicion_final_mundial
         FOREIGN KEY (anio) REFERENCES dbo.mundial(anio),
     CONSTRAINT fk_posicion_final_seleccion

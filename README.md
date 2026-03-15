@@ -42,6 +42,7 @@ El flujo final quedó en SQL Server para tener un solo stack de ejecución local
 ### 4) Decisiones de modelado
 
 - Tablas en singular y llaves técnicas (`*_id`) para estabilidad relacional.
+- `seleccion_alias` colapsa variantes históricas de nombre hacia una selección canónica; por eso una misma `seleccion_id` puede aparecer más de una vez en un mismo Mundial cuando hubo selecciones históricas distintas que hoy se normalizan al mismo identificador.
 - Separación de premios por tipo (`premio_jugador`, `premio_seleccion`).
 - Separación de plantel por tipo (`plantel_jugador`, `plantel_entrenador`).
 - Separación por grano analítico:
@@ -273,7 +274,7 @@ El init hace:
 
 - `anio`: edición del Mundial.
 - `posicion`: posición final absoluta en esa edición.
-- `seleccion_id`: selección ubicada en esa posición.
+- `seleccion_id`: selección ubicada en esa posición. Puede repetirse dentro del mismo `anio` si dos selecciones históricas fueron normalizadas a una misma selección canónica.
 
 ### goleador
 

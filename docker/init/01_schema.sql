@@ -2,7 +2,9 @@
 
 IF DB_ID(N'$(DB_NAME)') IS NULL
 BEGIN
-    EXEC (N'CREATE DATABASE [' + REPLACE('$(DB_NAME)', ']', ']]') + N']');
+    DECLARE @create_db_sql NVARCHAR(MAX);
+    SET @create_db_sql = N'CREATE DATABASE ' + QUOTENAME(N'$(DB_NAME)');
+    EXEC (@create_db_sql);
 END
 GO
 

@@ -38,9 +38,9 @@ if [ ! -f "$INIT_MARKER" ]; then
   echo ">>> Primera inicializacion detectada. Ejecutando schema + ETL..."
   /bin/bash /docker/init/02_fix_csvs.sh
 
-  "$SQLCMD" -C -S "$SERVER" -U "$SA_USER" -P "$PASSWORD" -i /docker/init/01_schema.sql -v DB_NAME="$DB_NAME"
+  "$SQLCMD" -b -C -S "$SERVER" -U "$SA_USER" -P "$PASSWORD" -i /docker/init/01_schema.sql -v DB_NAME="$DB_NAME"
 
-  "$SQLCMD" -C -S "$SERVER" -U "$SA_USER" -P "$PASSWORD" -d "$DB_NAME" -i /docker/init/03_etl.sql -v CSV_DIR="/csv"
+  "$SQLCMD" -b -C -S "$SERVER" -U "$SA_USER" -P "$PASSWORD" -d "$DB_NAME" -i /docker/init/03_etl.sql -v CSV_DIR="/csv"
 
   touch "$INIT_MARKER"
   echo ">>> Inicializacion completada."

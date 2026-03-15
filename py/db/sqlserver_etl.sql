@@ -46,8 +46,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.mundial (anio, sede, equipos, partidos_jugados, goles_total)
@@ -73,8 +72,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.seleccion (seleccion_id, nombre)
@@ -97,8 +95,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.seleccion_alias (alias_nombre, seleccion_id)
@@ -128,8 +125,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.jugador (
@@ -169,8 +165,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.entrenador (entrenador_id, nombre)
@@ -203,8 +198,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.partido (
@@ -255,8 +249,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.aparicion_partido (partido_id, seleccion_id, jugador_id, posicion, camiseta, seccion, es_capitan)
@@ -285,8 +278,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.direccion_tecnica_partido (partido_id, seleccion_id, entrenador_id)
@@ -315,8 +307,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.gol (gol_id, partido_id, seleccion_id, jugador_id, minuto, es_penal, es_autogol)
@@ -348,8 +339,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.tarjeta (tarjeta_id, partido_id, seleccion_id, jugador_id, tipo, minuto)
@@ -380,8 +370,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.cambio (cambio_id, partido_id, seleccion_id, jugador_sale_id, jugador_entra_id, minuto)
@@ -412,8 +401,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.penal (penal_id, partido_id, seleccion_id, orden, jugador_id, resultado)
@@ -451,8 +439,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.grupo (anio, grupo, posicion, seleccion_id, pts, pj, pg, pe, pp, gf, gc, dif, clasificado)
@@ -491,8 +478,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.posicion_final (anio, posicion, seleccion_id)
@@ -518,8 +504,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.goleador (anio, jugador_id, seleccion_id, goles)
@@ -546,8 +531,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.premio_jugador (anio, premio, jugador_id, seleccion_id)
@@ -573,8 +557,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.premio_seleccion (anio, premio, seleccion_id)
@@ -602,8 +585,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.plantel_jugador (anio, seleccion_id, jugador_id, posicion, camiseta, club)
@@ -631,8 +613,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.plantel_entrenador (anio, seleccion_id, entrenador_id)
@@ -667,8 +648,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.participacion_mundial (
@@ -723,8 +703,7 @@ BEGIN TRY
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
-        ROWTERMINATOR = '0x0a',
-        CODEPAGE = '65001'
+        ROWTERMINATOR = '0x0a'
     );
 
     INSERT INTO dbo.resolucion_identidad_jugador (

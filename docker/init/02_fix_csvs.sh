@@ -99,7 +99,7 @@ def fix_bool(value: str):
 res_file_path = os.path.join(CSV_DIR, RESOLUCION_FILE)
 if not os.path.exists(res_file_path):
     with open(res_file_path, "w", encoding="utf-8", newline="") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator="\n")
         writer.writerow(RESOLUCION_HEADER)
     print(f"  CREATED: {RESOLUCION_FILE} (solo encabezado)")
 
@@ -147,7 +147,7 @@ for filename, int_cols in INT_COLUMNS.items():
         rows = unique_rows
 
     with open(filepath, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
