@@ -65,7 +65,7 @@ penal_id,partido_id,seleccion_id,orden,jugador_id,resultado
 64,120,46,2,57,gol
 65,120,19,3,2802,gol
 66,120,46,3,144,atajado
-67,120,19,4,2803,travesaño
+67,120,19,4,2803,travesano
 68,120,46,4,256,gol
 69,120,19,5,1702,atajado
 70,120,46,5,2804,gol
@@ -120,7 +120,7 @@ penal_id,partido_id,seleccion_id,orden,jugador_id,resultado
 119,247,123,2,2817,gol
 120,247,55,2,1652,gol
 121,247,123,3,1917,gol
-122,247,55,3,2818,travesaño
+122,247,55,3,2818,travesano
 123,247,123,4,1937,gol
 124,247,55,4,211,gol
 125,247,123,5,2819,gol
@@ -135,7 +135,7 @@ penal_id,partido_id,seleccion_id,orden,jugador_id,resultado
 134,250,141,5,2135,gol
 135,310,135,1,1964,atajado
 136,310,140,1,457,atajado
-137,310,135,2,452,travesaño
+137,310,135,2,452,travesano
 138,310,140,2,2822,gol
 139,310,135,3,1966,atajado
 140,310,140,3,456,gol
@@ -160,7 +160,7 @@ penal_id,partido_id,seleccion_id,orden,jugador_id,resultado
 159,320,53,1,424,gol
 160,320,37,1,2826,gol
 161,320,53,2,474,gol
-162,320,37,2,621,travesaño
+162,320,37,2,621,travesano
 163,320,53,3,355,gol
 164,320,37,3,1845,gol
 165,320,53,4,496,gol
@@ -193,7 +193,7 @@ penal_id,partido_id,seleccion_id,orden,jugador_id,resultado
 192,441,37,3,621,gol
 193,441,53,4,520,gol
 194,441,37,4,450,gol
-195,441,53,5,620,travesaño
+195,441,53,5,620,travesano
 196,441,37,5,670,gol
 197,445,10,1,4,gol
 198,445,121,1,2391,gol
@@ -243,7 +243,7 @@ penal_id,partido_id,seleccion_id,orden,jugador_id,resultado
 242,541,48,5,2839,gol
 243,541,129,5,2840,atajado
 244,545,5,1,2496,gol
-245,545,143,1,633,travesaño
+245,545,143,1,633,travesano
 246,545,5,2,764,gol
 247,545,143,2,608,gol
 248,545,5,3,9,atajado

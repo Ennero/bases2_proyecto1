@@ -36,13 +36,21 @@ Por eso la salida recomendada es `datos_normalizados_web/`.
 El flujo final quedó en SQL Server para tener un solo stack de ejecución local y Docker:
 
 - esquema SQL: `py/db/sqlserver_schema.sql` (T-SQL),
-- ETL SQL: `py/db/sqlserver_etl.sql` (T-SQL),
+- ETL SQL: `py/db/sqlserver_etl.sql` (T-SQL con BULK INSERT),
 - Docker con SQL Server 2022 y scripts de init en `docker/init/`.
 
-### 4) Decisiones de modelado
+### 4) Normalización de caracteres especiales
+
+`BULK INSERT` en SQL Server sobre Linux no soporta UTF-8 directamente. La solución
+adoptada fue normalizar todos los caracteres acentuados y especiales a su equivalente
+ASCII en el script de limpieza (`02_fix_csvs.sh`) antes de la carga, usando
+`unicodedata.normalize('NFD')` de Python. Esto garantiza que `Bélgica` se almacene
+como `Belgica`, `España` como `Espana`, etc., de forma consistente en toda la base.
+
+### 5) Decisiones de modelado
 
 - Tablas en singular y llaves técnicas (`*_id`) para estabilidad relacional.
-- `seleccion_alias` colapsa variantes históricas de nombre hacia una selección canónica; por eso una misma `seleccion_id` puede aparecer más de una vez en un mismo Mundial cuando hubo selecciones históricas distintas que hoy se normalizan al mismo identificador.
+- `seleccion_alias` colapsa variantes históricas de nombre hacia una selección canónica.
 - Separación de premios por tipo (`premio_jugador`, `premio_seleccion`).
 - Separación de plantel por tipo (`plantel_jugador`, `plantel_entrenador`).
 - Separación por grano analítico:
@@ -63,10 +71,150 @@ Sí: `resolucion_identidad_jugador`.
 
 - `py/scraping_normalizado.py`: scraper y normalizador principal.
 - `py/db/sqlserver_schema.sql`: esquema SQL Server (T-SQL).
-- `py/db/sqlserver_etl.sql`: carga de CSV en SQL Server.
+- `py/db/sqlserver_etl.sql`: carga de CSV en SQL Server con BULK INSERT.
 - `py/db/modelo_wc.dbml`: modelo lógico.
+- `docker/init/`: scripts de inicialización del entorno Docker.
 
-## Inicio rápido
+## Estructura del repositorio
+
+```
+bases2_proyecto1/
+├── Dockerfile                          # Imagen SQL Server 2022 + Python3 + dos2unix
+├── docker-compose.yml                  # Orquestacion del contenedor
+├── .gitattributes                      # Fuerza LF en .sh para compatibilidad Linux
+├── docker/
+│   └── init/
+│       ├── run_init.sh                 # Arranque: espera SQL Server y ejecuta init
+│       ├── 01_schema.sql               # Crea la base de datos y llama al schema
+│       ├── 02_fix_csvs.sh              # Limpia, normaliza y deduplica los CSV
+│       └── 03_etl.sql                  # Llama al ETL principal con BULK INSERT
+├── py/
+│   ├── scraping_normalizado.py         # Scraper principal
+│   ├── normalizacion_csv.py            # Conversor de formato legacy a normalizado
+│   ├── README_scraper.md               # Guia del scraper
+│   └── db/
+│       ├── sqlserver_schema.sql        # Esquema T-SQL (SQL Server 2019+)
+│       ├── sqlserver_etl.sql           # ETL T-SQL con BULK INSERT y tablas staging
+│       ├── modelo_wc.dbml              # Modelo logico en DBML
+│       └── README_db.md               # Documentacion del modelo y ETL
+├── datos_normalizados_web/             # CSV generados desde la web (fuente principal)
+├── datos_normalizados_local/           # CSV generados desde el espejo HTML local
+├── html_descargados/                   # Espejo local del sitio
+└── db/
+    ├── ER-G3.png                       # Diagrama entidad-relacion
+    └── ER-G3.pdf                       # Diagrama entidad-relacion (PDF)
+```
+
+## Docker — inicio rápido
+
+### Requisitos
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) instalado y corriendo.
+- CSV generados en `datos_normalizados_web/` (ya incluidos en el repo).
+
+### Levantar la base de datos
+
+```powershell
+docker compose up -d --build
+```
+
+La primera vez tarda aproximadamente 60-90 segundos. El proceso hace:
+
+1. Construye la imagen (SQL Server 2022 + Python3 + dos2unix).
+2. Convierte los scripts `.sh` de CRLF a LF con `dos2unix` (compatibilidad Windows/Linux).
+3. Levanta SQL Server y espera a que esté listo (`run_init.sh`).
+4. Limpia y normaliza los CSV (`02_fix_csvs.sh`).
+5. Crea la base de datos y todas las tablas (`01_schema.sql`).
+6. Carga todos los datos con BULK INSERT (`03_etl.sql`).
+
+### Verificar que los datos cargaron
+
+```powershell
+docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd -C -S localhost -U sa -P "Mundiales2026!" -d mundiales -Q "SELECT COUNT(*) AS partidos FROM dbo.partido; SELECT COUNT(*) AS jugadores FROM dbo.jugador;"
+```
+
+### Conectarse con un cliente externo
+
+Usar DBeaver, Azure Data Studio, SSMS o cualquier cliente SQL:
+
+| Parámetro     | Valor            |
+| ------------- | ---------------- |
+| Host          | `localhost`      |
+| Puerto        | `1433`           |
+| Usuario       | `sa`             |
+| Contraseña    | `Mundiales2026!` |
+| Base de datos | `mundiales`      |
+
+> En DBeaver: Driver Properties → `trustServerCertificate = true`
+
+### Reiniciar desde cero
+
+```powershell
+docker compose down -v
+docker compose up -d --build
+```
+
+El flag `-v` destruye el volumen y fuerza la reinicialización completa.
+
+### Detener sin borrar datos
+
+```powershell
+docker compose down
+```
+
+## Detalle de los scripts Docker
+
+### `Dockerfile`
+
+Extiende `mcr.microsoft.com/mssql/server:2022-latest` instalando Python3, pip,
+dos2unix y mssql-tools18. Copia los scripts de init y ejecuta `dos2unix` sobre
+los `.sh` para convertir CRLF a LF, lo que es necesario porque los archivos se
+editan en Windows pero se ejecutan en Linux.
+
+### `docker-compose.yml`
+
+Define el servicio `db`. Puntos clave:
+
+- Monta `datos_normalizados_web/` como `/csv` dentro del contenedor.
+- Monta `py/db/` como `/db_scripts` (los scripts SQL referencian esta ruta con `:r`).
+- El volumen `mssql_data` persiste los datos entre reinicios.
+- El `command` llama directamente a `run_init.sh` en lugar del entrypoint por defecto.
+
+### `docker/init/run_init.sh`
+
+Script principal de arranque. Levanta `sqlservr` en segundo plano, espera hasta
+180 segundos a que acepte conexiones, y si el marcador `/var/opt/mssql/.init_done`
+no existe ejecuta los tres pasos de inicialización en orden. El marcador evita
+que la inicialización se repita en reinicios posteriores.
+
+### `docker/init/02_fix_csvs.sh`
+
+Script bash que invoca Python3 para preparar los CSV antes de la carga. Realiza
+tres operaciones sobre cada archivo:
+
+1. **Corrección de tipos**: convierte columnas numéricas que pandas exporta como
+   float (`1454.0` → `1454`) y booleanos de Python (`True`/`False` → `1`/`0`).
+2. **Normalización de caracteres**: elimina tildes y diacríticos usando
+   `unicodedata.normalize('NFD')`. Necesario porque `BULK INSERT` en SQL Server
+   Linux no soporta UTF-8 y leería `é` como caracteres corruptos. Caracteres sin
+   descomposición NFD (`ł`, `ø`, `ð`, etc.) se manejan con un mapa explícito.
+3. **Deduplicación**: elimina filas duplicadas usando las llaves primarias exactas
+   del schema, previniendo errores de constraint al cargar.
+
+### `docker/init/01_schema.sql`
+
+Crea la base de datos `mundiales` si no existe y luego incluye
+`/db_scripts/sqlserver_schema.sql` con `:r`. Requiere que `py/db/` esté montado
+como `/db_scripts` en el contenedor.
+
+### `docker/init/03_etl.sql`
+
+Define la variable `CSV_DIR="/csv"` e incluye `/db_scripts/sqlserver_etl.sql`
+con `:r`. El ETL principal usa tablas staging temporales (`#stg_*`) para cada
+CSV, hace la conversión de tipos con `TRY_CONVERT`, y luego inserta en las tablas
+definitivas. Todo corre dentro de una transacción con `XACT_ABORT ON`.
+
+## Inicio rápido sin Docker
 
 ### 1. Preparar entorno Python
 
@@ -100,18 +248,6 @@ sqlcmd -S <host>,1433 -U sa -P <password> -C -d <basedatos> -i py/db/sqlserver_s
 ```bash
 sqlcmd -S <host>,1433 -U sa -P <password> -C -d <basedatos> -i py/db/sqlserver_etl.sql -v CSV_DIR="./datos_normalizados_web"
 ```
-
-## Docker (SQL Server)
-
-```bash
-docker compose up -d --build
-```
-
-El init hace:
-
-1. `01_schema.sql`: crea base, tablas y vista.
-2. `02_fix_csvs.sh`: limpia tipos, deduplica y garantiza `resolucion_identidad_jugador.csv`.
-3. `03_etl.sql`: carga todos los CSV.
 
 ## Por qué existen estas tablas
 
@@ -162,7 +298,7 @@ El init hace:
 ### seleccion
 
 - `seleccion_id`: identificador técnico (PK).
-- `nombre`: nombre canónico único.
+- `nombre`: nombre canónico único (sin tildes).
 
 ### seleccion_alias
 
@@ -260,21 +396,14 @@ El init hace:
 - `grupo`: identificador de grupo (A, B, 1, 2, etc.).
 - `posicion`: posición final en el grupo.
 - `seleccion_id`: selección en ese grupo.
-- `pts`: puntos.
-- `pj`: partidos jugados.
-- `pg`: partidos ganados.
-- `pe`: partidos empatados.
-- `pp`: partidos perdidos.
-- `gf`: goles a favor.
-- `gc`: goles en contra.
-- `dif`: diferencia de gol.
+- `pts`, `pj`, `pg`, `pe`, `pp`, `gf`, `gc`, `dif`: estadísticas del grupo.
 - `clasificado`: si avanzó de fase.
 
 ### posicion_final
 
 - `anio`: edición del Mundial.
 - `posicion`: posición final absoluta en esa edición.
-- `seleccion_id`: selección ubicada en esa posición. Puede repetirse dentro del mismo `anio` si dos selecciones históricas fueron normalizadas a una misma selección canónica.
+- `seleccion_id`: selección ubicada en esa posición.
 
 ### goleador
 
@@ -317,14 +446,7 @@ El init hace:
 - `seleccion_id`: selección participante.
 - `posicion`: posición final de campaña.
 - `etapa`: última etapa alcanzada.
-- `pts`: puntos totales en la edición.
-- `pj`: partidos jugados.
-- `pg`: partidos ganados.
-- `pe`: partidos empatados.
-- `pp`: partidos perdidos.
-- `gf`: goles a favor.
-- `gc`: goles en contra.
-- `dif`: diferencia de gol.
+- `pts`, `pj`, `pg`, `pe`, `pp`, `gf`, `gc`, `dif`: estadísticas de la campaña.
 - `participo`: marca booleana de participación efectiva.
 
 ### resolucion_identidad_jugador
@@ -340,30 +462,15 @@ El init hace:
 - `confianza`: score de confianza opcional.
 - `notas`: observaciones de conciliación.
 
-## Archivos de salida esperados
+## Archivos de salida del scraper
 
-El scraper genera:
-
-- `mundial.csv`
-- `seleccion.csv`
-- `seleccion_alias.csv`
-- `participacion_mundial.csv`
-- `jugador.csv`
-- `entrenador.csv`
-- `partido.csv`
-- `aparicion_partido.csv`
-- `direccion_tecnica_partido.csv`
-- `gol.csv`
-- `tarjeta.csv`
-- `cambio.csv`
-- `penal.csv`
-- `grupo.csv`
-- `posicion_final.csv`
-- `goleador.csv`
-- `premio_jugador.csv`
-- `premio_seleccion.csv`
-- `plantel_jugador.csv`
-- `plantel_entrenador.csv`
+- `mundial.csv`, `seleccion.csv`, `seleccion_alias.csv`
+- `participacion_mundial.csv`, `jugador.csv`, `entrenador.csv`
+- `partido.csv`, `aparicion_partido.csv`, `direccion_tecnica_partido.csv`
+- `gol.csv`, `tarjeta.csv`, `cambio.csv`, `penal.csv`
+- `grupo.csv`, `posicion_final.csv`, `goleador.csv`
+- `premio_jugador.csv`, `premio_seleccion.csv`
+- `plantel_jugador.csv`, `plantel_entrenador.csv`
 - `resolucion_identidad_jugador.csv`
 
 ## Consultas ejemplo
@@ -390,7 +497,43 @@ WHERE j.nombre = 'Lionel Messi'
 GROUP BY j.nombre;
 ```
 
+### Partidos jugados por Argentina
+
+```sql
+SELECT p.anio, p.fecha, p.etapa,
+       sl.nombre AS local, p.goles_local,
+       p.goles_visitante, sv.nombre AS visitante
+FROM partido p
+JOIN seleccion sl ON sl.seleccion_id = p.local_seleccion_id
+JOIN seleccion sv ON sv.seleccion_id = p.visitante_seleccion_id
+WHERE sl.nombre = 'Argentina' OR sv.nombre = 'Argentina'
+ORDER BY p.anio, p.partido_id;
+```
+
+## Validaciones rápidas
+
+```sql
+SELECT COUNT(*) AS mundial            FROM dbo.mundial;
+SELECT COUNT(*) AS seleccion          FROM dbo.seleccion;
+SELECT COUNT(*) AS jugador            FROM dbo.jugador;
+SELECT COUNT(*) AS entrenador         FROM dbo.entrenador;
+SELECT COUNT(*) AS partido            FROM dbo.partido;
+SELECT COUNT(*) AS gol                FROM dbo.gol;
+SELECT COUNT(*) AS tarjeta            FROM dbo.tarjeta;
+SELECT COUNT(*) AS cambio             FROM dbo.cambio;
+SELECT COUNT(*) AS penal              FROM dbo.penal;
+SELECT COUNT(*) AS grupo              FROM dbo.grupo;
+SELECT COUNT(*) AS posicion_final     FROM dbo.posicion_final;
+SELECT COUNT(*) AS goleador           FROM dbo.goleador;
+SELECT COUNT(*) AS premio_jugador     FROM dbo.premio_jugador;
+SELECT COUNT(*) AS premio_seleccion   FROM dbo.premio_seleccion;
+SELECT COUNT(*) AS plantel_jugador    FROM dbo.plantel_jugador;
+SELECT COUNT(*) AS plantel_entrenador FROM dbo.plantel_entrenador;
+SELECT COUNT(*) AS participacion      FROM dbo.participacion_mundial;
+SELECT COUNT(*) AS pendientes         FROM dbo.v_evento_jugador_pendiente;
+```
+
 ## Documentación adicional
 
-- `py/README_scraper.md`: opciones de scraping.
-- `py/db/README_db.md`: guía de esquema y ETL SQL Server.
+- `py/README_scraper.md`: opciones de scraping y modos de extracción.
+- `py/db/README_db.md`: guía del esquema, ETL y decisiones de modelado.

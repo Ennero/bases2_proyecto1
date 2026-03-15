@@ -6,6 +6,7 @@ echo ">>> Iniciando limpieza de CSVs con Python..."
 python3 << 'PYEOF'
 import csv
 import os
+import unicodedata
 
 CSV_DIR = "/csv"
 
@@ -74,6 +75,22 @@ RESOLUCION_HEADER = [
     "jugador_nombre_raw", "minuto", "metodo", "confianza", "notas"
 ]
 
+# Caracteres que no tienen descomposicion NFD util — mapeo manual
+EXTRA_MAP = {
+    'ð': 'd', 'ø': 'o', 'ł': 'l', 'Ł': 'L', 'ı': 'i', 'İ': 'I',
+    'ß': 'ss', 'æ': 'ae', 'œ': 'oe', 'þ': 'th',
+}
+
+def normalize_text(value: str) -> str:
+    """Quita tildes y normaliza caracteres especiales a ASCII."""
+    if not value:
+        return value
+    # Aplicar mapa manual primero
+    for src, dst in EXTRA_MAP.items():
+        value = value.replace(src, dst)
+    # Descomponer en forma NFD y eliminar marcas diacriticas (Mn = Mark, Nonspacing)
+    nfd = unicodedata.normalize('NFD', value)
+    return ''.join(ch for ch in nfd if unicodedata.category(ch) != 'Mn')
 
 def fix_int(value: str):
     if value in ("", None):
@@ -86,14 +103,12 @@ def fix_int(value: str):
         pass
     return value
 
-
 def fix_bool(value: str):
     if value == "True":
         return "1"
     if value == "False":
         return "0"
     return value
-
 
 # Garantiza CSV especial requerido por ETL incluso si no hay ambiguedades.
 res_file_path = os.path.join(CSV_DIR, RESOLUCION_FILE)
@@ -130,6 +145,11 @@ for filename, int_cols in INT_COLUMNS.items():
         for col in bool_cols:
             if col in row:
                 row[col] = fix_bool(row[col])
+        # Normalizar texto en todas las columnas de texto
+        for col in row:
+            if col not in int_cols and col not in bool_cols:
+                if isinstance(row[col], str):
+                    row[col] = normalize_text(row[col])
 
     if pk_cols:
         seen = set()
