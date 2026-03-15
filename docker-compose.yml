@@ -15,8 +15,9 @@ services:
       - "1433:1433"
     volumes:
       - mssql_data:/var/opt/mssql
-      - ./docker/init:/docker/init:ro
+      # Scripts SQL montados como volumen (no son bash, no tienen problema de CRLF)
       - ./py/db:/db_scripts:ro
+      # CSVs montados para la carga
       - ./datos_normalizados_web:/csv
     healthcheck:
       test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -C -S localhost -U sa -P \"$${MSSQL_SA_PASSWORD}\" -Q \"SELECT 1\" > /dev/null || exit 1"]

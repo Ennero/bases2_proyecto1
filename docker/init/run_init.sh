@@ -1,5 +1,5 @@
-#!/bin/bash
-set -euo pipefail
+﻿#!/bin/bash
+set -eu
 
 SQLCMD="/opt/mssql-tools18/bin/sqlcmd"
 SERVER="localhost"
@@ -18,29 +18,36 @@ cleanup() {
 }
 trap cleanup EXIT
 
-# Espera a que SQL Server responda.
+# Espera a que SQL Server responda (hasta 180 segundos).
 echo ">>> Esperando a SQL Server..."
-for i in {1..90}; do
+READY=0
+for i in $(seq 1 90); do
   if "$SQLCMD" -C -S "$SERVER" -U "$SA_USER" -P "$PASSWORD" -Q "SELECT 1" >/dev/null 2>&1; then
+    READY=1
     break
   fi
   sleep 2
 done
 
-if ! "$SQLCMD" -C -S "$SERVER" -U "$SA_USER" -P "$PASSWORD" -Q "SELECT 1" >/dev/null 2>&1; then
+if [ "$READY" -eq 0 ]; then
   echo ">>> ERROR: SQL Server no estuvo listo a tiempo"
   exit 1
 fi
+
+echo ">>> SQL Server listo."
 
 # Solo inicializa una vez por volumen de datos.
 INIT_MARKER="/var/opt/mssql/.init_done"
 if [ ! -f "$INIT_MARKER" ]; then
   echo ">>> Primera inicializacion detectada. Ejecutando schema + ETL..."
+
   /bin/bash /docker/init/02_fix_csvs.sh
 
-  "$SQLCMD" -b -C -S "$SERVER" -U "$SA_USER" -P "$PASSWORD" -i /docker/init/01_schema.sql -v DB_NAME="$DB_NAME"
+  "$SQLCMD" -b -C -S "$SERVER" -U "$SA_USER" -P "$PASSWORD" \
+    -i /docker/init/01_schema.sql -v DB_NAME="$DB_NAME"
 
-  "$SQLCMD" -b -C -S "$SERVER" -U "$SA_USER" -P "$PASSWORD" -d "$DB_NAME" -i /docker/init/03_etl.sql -v CSV_DIR="/csv"
+  "$SQLCMD" -b -C -S "$SERVER" -U "$SA_USER" -P "$PASSWORD" \
+    -d "$DB_NAME" -i /docker/init/03_etl.sql -v CSV_DIR="/csv"
 
   touch "$INIT_MARKER"
   echo ">>> Inicializacion completada."
