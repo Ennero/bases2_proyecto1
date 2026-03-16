@@ -1,0 +1,27 @@
+-- ============================================================
+-- EJEMPLOS DE USO
+-- ============================================================
+ 
+-- Mundial 2022 completo
+-- EXEC dbo.sp_mundial_por_anio @anio = 2022;
+ 
+-- Mundial 2022, solo grupo A
+-- EXEC dbo.sp_mundial_por_anio @anio = 2022, @grupo = 'A';
+ 
+-- Mundial 2022, solo partidos de Argentina
+-- EXEC dbo.sp_mundial_por_anio @anio = 2022, @pais = 'Argentina';
+ 
+-- Mundial 2022, partidos del 20-Nov-2022
+-- EXEC dbo.sp_mundial_por_anio @anio = 2022, @fecha = '20-Nov-2022';
+ 
+-- Historial completo de Argentina
+-- EXEC dbo.sp_historial_pais @pais = 'Argentina';
+ 
+-- Historial de Argentina en 2022
+-- EXEC dbo.sp_historial_pais @pais = 'Argentina', @anio = 2022;
+ 
+-- Historial de Espana (sin tilde)
+-- EXEC dbo.sp_historial_pais @pais = 'Espana';
+ 
+-- Historial de Mexico (sin tilde)
+-- EXEC dbo.sp_historial_pais @pais = 'Mexico';

@@ -73,7 +73,7 @@ Sí: `resolucion_identidad_jugador`.
 - `py/db/sqlserver_schema.sql`: esquema SQL Server (T-SQL).
 - `py/db/sqlserver_etl.sql`: carga de CSV en SQL Server con BULK INSERT.
 - `py/db/modelo_wc.dbml`: modelo lógico.
-- `docker/init/`: scripts de inicialización del entorno Docker.
+- `docker/init/`: scripts de inicialización del entorno Docker.- `py/db/stored_procedures.sql`: stored procedures para consultas por año y por país.
 
 ## Estructura del repositorio
 
@@ -96,7 +96,9 @@ bases2_proyecto1/
 │       ├── sqlserver_schema.sql        # Esquema T-SQL (SQL Server 2019+)
 │       ├── sqlserver_etl.sql           # ETL T-SQL con BULK INSERT y tablas staging
 │       ├── modelo_wc.dbml              # Modelo logico en DBML
-│       └── README_db.md               # Documentacion del modelo y ETL
+│       |── README_db.md               # Documentacion del modelo y ETL
+│       ├── stored_procedures.sql       # SPs: sp_mundial_por_anio y sp_historial_pais
+│       └── README_stored_procedures.md # Documentacion de los stored procedures
 ├── datos_normalizados_web/             # CSV generados desde la web (fuente principal)
 ├── datos_normalizados_local/           # CSV generados desde el espejo HTML local
 ├── html_descargados/                   # Espejo local del sitio
@@ -537,3 +539,4 @@ SELECT COUNT(*) AS pendientes         FROM dbo.v_evento_jugador_pendiente;
 
 - `py/README_scraper.md`: opciones de scraping y modos de extracción.
 - `py/db/README_db.md`: guía del esquema, ETL y decisiones de modelado.
+- `py/db/README_stored_procedures.md`: construcción, uso y ejemplos de los stored procedures.
