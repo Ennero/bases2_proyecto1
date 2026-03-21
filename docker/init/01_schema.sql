@@ -12,3 +12,4 @@ USE [$(DB_NAME)];
 GO
 
 :r /db_scripts/sqlserver_schema.sql
+:r /db_scripts/performance_audit_logs.sql

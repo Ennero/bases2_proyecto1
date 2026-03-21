@@ -32,3 +32,16 @@ Toda la documentacion tecnica del proyecto se encuentra en:
 - [docs/manualtecnico.md](docs/manualtecnico.md)
 
 Ese manual incluye arquitectura, scraping, normalizacion, Docker, esquema SQL, ETL, stored procedures, lineamientos de vistas, operacion y troubleshooting.
+
+
+
+
+
+
+
+
+| Rol sugerido | Fases a cargo | Responsabilidades principales |
+| :--- | :--- | :--- |
+| **1. Especialista en Arquitectura y Carga de Datos** | Fase 1 y Fase 2 | • Analizar estrategias y preparar el entorno estableciendo rutas de almacenamiento <br>• Crear la base de datos con claves primarias, foráneas y restricciones .<br>• Agregar una tabla de registro (LOG) para cada tabla principal <br>• Realizar la carga masiva (simular partidos, cambiar nombres a mayúsculas) durante los 3 días simulados 65, 68.<br>• Obtener el nivel de fragmentación e insertarlo en los logs respectivos |
+| **2. Administrador de Respaldos y Restauración** | Fase 2  Fase 3 y Fase 4 | • Ejecutar backups completos e incrementales/diferenciales por consola al final de cada día de carga 43, 55.<br>• Eliminar la base de datos y restaurar los backups en orden secuencial en un segundo esquema 46, 72, 74.<br>• Tomar capturas de pantalla de validación (`SELECT *` y `SELECT COUNT(*)`) asegurando que la fecha y hora del sistema operativo sean visibles 47, 77.<br>• Registrar los tiempos precisos de restauración con cronómetro87, 112. |
+| **3. Analista de Rendimiento y Documentador Técnico** | Fase 5 y Entregables | • Realizar el análisis comparativo de los tiempos de restauración registrados 76.<br>• Elaborar recomendaciones y conclusiones basadas en datos reales 76.<br>• Redactar la Documentación Técnica en PDF (metodología, modelo ER, especificaciones del servidor) <br>• Crear el Manual de Usuario paso a paso <br>• Consolidar y comentar el Código Fuente (scripts SQL) para la entrega final. |

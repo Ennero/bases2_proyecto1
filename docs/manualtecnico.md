@@ -15,6 +15,7 @@
 - [12. Validaciones recomendadas](#12-validaciones-recomendadas)
 - [13. Troubleshooting](#13-troubleshooting)
 - [14. Seguridad y mantenimiento](#14-seguridad-y-mantenimiento)
+- [15. Decision tecnica sobre uso de dbo](#15-decision-tecnica-sobre-uso-de-dbo)
 
 ## 2. Alcance y objetivos
 
@@ -75,6 +76,7 @@ bases2_proyecto1/
 |       |-- sqlserver_schema.sql
 |       |-- sqlserver_etl.sql
 |       |-- stored_procedures.sql
+|       |-- performance_audit_logs.sql
 |       |-- modelo_wc.dbml
 |       `-- ejemplos_procedure.txt
 |-- datos_normalizados_web/
@@ -634,5 +636,19 @@ Recomendaciones:
 - Evitar publicar secretos en repositorio.
 - Respaldar volumen mssql_data periodicamente.
 - Versionar cambios de esquema, ETL y procedures.
+
+## 15. Decision tecnica sobre uso de dbo
+
+Se decidio mantener el prefijo de esquema dbo en scripts, procedimientos y consultas por razones de estabilidad operativa y rendimiento de resolucion de objetos en SQL Server.
+
+Justificacion tecnica:
+- Evita ambiguedad de resolucion de objetos cuando existen multiples esquemas.
+- Reduce riesgos de ejecucion sobre objetos homonimos en distintos esquemas.
+- Mejora mantenibilidad en despliegues y auditorias al dejar explicita la pertenencia de cada objeto.
+- Mantiene consistencia con buenas practicas de SQL Server para ambientes colaborativos.
+
+Aplicacion en auditoria de rendimiento:
+- El script py/db/performance_audit_logs.sql crea tablas log por cada tabla base y el procedimiento dbo.sp_registrar_logs_diarios.
+- El procedimiento consulta fragmentacion con sys.dm_db_index_physical_stats y filas por tabla para registrar evidencia diaria de carga.
 
 Ultima actualizacion: Marzo 20, 2026.
