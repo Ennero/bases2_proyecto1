@@ -16,19 +16,24 @@
 - [13. Troubleshooting](#13-troubleshooting)
 - [14. Seguridad y mantenimiento](#14-seguridad-y-mantenimiento)
 - [15. Decision tecnica sobre uso de dbo](#15-decision-tecnica-sobre-uso-de-dbo)
+- [16. Fase 2: Simulacion y auditoria de rendimiento](#16-Fase-2:—Simulacion-y-auditoria-de-rendimiento)
 
 ## 2. Alcance y objetivos
 
 Este proyecto construye una base de datos historica de mundiales de futbol, desde 1930 hasta 2026, mediante un pipeline ETL completo.
 
 Objetivos principales:
+
 - Extraer informacion historica desde fuente web o cache local de HTML.
 - Transformar y normalizar los datos a un modelo relacional consistente.
 - Cargar el dataset en SQL Server dentro de Docker.
 - Exponer consultas analiticas mediante stored procedures.
 - Preparar la base para vistas SQL orientadas a analitica y reporteria.
+- Simular cargas masivas diarias para el Mundial 2030 ficticio y registrar fragmentación e índices en tablas de auditoría.
+- Ejecutar y documentar estrategias de respaldo (full backup e incremental/diferencial) y restauración.
 
 Cobertura aproximada del dataset:
+
 - 23 ediciones de mundial.
 - 888+ partidos.
 - 1000+ jugadores.
@@ -49,6 +54,7 @@ flowchart TD
 ```
 
 Capas tecnicas:
+
 - Capa de extraccion: py/scraping_normalizado.py
 - Capa de transformacion: py/normalizacion_csv.py
 - Capa de limpieza pre-carga: docker/init/02_fix_csvs.sh
@@ -69,6 +75,13 @@ bases2_proyecto1/
 |       |-- 01_schema.sql
 |       |-- 02_fix_csvs.sh
 |       `-- 03_etl.sql
+|-- fase2/
+|   `-- sql/
+|       |-- 02_Carga_Catalogos_2030.sql
+|       |-- 03_Simulacion_Dia1_Grupos.sql
+|       |-- 04_Simulacion_Dia2_Finales.sql
+|       |-- 05_Update_Dia3_Mayusculas.sql
+|       `-- 06_Validacion_Fase2.sql
 |-- py/
 |   |-- scraping_normalizado.py
 |   |-- normalizacion_csv.py
@@ -93,10 +106,12 @@ Esta seccion describe en detalle como se recolecta la informacion y por que se d
 ### 5.1 Fuentes de datos
 
 Origenes soportados:
+
 - Origen web: consulta directa al sitio https://www.losmundialesdefutbol.com
 - Origen local: lectura de archivos HTML desde html_descargados/
 
 Motivo de doble fuente:
+
 - Modo local facilita depuracion y pruebas repetibles.
 - Modo web asegura cobertura y actualizacion de datos para corridas finales.
 
@@ -105,16 +120,19 @@ Motivo de doble fuente:
 El scraper usa Microsoft Edge en modo headless para descargar DOM final.
 
 Razon tecnica:
+
 - El sitio puede aplicar bloqueo tipo 403 a clientes no navegadores.
 - Usar Edge headless permite obtener HTML renderizado de forma estable sin Selenium.
 
 Flujo de lectura por origen:
+
 - Si origen es local: abre archivo HTML mapeado desde la ruta del sitio.
 - Si origen es web: resuelve URL, descarga con Edge headless y aplica pausa configurable.
 
 ### 5.3 Logica de extraccion
 
 El scraper divide la recoleccion por secciones del dominio:
+
 - mundiales
 - selecciones
 - jugadores
@@ -127,6 +145,7 @@ El scraper divide la recoleccion por secciones del dominio:
 - eventos por partido (goles, tarjetas, cambios, penales)
 
 Tecnicas clave de parseo:
+
 - Limpieza de texto y espacios.
 - Extraccion de enteros y pares de marcador por regex.
 - Resolucion de nombres desde enlaces, imagenes y atributos HTML.
@@ -135,6 +154,7 @@ Tecnicas clave de parseo:
 ### 5.4 Controles durante recoleccion
 
 Controles aplicados:
+
 - Deduplicacion por llaves de negocio temporales.
 - Validacion de nombres vacios o genericos.
 - Parseo robusto de minutos y resultados.
@@ -156,6 +176,7 @@ Despues del scraping, normalizacion_csv.py transforma datos intermedios al model
 ### 6.2 Salida final de archivos CSV
 
 Se generan 21 archivos:
+
 - mundial.csv
 - seleccion.csv
 - seleccion_alias.csv
@@ -181,6 +202,7 @@ Se generan 21 archivos:
 ### 6.3 Normalizacion de caracteres
 
 En docker/init/02_fix_csvs.sh se aplica limpieza adicional para compatibilidad con SQL Server sobre Linux:
+
 - Eliminacion de diacriticos y conversion a ASCII.
 - Correccion de enteros y booleanos.
 - Deduplicacion por llave primaria esperada.
@@ -221,6 +243,7 @@ Esta seccion documenta cada tabla y cada atributo del modelo.
 Proposito: resumen por edicion de mundial.
 
 Atributos:
+
 - anio: llave primaria de la edicion.
 - sede: pais o paises sede.
 - equipos: cantidad de selecciones participantes.
@@ -232,6 +255,7 @@ Atributos:
 Proposito: catalogo canonico de selecciones.
 
 Atributos:
+
 - seleccion_id: llave primaria tecnica de la seleccion.
 - nombre: nombre canonico unico de la seleccion.
 
@@ -240,6 +264,7 @@ Atributos:
 Proposito: mapear nombres historicos o variantes a una seleccion canonica.
 
 Atributos:
+
 - alias_nombre: nombre alterno o historico, llave primaria.
 - seleccion_id: referencia a seleccion canonica.
 
@@ -248,6 +273,7 @@ Atributos:
 Proposito: catalogo maestro de jugadores.
 
 Atributos:
+
 - jugador_id: llave primaria tecnica del jugador.
 - nombre: nombre principal.
 - nombre_completo: nombre completo cuando existe.
@@ -263,6 +289,7 @@ Atributos:
 Proposito: catalogo maestro de entrenadores.
 
 Atributos:
+
 - entrenador_id: llave primaria tecnica del entrenador.
 - nombre: nombre del entrenador (unico).
 
@@ -271,6 +298,7 @@ Atributos:
 Proposito: hecho principal de cada partido.
 
 Atributos:
+
 - partido_id: llave primaria tecnica del partido.
 - anio: referencia al mundial.
 - fecha: fecha textual del partido.
@@ -289,6 +317,7 @@ Atributos:
 Proposito: registrar participacion de cada jugador por partido.
 
 Atributos:
+
 - partido_id: referencia al partido.
 - seleccion_id: seleccion del jugador en ese partido.
 - jugador_id: jugador participante.
@@ -302,6 +331,7 @@ Atributos:
 Proposito: relacion entrenador-seleccion-partido.
 
 Atributos:
+
 - partido_id: referencia al partido.
 - seleccion_id: seleccion dirigida.
 - entrenador_id: entrenador a cargo.
@@ -311,6 +341,7 @@ Atributos:
 Proposito: eventos de gol por partido.
 
 Atributos:
+
 - gol_id: llave primaria tecnica del gol.
 - partido_id: referencia al partido.
 - seleccion_id: seleccion asociada al gol.
@@ -324,6 +355,7 @@ Atributos:
 Proposito: eventos de tarjetas.
 
 Atributos:
+
 - tarjeta_id: llave primaria tecnica de la tarjeta.
 - partido_id: referencia al partido.
 - seleccion_id: seleccion del jugador amonestado/expulsado.
@@ -336,6 +368,7 @@ Atributos:
 Proposito: eventos de sustitucion.
 
 Atributos:
+
 - cambio_id: llave primaria tecnica del cambio.
 - partido_id: referencia al partido.
 - seleccion_id: seleccion que realiza el cambio.
@@ -348,6 +381,7 @@ Atributos:
 Proposito: ejecuciones de tanda de penales.
 
 Atributos:
+
 - penal_id: llave primaria tecnica del evento.
 - partido_id: referencia al partido.
 - seleccion_id: seleccion que ejecuta.
@@ -360,6 +394,7 @@ Atributos:
 Proposito: tabla de posiciones por grupo en una edicion.
 
 Atributos:
+
 - anio: referencia al mundial.
 - grupo: identificador del grupo.
 - posicion: posicion final en grupo.
@@ -379,6 +414,7 @@ Atributos:
 Proposito: posicion final global de cada seleccion por mundial.
 
 Atributos:
+
 - anio: referencia al mundial.
 - posicion: posicion final absoluta.
 - seleccion_id: seleccion ubicada en esa posicion.
@@ -388,6 +424,7 @@ Atributos:
 Proposito: registro de goleadores por edicion.
 
 Atributos:
+
 - anio: referencia al mundial.
 - jugador_id: jugador goleador.
 - seleccion_id: seleccion del jugador en la edicion.
@@ -398,6 +435,7 @@ Atributos:
 Proposito: premios otorgados a jugadores.
 
 Atributos:
+
 - anio: referencia al mundial.
 - premio: nombre del premio.
 - jugador_id: jugador premiado.
@@ -408,6 +446,7 @@ Atributos:
 Proposito: premios otorgados a selecciones.
 
 Atributos:
+
 - anio: referencia al mundial.
 - premio: nombre del premio.
 - seleccion_id: seleccion premiada.
@@ -417,6 +456,7 @@ Atributos:
 Proposito: convocados de jugadores por mundial y seleccion.
 
 Atributos:
+
 - anio: referencia al mundial.
 - seleccion_id: seleccion convocante.
 - jugador_id: jugador convocado.
@@ -429,6 +469,7 @@ Atributos:
 Proposito: entrenadores del plantel por mundial y seleccion.
 
 Atributos:
+
 - anio: referencia al mundial.
 - seleccion_id: seleccion.
 - entrenador_id: entrenador convocado.
@@ -438,6 +479,7 @@ Atributos:
 Proposito: resumen de campania por seleccion en cada edicion.
 
 Atributos:
+
 - anio: referencia al mundial.
 - seleccion_id: seleccion participante.
 - posicion: posicion final.
@@ -457,6 +499,7 @@ Atributos:
 Proposito: trazabilidad de eventos con jugador no resuelto automaticamente.
 
 Atributos:
+
 - resolucion_id: llave primaria autoincremental del caso.
 - source_table: tabla origen del evento (gol, tarjeta, cambio_entrada, cambio_salida, penal).
 - source_event_id: identificador del evento en su tabla origen.
@@ -473,6 +516,7 @@ Atributos:
 Proposito: consolidar eventos de gol, tarjeta, cambio y penal donde no existe jugador identificado.
 
 Atributos:
+
 - source_table: origen del evento.
 - source_event_id: id del evento.
 - partido_id: partido del evento.
@@ -487,9 +531,11 @@ Archivo: py/db/stored_procedures.sql
 ### 9.1 sp_mundial_por_anio
 
 Objetivo:
+
 - Mostrar informacion integral de una edicion del mundial.
 
 Parametros:
+
 - @anio (obligatorio)
 - @grupo (opcional)
 - @pais (opcional)
@@ -506,9 +552,11 @@ EXEC dbo.sp_mundial_por_anio @anio = 2022;
 ### 9.2 sp_historial_pais
 
 Objetivo:
+
 - Mostrar historial completo de una seleccion.
 
 Parametros:
+
 - @pais (obligatorio)
 - @anio (opcional)
 
@@ -521,6 +569,7 @@ EXEC dbo.sp_historial_pais @pais = 'Argentina';
 ```
 
 Regla de uso:
+
 - Consultar paises sin tildes: Espana, Mexico, Belgica.
 
 ## 10. Seccion para vistas SQL
@@ -528,16 +577,18 @@ Regla de uso:
 Esta seccion queda reservada para la implementacion de vistas por parte de tu companera.
 
 Responsable funcional:
+
 - Estefania Mazariegos
 
 Objetivo de las vistas:
+
 - Simplificar consultas recurrentes.
 - Estandarizar datasets de reporteria.
 - Facilitar integracion con BI.
 
 ### 10.1 Convenciones recomendadas
 
-- Prefijo: v_
+- Prefijo: v\_
 - Formato de nombre: snake_case
 - Evitar logica de negocio duplicada entre vistas
 - Documentar cada vista con proposito y columnas
@@ -558,16 +609,19 @@ Ejemplo de uso:
 ### 10.3 Espacio de registro de vistas
 
 Vista 1:
+
 - Nombre:
 - Objetivo:
 - Estado:
 
 Vista 2:
+
 - Nombre:
 - Objetivo:
 - Estado:
 
 Vista 3:
+
 - Nombre:
 - Objetivo:
 - Estado:
@@ -615,23 +669,28 @@ SELECT COUNT(*) AS pendientes_resolucion FROM dbo.v_evento_jugador_pendiente;
 ## 13. Troubleshooting
 
 1. SQL Server no responde al iniciar
+
 - Revisar logs del contenedor.
 - Esperar finalizacion de init.
 
 2. Fallo en BULK INSERT
+
 - Verificar montaje de /csv.
 - Confirmar que existan los 21 CSV.
 
 3. Resultados vacios por nombres de pais
+
 - Reintentar sin tildes (ej. Espana, Mexico).
 
 4. Reproceso de base completo
+
 - docker compose down -v
 - docker compose up -d --build
 
 ## 14. Seguridad y mantenimiento
 
 Recomendaciones:
+
 - Cambiar credenciales en entornos no academicos.
 - Evitar publicar secretos en repositorio.
 - Respaldar volumen mssql_data periodicamente.
@@ -642,13 +701,111 @@ Recomendaciones:
 Se decidio mantener el prefijo de esquema dbo en scripts, procedimientos y consultas por razones de estabilidad operativa y rendimiento de resolucion de objetos en SQL Server.
 
 Justificacion tecnica:
+
 - Evita ambiguedad de resolucion de objetos cuando existen multiples esquemas.
 - Reduce riesgos de ejecucion sobre objetos homonimos en distintos esquemas.
 - Mejora mantenibilidad en despliegues y auditorias al dejar explicita la pertenencia de cada objeto.
 - Mantiene consistencia con buenas practicas de SQL Server para ambientes colaborativos.
 
 Aplicacion en auditoria de rendimiento:
+
 - El script py/db/performance_audit_logs.sql crea tablas log por cada tabla base y el procedimiento dbo.sp_registrar_logs_diarios.
 - El procedimiento consulta fragmentacion con sys.dm_db_index_physical_stats y filas por tabla para registrar evidencia diaria de carga.
 
-Ultima actualizacion: Marzo 20, 2026.
+## 16. Fase 2: Simulacion y auditoria de rendimiento
+
+### 16.1 Objetivo
+
+Simular tres dias de carga masiva sobre un Mundial ficticio (2030), registrar
+fragmentacion e indices en tablas de auditoria por cada dia, y validar la
+integridad del resultado final.
+
+### 16.2 Tablas de auditoria
+
+El archivo py/db/performance*audit_logs.sql crea una tabla log* por cada tabla
+de negocio del modelo (21 en total). Estructura comun:
+
+- log_id: identificador autoincremental.
+- fecha_registro: timestamp de la insercion.
+- nivel_fragmentacion: fragmentacion promedio del indice principal (%).
+- filas_totales: conteo de filas en la tabla al momento del registro.
+- descripcion_carga: etiqueta del dia de carga.
+
+Tablas creadas:
+log_mundial, log_seleccion, log_seleccion_alias, log_jugador, log_entrenador,
+log_partido, log_aparicion_partido, log_direccion_tecnica_partido, log_gol,
+log_tarjeta, log_cambio, log_penal, log_grupo, log_posicion_final, log_goleador,
+log_premio_jugador, log_premio_seleccion, log_plantel_jugador,
+log_plantel_entrenador, log_participacion_mundial, log_resolucion_identidad_jugador.
+
+### 16.3 Procedimiento sp_registrar_logs_diarios
+
+Firma:
+
+    EXEC dbo.sp_registrar_logs_diarios @descripcion_carga = N'etiqueta';
+
+Comportamiento: por cada tabla de negocio consulta sys.dm_db_partition_stats
+para obtener el conteo de filas y sys.dm_db_index_physical_stats para obtener
+el nivel de fragmentacion del indice primario, luego inserta un registro en su
+tabla log correspondiente.
+
+Se llama al final de cada script de dia de carga.
+
+### 16.4 Scripts de simulacion
+
+Orden de ejecucion obligatorio:
+
+1. 02_Carga_Catalogos_2030.sql
+   Valida que existan selecciones 1-4 y jugadores 1-44.
+   Inserta mundial 2030, participacion_mundial, grupo y plantel_jugador base.
+   Es idempotente (usa NOT EXISTS).
+
+2. 03_Simulacion_Dia1_Grupos.sql
+   Inserta 4 partidos de fase de grupos con apariciones, goles, tarjetas y cambios.
+   Llama a sp_registrar_logs_diarios con etiqueta 'Carga Masiva Dia 1 - Grupos 2030'.
+
+3. 04_Simulacion_Dia2_Finales.sql
+   Inserta 2 semifinales y 1 final con penales incluidos.
+   Llama a sp_registrar_logs_diarios con etiqueta 'Carga Masiva Dia 2 - Finales 2030'.
+
+4. 05_Update_Dia3_Mayusculas.sql
+   Ejecuta UPDATE masivo convirtiendo nombres de seleccion a mayusculas.
+   Llama a sp_registrar_logs_diarios con etiqueta 'Update Mayusculas Dia 3'.
+
+5. 06_Validacion_Fase2.sql
+   Verifica precondiciones, conteos por tabla, resumen deportivo del 2030,
+   evidencia de logs y semaforo final OK/REVISAR.
+
+### 16.5 Ejecucion desde Docker
+
+```bash
+docker exec -i mundiales_db /opt/mssql-tools18/bin/sqlcmd \
+  -C -S localhost -U sa -P "Mundiales2026!" -d mundiales \
+  -i /ruta/fase2/sql/02_Carga_Catalogos_2030.sql
+
+docker exec -i mundiales_db /opt/mssql-tools18/bin/sqlcmd \
+  -C -S localhost -U sa -P "Mundiales2026!" -d mundiales \
+  -i /ruta/fase2/sql/03_Simulacion_Dia1_Grupos.sql
+
+docker exec -i mundiales_db /opt/mssql-tools18/bin/sqlcmd \
+  -C -S localhost -U sa -P "Mundiales2026!" -d mundiales \
+  -i /ruta/fase2/sql/04_Simulacion_Dia2_Finales.sql
+
+docker exec -i mundiales_db /opt/mssql-tools18/bin/sqlcmd \
+  -C -S localhost -U sa -P "Mundiales2026!" -d mundiales \
+  -i /ruta/fase2/sql/05_Update_Dia3_Mayusculas.sql
+
+docker exec -i mundiales_db /opt/mssql-tools18/bin/sqlcmd \
+  -C -S localhost -U sa -P "Mundiales2026!" -d mundiales \
+  -i /ruta/fase2/sql/06_Validacion_Fase2.sql
+```
+
+### 16.6 Validacion rapida post-simulacion
+
+```sql
+SELECT COUNT(*) AS partidos_2030    FROM dbo.partido             WHERE anio = 2030;
+SELECT COUNT(*) AS plantel_2030     FROM dbo.plantel_jugador     WHERE anio = 2030;
+SELECT TOP(5) * FROM dbo.log_partido         ORDER BY log_id DESC;
+SELECT TOP(5) * FROM dbo.log_seleccion       ORDER BY log_id DESC;
+SELECT TOP(5) * FROM dbo.log_aparicion_partido ORDER BY log_id DESC;
+```
