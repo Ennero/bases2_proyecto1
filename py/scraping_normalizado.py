@@ -507,9 +507,23 @@ def extraer_minuto(texto: str) -> str:
 
 
 def parsear_resultado_penal(texto: str) -> str:
-    coincidencias = re.findall(r"\d+", texto)
-    if len(coincidencias) >= 2:
-        return f"{coincidencias[0]} - {coincidencias[1]}"
+    texto_limpio = limpiar_texto(texto).lower()
+    if not texto_limpio:
+        return ""
+
+    # Solo aceptamos marcadores chicos (1-2 digitos) junto al contexto de penales.
+    # Evita capturar anios del menu como 2026/2022.
+    patrones = (
+        r"\((\d{1,2})\s*-\s*(\d{1,2})\)\s*por\s+penales",
+        r"(\d{1,2})\s*-\s*(\d{1,2})\s*por\s+penales",
+        r"por\s+penales\s*\(?\s*(\d{1,2})\s*-\s*(\d{1,2})\s*\)?",
+        r"definici[oó]n\s+por\s+penales\s*:?\s*(\d{1,2})\s*-\s*(\d{1,2})",
+    )
+
+    for patron in patrones:
+        coincidencia = re.search(patron, texto_limpio)
+        if coincidencia:
+            return f"{int(coincidencia.group(1))} - {int(coincidencia.group(2))}"
     return ""
 
 
@@ -647,12 +661,25 @@ def parsear_detalle_partido(fuente: FuenteDatos, partido: dict) -> dict:
     tiempo_extra = "tiempo extra" in texto_pagina.lower() or "prórroga" in texto_pagina.lower()
     penales = False
     resultado_penales = ""
-    for div in soup.find_all("div"):
-        texto = limpiar_texto(div.get_text(" "))
-        if "por penales" in texto.lower():
+    for texto in soup.stripped_strings:
+        texto_limpio = limpiar_texto(texto)
+        if "por penales" in texto_limpio.lower():
             penales = True
-            resultado_penales = parsear_resultado_penal(texto)
-            break
+            resultado = parsear_resultado_penal(texto_limpio)
+            if resultado:
+                resultado_penales = resultado
+                break
+
+    if penales and not resultado_penales:
+        for nodo in soup.find_all(string=lambda t: isinstance(t, str) and "penales" in t.lower()):
+            if not isinstance(nodo, str):
+                continue
+            padre = nodo.parent if isinstance(nodo.parent, Tag) else None
+            contexto = limpiar_texto(padre.get_text(" ")) if padre else limpiar_texto(nodo)
+            resultado = parsear_resultado_penal(contexto)
+            if resultado:
+                resultado_penales = resultado
+                break
 
     goles: list[dict] = []
     marcador_goles = soup.find(string=lambda texto: isinstance(texto, str) and "Goles:" in texto)

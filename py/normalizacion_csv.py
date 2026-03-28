@@ -204,12 +204,16 @@ def _parse_int(value: object) -> int | None:
     return int(match.group()) if match else None
 
 
-def _parse_score_pair(value: object) -> tuple[int | None, int | None]:
+def _parse_score_pair(value: object, max_value: int | None = None) -> tuple[int | None, int | None]:
     text = _clean_text(value)
     match = re.search(r"(\d+)\s*-\s*(\d+)", text)
     if not match:
         return None, None
-    return int(match.group(1)), int(match.group(2))
+    local = int(match.group(1))
+    visitante = int(match.group(2))
+    if max_value is not None and (local > max_value or visitante > max_value):
+        return None, None
+    return local, visitante
 
 
 def _empty_frame(columns: list[str]) -> pd.DataFrame:
@@ -518,7 +522,10 @@ def _build_match_frame(frames: dict[str, pd.DataFrame], selection_map: dict[str,
         if match_key in match_map:
             continue
         goles_local, goles_visitante = _parse_score_pair(row.get("resultado", ""))
-        penales_local, penales_visitante = _parse_score_pair(row.get("resultado_penales", ""))
+        definicion_penales = _parse_bool(row.get("penales", ""))
+        penales_local, penales_visitante = _parse_score_pair(row.get("resultado_penales", ""), max_value=20)
+        if not definicion_penales:
+            penales_local, penales_visitante = None, None
         match_id = next_id
         next_id += 1
         match_map[match_key] = match_id
@@ -532,7 +539,7 @@ def _build_match_frame(frames: dict[str, pd.DataFrame], selection_map: dict[str,
             "goles_local": goles_local,
             "goles_visitante": goles_visitante,
             "tiempo_extra": _parse_bool(row.get("tiempo_extra", "")),
-            "definicion_penales": _parse_bool(row.get("penales", "")),
+            "definicion_penales": definicion_penales,
             "penales_local": penales_local,
             "penales_visitante": penales_visitante,
         })
