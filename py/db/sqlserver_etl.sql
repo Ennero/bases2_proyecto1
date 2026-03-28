@@ -481,6 +481,7 @@ BEGIN TRY
         ROWTERMINATOR = '0x0a'
     );
 
+    -- posicion_final puede repetir anio+posicion en casos historicos validos.
     INSERT INTO dbo.posicion_final (anio, posicion, seleccion_id)
     SELECT
         TRY_CONVERT(INT, NULLIF(LTRIM(RTRIM(anio)), '')),
@@ -651,6 +652,8 @@ BEGIN TRY
         ROWTERMINATOR = '0x0a'
     );
 
+    -- participacion_mundial conserva filas multiples por anio+seleccion_id
+    -- cuando la canonizacion historica agrupa alias de selecciones distintas.
     INSERT INTO dbo.participacion_mundial (
         anio,
         seleccion_id,

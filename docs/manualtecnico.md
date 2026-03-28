@@ -7,6 +7,7 @@
 - [4. Estructura del repositorio](#4-estructura-del-repositorio)
 - [5. Proceso de recoleccion de datos](#5-proceso-de-recoleccion-de-datos)
 - [6. Proceso de normalizacion y generacion de CSV](#6-proceso-de-normalizacion-y-generacion-de-csv)
+- [6.4 Politica de canonizacion historica y no unicidad controlada](#64-politica-de-canonizacion-historica-y-no-unicidad-controlada)
 - [7. Carga en Docker y SQL Server](#7-carga-en-docker-y-sql-server)
 - [8. Diccionario tecnico de la base de datos](#8-diccionario-tecnico-de-la-base-de-datos)
 - [9. Stored procedures](#9-stored-procedures)
@@ -158,6 +159,7 @@ Controles aplicados:
 - Deduplicacion por llaves de negocio temporales.
 - Validacion de nombres vacios o genericos.
 - Parseo robusto de minutos y resultados.
+- Parseo contextual de definicion por penales para evitar capturar anios del menu del sitio.
 - Manejo de faltantes sin romper el flujo.
 
 ## 6. Proceso de normalizacion y generacion de CSV
@@ -207,6 +209,29 @@ En docker/init/02_fix_csvs.sh se aplica limpieza adicional para compatibilidad c
 - Correccion de enteros y booleanos.
 - Deduplicacion por llave primaria esperada.
 - Garantia de existencia de resolucion_identidad_jugador.csv.
+
+### 6.4 Politica de canonizacion historica y no unicidad controlada
+
+La canonizacion de selecciones sigue dos metas en paralelo:
+
+- Unificar nombres para consulta analitica en una seleccion canonica.
+- Conservar hechos historicos sin borrar registros validos de la fuente.
+
+Alias historicos activos en el proyecto:
+
+- Alemania Occidental y Alemania Oriental -> Alemania (agregacion historica tras la reunificacion).
+- URSS -> Rusia (sucesion historica usada para agregacion estadistica).
+- RF de Yugoslavia y Serbia y Montenegro -> Serbia (continuidad historica en la serie de selecciones).
+- Checoslovaquia -> Republica Checa (continuidad historica para agregacion de registros).
+- Holanda y Paises Bajos -> Paises Bajos (variacion linguistica y ortografica).
+
+Implicacion tecnica intencional:
+
+- participacion_mundial puede contener mas de una fila para la misma combinacion (anio, seleccion_id).
+- posicion_final puede repetir (anio, posicion) y tambien (anio, seleccion_id) en casos historicos validos.
+- Estas repeticiones no son corrupcion de datos; preservan fidelidad historica despues de canonizar nombres.
+
+Por este motivo, el modelo SQL no debe imponer unicidad natural en esos pares de columnas.
 
 ## 7. Carga en Docker y SQL Server
 
@@ -311,6 +336,7 @@ Atributos:
 - definicion_penales: indica si hubo tanda de penales.
 - penales_local: goles de penal del local en tanda.
 - penales_visitante: goles de penal del visitante en tanda.
+- regla de calidad: si no existe marcador valido en fuente o no hubo tanda, campos de penales quedan nulos.
 
 ### 8.7 Tabla aparicion_partido
 
@@ -418,6 +444,7 @@ Atributos:
 - anio: referencia al mundial.
 - posicion: posicion final absoluta.
 - seleccion_id: seleccion ubicada en esa posicion.
+- regla de clave: PK compuesta (anio, posicion, seleccion_id) para permitir posiciones compartidas y casos historicos canonizados.
 
 ### 8.15 Tabla goleador
 
@@ -480,6 +507,7 @@ Proposito: resumen de campania por seleccion en cada edicion.
 
 Atributos:
 
+- participacion_id: llave primaria tecnica autoincremental.
 - anio: referencia al mundial.
 - seleccion_id: seleccion participante.
 - posicion: posicion final.
@@ -493,6 +521,7 @@ Atributos:
 - gc: goles en contra.
 - dif: diferencia de goles.
 - participo: marca booleana de participacion efectiva.
+- regla de clave: no se fuerza unicidad por (anio, seleccion_id); una seleccion canonica puede tener multiples filas historicas en el mismo anio.
 
 ### 8.21 Tabla resolucion_identidad_jugador
 
@@ -664,6 +693,35 @@ SELECT COUNT(*) AS partido FROM dbo.partido;
 SELECT COUNT(*) AS gol FROM dbo.gol;
 SELECT COUNT(*) AS participacion FROM dbo.participacion_mundial;
 SELECT COUNT(*) AS pendientes_resolucion FROM dbo.v_evento_jugador_pendiente;
+
+SELECT anio, seleccion_id, COUNT(*) AS filas
+FROM dbo.participacion_mundial
+GROUP BY anio, seleccion_id
+HAVING COUNT(*) > 1
+ORDER BY anio, seleccion_id;
+
+SELECT anio, posicion, COUNT(*) AS filas
+FROM dbo.posicion_final
+GROUP BY anio, posicion
+HAVING COUNT(*) > 1
+ORDER BY anio, posicion;
+
+SELECT COUNT(*) AS penales_incompletos
+FROM dbo.partido
+WHERE definicion_penales = 1
+  AND (penales_local IS NULL OR penales_visitante IS NULL);
+
+SELECT COUNT(*) AS penales_fuera_de_contexto
+FROM dbo.partido
+WHERE definicion_penales = 0
+  AND (penales_local IS NOT NULL OR penales_visitante IS NOT NULL);
+```
+
+```bash
+awk -F, 'NR>1 && tolower($2) ~ /^minuto[[:space:]]+[0-9]+/ {c++} END{print c+0}' datos_normalizados_local/seleccion.csv
+awk -F, 'NR>1 && $4 ~ /\.[0-9]+$/ {c++} END{print c+0}' datos_normalizados_local/tarjeta.csv
+awk -F, 'NR>1 && $10=="True" && ($11=="" || $12=="") {c++} END{print c+0}' datos_normalizados_web/partido.csv
+awk -F, 'NR>1 && $10!="True" && ($11!="" || $12!="") {c++} END{print c+0}' datos_normalizados_web/partido.csv
 ```
 
 ## 13. Troubleshooting

@@ -2,12 +2,24 @@
 
 Autores: David Barrios, Enner Mendizabal, Estefania Mazariegos  
 Licencia: MIT  
-Version: 2026.1  
-Ultima actualizacion: Marzo 20, 2026
+Version: 2026.2  
+Ultima actualizacion: Marzo 28, 2026
 
 ## Descripcion general
 
 Proyecto para extraer, normalizar y cargar datos historicos de Copas del Mundo (1930-2026) en SQL Server.
+
+## Estado tecnico actual (mar 2026)
+
+- Parseo de penales corregido: solo toma marcador cuando hay contexto explicito de definicion por penales.
+- Si no hay marcador valido en fuente, `penales_local` y `penales_visitante` se mantienen nulos.
+- Canonizacion historica activa en selecciones: Alemania Occidental/Oriental, URSS, RF de Yugoslavia, Serbia y Montenegro, Checoslovaquia, Holanda/Paises Bajos.
+- El modelo SQL no fuerza unicidad natural en casos historicos canonizados:
+  - `participacion_mundial` puede repetir `(anio, seleccion_id)`.
+  - `posicion_final` puede repetir `(anio, posicion)` o `(anio, seleccion_id)`.
+- Auditoria post-scrapeo web disponible en `logs/auditoria_post_scrapeo_web_20260327_235248.json`.
+  - `fk_orphan_total = 0`
+  - `penalty_anomalies = 0`
 
 ## Inicio rapido
 

@@ -97,6 +97,13 @@ SELECT TOP (10) * FROM dbo.log_partido ORDER BY log_id DESC;
 SELECT TOP (10) * FROM dbo.log_seleccion ORDER BY log_id DESC;
 ```
 
+## Compatibilidad con modelo canonico historico
+
+- En el dataset historico (1930-2026), `dbo.participacion_mundial` puede tener mas de una fila para la misma combinacion `(anio, seleccion_id)`.
+- En el dataset historico (1930-2026), `dbo.posicion_final` puede repetir `(anio, posicion)` por posiciones compartidas o canonizacion de selecciones historicas.
+- Los scripts de Fase 2 para 2030 siguen insertando una fila por seleccion en `participacion_mundial`; esto es intencional para una simulacion controlada.
+- Estas reglas no son conflicto: Fase 2 simula carga operativa, mientras el historico prioriza fidelidad de fuente.
+
 ## Notas
 
 - Los scripts estan preparados para minimizar duplicados con validaciones `NOT EXISTS`.

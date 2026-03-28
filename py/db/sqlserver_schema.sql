@@ -246,7 +246,7 @@ CREATE TABLE dbo.posicion_final (
     anio INT NOT NULL,
     posicion INT NOT NULL,
     seleccion_id BIGINT NOT NULL,
-    CONSTRAINT pk_posicion_final PRIMARY KEY (anio, posicion),
+    CONSTRAINT pk_posicion_final PRIMARY KEY (anio, posicion, seleccion_id),
     CONSTRAINT fk_posicion_final_mundial
         FOREIGN KEY (anio) REFERENCES dbo.mundial(anio),
     CONSTRAINT fk_posicion_final_seleccion
@@ -255,6 +255,7 @@ CREATE TABLE dbo.posicion_final (
 GO
 
 CREATE INDEX idx_posicion_final_anio ON dbo.posicion_final(anio);
+CREATE INDEX idx_posicion_final_anio_posicion ON dbo.posicion_final(anio, posicion);
 GO
 
 CREATE TABLE dbo.goleador (
@@ -331,6 +332,7 @@ CREATE TABLE dbo.plantel_entrenador (
 GO
 
 CREATE TABLE dbo.participacion_mundial (
+    participacion_id BIGINT IDENTITY(1,1) NOT NULL,
     anio INT NOT NULL,
     seleccion_id BIGINT NOT NULL,
     posicion INT NULL,
@@ -344,7 +346,7 @@ CREATE TABLE dbo.participacion_mundial (
     gc INT NULL,
     dif INT NULL,
     participo BIT NOT NULL CONSTRAINT df_participacion_participo DEFAULT (1),
-    CONSTRAINT pk_participacion_mundial PRIMARY KEY (anio, seleccion_id),
+    CONSTRAINT pk_participacion_mundial PRIMARY KEY (participacion_id),
     CONSTRAINT fk_participacion_mundial
         FOREIGN KEY (anio) REFERENCES dbo.mundial(anio),
     CONSTRAINT fk_participacion_seleccion
@@ -353,6 +355,7 @@ CREATE TABLE dbo.participacion_mundial (
 GO
 
 CREATE INDEX idx_participacion_anio ON dbo.participacion_mundial(anio);
+CREATE INDEX idx_participacion_anio_seleccion ON dbo.participacion_mundial(anio, seleccion_id);
 GO
 
 CREATE TABLE dbo.resolucion_identidad_jugador (

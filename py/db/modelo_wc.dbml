@@ -167,8 +167,9 @@ Table posicion_final {
   seleccion_id bigint [not null]
 
   Indexes {
-    (anio, posicion) [pk]
-    (anio, seleccion_id) [unique]
+    (anio, posicion, seleccion_id) [pk]
+    (anio)
+    (anio, posicion)
   }
 }
 
@@ -228,6 +229,7 @@ Table plantel_entrenador {
 }
 
 Table participacion_mundial {
+  participacion_id bigint [pk, increment]
   anio integer [not null]
   seleccion_id bigint [not null]
   posicion integer
@@ -243,7 +245,8 @@ Table participacion_mundial {
   participo boolean [not null, default: true]
 
   Indexes {
-    (anio, seleccion_id) [pk]
+    (anio)
+    (anio, seleccion_id)
   }
 }
 

@@ -55,6 +55,10 @@ OBSOLETE_OUTPUT_FILES = (
     "plantel.csv",
 )
 
+# Canonizacion historica: consolida estados sucesores y variantes de escritura
+# en un nombre canonico. Esta unificacion es intencional y puede producir mas de
+# una fila valida para la misma clave natural (por ejemplo anio+seleccion_id) en
+# tablas de resumen historico.
 SELECCION_ALIAS_MAP = {
     "Alemania Occidental": "Alemania",
     "Alemania Oriental": "Alemania",
