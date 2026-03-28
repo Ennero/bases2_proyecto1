@@ -72,6 +72,58 @@ GENERIC_SELECTION_VALUES = {
     "Seleccion",
 }
 
+INVALID_SELECTION_EXACT = {
+    "seleccion",
+    "selecciones",
+    "equipo",
+    "equipos",
+    "jugador",
+    "jugadores",
+    "tarjeta",
+    "tarjetas",
+    "cambio",
+    "cambios",
+    "minuto",
+}
+
+INVALID_SELECTION_PATTERNS = (
+    re.compile(r"^minuto\s+\d", flags=re.IGNORECASE),
+    re.compile(r"^\d+(?:\+\d+)?$"),
+)
+
+INT_COLUMNS_BY_FILE = {
+    "mundial.csv": ("anio", "equipos", "partidos_jugados", "goles_total"),
+    "seleccion.csv": ("seleccion_id",),
+    "seleccion_alias.csv": ("seleccion_id",),
+    "jugador.csv": ("jugador_id",),
+    "entrenador.csv": ("entrenador_id",),
+    "partido.csv": (
+        "partido_id",
+        "anio",
+        "local_seleccion_id",
+        "visitante_seleccion_id",
+        "goles_local",
+        "goles_visitante",
+        "penales_local",
+        "penales_visitante",
+    ),
+    "aparicion_partido.csv": ("partido_id", "seleccion_id", "jugador_id"),
+    "direccion_tecnica_partido.csv": ("partido_id", "seleccion_id", "entrenador_id"),
+    "gol.csv": ("gol_id", "partido_id", "seleccion_id", "jugador_id"),
+    "tarjeta.csv": ("tarjeta_id", "partido_id", "seleccion_id", "jugador_id"),
+    "cambio.csv": ("cambio_id", "partido_id", "seleccion_id", "jugador_sale_id", "jugador_entra_id"),
+    "penal.csv": ("penal_id", "partido_id", "seleccion_id", "orden", "jugador_id"),
+    "grupo.csv": ("anio", "posicion", "seleccion_id", "pts", "pj", "pg", "pe", "pp", "gf", "gc", "dif"),
+    "posicion_final.csv": ("anio", "posicion", "seleccion_id"),
+    "goleador.csv": ("anio", "jugador_id", "seleccion_id", "goles"),
+    "premio_jugador.csv": ("anio", "jugador_id", "seleccion_id"),
+    "premio_seleccion.csv": ("anio", "seleccion_id"),
+    "plantel_jugador.csv": ("anio", "seleccion_id", "jugador_id"),
+    "plantel_entrenador.csv": ("anio", "seleccion_id", "entrenador_id"),
+    "participacion_mundial.csv": ("anio", "seleccion_id", "posicion", "pts", "pj", "pg", "pe", "pp", "gf", "gc", "dif"),
+    "resolucion_identidad_jugador.csv": ("source_event_id", "partido_id", "seleccion_id"),
+}
+
 
 def _read_optional_csv(raw_dir: str, filename: str) -> pd.DataFrame:
     path = os.path.join(raw_dir, filename)
@@ -82,7 +134,11 @@ def _read_optional_csv(raw_dir: str, filename: str) -> pd.DataFrame:
 
 def _write_csv(df: pd.DataFrame, out_dir: str, filename: str) -> None:
     os.makedirs(out_dir, exist_ok=True)
-    output = df.fillna("")
+    output = df.copy()
+    for column in INT_COLUMNS_BY_FILE.get(filename, ()):
+        if column in output.columns:
+            output[column] = output[column].apply(lambda value: str(parsed) if (parsed := _parse_int(value)) is not None else "")
+    output = output.fillna("")
     output.to_csv(os.path.join(out_dir, filename), index=False, encoding="utf-8-sig")
 
 
@@ -118,7 +174,14 @@ def _is_valid_selection_name(value: object) -> bool:
     if not text:
         return False
     lowered = text.lower()
-    return "comparación de las selecciones" not in lowered and "comparacion de las selecciones" not in lowered
+    if lowered in INVALID_SELECTION_EXACT:
+        return False
+    if "comparación de las selecciones" in lowered or "comparacion de las selecciones" in lowered:
+        return False
+    for pattern in INVALID_SELECTION_PATTERNS:
+        if pattern.search(lowered):
+            return False
+    return True
 
 
 def _canonical_selection_name(value: object) -> str:
@@ -773,24 +836,24 @@ def normalizar_csv_intermedio(raw_dir: str, output_dir: str) -> None:
                 "goles_total": _parse_int(row.get("goles_total", "")),
             })
 
-    _write_csv(pd.DataFrame(mundial_rows, columns=["anio", "sede", "equipos", "partidos_jugados", "goles_total"]).drop_duplicates(), output_dir, "mundial.csv")
+    _write_csv(pd.DataFrame(mundial_rows, columns=["anio", "sede", "equipos", "partidos_jugados", "goles_total"]).drop_duplicates(subset=["anio"]), output_dir, "mundial.csv")
     _write_csv(seleccion_frame.drop_duplicates(subset=["seleccion_id"]), output_dir, "seleccion.csv")
-    _write_csv(alias_frame.drop_duplicates(subset=["alias_nombre", "seleccion_id"]), output_dir, "seleccion_alias.csv")
+    _write_csv(alias_frame.drop_duplicates(subset=["alias_nombre"]), output_dir, "seleccion_alias.csv")
     _write_csv(player_registry.to_frame().drop_duplicates(subset=["jugador_id"]), output_dir, "jugador.csv")
     _write_csv(coach_registry.to_frame().drop_duplicates(subset=["entrenador_id"]), output_dir, "entrenador.csv")
     _write_csv(partido_frame.drop_duplicates(subset=["partido_id"]), output_dir, "partido.csv")
-    _write_csv(pd.DataFrame(aparicion_rows, columns=["partido_id", "seleccion_id", "jugador_id", "posicion", "camiseta", "seccion", "es_capitan"]).drop_duplicates(), output_dir, "aparicion_partido.csv")
-    _write_csv(pd.DataFrame(tecnico_rows, columns=["partido_id", "seleccion_id", "entrenador_id"]).drop_duplicates(), output_dir, "direccion_tecnica_partido.csv")
+    _write_csv(pd.DataFrame(aparicion_rows, columns=["partido_id", "seleccion_id", "jugador_id", "posicion", "camiseta", "seccion", "es_capitan"]).drop_duplicates(subset=["partido_id", "seleccion_id", "jugador_id", "seccion"]), output_dir, "aparicion_partido.csv")
+    _write_csv(pd.DataFrame(tecnico_rows, columns=["partido_id", "seleccion_id", "entrenador_id"]).drop_duplicates(subset=["partido_id", "seleccion_id", "entrenador_id"]), output_dir, "direccion_tecnica_partido.csv")
     _write_csv(pd.DataFrame(gol_rows, columns=["gol_id", "partido_id", "seleccion_id", "jugador_id", "minuto", "es_penal", "es_autogol"]).drop_duplicates(subset=["gol_id"]), output_dir, "gol.csv")
     _write_csv(pd.DataFrame(tarjeta_rows, columns=["tarjeta_id", "partido_id", "seleccion_id", "jugador_id", "tipo", "minuto"]).drop_duplicates(subset=["tarjeta_id"]), output_dir, "tarjeta.csv")
     _write_csv(pd.DataFrame(cambio_rows, columns=["cambio_id", "partido_id", "seleccion_id", "jugador_sale_id", "jugador_entra_id", "minuto"]).drop_duplicates(subset=["cambio_id"]), output_dir, "cambio.csv")
     _write_csv(pd.DataFrame(penal_rows, columns=["penal_id", "partido_id", "seleccion_id", "orden", "jugador_id", "resultado"]).drop_duplicates(subset=["penal_id"]), output_dir, "penal.csv")
-    _write_csv(pd.DataFrame(grupo_rows, columns=["anio", "grupo", "posicion", "seleccion_id", "pts", "pj", "pg", "pe", "pp", "gf", "gc", "dif", "clasificado"]).drop_duplicates(), output_dir, "grupo.csv")
-    _write_csv(pd.DataFrame(posicion_rows, columns=["anio", "posicion", "seleccion_id"]).drop_duplicates(), output_dir, "posicion_final.csv")
-    _write_csv(pd.DataFrame(goleador_rows, columns=["anio", "jugador_id", "seleccion_id", "goles"]).drop_duplicates(), output_dir, "goleador.csv")
-    _write_csv(pd.DataFrame(premio_jugador_rows, columns=["anio", "premio", "jugador_id", "seleccion_id"]).drop_duplicates(), output_dir, "premio_jugador.csv")
-    _write_csv(pd.DataFrame(premio_seleccion_rows, columns=["anio", "premio", "seleccion_id"]).drop_duplicates(), output_dir, "premio_seleccion.csv")
-    _write_csv(pd.DataFrame(plantel_jugador_rows, columns=["anio", "seleccion_id", "jugador_id", "posicion", "camiseta", "club"]).drop_duplicates(), output_dir, "plantel_jugador.csv")
-    _write_csv(pd.DataFrame(plantel_entrenador_rows, columns=["anio", "seleccion_id", "entrenador_id"]).drop_duplicates(), output_dir, "plantel_entrenador.csv")
-    _write_csv(pd.DataFrame(participacion_rows, columns=["anio", "seleccion_id", "posicion", "etapa", "pts", "pj", "pg", "pe", "pp", "gf", "gc", "dif", "participo"]).drop_duplicates(), output_dir, "participacion_mundial.csv")
-    _write_csv(pd.DataFrame(resolucion_rows, columns=["source_table", "source_event_id", "partido_id", "seleccion_id", "jugador_nombre_raw", "minuto", "metodo", "confianza", "notas"]).drop_duplicates(), output_dir, "resolucion_identidad_jugador.csv")
+    _write_csv(pd.DataFrame(grupo_rows, columns=["anio", "grupo", "posicion", "seleccion_id", "pts", "pj", "pg", "pe", "pp", "gf", "gc", "dif", "clasificado"]).drop_duplicates(subset=["anio", "grupo", "posicion", "seleccion_id"]), output_dir, "grupo.csv")
+    _write_csv(pd.DataFrame(posicion_rows, columns=["anio", "posicion", "seleccion_id"]).drop_duplicates(subset=["anio", "posicion", "seleccion_id"]), output_dir, "posicion_final.csv")
+    _write_csv(pd.DataFrame(goleador_rows, columns=["anio", "jugador_id", "seleccion_id", "goles"]).drop_duplicates(subset=["anio", "jugador_id", "seleccion_id"]), output_dir, "goleador.csv")
+    _write_csv(pd.DataFrame(premio_jugador_rows, columns=["anio", "premio", "jugador_id", "seleccion_id"]).drop_duplicates(subset=["anio", "premio", "jugador_id", "seleccion_id"]), output_dir, "premio_jugador.csv")
+    _write_csv(pd.DataFrame(premio_seleccion_rows, columns=["anio", "premio", "seleccion_id"]).drop_duplicates(subset=["anio", "premio", "seleccion_id"]), output_dir, "premio_seleccion.csv")
+    _write_csv(pd.DataFrame(plantel_jugador_rows, columns=["anio", "seleccion_id", "jugador_id", "posicion", "camiseta", "club"]).drop_duplicates(subset=["anio", "seleccion_id", "jugador_id"]), output_dir, "plantel_jugador.csv")
+    _write_csv(pd.DataFrame(plantel_entrenador_rows, columns=["anio", "seleccion_id", "entrenador_id"]).drop_duplicates(subset=["anio", "seleccion_id", "entrenador_id"]), output_dir, "plantel_entrenador.csv")
+    _write_csv(pd.DataFrame(participacion_rows, columns=["anio", "seleccion_id", "posicion", "etapa", "pts", "pj", "pg", "pe", "pp", "gf", "gc", "dif", "participo"]).drop_duplicates(subset=["anio", "seleccion_id", "etapa", "participo"]), output_dir, "participacion_mundial.csv")
+    _write_csv(pd.DataFrame(resolucion_rows, columns=["source_table", "source_event_id", "partido_id", "seleccion_id", "jugador_nombre_raw", "minuto", "metodo", "confianza", "notas"]).drop_duplicates(subset=["source_table", "source_event_id", "partido_id", "seleccion_id", "jugador_nombre_raw", "minuto", "metodo"]), output_dir, "resolucion_identidad_jugador.csv")

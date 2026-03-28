@@ -51,16 +51,36 @@ class FuenteDatos:
     origen: str
     html_dir: str
     pausa: float
+    aviso_fallback_local_emitido: bool = False
+
+    def _leer_html_local(self, ruta_sitio: str) -> str:
+        archivo_local = ruta_local_desde_sitio(ruta_sitio, self.html_dir)
+        with open(archivo_local, "r", encoding="utf-8", errors="ignore") as descriptor:
+            return descriptor.read()
 
     def obtener_soup(self, ruta: str) -> BeautifulSoup:
         ruta_sitio = normalizar_ruta_sitio(ruta)
         if self.origen == "local":
-            archivo_local = ruta_local_desde_sitio(ruta_sitio, self.html_dir)
-            with open(archivo_local, "r", encoding="utf-8", errors="ignore") as descriptor:
-                html = descriptor.read()
+            html = self._leer_html_local(ruta_sitio)
         else:
             url = normalizar_url(ruta_sitio)
-            html = obtener_html_con_edge(url)
+            html = ""
+            error_web: Exception | None = None
+            try:
+                html = obtener_html_con_edge(url)
+            except Exception as error:
+                error_web = error
+
+            if not html or respuesta_web_bloqueada(html):
+                try:
+                    html = self._leer_html_local(ruta_sitio)
+                    if not self.aviso_fallback_local_emitido:
+                        print("  Aviso: respuesta web bloqueada o vacía; usando html_descargados como respaldo cuando exista.")
+                        self.aviso_fallback_local_emitido = True
+                except FileNotFoundError:
+                    if not html and error_web is not None:
+                        raise error_web
+
             if self.pausa > 0:
                 time.sleep(self.pausa)
         return BeautifulSoup(html, "html.parser")
@@ -206,6 +226,53 @@ def obtener_nombre_seleccion_desde_imagen(tag: Tag | None) -> str:
         return ""
     valor = limpiar_texto(atributo_texto(imagen, "alt"))
     return valor.replace("Bandera de ", "").strip()
+
+
+def es_equipo_probable(texto: str) -> bool:
+    valor = limpiar_texto(texto)
+    if not valor:
+        return False
+    valor_lower = valor.lower()
+    if valor_lower.startswith("minuto "):
+        return False
+    if valor_lower.startswith("selecc"):
+        return False
+    if re.fullmatch(r"\d+(?:\+\d+)?", valor):
+        return False
+    return True
+
+
+def respuesta_web_bloqueada(html: str) -> bool:
+    texto = limpiar_texto(html).lower()
+    if not texto:
+        return True
+    indicadores = (
+        "forbidden access",
+        "access denied",
+        "error 403",
+        "captcha",
+        "cloudflare",
+        "just a moment",
+    )
+    if any(indicador in texto for indicador in indicadores):
+        return True
+    if len(texto) < 120 and "los mundiales" not in texto:
+        return True
+    return False
+
+
+def tabla_bajo_subtitulo(subtitulo: Tag) -> Tag | None:
+    for sibling in subtitulo.next_siblings:
+        if not isinstance(sibling, Tag):
+            continue
+        if sibling.name == "h3":
+            break
+        if sibling.name == "table":
+            return sibling
+        tabla = sibling.find("table")
+        if isinstance(tabla, Tag):
+            return tabla
+    return None
 
 
 def guardar_csv(datos: list[dict], nombre: str, carpeta: str) -> None:
@@ -487,20 +554,46 @@ def parsear_detalle_partido(fuente: FuenteDatos, partido: dict) -> dict:
     for subtitulo in soup.find_all("h3"):
         if "tarjetas" not in limpiar_texto(subtitulo.get_text()).lower():
             continue
-        tabla = subtitulo.find_next("table")
+        tabla = tabla_bajo_subtitulo(subtitulo)
         if not isinstance(tabla, Tag):
             continue
+        equipo_actual = ""
         for fila in tabla.find_all("tr"):
             celdas = fila.find_all("td")
+            if len(celdas) == 1:
+                equipo_header = obtener_nombre_seleccion_desde_imagen(fila) or limpiar_texto(celdas[0].get_text(" "))
+                if es_equipo_probable(equipo_header):
+                    equipo_actual = equipo_header
+                continue
             if len(celdas) < 3:
                 continue
-            equipo = limpiar_texto(celdas[0].get_text())
-            if equipo.lower().startswith("selecc"):
+
+            minuto = extraer_minuto(limpiar_texto(celdas[0].get_text(" ")))
+            if minuto:
+                equipo = equipo_actual
+                celda_jugador = celdas[1]
+                celda_tarjeta = celdas[2]
+            else:
+                equipo_celda = limpiar_texto(celdas[0].get_text(" "))
+                if es_equipo_probable(equipo_celda):
+                    equipo_actual = equipo_celda
+                equipo = equipo_actual
+                celda_jugador = celdas[1]
+                celda_tarjeta = celdas[2]
+
+            if not es_equipo_probable(equipo):
                 continue
-            enlace = primer_link(celdas[1], "jugadores")
-            jugador = limpiar_texto(enlace.get_text()) if enlace else limpiar_texto(celdas[1].get_text(" "))
+
+            texto_jugador = limpiar_texto(celda_jugador.get_text(" "))
+            texto_tarjeta = limpiar_texto(celda_tarjeta.get_text(" "))
+            if not texto_jugador and not texto_tarjeta:
+                continue
+
+            enlace = primer_link(celda_jugador, "jugadores")
+            jugador = limpiar_texto(enlace.get_text()) if enlace else texto_jugador
             jugador_slug = slug_de_href(atributo_texto(enlace, "href")) if enlace else ""
-            texto_tarjeta = limpiar_texto(celdas[2].get_text(" "))
+
+            minuto_tarjeta = minuto or extraer_minuto(texto_tarjeta)
             tipo = "amarilla" if "amarilla" in texto_tarjeta.lower() or fila.find("div", class_="am") else "roja"
             tarjetas.append({
                 "partido_slug": partido_slug,
@@ -509,7 +602,7 @@ def parsear_detalle_partido(fuente: FuenteDatos, partido: dict) -> dict:
                 "jugador_slug": jugador_slug,
                 "equipo": equipo,
                 "tipo": tipo,
-                "minuto": extraer_minuto(texto_tarjeta),
+                "minuto": minuto_tarjeta,
             })
         break
 
@@ -517,19 +610,23 @@ def parsear_detalle_partido(fuente: FuenteDatos, partido: dict) -> dict:
     for subtitulo in soup.find_all("h3"):
         if "cambios" not in limpiar_texto(subtitulo.get_text()).lower():
             continue
-        tabla = subtitulo.find_next("table")
+        tabla = tabla_bajo_subtitulo(subtitulo)
         if not isinstance(tabla, Tag):
             continue
         equipo_actual = ""
         for fila in tabla.find_all("tr"):
             celdas = fila.find_all("td")
             if len(celdas) == 1:
-                equipo_actual = obtener_nombre_seleccion_desde_imagen(fila) or limpiar_texto(celdas[0].get_text(" "))
+                equipo_header = obtener_nombre_seleccion_desde_imagen(fila) or limpiar_texto(celdas[0].get_text(" "))
+                if es_equipo_probable(equipo_header):
+                    equipo_actual = equipo_header
                 continue
             if len(celdas) < 5:
                 continue
             minuto = extraer_minuto(limpiar_texto(celdas[0].get_text(" ")))
             if not minuto:
+                continue
+            if not es_equipo_probable(equipo_actual):
                 continue
             entra_link = primer_link(celdas[2], "jugadores")
             sale_link = primer_link(celdas[4], "jugadores")
@@ -1123,10 +1220,14 @@ def extraer_mundiales_info(fuente: FuenteDatos, anios: list[int], carpeta: str) 
 
         bloque_resumen = soup.find(string=lambda texto: isinstance(texto, str) and "Organizador" in texto)
         if bloque_resumen:
-            contenedor = bloque_resumen.find_parent("p")
+            contenedor = bloque_resumen.find_parent(["p", "div", "li"])
             if isinstance(contenedor, Tag):
                 texto = limpiar_texto(contenedor.get_text(" "))
-                sede_match = re.search(r"Organizador:\s*([^\-]+?)\s+(?:Selecciones:|$)", texto)
+                sede_match = re.search(
+                    r"Organizador:\s*(.+?)(?:\s*-\s*(?:Selecciones|Equipos|Partidos):|\s*(?:Selecciones|Equipos|Partidos):|$)",
+                    texto,
+                    flags=re.IGNORECASE,
+                )
                 equipos_match = re.search(r"Selecciones:\s*(\d+)", texto)
                 partidos_match = re.search(r"Partidos:\s*(\d+)", texto)
                 goles_match = re.search(r"Goles:\s*(\d+)", texto)

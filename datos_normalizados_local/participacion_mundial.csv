@@ -1,27 +1,27 @@
 ﻿anio,seleccion_id,posicion,etapa,pts,pj,pg,pe,pp,gf,gc,dif,participo
 1930,1,,no participó,,,,,,,,,False
-1934,1,3.0,Partido 3er Puesto,6.0,4.0,3.0,0.0,1.0,11.0,8.0,3.0,True
-1938,1,10.0,Octavos de Final,1.0,2.0,0.0,1.0,1.0,3.0,5.0,-2.0,True
+1934,1,3,Partido 3er Puesto,6,4,3,0,1,11,8,3,True
+1938,1,10,Octavos de Final,1,2,0,1,1,3,5,-2,True
 1950,1,,no participó,,,,,,,,,False
-1954,1,1.0,Final,10.0,6.0,5.0,0.0,1.0,25.0,14.0,11.0,True
-1958,1,4.0,Partido 3er Puesto,6.0,6.0,2.0,2.0,2.0,12.0,14.0,-2.0,True
-1962,1,7.0,Cuartos de Final,5.0,4.0,2.0,1.0,1.0,4.0,2.0,2.0,True
-1966,1,2.0,Final,9.0,6.0,4.0,1.0,1.0,15.0,6.0,9.0,True
-1970,1,3.0,Partido 3er Puesto,10.0,6.0,5.0,0.0,1.0,17.0,10.0,7.0,True
-1974,1,1.0,Final,12.0,7.0,6.0,0.0,1.0,13.0,4.0,9.0,True
-1978,1,6.0,Grupos 2da Ronda,6.0,6.0,1.0,4.0,1.0,10.0,5.0,5.0,True
-1982,1,2.0,Final,8.0,7.0,3.0,2.0,2.0,12.0,10.0,2.0,True
-1986,1,2.0,Final,8.0,7.0,3.0,2.0,2.0,8.0,7.0,1.0,True
-1990,1,1.0,Final,12.0,7.0,5.0,2.0,0.0,15.0,5.0,10.0,True
-1994,1,5.0,Cuartos de Final,10.0,5.0,3.0,1.0,1.0,9.0,7.0,2.0,True
-1998,1,7.0,Cuartos de Final,10.0,5.0,3.0,1.0,1.0,8.0,6.0,2.0,True
-2002,1,2.0,Final,16.0,7.0,5.0,1.0,1.0,14.0,3.0,11.0,True
-2006,1,3.0,Partido 3er Puesto,16.0,7.0,5.0,1.0,1.0,14.0,6.0,8.0,True
-2010,1,3.0,Partido 3er Puesto,15.0,7.0,5.0,0.0,2.0,16.0,5.0,11.0,True
-2014,1,1.0,Final,19.0,7.0,6.0,1.0,0.0,18.0,4.0,14.0,True
-2018,1,22.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,2.0,4.0,-2.0,True
-2022,1,17.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,6.0,5.0,1.0,True
-2026,1,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+1954,1,1,Final,10,6,5,0,1,25,14,11,True
+1958,1,4,Partido 3er Puesto,6,6,2,2,2,12,14,-2,True
+1962,1,7,Cuartos de Final,5,4,2,1,1,4,2,2,True
+1966,1,2,Final,9,6,4,1,1,15,6,9,True
+1970,1,3,Partido 3er Puesto,10,6,5,0,1,17,10,7,True
+1974,1,1,Final,12,7,6,0,1,13,4,9,True
+1978,1,6,Grupos 2da Ronda,6,6,1,4,1,10,5,5,True
+1982,1,2,Final,8,7,3,2,2,12,10,2,True
+1986,1,2,Final,8,7,3,2,2,8,7,1,True
+1990,1,1,Final,12,7,5,2,0,15,5,10,True
+1994,1,5,Cuartos de Final,10,5,3,1,1,9,7,2,True
+1998,1,7,Cuartos de Final,10,5,3,1,1,8,6,2,True
+2002,1,2,Final,16,7,5,1,1,14,3,11,True
+2006,1,3,Partido 3er Puesto,16,7,5,1,1,14,6,8,True
+2010,1,3,Partido 3er Puesto,15,7,5,0,2,16,5,11,True
+2014,1,1,Final,19,7,6,1,0,18,4,14,True
+2018,1,22,Grupos 1ra Ronda,3,3,1,0,2,2,4,-2,True
+2022,1,17,Grupos 1ra Ronda,4,3,1,1,1,6,5,1,True
+2026,1,,clasificado,0,0,0,0,0,0,0,0,True
 1930,2,,no participó,,,,,,,,,False
 1934,2,,no participó,,,,,,,,,False
 1938,2,,no participó,,,,,,,,,False
@@ -39,7 +39,7 @@
 1994,2,,no participó,,,,,,,,,False
 1998,2,,no participó,,,,,,,,,False
 2002,2,,no participó,,,,,,,,,False
-2006,2,23.0,Grupos 1ra Ronda,2.0,3.0,0.0,2.0,1.0,1.0,2.0,-1.0,True
+2006,2,23,Grupos 1ra Ronda,2,3,0,2,1,1,2,-1,True
 2010,2,,no participó,,,,,,,,,False
 2014,2,,no participó,,,,,,,,,False
 2018,2,,no participó,,,,,,,,,False
@@ -59,15 +59,15 @@
 1982,3,,no participó,,,,,,,,,False
 1986,3,,no participó,,,,,,,,,False
 1990,3,,no participó,,,,,,,,,False
-1994,3,12.0,Octavos de Final,6.0,4.0,2.0,0.0,2.0,5.0,6.0,-1.0,True
-1998,3,28.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,7.0,-5.0,True
-2002,3,32.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,0.0,12.0,-12.0,True
-2006,3,28.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,7.0,-5.0,True
+1994,3,12,Octavos de Final,6,4,2,0,2,5,6,-1,True
+1998,3,28,Grupos 1ra Ronda,1,3,0,1,2,2,7,-5,True
+2002,3,32,Grupos 1ra Ronda,0,3,0,0,3,0,12,-12,True
+2006,3,28,Grupos 1ra Ronda,1,3,0,1,2,2,7,-5,True
 2010,3,,no participó,,,,,,,,,False
 2014,3,,no participó,,,,,,,,,False
-2018,3,26.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,2.0,7.0,-5.0,True
-2022,3,25.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,3.0,5.0,-2.0,True
-2026,3,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+2018,3,26,Grupos 1ra Ronda,3,3,1,0,2,2,7,-5,True
+2022,3,25,Grupos 1ra Ronda,3,3,1,0,2,3,5,-2,True
+2026,3,,clasificado,0,0,0,0,0,0,0,0,True
 1930,4,,no participó,,,,,,,,,False
 1934,4,,no participó,,,,,,,,,False
 1938,4,,no participó,,,,,,,,,False
@@ -79,41 +79,41 @@
 1970,4,,no participó,,,,,,,,,False
 1974,4,,no participó,,,,,,,,,False
 1978,4,,no participó,,,,,,,,,False
-1982,4,13.0,Grupos 1ra Ronda,4.0,3.0,2.0,0.0,1.0,5.0,5.0,0.0,True
-1986,4,22.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,1.0,5.0,-4.0,True
+1982,4,13,Grupos 1ra Ronda,4,3,2,0,1,5,5,0,True
+1986,4,22,Grupos 1ra Ronda,1,3,0,1,2,1,5,-4,True
 1990,4,,no participó,,,,,,,,,False
 1994,4,,no participó,,,,,,,,,False
 1998,4,,no participó,,,,,,,,,False
 2002,4,,no participó,,,,,,,,,False
 2006,4,,no participó,,,,,,,,,False
-2010,4,28.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,0.0,2.0,-2.0,True
-2014,4,14.0,Octavos de Final,4.0,4.0,1.0,1.0,2.0,7.0,7.0,0.0,True
+2010,4,28,Grupos 1ra Ronda,1,3,0,1,2,0,2,-2,True
+2014,4,14,Octavos de Final,4,4,1,1,2,7,7,0,True
 2018,4,,no participó,,,,,,,,,False
 2022,4,,no participó,,,,,,,,,False
-2026,4,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
-1930,5,2.0,Final,8.0,5.0,4.0,0.0,1.0,18.0,9.0,9.0,True
-1934,5,9.0,Octavos de Final,0.0,1.0,0.0,0.0,1.0,2.0,3.0,-1.0,True
+2026,4,,clasificado,0,0,0,0,0,0,0,0,True
+1930,5,2,Final,8,5,4,0,1,18,9,9,True
+1934,5,9,Octavos de Final,0,1,0,0,1,2,3,-1,True
 1938,5,,no participó,,,,,,,,,False
 1950,5,,no participó,,,,,,,,,False
 1954,5,,no participó,,,,,,,,,False
-1958,5,13.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,5.0,10.0,-5.0,True
-1962,5,10.0,Grupos 1ra Ronda,3.0,3.0,1.0,1.0,1.0,2.0,3.0,-1.0,True
-1966,5,5.0,Cuartos de Final,5.0,4.0,2.0,1.0,1.0,4.0,2.0,2.0,True
+1958,5,13,Grupos 1ra Ronda,2,3,1,0,2,5,10,-5,True
+1962,5,10,Grupos 1ra Ronda,3,3,1,1,1,2,3,-1,True
+1966,5,5,Cuartos de Final,5,4,2,1,1,4,2,2,True
 1970,5,,no participó,,,,,,,,,False
-1974,5,8.0,Grupos 2da Ronda,4.0,6.0,1.0,2.0,3.0,9.0,12.0,-3.0,True
-1978,5,1.0,Final,11.0,7.0,5.0,1.0,1.0,15.0,4.0,11.0,True
-1982,5,11.0,Grupos 2da Ronda,4.0,5.0,2.0,0.0,3.0,8.0,7.0,1.0,True
-1986,5,1.0,Final,13.0,7.0,6.0,1.0,0.0,14.0,5.0,9.0,True
-1990,5,2.0,Final,7.0,7.0,2.0,3.0,2.0,5.0,4.0,1.0,True
-1994,5,10.0,Octavos de Final,6.0,4.0,2.0,0.0,2.0,8.0,6.0,2.0,True
-1998,5,6.0,Cuartos de Final,10.0,5.0,3.0,1.0,1.0,10.0,4.0,6.0,True
-2002,5,18.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,2.0,2.0,0.0,True
-2006,5,6.0,Cuartos de Final,11.0,5.0,3.0,2.0,0.0,11.0,3.0,8.0,True
-2010,5,5.0,Cuartos de Final,12.0,5.0,4.0,0.0,1.0,10.0,6.0,4.0,True
-2014,5,2.0,Final,16.0,7.0,5.0,1.0,1.0,8.0,4.0,4.0,True
-2018,5,16.0,Octavos de Final,4.0,4.0,1.0,1.0,2.0,6.0,9.0,-3.0,True
-2022,5,1.0,Final,14.0,7.0,4.0,2.0,1.0,15.0,8.0,7.0,True
-2026,5,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+1974,5,8,Grupos 2da Ronda,4,6,1,2,3,9,12,-3,True
+1978,5,1,Final,11,7,5,1,1,15,4,11,True
+1982,5,11,Grupos 2da Ronda,4,5,2,0,3,8,7,1,True
+1986,5,1,Final,13,7,6,1,0,14,5,9,True
+1990,5,2,Final,7,7,2,3,2,5,4,1,True
+1994,5,10,Octavos de Final,6,4,2,0,2,8,6,2,True
+1998,5,6,Cuartos de Final,10,5,3,1,1,10,4,6,True
+2002,5,18,Grupos 1ra Ronda,4,3,1,1,1,2,2,0,True
+2006,5,6,Cuartos de Final,11,5,3,2,0,11,3,8,True
+2010,5,5,Cuartos de Final,12,5,4,0,1,10,6,4,True
+2014,5,2,Final,16,7,5,1,1,8,4,4,True
+2018,5,16,Octavos de Final,4,4,1,1,2,6,9,-3,True
+2022,5,1,Final,14,7,4,2,1,15,8,7,True
+2026,5,,clasificado,0,0,0,0,0,0,0,0,True
 1930,6,,no participó,,,,,,,,,False
 1934,6,,no participó,,,,,,,,,False
 1938,6,,no participó,,,,,,,,,False
@@ -123,7 +123,7 @@
 1962,6,,no participó,,,,,,,,,False
 1966,6,,no participó,,,,,,,,,False
 1970,6,,no participó,,,,,,,,,False
-1974,6,14.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,0.0,5.0,-5.0,True
+1974,6,14,Grupos 1ra Ronda,1,3,0,1,2,0,5,-5,True
 1978,6,,no participó,,,,,,,,,False
 1982,6,,no participó,,,,,,,,,False
 1986,6,,no participó,,,,,,,,,False
@@ -131,58 +131,58 @@
 1994,6,,no participó,,,,,,,,,False
 1998,6,,no participó,,,,,,,,,False
 2002,6,,no participó,,,,,,,,,False
-2006,6,16.0,Octavos de Final,4.0,4.0,1.0,1.0,2.0,5.0,6.0,-1.0,True
-2010,6,21.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,3.0,6.0,-3.0,True
-2014,6,30.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,3.0,9.0,-6.0,True
-2018,6,30.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,5.0,-3.0,True
-2022,6,11.0,Octavos de Final,6.0,4.0,2.0,0.0,2.0,4.0,6.0,-2.0,True
-2026,6,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+2006,6,16,Octavos de Final,4,4,1,1,2,5,6,-1,True
+2010,6,21,Grupos 1ra Ronda,4,3,1,1,1,3,6,-3,True
+2014,6,30,Grupos 1ra Ronda,0,3,0,0,3,3,9,-6,True
+2018,6,30,Grupos 1ra Ronda,1,3,0,1,2,2,5,-3,True
+2022,6,11,Octavos de Final,6,4,2,0,2,4,6,-2,True
+2026,6,,clasificado,0,0,0,0,0,0,0,0,True
 1930,7,,no participó,,,,,,,,,False
-1934,7,4.0,Partido 3er Puesto,4.0,4.0,2.0,0.0,2.0,7.0,7.0,0.0,True
-1938,7,16.0,Octavos de Final,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+1934,7,4,Partido 3er Puesto,4,4,2,0,2,7,7,0,True
+1938,7,16,Octavos de Final,0,0,0,0,0,0,0,0,True
 1950,7,,no participó,,,,,,,,,False
-1954,7,3.0,Partido 3er Puesto,8.0,5.0,4.0,0.0,1.0,17.0,12.0,5.0,True
-1958,7,15.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,7.0,-5.0,True
+1954,7,3,Partido 3er Puesto,8,5,4,0,1,17,12,5,True
+1958,7,15,Grupos 1ra Ronda,1,3,0,1,2,2,7,-5,True
 1962,7,,no participó,,,,,,,,,False
 1966,7,,no participó,,,,,,,,,False
 1970,7,,no participó,,,,,,,,,False
 1974,7,,no participó,,,,,,,,,False
-1978,7,7.0,Grupos 2da Ronda,6.0,6.0,3.0,0.0,3.0,7.0,10.0,-3.0,True
-1982,7,8.0,Grupos 2da Ronda,5.0,5.0,2.0,1.0,2.0,5.0,4.0,1.0,True
+1978,7,7,Grupos 2da Ronda,6,6,3,0,3,7,10,-3,True
+1982,7,8,Grupos 2da Ronda,5,5,2,1,2,5,4,1,True
 1986,7,,no participó,,,,,,,,,False
-1990,7,18.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,2.0,3.0,-1.0,True
+1990,7,18,Grupos 1ra Ronda,2,3,1,0,2,2,3,-1,True
 1994,7,,no participó,,,,,,,,,False
-1998,7,23.0,Grupos 1ra Ronda,2.0,3.0,0.0,2.0,1.0,3.0,4.0,-1.0,True
+1998,7,23,Grupos 1ra Ronda,2,3,0,2,1,3,4,-1,True
 2002,7,,no participó,,,,,,,,,False
 2006,7,,no participó,,,,,,,,,False
 2010,7,,no participó,,,,,,,,,False
 2014,7,,no participó,,,,,,,,,False
 2018,7,,no participó,,,,,,,,,False
 2022,7,,no participó,,,,,,,,,False
-2026,7,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
-1930,12,11.0,Grupos 1ra Ronda,0.0,2.0,0.0,0.0,2.0,0.0,4.0,-4.0,True
-1934,12,15.0,Octavos de Final,0.0,1.0,0.0,0.0,1.0,2.0,5.0,-3.0,True
-1938,12,13.0,Octavos de Final,0.0,1.0,0.0,0.0,1.0,1.0,3.0,-2.0,True
+2026,7,,clasificado,0,0,0,0,0,0,0,0,True
+1930,12,11,Grupos 1ra Ronda,0,2,0,0,2,0,4,-4,True
+1934,12,15,Octavos de Final,0,1,0,0,1,2,5,-3,True
+1938,12,13,Octavos de Final,0,1,0,0,1,1,3,-2,True
 1950,12,,no participó,,,,,,,,,False
-1954,12,12.0,Grupos 1ra Ronda,1.0,2.0,0.0,1.0,1.0,5.0,8.0,-3.0,True
+1954,12,12,Grupos 1ra Ronda,1,2,0,1,1,5,8,-3,True
 1958,12,,no participó,,,,,,,,,False
 1962,12,,no participó,,,,,,,,,False
 1966,12,,no participó,,,,,,,,,False
-1970,12,10.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,4.0,5.0,-1.0,True
+1970,12,10,Grupos 1ra Ronda,2,3,1,0,2,4,5,-1,True
 1974,12,,no participó,,,,,,,,,False
 1978,12,,no participó,,,,,,,,,False
-1982,12,10.0,Grupos 2da Ronda,5.0,5.0,2.0,1.0,2.0,3.0,5.0,-2.0,True
-1986,12,4.0,Partido 3er Puesto,6.0,7.0,2.0,2.0,3.0,12.0,15.0,-3.0,True
-1990,12,11.0,Octavos de Final,4.0,4.0,2.0,0.0,2.0,6.0,4.0,2.0,True
-1994,12,11.0,Octavos de Final,6.0,4.0,2.0,0.0,2.0,4.0,4.0,0.0,True
-1998,12,19.0,Grupos 1ra Ronda,3.0,3.0,0.0,3.0,0.0,3.0,3.0,0.0,True
-2002,12,14.0,Octavos de Final,5.0,4.0,1.0,2.0,1.0,6.0,7.0,-1.0,True
+1982,12,10,Grupos 2da Ronda,5,5,2,1,2,3,5,-2,True
+1986,12,4,Partido 3er Puesto,6,7,2,2,3,12,15,-3,True
+1990,12,11,Octavos de Final,4,4,2,0,2,6,4,2,True
+1994,12,11,Octavos de Final,6,4,2,0,2,4,4,0,True
+1998,12,19,Grupos 1ra Ronda,3,3,0,3,0,3,3,0,True
+2002,12,14,Octavos de Final,5,4,1,2,1,6,7,-1,True
 2006,12,,no participó,,,,,,,,,False
 2010,12,,no participó,,,,,,,,,False
-2014,12,6.0,Cuartos de Final,12.0,5.0,4.0,0.0,1.0,6.0,3.0,3.0,True
-2018,12,3.0,Partido 3er Puesto,18.0,7.0,6.0,0.0,1.0,16.0,6.0,10.0,True
-2022,12,23.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,1.0,2.0,-1.0,True
-2026,12,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+2014,12,6,Cuartos de Final,12,5,4,0,1,6,3,3,True
+2018,12,3,Partido 3er Puesto,18,7,6,0,1,16,6,10,True
+2022,12,23,Grupos 1ra Ronda,4,3,1,1,1,1,2,-1,True
+2026,12,,clasificado,0,0,0,0,0,0,0,0,True
 1930,9,,no participó,,,,,,,,,False
 1934,9,,no participó,,,,,,,,,False
 1938,9,,no participó,,,,,,,,,False
@@ -202,49 +202,49 @@
 2002,9,,no participó,,,,,,,,,False
 2006,9,,no participó,,,,,,,,,False
 2010,9,,no participó,,,,,,,,,False
-2014,9,20.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,4.0,4.0,0.0,True
+2014,9,20,Grupos 1ra Ronda,3,3,1,0,2,4,4,0,True
 2018,9,,no participó,,,,,,,,,False
 2022,9,,no participó,,,,,,,,,False
 2026,9,,,,,,,,,,,True
-1930,10,6.0,Grupos 1ra Ronda,2.0,2.0,1.0,0.0,1.0,5.0,2.0,3.0,True
-1934,10,14.0,Octavos de Final,0.0,1.0,0.0,0.0,1.0,1.0,3.0,-2.0,True
-1938,10,3.0,Partido 3er Puesto,7.0,5.0,3.0,1.0,1.0,14.0,11.0,3.0,True
-1950,10,2.0,Ronda Final,9.0,6.0,4.0,1.0,1.0,22.0,6.0,16.0,True
-1954,10,6.0,Cuartos de Final,3.0,3.0,1.0,1.0,1.0,8.0,5.0,3.0,True
-1958,10,1.0,Final,11.0,6.0,5.0,1.0,0.0,16.0,4.0,12.0,True
-1962,10,1.0,Final,11.0,6.0,5.0,1.0,0.0,14.0,5.0,9.0,True
-1966,10,11.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,4.0,6.0,-2.0,True
-1970,10,1.0,Final,12.0,6.0,6.0,0.0,0.0,19.0,7.0,12.0,True
-1974,10,4.0,Partido 3er Puesto,8.0,7.0,3.0,2.0,2.0,6.0,4.0,2.0,True
-1978,10,3.0,Partido 3er Puesto,11.0,7.0,4.0,3.0,0.0,10.0,3.0,7.0,True
-1982,10,5.0,Grupos 2da Ronda,8.0,5.0,4.0,0.0,1.0,15.0,6.0,9.0,True
-1986,10,5.0,Cuartos de Final,9.0,5.0,4.0,1.0,0.0,10.0,1.0,9.0,True
-1990,10,9.0,Octavos de Final,6.0,4.0,3.0,0.0,1.0,4.0,2.0,2.0,True
-1994,10,1.0,Final,17.0,7.0,5.0,2.0,0.0,11.0,3.0,8.0,True
-1998,10,2.0,Final,13.0,7.0,4.0,1.0,2.0,14.0,10.0,4.0,True
-2002,10,1.0,Final,21.0,7.0,7.0,0.0,0.0,18.0,4.0,14.0,True
-2006,10,5.0,Cuartos de Final,12.0,5.0,4.0,0.0,1.0,10.0,2.0,8.0,True
-2010,10,6.0,Cuartos de Final,10.0,5.0,3.0,1.0,1.0,9.0,4.0,5.0,True
-2014,10,4.0,Partido 3er Puesto,11.0,7.0,3.0,2.0,2.0,11.0,14.0,-3.0,True
-2018,10,6.0,Cuartos de Final,10.0,5.0,3.0,1.0,1.0,8.0,3.0,5.0,True
-2022,10,7.0,Cuartos de Final,10.0,5.0,3.0,1.0,1.0,8.0,3.0,5.0,True
-2026,10,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+1930,10,6,Grupos 1ra Ronda,2,2,1,0,1,5,2,3,True
+1934,10,14,Octavos de Final,0,1,0,0,1,1,3,-2,True
+1938,10,3,Partido 3er Puesto,7,5,3,1,1,14,11,3,True
+1950,10,2,Ronda Final,9,6,4,1,1,22,6,16,True
+1954,10,6,Cuartos de Final,3,3,1,1,1,8,5,3,True
+1958,10,1,Final,11,6,5,1,0,16,4,12,True
+1962,10,1,Final,11,6,5,1,0,14,5,9,True
+1966,10,11,Grupos 1ra Ronda,2,3,1,0,2,4,6,-2,True
+1970,10,1,Final,12,6,6,0,0,19,7,12,True
+1974,10,4,Partido 3er Puesto,8,7,3,2,2,6,4,2,True
+1978,10,3,Partido 3er Puesto,11,7,4,3,0,10,3,7,True
+1982,10,5,Grupos 2da Ronda,8,5,4,0,1,15,6,9,True
+1986,10,5,Cuartos de Final,9,5,4,1,0,10,1,9,True
+1990,10,9,Octavos de Final,6,4,3,0,1,4,2,2,True
+1994,10,1,Final,17,7,5,2,0,11,3,8,True
+1998,10,2,Final,13,7,4,1,2,14,10,4,True
+2002,10,1,Final,21,7,7,0,0,18,4,14,True
+2006,10,5,Cuartos de Final,12,5,4,0,1,10,2,8,True
+2010,10,6,Cuartos de Final,10,5,3,1,1,9,4,5,True
+2014,10,4,Partido 3er Puesto,11,7,3,2,2,11,14,-3,True
+2018,10,6,Cuartos de Final,10,5,3,1,1,8,3,5,True
+2022,10,7,Cuartos de Final,10,5,3,1,1,8,3,5,True
+2026,10,,clasificado,0,0,0,0,0,0,0,0,True
 1930,11,,no participó,,,,,,,,,False
 1934,11,,no participó,,,,,,,,,False
 1938,11,,no participó,,,,,,,,,False
 1950,11,,no participó,,,,,,,,,False
 1954,11,,no participó,,,,,,,,,False
 1958,11,,no participó,,,,,,,,,False
-1962,11,15.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,1.0,7.0,-6.0,True
-1966,11,15.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,1.0,8.0,-7.0,True
-1970,11,13.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,5.0,9.0,-4.0,True
-1974,11,12.0,Grupos 1ra Ronda,2.0,3.0,0.0,2.0,1.0,2.0,5.0,-3.0,True
+1962,11,15,Grupos 1ra Ronda,1,3,0,1,2,1,7,-6,True
+1966,11,15,Grupos 1ra Ronda,0,3,0,0,3,1,8,-7,True
+1970,11,13,Grupos 1ra Ronda,1,3,0,1,2,5,9,-4,True
+1974,11,12,Grupos 1ra Ronda,2,3,0,2,1,2,5,-3,True
 1978,11,,no participó,,,,,,,,,False
 1982,11,,no participó,,,,,,,,,False
-1986,11,15.0,Octavos de Final,2.0,4.0,0.0,2.0,2.0,2.0,6.0,-4.0,True
+1986,11,15,Octavos de Final,2,4,0,2,2,2,6,-4,True
 1990,11,,no participó,,,,,,,,,False
-1994,11,4.0,Partido 3er Puesto,10.0,7.0,3.0,1.0,3.0,10.0,11.0,-1.0,True
-1998,11,29.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,1.0,7.0,-6.0,True
+1994,11,4,Partido 3er Puesto,10,7,3,1,3,10,11,-1,True
+1998,11,29,Grupos 1ra Ronda,1,3,0,1,2,1,7,-6,True
 2002,11,,no participó,,,,,,,,,False
 2006,11,,no participó,,,,,,,,,False
 2010,11,,no participó,,,,,,,,,False
@@ -263,17 +263,17 @@
 1970,14,,no participó,,,,,,,,,False
 1974,14,,no participó,,,,,,,,,False
 1978,14,,no participó,,,,,,,,,False
-1982,14,17.0,Grupos 1ra Ronda,3.0,3.0,0.0,3.0,0.0,1.0,1.0,0.0,True
+1982,14,17,Grupos 1ra Ronda,3,3,0,3,0,1,1,0,True
 1986,14,,no participó,,,,,,,,,False
-1990,14,7.0,Cuartos de Final,6.0,5.0,3.0,0.0,2.0,7.0,9.0,-2.0,True
-1994,14,22.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,3.0,11.0,-8.0,True
-1998,14,25.0,Grupos 1ra Ronda,2.0,3.0,0.0,2.0,1.0,2.0,5.0,-3.0,True
-2002,14,20.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,2.0,3.0,-1.0,True
+1990,14,7,Cuartos de Final,6,5,3,0,2,7,9,-2,True
+1994,14,22,Grupos 1ra Ronda,1,3,0,1,2,3,11,-8,True
+1998,14,25,Grupos 1ra Ronda,2,3,0,2,1,2,5,-3,True
+2002,14,20,Grupos 1ra Ronda,4,3,1,1,1,2,3,-1,True
 2006,14,,no participó,,,,,,,,,False
-2010,14,31.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,2.0,5.0,-3.0,True
-2014,14,32.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,1.0,9.0,-8.0,True
+2010,14,31,Grupos 1ra Ronda,0,3,0,0,3,2,5,-3,True
+2014,14,32,Grupos 1ra Ronda,0,3,0,0,3,1,9,-8,True
 2018,14,,no participó,,,,,,,,,False
-2022,14,19.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,4.0,4.0,0.0,True
+2022,14,19,Grupos 1ra Ronda,4,3,1,1,1,4,4,0,True
 2026,14,,no participó,,,,,,,,,False
 1930,15,,no participó,,,,,,,,,False
 1934,15,,no participó,,,,,,,,,False
@@ -287,7 +287,7 @@
 1974,15,,no participó,,,,,,,,,False
 1978,15,,no participó,,,,,,,,,False
 1982,15,,no participó,,,,,,,,,False
-1986,15,24.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,0.0,5.0,-5.0,True
+1986,15,24,Grupos 1ra Ronda,0,3,0,0,3,0,5,-5,True
 1990,15,,no participó,,,,,,,,,False
 1994,15,,no participó,,,,,,,,,False
 1998,15,,no participó,,,,,,,,,False
@@ -296,28 +296,28 @@
 2010,15,,no participó,,,,,,,,,False
 2014,15,,no participó,,,,,,,,,False
 2018,15,,no participó,,,,,,,,,False
-2022,15,31.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,2.0,7.0,-5.0,True
-2026,15,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
-1930,17,5.0,Grupos 1ra Ronda,4.0,3.0,2.0,0.0,1.0,5.0,3.0,2.0,True
+2022,15,31,Grupos 1ra Ronda,0,3,0,0,3,2,7,-5,True
+2026,15,,clasificado,0,0,0,0,0,0,0,0,True
+1930,17,5,Grupos 1ra Ronda,4,3,2,0,1,5,3,2,True
 1934,17,,no participó,,,,,,,,,False
 1938,17,,no participó,,,,,,,,,False
-1950,17,9.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,5.0,6.0,-1.0,True
+1950,17,9,Grupos 1ra Ronda,2,3,1,0,2,5,6,-1,True
 1954,17,,no participó,,,,,,,,,False
 1958,17,,no participó,,,,,,,,,False
-1962,17,3.0,Partido 3er Puesto,8.0,6.0,4.0,0.0,2.0,10.0,8.0,2.0,True
-1966,17,13.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,5.0,-3.0,True
+1962,17,3,Partido 3er Puesto,8,6,4,0,2,10,8,2,True
+1966,17,13,Grupos 1ra Ronda,1,3,0,1,2,2,5,-3,True
 1970,17,,no participó,,,,,,,,,False
-1974,17,11.0,Grupos 1ra Ronda,2.0,3.0,0.0,2.0,1.0,1.0,2.0,-1.0,True
+1974,17,11,Grupos 1ra Ronda,2,3,0,2,1,1,2,-1,True
 1978,17,,no participó,,,,,,,,,False
-1982,17,22.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,3.0,8.0,-5.0,True
+1982,17,22,Grupos 1ra Ronda,0,3,0,0,3,3,8,-5,True
 1986,17,,no participó,,,,,,,,,False
 1990,17,,no participó,,,,,,,,,False
 1994,17,,no participó,,,,,,,,,False
-1998,17,16.0,Octavos de Final,3.0,4.0,0.0,3.0,1.0,5.0,8.0,-3.0,True
+1998,17,16,Octavos de Final,3,4,0,3,1,5,8,-3,True
 2002,17,,no participó,,,,,,,,,False
 2006,17,,no participó,,,,,,,,,False
-2010,17,10.0,Octavos de Final,6.0,4.0,2.0,0.0,2.0,3.0,5.0,-2.0,True
-2014,17,9.0,Octavos de Final,7.0,4.0,2.0,1.0,1.0,6.0,4.0,2.0,True
+2010,17,10,Octavos de Final,6,4,2,0,2,3,5,-2,True
+2014,17,9,Octavos de Final,7,4,2,1,1,6,4,2,True
 2018,17,,no participó,,,,,,,,,False
 2022,17,,no participó,,,,,,,,,False
 2026,17,,no participó,,,,,,,,,False
@@ -337,7 +337,7 @@
 1990,18,,no participó,,,,,,,,,False
 1994,18,,no participó,,,,,,,,,False
 1998,18,,no participó,,,,,,,,,False
-2002,18,31.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,0.0,9.0,-9.0,True
+2002,18,31,Grupos 1ra Ronda,0,3,0,0,3,0,9,-9,True
 2006,18,,no participó,,,,,,,,,False
 2010,18,,no participó,,,,,,,,,False
 2014,18,,no participó,,,,,,,,,False
@@ -351,7 +351,7 @@
 1954,20,,no participó,,,,,,,,,False
 1958,20,,no participó,,,,,,,,,False
 1962,20,,no participó,,,,,,,,,False
-1966,20,8.0,Cuartos de Final,3.0,4.0,1.0,1.0,2.0,5.0,9.0,-4.0,True
+1966,20,8,Cuartos de Final,3,4,1,1,2,5,9,-4,True
 1970,20,,no participó,,,,,,,,,False
 1974,20,,no participó,,,,,,,,,False
 1978,20,,no participó,,,,,,,,,False
@@ -362,7 +362,7 @@
 1998,20,,no participó,,,,,,,,,False
 2002,20,,no participó,,,,,,,,,False
 2006,20,,no participó,,,,,,,,,False
-2010,20,32.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,1.0,12.0,-11.0,True
+2010,20,32,Grupos 1ra Ronda,0,3,0,0,3,1,12,-11,True
 2014,20,,no participó,,,,,,,,,False
 2018,20,,no participó,,,,,,,,,False
 2022,20,,no participó,,,,,,,,,False
@@ -371,7 +371,7 @@
 1934,21,,no participó,,,,,,,,,False
 1938,21,,no participó,,,,,,,,,False
 1950,21,,no participó,,,,,,,,,False
-1954,21,16.0,Grupos 1ra Ronda,0.0,2.0,0.0,0.0,2.0,0.0,16.0,-16.0,True
+1954,21,16,Grupos 1ra Ronda,0,2,0,0,2,0,16,-16,True
 1958,21,,no participó,,,,,,,,,False
 1962,21,,no participó,,,,,,,,,False
 1966,21,,no participó,,,,,,,,,False
@@ -379,17 +379,17 @@
 1974,21,,no participó,,,,,,,,,False
 1978,21,,no participó,,,,,,,,,False
 1982,21,,no participó,,,,,,,,,False
-1986,21,20.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,4.0,7.0,-3.0,True
-1990,21,22.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,1.0,6.0,-5.0,True
-1994,21,20.0,Grupos 1ra Ronda,2.0,3.0,0.0,2.0,1.0,4.0,5.0,-1.0,True
-1998,21,30.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,9.0,-7.0,True
-2002,21,4.0,Partido 3er Puesto,11.0,7.0,3.0,2.0,2.0,8.0,6.0,2.0,True
-2006,21,17.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,3.0,4.0,-1.0,True
-2010,21,15.0,Octavos de Final,4.0,4.0,1.0,1.0,2.0,6.0,8.0,-2.0,True
-2014,21,27.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,3.0,6.0,-3.0,True
-2018,21,19.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,3.0,3.0,0.0,True
-2022,21,16.0,Octavos de Final,4.0,4.0,1.0,1.0,2.0,5.0,8.0,-3.0,True
-2026,21,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+1986,21,20,Grupos 1ra Ronda,1,3,0,1,2,4,7,-3,True
+1990,21,22,Grupos 1ra Ronda,0,3,0,0,3,1,6,-5,True
+1994,21,20,Grupos 1ra Ronda,2,3,0,2,1,4,5,-1,True
+1998,21,30,Grupos 1ra Ronda,1,3,0,1,2,2,9,-7,True
+2002,21,4,Partido 3er Puesto,11,7,3,2,2,8,6,2,True
+2006,21,17,Grupos 1ra Ronda,4,3,1,1,1,3,4,-1,True
+2010,21,15,Octavos de Final,4,4,1,1,2,6,8,-2,True
+2014,21,27,Grupos 1ra Ronda,1,3,0,1,2,3,6,-3,True
+2018,21,19,Grupos 1ra Ronda,3,3,1,0,2,3,3,0,True
+2022,21,16,Octavos de Final,4,4,1,1,2,5,8,-3,True
+2026,21,,clasificado,0,0,0,0,0,0,0,0,True
 1930,23,,no participó,,,,,,,,,False
 1934,23,,no participó,,,,,,,,,False
 1938,23,,no participó,,,,,,,,,False
@@ -407,12 +407,12 @@
 1994,23,,no participó,,,,,,,,,False
 1998,23,,no participó,,,,,,,,,False
 2002,23,,no participó,,,,,,,,,False
-2006,23,19.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,5.0,6.0,-1.0,True
-2010,23,17.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,4.0,3.0,1.0,True
-2014,23,21.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,4.0,5.0,-1.0,True
+2006,23,19,Grupos 1ra Ronda,3,3,1,0,2,5,6,-1,True
+2010,23,17,Grupos 1ra Ronda,4,3,1,1,1,4,3,1,True
+2014,23,21,Grupos 1ra Ronda,3,3,1,0,2,4,5,-1,True
 2018,23,,no participó,,,,,,,,,False
 2022,23,,no participó,,,,,,,,,False
-2026,23,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+2026,23,,clasificado,0,0,0,0,0,0,0,0,True
 1930,22,,no participó,,,,,,,,,False
 1934,22,,no participó,,,,,,,,,False
 1938,22,,no participó,,,,,,,,,False
@@ -426,15 +426,15 @@
 1978,22,,no participó,,,,,,,,,False
 1982,22,,no participó,,,,,,,,,False
 1986,22,,no participó,,,,,,,,,False
-1990,22,13.0,Octavos de Final,4.0,4.0,2.0,0.0,2.0,4.0,6.0,-2.0,True
+1990,22,13,Octavos de Final,4,4,2,0,2,4,6,-2,True
 1994,22,,no participó,,,,,,,,,False
 1998,22,,no participó,,,,,,,,,False
-2002,22,19.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,5.0,6.0,-1.0,True
-2006,22,31.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,3.0,9.0,-6.0,True
+2002,22,19,Grupos 1ra Ronda,4,3,1,1,1,5,6,-1,True
+2006,22,31,Grupos 1ra Ronda,0,3,0,0,3,3,9,-6,True
 2010,22,,no participó,,,,,,,,,False
-2014,22,8.0,Cuartos de Final,9.0,5.0,2.0,3.0,0.0,5.0,2.0,3.0,True
-2018,22,29.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,5.0,-3.0,True
-2022,22,27.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,3.0,11.0,-8.0,True
+2014,22,8,Cuartos de Final,9,5,2,3,0,5,2,3,True
+2018,22,29,Grupos 1ra Ronda,1,3,0,1,2,2,5,-3,True
+2022,22,27,Grupos 1ra Ronda,3,3,1,0,2,3,11,-8,True
 2026,22,,,,,,,,,,,True
 1930,24,,no participó,,,,,,,,,False
 1934,24,,no participó,,,,,,,,,False
@@ -451,14 +451,14 @@
 1986,24,,no participó,,,,,,,,,False
 1990,24,,no participó,,,,,,,,,False
 1994,24,,no participó,,,,,,,,,False
-1998,24,3.0,Partido 3er Puesto,15.0,7.0,5.0,0.0,2.0,11.0,5.0,6.0,True
-2002,24,23.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,2.0,3.0,-1.0,True
-2006,24,22.0,Grupos 1ra Ronda,2.0,3.0,0.0,2.0,1.0,2.0,3.0,-1.0,True
+1998,24,3,Partido 3er Puesto,15,7,5,0,2,11,5,6,True
+2002,24,23,Grupos 1ra Ronda,3,3,1,0,2,2,3,-1,True
+2006,24,22,Grupos 1ra Ronda,2,3,0,2,1,2,3,-1,True
 2010,24,,no participó,,,,,,,,,False
-2014,24,19.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,6.0,6.0,0.0,True
-2018,24,2.0,Final,14.0,7.0,4.0,2.0,1.0,14.0,9.0,5.0,True
-2022,24,3.0,Partido 3er Puesto,10.0,7.0,2.0,4.0,1.0,8.0,7.0,1.0,True
-2026,24,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+2014,24,19,Grupos 1ra Ronda,3,3,1,0,2,6,6,0,True
+2018,24,2,Final,14,7,4,2,1,14,9,5,True
+2022,24,3,Partido 3er Puesto,10,7,2,4,1,8,7,1,True
+2026,24,,clasificado,0,0,0,0,0,0,0,0,True
 1930,27,,no participó,,,,,,,,,False
 1934,27,,no participó,,,,,,,,,False
 1938,27,,no participó,,,,,,,,,False
@@ -471,16 +471,16 @@
 1974,27,,no participó,,,,,,,,,False
 1978,27,,no participó,,,,,,,,,False
 1982,27,,no participó,,,,,,,,,False
-1986,27,9.0,Octavos de Final,6.0,4.0,3.0,0.0,1.0,10.0,6.0,4.0,True
+1986,27,9,Octavos de Final,6,4,3,0,1,10,6,4,True
 1990,27,,no participó,,,,,,,,,False
 1994,27,,no participó,,,,,,,,,False
-1998,27,8.0,Cuartos de Final,7.0,5.0,2.0,1.0,2.0,9.0,7.0,2.0,True
-2002,27,10.0,Octavos de Final,7.0,4.0,2.0,1.0,1.0,5.0,5.0,0.0,True
+1998,27,8,Cuartos de Final,7,5,2,1,2,9,7,2,True
+2002,27,10,Octavos de Final,7,4,2,1,1,5,5,0,True
 2006,27,,no participó,,,,,,,,,False
-2010,27,24.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,3.0,6.0,-3.0,True
+2010,27,24,Grupos 1ra Ronda,3,3,1,0,2,3,6,-3,True
 2014,27,,no participó,,,,,,,,,False
-2018,27,11.0,Octavos de Final,6.0,4.0,1.0,3.0,0.0,3.0,2.0,1.0,True
-2022,27,28.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,1.0,3.0,-2.0,True
+2018,27,11,Octavos de Final,6,4,1,3,0,3,2,1,True
+2022,27,28,Grupos 1ra Ronda,1,3,0,1,2,1,3,-2,True
 2026,27,,,,,,,,,,,True
 1930,28,,no participó,,,,,,,,,False
 1934,28,,no participó,,,,,,,,,False
@@ -498,13 +498,13 @@
 1990,28,,no participó,,,,,,,,,False
 1994,28,,no participó,,,,,,,,,False
 1998,28,,no participó,,,,,,,,,False
-2002,28,24.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,2.0,4.0,-2.0,True
-2006,28,12.0,Octavos de Final,6.0,4.0,2.0,0.0,2.0,5.0,4.0,1.0,True
+2002,28,24,Grupos 1ra Ronda,3,3,1,0,2,2,4,-2,True
+2006,28,12,Octavos de Final,6,4,2,0,2,5,4,1,True
 2010,28,,no participó,,,,,,,,,False
-2014,28,17.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,3.0,3.0,0.0,True
+2014,28,17,Grupos 1ra Ronda,4,3,1,1,1,3,3,0,True
 2018,28,,no participó,,,,,,,,,False
-2022,28,18.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,4.0,3.0,1.0,True
-2026,28,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+2022,28,18,Grupos 1ra Ronda,4,3,1,1,1,4,3,1,True
+2026,28,,clasificado,0,0,0,0,0,0,0,0,True
 1930,31,,no participó,,,,,,,,,False
 1934,31,,no participó,,,,,,,,,False
 1938,31,,no participó,,,,,,,,,False
@@ -518,7 +518,7 @@
 1978,31,,no participó,,,,,,,,,False
 1982,31,,no participó,,,,,,,,,False
 1986,31,,no participó,,,,,,,,,False
-1990,31,24.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,2.0,11.0,-9.0,True
+1990,31,24,Grupos 1ra Ronda,0,3,0,0,3,2,11,-9,True
 1994,31,,no participó,,,,,,,,,False
 1998,31,,no participó,,,,,,,,,False
 2002,31,,no participó,,,,,,,,,False
@@ -532,25 +532,25 @@
 1934,32,,no participó,,,,,,,,,False
 1938,32,,no participó,,,,,,,,,False
 1950,32,,no participó,,,,,,,,,False
-1954,32,15.0,Grupos 1ra Ronda,0.0,2.0,0.0,0.0,2.0,0.0,8.0,-8.0,True
-1958,32,14.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,4.0,6.0,-2.0,True
+1954,32,15,Grupos 1ra Ronda,0,2,0,0,2,0,8,-8,True
+1958,32,14,Grupos 1ra Ronda,1,3,0,1,2,4,6,-2,True
 1962,32,,no participó,,,,,,,,,False
 1966,32,,no participó,,,,,,,,,False
 1970,32,,no participó,,,,,,,,,False
-1974,32,9.0,Grupos 1ra Ronda,4.0,3.0,1.0,2.0,0.0,3.0,1.0,2.0,True
-1978,32,11.0,Grupos 1ra Ronda,3.0,3.0,1.0,1.0,1.0,5.0,6.0,-1.0,True
-1982,32,15.0,Grupos 1ra Ronda,3.0,3.0,1.0,1.0,1.0,8.0,8.0,0.0,True
-1986,32,19.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,1.0,3.0,-2.0,True
-1990,32,18.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,2.0,3.0,-1.0,True
+1974,32,9,Grupos 1ra Ronda,4,3,1,2,0,3,1,2,True
+1978,32,11,Grupos 1ra Ronda,3,3,1,1,1,5,6,-1,True
+1982,32,15,Grupos 1ra Ronda,3,3,1,1,1,8,8,0,True
+1986,32,19,Grupos 1ra Ronda,1,3,0,1,2,1,3,-2,True
+1990,32,18,Grupos 1ra Ronda,2,3,1,0,2,2,3,-1,True
 1994,32,,no participó,,,,,,,,,False
-1998,32,27.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,6.0,-4.0,True
+1998,32,27,Grupos 1ra Ronda,1,3,0,1,2,2,6,-4,True
 2002,32,,no participó,,,,,,,,,False
 2006,32,,no participó,,,,,,,,,False
 2010,32,,no participó,,,,,,,,,False
 2014,32,,no participó,,,,,,,,,False
 2018,32,,no participó,,,,,,,,,False
 2022,32,,no participó,,,,,,,,,False
-2026,32,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+2026,32,,clasificado,0,0,0,0,0,0,0,0,True
 1930,33,,no participó,,,,,,,,,False
 1934,33,,no participó,,,,,,,,,False
 1938,33,,no participó,,,,,,,,,False
@@ -569,7 +569,7 @@
 1998,33,,no participó,,,,,,,,,False
 2002,33,,no participó,,,,,,,,,False
 2006,33,,no participó,,,,,,,,,False
-2010,33,16.0,Octavos de Final,4.0,4.0,1.0,1.0,2.0,5.0,7.0,-2.0,True
+2010,33,16,Octavos de Final,4,4,1,1,2,5,7,-2,True
 2014,33,,no participó,,,,,,,,,False
 2018,33,,no participó,,,,,,,,,False
 2022,33,,no participó,,,,,,,,,False
@@ -590,40 +590,40 @@
 1990,34,,no participó,,,,,,,,,False
 1994,34,,no participó,,,,,,,,,False
 1998,34,,no participó,,,,,,,,,False
-2002,34,30.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,2.0,7.0,-5.0,True
+2002,34,30,Grupos 1ra Ronda,0,3,0,0,3,2,7,-5,True
 2006,34,,no participó,,,,,,,,,False
-2010,34,18.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,3.0,3.0,0.0,True
+2010,34,18,Grupos 1ra Ronda,4,3,1,1,1,3,3,0,True
 2014,34,,no participó,,,,,,,,,False
 2018,34,,no participó,,,,,,,,,False
 2022,34,,no participó,,,,,,,,,False
 2026,34,,,,,,,,,,,True
 1930,35,,no participó,,,,,,,,,False
-1934,35,5.0,Cuartos de Final,3.0,3.0,1.0,1.0,1.0,4.0,3.0,1.0,True
+1934,35,5,Cuartos de Final,3,3,1,1,1,4,3,1,True
 1938,35,,no participó,,,,,,,,,False
-1950,35,4.0,Ronda Final,7.0,6.0,3.0,1.0,2.0,10.0,12.0,-2.0,True
+1950,35,4,Ronda Final,7,6,3,1,2,10,12,-2,True
 1954,35,,no participó,,,,,,,,,False
 1958,35,,no participó,,,,,,,,,False
-1962,35,12.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,2.0,3.0,-1.0,True
-1966,35,10.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,4.0,5.0,-1.0,True
+1962,35,12,Grupos 1ra Ronda,2,3,1,0,2,2,3,-1,True
+1966,35,10,Grupos 1ra Ronda,2,3,1,0,2,4,5,-1,True
 1970,35,,no participó,,,,,,,,,False
 1974,35,,no participó,,,,,,,,,False
-1978,35,10.0,Grupos 1ra Ronda,3.0,3.0,1.0,1.0,1.0,2.0,2.0,0.0,True
-1982,35,12.0,Grupos 2da Ronda,4.0,5.0,1.0,2.0,2.0,4.0,5.0,-1.0,True
-1986,35,7.0,Cuartos de Final,7.0,5.0,3.0,1.0,1.0,11.0,4.0,7.0,True
-1990,35,10.0,Octavos de Final,5.0,4.0,2.0,1.0,1.0,6.0,4.0,2.0,True
-1994,35,8.0,Cuartos de Final,8.0,5.0,2.0,2.0,1.0,10.0,6.0,4.0,True
-1998,35,17.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,8.0,4.0,4.0,True
-2002,35,5.0,Cuartos de Final,11.0,5.0,3.0,2.0,0.0,10.0,5.0,5.0,True
-2006,35,9.0,Octavos de Final,9.0,4.0,3.0,0.0,1.0,9.0,4.0,5.0,True
-2010,35,1.0,Final,18.0,7.0,6.0,0.0,1.0,8.0,2.0,6.0,True
-2014,35,23.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,4.0,7.0,-3.0,True
-2018,35,10.0,Octavos de Final,6.0,4.0,1.0,3.0,0.0,7.0,6.0,1.0,True
-2022,35,13.0,Octavos de Final,5.0,4.0,1.0,2.0,1.0,9.0,3.0,6.0,True
-2026,35,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
-1930,36,3.0,Partido 3er Puesto,4.0,3.0,2.0,0.0,1.0,7.0,6.0,1.0,True
-1934,36,16.0,Octavos de Final,0.0,1.0,0.0,0.0,1.0,1.0,7.0,-6.0,True
+1978,35,10,Grupos 1ra Ronda,3,3,1,1,1,2,2,0,True
+1982,35,12,Grupos 2da Ronda,4,5,1,2,2,4,5,-1,True
+1986,35,7,Cuartos de Final,7,5,3,1,1,11,4,7,True
+1990,35,10,Octavos de Final,5,4,2,1,1,6,4,2,True
+1994,35,8,Cuartos de Final,8,5,2,2,1,10,6,4,True
+1998,35,17,Grupos 1ra Ronda,4,3,1,1,1,8,4,4,True
+2002,35,5,Cuartos de Final,11,5,3,2,0,10,5,5,True
+2006,35,9,Octavos de Final,9,4,3,0,1,9,4,5,True
+2010,35,1,Final,18,7,6,0,1,8,2,6,True
+2014,35,23,Grupos 1ra Ronda,3,3,1,0,2,4,7,-3,True
+2018,35,10,Octavos de Final,6,4,1,3,0,7,6,1,True
+2022,35,13,Octavos de Final,5,4,1,2,1,9,3,6,True
+2026,35,,clasificado,0,0,0,0,0,0,0,0,True
+1930,36,3,Partido 3er Puesto,4,3,2,0,1,7,6,1,True
+1934,36,16,Octavos de Final,0,1,0,0,1,1,7,-6,True
 1938,36,,no participó,,,,,,,,,False
-1950,36,10.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,4.0,8.0,-4.0,True
+1950,36,10,Grupos 1ra Ronda,2,3,1,0,2,4,8,-4,True
 1954,36,,no participó,,,,,,,,,False
 1958,36,,no participó,,,,,,,,,False
 1962,36,,no participó,,,,,,,,,False
@@ -633,45 +633,45 @@
 1978,36,,no participó,,,,,,,,,False
 1982,36,,no participó,,,,,,,,,False
 1986,36,,no participó,,,,,,,,,False
-1990,36,23.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,2.0,8.0,-6.0,True
-1994,36,14.0,Octavos de Final,4.0,4.0,1.0,1.0,2.0,3.0,4.0,-1.0,True
-1998,36,32.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,1.0,5.0,-4.0,True
-2002,36,8.0,Cuartos de Final,7.0,5.0,2.0,1.0,2.0,7.0,7.0,0.0,True
-2006,36,25.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,6.0,-4.0,True
-2010,36,12.0,Octavos de Final,5.0,4.0,1.0,2.0,1.0,5.0,5.0,0.0,True
-2014,36,15.0,Octavos de Final,4.0,4.0,1.0,1.0,2.0,5.0,6.0,-1.0,True
+1990,36,23,Grupos 1ra Ronda,0,3,0,0,3,2,8,-6,True
+1994,36,14,Octavos de Final,4,4,1,1,2,3,4,-1,True
+1998,36,32,Grupos 1ra Ronda,0,3,0,0,3,1,5,-4,True
+2002,36,8,Cuartos de Final,7,5,2,1,2,7,7,0,True
+2006,36,25,Grupos 1ra Ronda,1,3,0,1,2,2,6,-4,True
+2010,36,12,Octavos de Final,5,4,1,2,1,5,5,0,True
+2014,36,15,Octavos de Final,4,4,1,1,2,5,6,-1,True
 2018,36,,no participó,,,,,,,,,False
-2022,36,14.0,Octavos de Final,5.0,4.0,1.0,2.0,1.0,3.0,4.0,-1.0,True
-2026,36,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
-1930,37,7.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,4.0,3.0,1.0,True
-1934,37,9.0,Octavos de Final,0.0,1.0,0.0,0.0,1.0,2.0,3.0,-1.0,True
-1938,37,8.0,Cuartos de Final,2.0,2.0,1.0,0.0,1.0,4.0,4.0,0.0,True
+2022,36,14,Octavos de Final,5,4,1,2,1,3,4,-1,True
+2026,36,,clasificado,0,0,0,0,0,0,0,0,True
+1930,37,7,Grupos 1ra Ronda,2,3,1,0,2,4,3,1,True
+1934,37,9,Octavos de Final,0,1,0,0,1,2,3,-1,True
+1938,37,8,Cuartos de Final,2,2,1,0,1,4,4,0,True
 1950,37,,no participó,,,,,,,,,False
-1954,37,9.0,Grupos 1ra Ronda,2.0,2.0,1.0,0.0,1.0,3.0,3.0,0.0,True
-1958,37,3.0,Partido 3er Puesto,8.0,6.0,4.0,0.0,2.0,23.0,15.0,8.0,True
+1954,37,9,Grupos 1ra Ronda,2,2,1,0,1,3,3,0,True
+1958,37,3,Partido 3er Puesto,8,6,4,0,2,23,15,8,True
 1962,37,,no participó,,,,,,,,,False
-1966,37,13.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,5.0,-3.0,True
+1966,37,13,Grupos 1ra Ronda,1,3,0,1,2,2,5,-3,True
 1970,37,,no participó,,,,,,,,,False
 1974,37,,no participó,,,,,,,,,False
-1978,37,12.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,5.0,5.0,0.0,True
-1982,37,4.0,Partido 3er Puesto,8.0,7.0,3.0,2.0,2.0,16.0,12.0,4.0,True
-1986,37,3.0,Partido 3er Puesto,10.0,7.0,4.0,2.0,1.0,12.0,6.0,6.0,True
+1978,37,12,Grupos 1ra Ronda,2,3,1,0,2,5,5,0,True
+1982,37,4,Partido 3er Puesto,8,7,3,2,2,16,12,4,True
+1986,37,3,Partido 3er Puesto,10,7,4,2,1,12,6,6,True
 1990,37,,no participó,,,,,,,,,False
 1994,37,,no participó,,,,,,,,,False
-1998,37,1.0,Final,19.0,7.0,6.0,1.0,0.0,15.0,2.0,13.0,True
-2002,37,28.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,0.0,3.0,-3.0,True
-2006,37,2.0,Final,15.0,7.0,4.0,3.0,0.0,9.0,3.0,6.0,True
-2010,37,29.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,1.0,4.0,-3.0,True
-2014,37,7.0,Cuartos de Final,10.0,5.0,3.0,1.0,1.0,10.0,3.0,7.0,True
-2018,37,1.0,Final,19.0,7.0,6.0,1.0,0.0,14.0,6.0,8.0,True
-2022,37,2.0,Final,16.0,7.0,5.0,1.0,1.0,16.0,8.0,8.0,True
-2026,37,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+1998,37,1,Final,19,7,6,1,0,15,2,13,True
+2002,37,28,Grupos 1ra Ronda,1,3,0,1,2,0,3,-3,True
+2006,37,2,Final,15,7,4,3,0,9,3,6,True
+2010,37,29,Grupos 1ra Ronda,1,3,0,1,2,1,4,-3,True
+2014,37,7,Cuartos de Final,10,5,3,1,1,10,3,7,True
+2018,37,1,Final,19,7,6,1,0,14,6,8,True
+2022,37,2,Final,16,7,5,1,1,16,8,8,True
+2026,37,,clasificado,0,0,0,0,0,0,0,0,True
 1930,38,,no participó,,,,,,,,,False
 1934,38,,no participó,,,,,,,,,False
 1938,38,,no participó,,,,,,,,,False
 1950,38,,no participó,,,,,,,,,False
 1954,38,,no participó,,,,,,,,,False
-1958,38,5.0,Cuartos de Final,5.0,5.0,1.0,3.0,1.0,4.0,4.0,0.0,True
+1958,38,5,Cuartos de Final,5,5,1,3,1,4,4,0,True
 1962,38,,no participó,,,,,,,,,False
 1966,38,,no participó,,,,,,,,,False
 1970,38,,no participó,,,,,,,,,False
@@ -687,7 +687,7 @@
 2010,38,,no participó,,,,,,,,,False
 2014,38,,no participó,,,,,,,,,False
 2018,38,,no participó,,,,,,,,,False
-2022,38,30.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,1.0,6.0,-5.0,True
+2022,38,30,Grupos 1ra Ronda,1,3,0,1,2,1,6,-5,True
 2026,38,,,,,,,,,,,True
 1930,39,,no participó,,,,,,,,,False
 1934,39,,no participó,,,,,,,,,False
@@ -706,12 +706,12 @@
 1994,39,,no participó,,,,,,,,,False
 1998,39,,no participó,,,,,,,,,False
 2002,39,,no participó,,,,,,,,,False
-2006,39,13.0,Octavos de Final,6.0,4.0,2.0,0.0,2.0,4.0,6.0,-2.0,True
-2010,39,7.0,Cuartos de Final,8.0,5.0,2.0,2.0,1.0,5.0,4.0,1.0,True
-2014,39,25.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,4.0,6.0,-2.0,True
+2006,39,13,Octavos de Final,6,4,2,0,2,4,6,-2,True
+2010,39,7,Cuartos de Final,8,5,2,2,1,5,4,1,True
+2014,39,25,Grupos 1ra Ronda,1,3,0,1,2,4,6,-2,True
 2018,39,,no participó,,,,,,,,,False
-2022,39,24.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,5.0,7.0,-2.0,True
-2026,39,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+2022,39,24,Grupos 1ra Ronda,3,3,1,0,2,5,7,-2,True
+2026,39,,clasificado,0,0,0,0,0,0,0,0,True
 1930,40,,no participó,,,,,,,,,False
 1934,40,,no participó,,,,,,,,,False
 1938,40,,no participó,,,,,,,,,False
@@ -726,12 +726,12 @@
 1982,40,,no participó,,,,,,,,,False
 1986,40,,no participó,,,,,,,,,False
 1990,40,,no participó,,,,,,,,,False
-1994,40,24.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,0.0,10.0,-10.0,True
+1994,40,24,Grupos 1ra Ronda,0,3,0,0,3,0,10,-10,True
 1998,40,,no participó,,,,,,,,,False
 2002,40,,no participó,,,,,,,,,False
 2006,40,,no participó,,,,,,,,,False
-2010,40,25.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,2.0,5.0,-3.0,True
-2014,40,13.0,Octavos de Final,5.0,4.0,1.0,2.0,1.0,3.0,5.0,-2.0,True
+2010,40,25,Grupos 1ra Ronda,3,3,1,0,2,2,5,-3,True
+2014,40,13,Octavos de Final,5,4,1,2,1,3,5,-2,True
 2018,40,,no participó,,,,,,,,,False
 2022,40,,no participó,,,,,,,,,False
 2026,40,,no participó,,,,,,,,,False
@@ -744,7 +744,7 @@
 1962,41,,no participó,,,,,,,,,False
 1966,41,,no participó,,,,,,,,,False
 1970,41,,no participó,,,,,,,,,False
-1974,41,15.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,2.0,14.0,-12.0,True
+1974,41,15,Grupos 1ra Ronda,0,3,0,0,3,2,14,-12,True
 1978,41,,no participó,,,,,,,,,False
 1982,41,,no participó,,,,,,,,,False
 1986,41,,no participó,,,,,,,,,False
@@ -757,30 +757,30 @@
 2014,41,,no participó,,,,,,,,,False
 2018,41,,no participó,,,,,,,,,False
 2022,41,,no participó,,,,,,,,,False
-2026,41,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
-1930,115,,no participó,,,,,,,,,False
-1934,115,9.0,Octavos de Final,0.0,1.0,0.0,0.0,1.0,2.0,3.0,-1.0,True
-1938,115,14.0,Octavos de Final,0.0,1.0,0.0,0.0,1.0,0.0,3.0,-3.0,True
-1950,115,,no participó,,,,,,,,,False
-1954,115,,no participó,,,,,,,,,False
-1958,115,,no participó,,,,,,,,,False
-1962,115,,no participó,,,,,,,,,False
-1966,115,,no participó,,,,,,,,,False
-1970,115,,no participó,,,,,,,,,False
-1974,115,2.0,Final,11.0,7.0,5.0,1.0,1.0,15.0,3.0,12.0,True
-1978,115,2.0,Final,8.0,7.0,3.0,2.0,2.0,15.0,10.0,5.0,True
-1982,115,,no participó,,,,,,,,,False
-1986,115,,no participó,,,,,,,,,False
-1990,115,15.0,Octavos de Final,3.0,4.0,0.0,3.0,1.0,3.0,4.0,-1.0,True
-1994,115,7.0,Cuartos de Final,9.0,5.0,3.0,0.0,2.0,8.0,6.0,2.0,True
-1998,115,4.0,Partido 3er Puesto,12.0,7.0,3.0,3.0,1.0,13.0,7.0,6.0,True
-2002,115,,no participó,,,,,,,,,False
-2006,115,11.0,Octavos de Final,7.0,4.0,2.0,1.0,1.0,3.0,2.0,1.0,True
-2010,115,2.0,Final,18.0,7.0,6.0,0.0,1.0,12.0,6.0,6.0,True
-2014,115,3.0,Partido 3er Puesto,17.0,7.0,5.0,2.0,0.0,15.0,4.0,11.0,True
-2018,115,,no participó,,,,,,,,,False
-2022,115,5.0,Cuartos de Final,11.0,5.0,3.0,2.0,0.0,10.0,4.0,6.0,True
-2026,115,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+2026,41,,clasificado,0,0,0,0,0,0,0,0,True
+1930,63,,no participó,,,,,,,,,False
+1934,63,9,Octavos de Final,0,1,0,0,1,2,3,-1,True
+1938,63,14,Octavos de Final,0,1,0,0,1,0,3,-3,True
+1950,63,,no participó,,,,,,,,,False
+1954,63,,no participó,,,,,,,,,False
+1958,63,,no participó,,,,,,,,,False
+1962,63,,no participó,,,,,,,,,False
+1966,63,,no participó,,,,,,,,,False
+1970,63,,no participó,,,,,,,,,False
+1974,63,2,Final,11,7,5,1,1,15,3,12,True
+1978,63,2,Final,8,7,3,2,2,15,10,5,True
+1982,63,,no participó,,,,,,,,,False
+1986,63,,no participó,,,,,,,,,False
+1990,63,15,Octavos de Final,3,4,0,3,1,3,4,-1,True
+1994,63,7,Cuartos de Final,9,5,3,0,2,8,6,2,True
+1998,63,4,Partido 3er Puesto,12,7,3,3,1,13,7,6,True
+2002,63,,no participó,,,,,,,,,False
+2006,63,11,Octavos de Final,7,4,2,1,1,3,2,1,True
+2010,63,2,Final,18,7,6,0,1,12,6,6,True
+2014,63,3,Partido 3er Puesto,17,7,5,2,0,15,4,11,True
+2018,63,,no participó,,,,,,,,,False
+2022,63,5,Cuartos de Final,11,5,3,2,0,10,4,6,True
+2026,63,,clasificado,0,0,0,0,0,0,0,0,True
 1930,42,,no participó,,,,,,,,,False
 1934,42,,no participó,,,,,,,,,False
 1938,42,,no participó,,,,,,,,,False
@@ -792,31 +792,31 @@
 1970,42,,no participó,,,,,,,,,False
 1974,42,,no participó,,,,,,,,,False
 1978,42,,no participó,,,,,,,,,False
-1982,42,18.0,Grupos 1ra Ronda,2.0,3.0,0.0,2.0,1.0,2.0,3.0,-1.0,True
+1982,42,18,Grupos 1ra Ronda,2,3,0,2,1,2,3,-1,True
 1986,42,,no participó,,,,,,,,,False
 1990,42,,no participó,,,,,,,,,False
 1994,42,,no participó,,,,,,,,,False
 1998,42,,no participó,,,,,,,,,False
 2002,42,,no participó,,,,,,,,,False
 2006,42,,no participó,,,,,,,,,False
-2010,42,30.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,0.0,3.0,-3.0,True
-2014,42,31.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,1.0,8.0,-7.0,True
+2010,42,30,Grupos 1ra Ronda,1,3,0,1,2,0,3,-3,True
+2014,42,31,Grupos 1ra Ronda,0,3,0,0,3,1,8,-7,True
 2018,42,,no participó,,,,,,,,,False
 2022,42,,no participó,,,,,,,,,False
 2026,42,,,,,,,,,,,True
 1930,43,,no participó,,,,,,,,,False
-1934,43,6.0,Cuartos de Final,2.0,2.0,1.0,0.0,1.0,5.0,4.0,1.0,True
-1938,43,2.0,Final,6.0,4.0,3.0,0.0,1.0,15.0,5.0,10.0,True
+1934,43,6,Cuartos de Final,2,2,1,0,1,5,4,1,True
+1938,43,2,Final,6,4,3,0,1,15,5,10,True
 1950,43,,no participó,,,,,,,,,False
-1954,43,2.0,Final,8.0,5.0,4.0,0.0,1.0,27.0,10.0,17.0,True
-1958,43,10.0,Grupos 1ra Ronda,3.0,4.0,1.0,1.0,2.0,7.0,5.0,2.0,True
-1962,43,5.0,Cuartos de Final,5.0,4.0,2.0,1.0,1.0,8.0,3.0,5.0,True
-1966,43,6.0,Cuartos de Final,4.0,4.0,2.0,0.0,2.0,8.0,7.0,1.0,True
+1954,43,2,Final,8,5,4,0,1,27,10,17,True
+1958,43,10,Grupos 1ra Ronda,3,4,1,1,2,7,5,2,True
+1962,43,5,Cuartos de Final,5,4,2,1,1,8,3,5,True
+1966,43,6,Cuartos de Final,4,4,2,0,2,8,7,1,True
 1970,43,,no participó,,,,,,,,,False
 1974,43,,no participó,,,,,,,,,False
-1978,43,15.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,3.0,8.0,-5.0,True
-1982,43,14.0,Grupos 1ra Ronda,3.0,3.0,1.0,1.0,1.0,12.0,6.0,6.0,True
-1986,43,18.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,2.0,9.0,-7.0,True
+1978,43,15,Grupos 1ra Ronda,0,3,0,0,3,3,8,-5,True
+1982,43,14,Grupos 1ra Ronda,3,3,1,1,1,12,6,6,True
+1986,43,18,Grupos 1ra Ronda,2,3,1,0,2,2,9,-7,True
 1990,43,,no participó,,,,,,,,,False
 1994,43,,no participó,,,,,,,,,False
 1998,43,,no participó,,,,,,,,,False
@@ -830,26 +830,26 @@
 1930,46,,no participó,,,,,,,,,False
 1934,46,,no participó,,,,,,,,,False
 1938,46,,no participó,,,,,,,,,False
-1950,46,8.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,2.0,2.0,0.0,True
-1954,46,7.0,Cuartos de Final,3.0,3.0,1.0,1.0,1.0,8.0,8.0,0.0,True
-1958,46,11.0,Grupos 1ra Ronda,3.0,4.0,0.0,3.0,1.0,4.0,5.0,-1.0,True
-1962,46,8.0,Cuartos de Final,3.0,4.0,1.0,1.0,2.0,5.0,6.0,-1.0,True
-1966,46,1.0,Final,11.0,6.0,5.0,1.0,0.0,11.0,3.0,8.0,True
-1970,46,8.0,Cuartos de Final,4.0,4.0,2.0,0.0,2.0,4.0,4.0,0.0,True
+1950,46,8,Grupos 1ra Ronda,2,3,1,0,2,2,2,0,True
+1954,46,7,Cuartos de Final,3,3,1,1,1,8,8,0,True
+1958,46,11,Grupos 1ra Ronda,3,4,0,3,1,4,5,-1,True
+1962,46,8,Cuartos de Final,3,4,1,1,2,5,6,-1,True
+1966,46,1,Final,11,6,5,1,0,11,3,8,True
+1970,46,8,Cuartos de Final,4,4,2,0,2,4,4,0,True
 1974,46,,no participó,,,,,,,,,False
 1978,46,,no participó,,,,,,,,,False
-1982,46,6.0,Grupos 2da Ronda,8.0,5.0,3.0,2.0,0.0,6.0,1.0,5.0,True
-1986,46,8.0,Cuartos de Final,5.0,5.0,2.0,1.0,2.0,7.0,3.0,4.0,True
-1990,46,4.0,Partido 3er Puesto,9.0,7.0,3.0,3.0,1.0,8.0,6.0,2.0,True
+1982,46,6,Grupos 2da Ronda,8,5,3,2,0,6,1,5,True
+1986,46,8,Cuartos de Final,5,5,2,1,2,7,3,4,True
+1990,46,4,Partido 3er Puesto,9,7,3,3,1,8,6,2,True
 1994,46,,no participó,,,,,,,,,False
-1998,46,9.0,Octavos de Final,7.0,4.0,2.0,1.0,1.0,7.0,4.0,3.0,True
-2002,46,6.0,Cuartos de Final,8.0,5.0,2.0,2.0,1.0,6.0,3.0,3.0,True
-2006,46,7.0,Cuartos de Final,11.0,5.0,3.0,2.0,0.0,6.0,2.0,4.0,True
-2010,46,13.0,Octavos de Final,5.0,4.0,1.0,2.0,1.0,3.0,5.0,-2.0,True
-2014,46,26.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,4.0,-2.0,True
-2018,46,4.0,Partido 3er Puesto,10.0,7.0,3.0,1.0,3.0,12.0,8.0,4.0,True
-2022,46,6.0,Cuartos de Final,10.0,5.0,3.0,1.0,1.0,13.0,4.0,9.0,True
-2026,46,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+1998,46,9,Octavos de Final,7,4,2,1,1,7,4,3,True
+2002,46,6,Cuartos de Final,8,5,2,2,1,6,3,3,True
+2006,46,7,Cuartos de Final,11,5,3,2,0,6,2,4,True
+2010,46,13,Octavos de Final,5,4,1,2,1,3,5,-2,True
+2014,46,26,Grupos 1ra Ronda,1,3,0,1,2,2,4,-2,True
+2018,46,4,Partido 3er Puesto,10,7,3,1,3,12,8,4,True
+2022,46,6,Cuartos de Final,10,5,3,1,1,13,4,9,True
+2026,46,,clasificado,0,0,0,0,0,0,0,0,True
 1930,50,,no participó,,,,,,,,,False
 1934,50,,no participó,,,,,,,,,False
 1938,50,,no participó,,,,,,,,,False
@@ -860,19 +860,19 @@
 1966,50,,no participó,,,,,,,,,False
 1970,50,,no participó,,,,,,,,,False
 1974,50,,no participó,,,,,,,,,False
-1978,50,14.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,8.0,-6.0,True
+1978,50,14,Grupos 1ra Ronda,1,3,0,1,2,2,8,-6,True
 1982,50,,no participó,,,,,,,,,False
 1986,50,,no participó,,,,,,,,,False
 1990,50,,no participó,,,,,,,,,False
 1994,50,,no participó,,,,,,,,,False
-1998,50,20.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,2.0,4.0,-2.0,True
+1998,50,20,Grupos 1ra Ronda,3,3,1,0,2,2,4,-2,True
 2002,50,,no participó,,,,,,,,,False
-2006,50,26.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,6.0,-4.0,True
+2006,50,26,Grupos 1ra Ronda,1,3,0,1,2,2,6,-4,True
 2010,50,,no participó,,,,,,,,,False
-2014,50,28.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,1.0,4.0,-3.0,True
-2018,50,18.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,2.0,2.0,0.0,True
-2022,50,26.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,4.0,7.0,-3.0,True
-2026,50,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+2014,50,28,Grupos 1ra Ronda,1,3,0,1,2,1,4,-3,True
+2018,50,18,Grupos 1ra Ronda,4,3,1,1,1,2,2,0,True
+2022,50,26,Grupos 1ra Ronda,3,3,1,0,2,4,7,-3,True
+2026,50,,clasificado,0,0,0,0,0,0,0,0,True
 1930,47,,no participó,,,,,,,,,False
 1934,47,,no participó,,,,,,,,,False
 1938,47,,no participó,,,,,,,,,False
@@ -885,7 +885,7 @@
 1974,47,,no participó,,,,,,,,,False
 1978,47,,no participó,,,,,,,,,False
 1982,47,,no participó,,,,,,,,,False
-1986,47,23.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,1.0,4.0,-3.0,True
+1986,47,23,Grupos 1ra Ronda,0,3,0,0,3,1,4,-3,True
 1990,47,,no participó,,,,,,,,,False
 1994,47,,no participó,,,,,,,,,False
 1998,47,,no participó,,,,,,,,,False
@@ -909,10 +909,10 @@
 1978,48,,no participó,,,,,,,,,False
 1982,48,,no participó,,,,,,,,,False
 1986,48,,no participó,,,,,,,,,False
-1990,48,8.0,Cuartos de Final,4.0,5.0,0.0,4.0,1.0,2.0,3.0,-1.0,True
-1994,48,16.0,Octavos de Final,4.0,4.0,1.0,1.0,2.0,2.0,4.0,-2.0,True
+1990,48,8,Cuartos de Final,4,5,0,4,1,2,3,-1,True
+1994,48,16,Octavos de Final,4,4,1,1,2,2,4,-2,True
 1998,48,,no participó,,,,,,,,,False
-2002,48,12.0,Octavos de Final,6.0,4.0,1.0,3.0,0.0,6.0,3.0,3.0,True
+2002,48,12,Octavos de Final,6,4,1,3,0,6,3,3,True
 2006,48,,no participó,,,,,,,,,False
 2010,48,,no participó,,,,,,,,,False
 2014,48,,no participó,,,,,,,,,False
@@ -939,29 +939,29 @@
 2006,51,,no participó,,,,,,,,,False
 2010,51,,no participó,,,,,,,,,False
 2014,51,,no participó,,,,,,,,,False
-2018,51,28.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,5.0,-3.0,True
+2018,51,28,Grupos 1ra Ronda,1,3,0,1,2,2,5,-3,True
 2022,51,,no participó,,,,,,,,,False
 2026,51,,,,,,,,,,,True
 1930,53,,no participó,,,,,,,,,False
-1934,53,1.0,Final,9.0,5.0,4.0,1.0,0.0,12.0,3.0,9.0,True
-1938,53,1.0,Final,8.0,4.0,4.0,0.0,0.0,11.0,5.0,6.0,True
-1950,53,7.0,Grupos 1ra Ronda,2.0,2.0,1.0,0.0,1.0,4.0,3.0,1.0,True
-1954,53,10.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,6.0,7.0,-1.0,True
+1934,53,1,Final,9,5,4,1,0,12,3,9,True
+1938,53,1,Final,8,4,4,0,0,11,5,6,True
+1950,53,7,Grupos 1ra Ronda,2,2,1,0,1,4,3,1,True
+1954,53,10,Grupos 1ra Ronda,2,3,1,0,2,6,7,-1,True
 1958,53,,no participó,,,,,,,,,False
-1962,53,9.0,Grupos 1ra Ronda,3.0,3.0,1.0,1.0,1.0,3.0,2.0,1.0,True
-1966,53,9.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,2.0,2.0,0.0,True
-1970,53,2.0,Final,8.0,6.0,3.0,2.0,1.0,10.0,8.0,2.0,True
-1974,53,10.0,Grupos 1ra Ronda,3.0,3.0,1.0,1.0,1.0,5.0,4.0,1.0,True
-1978,53,4.0,Partido 3er Puesto,9.0,7.0,4.0,1.0,2.0,9.0,6.0,3.0,True
-1982,53,1.0,Final,11.0,7.0,4.0,3.0,0.0,12.0,6.0,6.0,True
-1986,53,12.0,Octavos de Final,4.0,4.0,1.0,2.0,1.0,5.0,6.0,-1.0,True
-1990,53,3.0,Partido 3er Puesto,13.0,7.0,6.0,1.0,0.0,10.0,2.0,8.0,True
-1994,53,2.0,Final,14.0,7.0,4.0,2.0,1.0,8.0,5.0,3.0,True
-1998,53,5.0,Cuartos de Final,11.0,5.0,3.0,2.0,0.0,8.0,3.0,5.0,True
-2002,53,15.0,Octavos de Final,4.0,4.0,1.0,1.0,2.0,5.0,5.0,0.0,True
-2006,53,1.0,Final,17.0,7.0,5.0,2.0,0.0,12.0,2.0,10.0,True
-2010,53,26.0,Grupos 1ra Ronda,2.0,3.0,0.0,2.0,1.0,4.0,5.0,-1.0,True
-2014,53,22.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,2.0,3.0,-1.0,True
+1962,53,9,Grupos 1ra Ronda,3,3,1,1,1,3,2,1,True
+1966,53,9,Grupos 1ra Ronda,2,3,1,0,2,2,2,0,True
+1970,53,2,Final,8,6,3,2,1,10,8,2,True
+1974,53,10,Grupos 1ra Ronda,3,3,1,1,1,5,4,1,True
+1978,53,4,Partido 3er Puesto,9,7,4,1,2,9,6,3,True
+1982,53,1,Final,11,7,4,3,0,12,6,6,True
+1986,53,12,Octavos de Final,4,4,1,2,1,5,6,-1,True
+1990,53,3,Partido 3er Puesto,13,7,6,1,0,10,2,8,True
+1994,53,2,Final,14,7,4,2,1,8,5,3,True
+1998,53,5,Cuartos de Final,11,5,3,2,0,8,3,5,True
+2002,53,15,Octavos de Final,4,4,1,1,2,5,5,0,True
+2006,53,1,Final,17,7,5,2,0,12,2,10,True
+2010,53,26,Grupos 1ra Ronda,2,3,0,2,1,4,5,-1,True
+2014,53,22,Grupos 1ra Ronda,3,3,1,0,2,2,3,-1,True
 2018,53,,no participó,,,,,,,,,False
 2022,53,,no participó,,,,,,,,,False
 2026,53,,,,,,,,,,,True
@@ -980,14 +980,14 @@
 1986,55,,no participó,,,,,,,,,False
 1990,55,,no participó,,,,,,,,,False
 1994,55,,no participó,,,,,,,,,False
-1998,55,31.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,1.0,4.0,-3.0,True
-2002,55,9.0,Octavos de Final,7.0,4.0,2.0,1.0,1.0,5.0,3.0,2.0,True
-2006,55,29.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,7.0,-5.0,True
-2010,55,9.0,Octavos de Final,7.0,4.0,2.0,1.0,1.0,4.0,2.0,2.0,True
-2014,55,29.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,6.0,-4.0,True
-2018,55,15.0,Octavos de Final,4.0,4.0,1.0,1.0,2.0,6.0,7.0,-1.0,True
-2022,55,9.0,Octavos de Final,7.0,4.0,2.0,1.0,1.0,5.0,4.0,1.0,True
-2026,55,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+1998,55,31,Grupos 1ra Ronda,0,3,0,0,3,1,4,-3,True
+2002,55,9,Octavos de Final,7,4,2,1,1,5,3,2,True
+2006,55,29,Grupos 1ra Ronda,1,3,0,1,2,2,7,-5,True
+2010,55,9,Octavos de Final,7,4,2,1,1,4,2,2,True
+2014,55,29,Grupos 1ra Ronda,1,3,0,1,2,2,6,-4,True
+2018,55,15,Octavos de Final,4,4,1,1,2,6,7,-1,True
+2022,55,9,Octavos de Final,7,4,2,1,1,5,4,1,True
+2026,55,,clasificado,0,0,0,0,0,0,0,0,True
 1930,58,,no participó,,,,,,,,,False
 1934,58,,no participó,,,,,,,,,False
 1938,58,,no participó,,,,,,,,,False
@@ -996,501 +996,501 @@
 1958,58,,no participó,,,,,,,,,False
 1962,58,,no participó,,,,,,,,,False
 1966,58,,no participó,,,,,,,,,False
-1970,58,14.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,6.0,-4.0,True
+1970,58,14,Grupos 1ra Ronda,1,3,0,1,2,2,6,-4,True
 1974,58,,no participó,,,,,,,,,False
 1978,58,,no participó,,,,,,,,,False
 1982,58,,no participó,,,,,,,,,False
-1986,58,11.0,Octavos de Final,4.0,4.0,1.0,2.0,1.0,3.0,2.0,1.0,True
+1986,58,11,Octavos de Final,4,4,1,2,1,3,2,1,True
 1990,58,,no participó,,,,,,,,,False
-1994,58,23.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,2.0,5.0,-3.0,True
-1998,58,18.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,5.0,5.0,0.0,True
+1994,58,23,Grupos 1ra Ronda,0,3,0,0,3,2,5,-3,True
+1998,58,18,Grupos 1ra Ronda,4,3,1,1,1,5,5,0,True
 2002,58,,no participó,,,,,,,,,False
 2006,58,,no participó,,,,,,,,,False
 2010,58,,no participó,,,,,,,,,False
 2014,58,,no participó,,,,,,,,,False
-2018,58,27.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,2.0,4.0,-2.0,True
-2022,58,4.0,Partido 3er Puesto,11.0,7.0,3.0,2.0,2.0,6.0,5.0,1.0,True
-2026,58,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
-1930,112,,no participó,,,,,,,,,False
-1934,112,,no participó,,,,,,,,,False
-1938,112,,no participó,,,,,,,,,False
-1950,112,,no participó,,,,,,,,,False
-1954,112,,no participó,,,,,,,,,False
-1958,112,,no participó,,,,,,,,,False
-1962,112,,no participó,,,,,,,,,False
-1966,112,,no participó,,,,,,,,,False
-1970,112,,no participó,,,,,,,,,False
-1974,112,,no participó,,,,,,,,,False
-1978,112,,no participó,,,,,,,,,False
-1982,112,,no participó,,,,,,,,,False
-1986,112,,no participó,,,,,,,,,False
-1990,112,,no participó,,,,,,,,,False
-1994,112,9.0,Octavos de Final,6.0,4.0,2.0,0.0,2.0,7.0,4.0,3.0,True
-1998,112,12.0,Octavos de Final,6.0,4.0,2.0,0.0,2.0,6.0,9.0,-3.0,True
-2002,112,27.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,1.0,3.0,-2.0,True
-2006,112,,no participó,,,,,,,,,False
-2010,112,27.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,3.0,5.0,-2.0,True
-2014,112,16.0,Octavos de Final,4.0,4.0,1.0,1.0,2.0,3.0,5.0,-2.0,True
-2018,112,21.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,3.0,4.0,-1.0,True
-2022,112,,no participó,,,,,,,,,False
-2026,112,,no participó,,,,,,,,,False
-1930,114,,no participó,,,,,,,,,False
-1934,114,,no participó,,,,,,,,,False
-1938,114,,no participó,,,,,,,,,False
-1950,114,,no participó,,,,,,,,,False
-1954,114,,no participó,,,,,,,,,False
-1958,114,,no participó,,,,,,,,,False
-1962,114,,no participó,,,,,,,,,False
-1966,114,,no participó,,,,,,,,,False
-1970,114,,no participó,,,,,,,,,False
-1974,114,,no participó,,,,,,,,,False
-1978,114,,no participó,,,,,,,,,False
-1982,114,23.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,2.0,12.0,-10.0,True
-1986,114,,no participó,,,,,,,,,False
-1990,114,,no participó,,,,,,,,,False
-1994,114,,no participó,,,,,,,,,False
-1998,114,,no participó,,,,,,,,,False
-2002,114,,no participó,,,,,,,,,False
-2006,114,,no participó,,,,,,,,,False
-2010,114,22.0,Grupos 1ra Ronda,3.0,3.0,0.0,3.0,0.0,2.0,2.0,0.0,True
-2014,114,,no participó,,,,,,,,,False
-2018,114,,no participó,,,,,,,,,False
-2022,114,,no participó,,,,,,,,,False
-2026,114,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
-1930,116,,no participó,,,,,,,,,False
-1934,116,,no participó,,,,,,,,,False
-1938,116,,no participó,,,,,,,,,False
-1950,116,,no participó,,,,,,,,,False
-1954,116,,no participó,,,,,,,,,False
-1958,116,,no participó,,,,,,,,,False
-1962,116,,no participó,,,,,,,,,False
-1966,116,,no participó,,,,,,,,,False
-1970,116,,no participó,,,,,,,,,False
-1974,116,,no participó,,,,,,,,,False
-1978,116,,no participó,,,,,,,,,False
-1982,116,,no participó,,,,,,,,,False
-1986,116,,no participó,,,,,,,,,False
-1990,116,,no participó,,,,,,,,,False
-1994,116,,no participó,,,,,,,,,False
-1998,116,,no participó,,,,,,,,,False
-2002,116,,no participó,,,,,,,,,False
-2006,116,,no participó,,,,,,,,,False
-2010,116,,no participó,,,,,,,,,False
-2014,116,,no participó,,,,,,,,,False
-2018,116,32.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,2.0,11.0,-9.0,True
-2022,116,,no participó,,,,,,,,,False
-2026,116,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
-1930,117,9.0,Grupos 1ra Ronda,2.0,2.0,1.0,0.0,1.0,1.0,3.0,-2.0,True
-1934,117,,no participó,,,,,,,,,False
-1938,117,,no participó,,,,,,,,,False
-1950,117,11.0,Grupos 1ra Ronda,1.0,2.0,0.0,1.0,1.0,2.0,4.0,-2.0,True
-1954,117,,no participó,,,,,,,,,False
-1958,117,12.0,Grupos 1ra Ronda,3.0,3.0,1.0,1.0,1.0,9.0,12.0,-3.0,True
-1962,117,,no participó,,,,,,,,,False
-1966,117,,no participó,,,,,,,,,False
-1970,117,,no participó,,,,,,,,,False
-1974,117,,no participó,,,,,,,,,False
-1978,117,,no participó,,,,,,,,,False
-1982,117,,no participó,,,,,,,,,False
-1986,117,13.0,Octavos de Final,4.0,4.0,1.0,2.0,1.0,4.0,6.0,-2.0,True
-1990,117,,no participó,,,,,,,,,False
-1994,117,,no participó,,,,,,,,,False
-1998,117,14.0,Octavos de Final,5.0,4.0,1.0,2.0,1.0,3.0,2.0,1.0,True
-2002,117,16.0,Octavos de Final,4.0,4.0,1.0,1.0,2.0,6.0,7.0,-1.0,True
-2006,117,18.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,2.0,2.0,0.0,True
-2010,117,8.0,Cuartos de Final,6.0,5.0,1.0,3.0,1.0,3.0,2.0,1.0,True
-2014,117,,no participó,,,,,,,,,False
-2018,117,,no participó,,,,,,,,,False
-2022,117,,no participó,,,,,,,,,False
-2026,117,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
-1930,118,10.0,Grupos 1ra Ronda,0.0,2.0,0.0,0.0,2.0,1.0,4.0,-3.0,True
-1934,118,,no participó,,,,,,,,,False
-1938,118,,no participó,,,,,,,,,False
-1950,118,,no participó,,,,,,,,,False
-1954,118,,no participó,,,,,,,,,False
-1958,118,,no participó,,,,,,,,,False
-1962,118,,no participó,,,,,,,,,False
-1966,118,,no participó,,,,,,,,,False
-1970,118,7.0,Cuartos de Final,4.0,4.0,2.0,0.0,2.0,9.0,9.0,0.0,True
-1974,118,,no participó,,,,,,,,,False
-1978,118,8.0,Grupos 2da Ronda,5.0,6.0,2.0,1.0,3.0,7.0,12.0,-5.0,True
-1982,118,20.0,Grupos 1ra Ronda,2.0,3.0,0.0,2.0,1.0,2.0,6.0,-4.0,True
-1986,118,,no participó,,,,,,,,,False
-1990,118,,no participó,,,,,,,,,False
-1994,118,,no participó,,,,,,,,,False
-1998,118,,no participó,,,,,,,,,False
-2002,118,,no participó,,,,,,,,,False
-2006,118,,no participó,,,,,,,,,False
-2010,118,,no participó,,,,,,,,,False
-2014,118,,no participó,,,,,,,,,False
-2018,118,20.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,2.0,2.0,0.0,True
-2022,118,,no participó,,,,,,,,,False
-2026,118,,no participó,,,,,,,,,False
-1930,119,,no participó,,,,,,,,,False
-1934,119,,no participó,,,,,,,,,False
-1938,119,11.0,Octavos de Final,0.0,1.0,0.0,0.0,1.0,5.0,6.0,-1.0,True
-1950,119,,no participó,,,,,,,,,False
-1954,119,,no participó,,,,,,,,,False
-1958,119,,no participó,,,,,,,,,False
-1962,119,,no participó,,,,,,,,,False
-1966,119,,no participó,,,,,,,,,False
-1970,119,,no participó,,,,,,,,,False
-1974,119,3.0,Partido 3er Puesto,12.0,7.0,6.0,0.0,1.0,16.0,5.0,11.0,True
-1978,119,5.0,Grupos 2da Ronda,7.0,6.0,3.0,1.0,2.0,6.0,6.0,0.0,True
-1982,119,3.0,Partido 3er Puesto,9.0,7.0,3.0,3.0,1.0,11.0,5.0,6.0,True
-1986,119,14.0,Octavos de Final,3.0,4.0,1.0,1.0,2.0,1.0,7.0,-6.0,True
-1990,119,,no participó,,,,,,,,,False
-1994,119,,no participó,,,,,,,,,False
-1998,119,,no participó,,,,,,,,,False
-2002,119,25.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,3.0,7.0,-4.0,True
-2006,119,21.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,2.0,4.0,-2.0,True
-2010,119,,no participó,,,,,,,,,False
-2014,119,,no participó,,,,,,,,,False
-2018,119,25.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,2.0,5.0,-3.0,True
-2022,119,15.0,Octavos de Final,4.0,4.0,1.0,1.0,2.0,3.0,5.0,-2.0,True
-2026,119,,,,,,,,,,,True
-1930,120,,no participó,,,,,,,,,False
-1934,120,,no participó,,,,,,,,,False
-1938,120,,no participó,,,,,,,,,False
-1950,120,,no participó,,,,,,,,,False
-1954,120,,no participó,,,,,,,,,False
-1958,120,,no participó,,,,,,,,,False
-1962,120,,no participó,,,,,,,,,False
-1966,120,3.0,Partido 3er Puesto,10.0,6.0,5.0,0.0,1.0,17.0,8.0,9.0,True
-1970,120,,no participó,,,,,,,,,False
-1974,120,,no participó,,,,,,,,,False
-1978,120,,no participó,,,,,,,,,False
-1982,120,,no participó,,,,,,,,,False
-1986,120,17.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,2.0,4.0,-2.0,True
-1990,120,,no participó,,,,,,,,,False
-1994,120,,no participó,,,,,,,,,False
-1998,120,,no participó,,,,,,,,,False
-2002,120,21.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,6.0,4.0,2.0,True
-2006,120,4.0,Partido 3er Puesto,13.0,7.0,4.0,1.0,2.0,7.0,5.0,2.0,True
-2010,120,11.0,Octavos de Final,5.0,4.0,1.0,2.0,1.0,7.0,1.0,6.0,True
-2014,120,18.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,4.0,7.0,-3.0,True
-2018,120,13.0,Octavos de Final,5.0,4.0,1.0,2.0,1.0,6.0,6.0,0.0,True
-2022,120,8.0,Cuartos de Final,9.0,5.0,3.0,0.0,2.0,12.0,6.0,6.0,True
-2026,120,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
-1930,121,,no participó,,,,,,,,,False
-1934,121,,no participó,,,,,,,,,False
-1938,121,,no participó,,,,,,,,,False
-1950,121,,no participó,,,,,,,,,False
-1954,121,,no participó,,,,,,,,,False
-1958,121,,no participó,,,,,,,,,False
-1962,121,,no participó,,,,,,,,,False
-1966,121,,no participó,,,,,,,,,False
-1970,121,,no participó,,,,,,,,,False
-1974,121,16.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,0.0,14.0,-14.0,True
-1978,121,,no participó,,,,,,,,,False
-1982,121,,no participó,,,,,,,,,False
-1986,121,,no participó,,,,,,,,,False
-1990,121,,no participó,,,,,,,,,False
-1994,121,,no participó,,,,,,,,,False
-1998,121,,no participó,,,,,,,,,False
-2002,121,,no participó,,,,,,,,,False
-2006,121,,no participó,,,,,,,,,False
-2010,121,,no participó,,,,,,,,,False
-2014,121,,no participó,,,,,,,,,False
-2018,121,,no participó,,,,,,,,,False
-2022,121,,no participó,,,,,,,,,False
-2026,121,,no participó,,,,,,,,,False
-1930,122,,no participó,,,,,,,,,False
-1934,122,2.0,Final,6.0,4.0,3.0,0.0,1.0,9.0,6.0,3.0,True
-1938,122,5.0,Cuartos de Final,3.0,3.0,1.0,1.0,1.0,5.0,3.0,2.0,True
-1950,122,,no participó,,,,,,,,,False
-1954,122,14.0,Grupos 1ra Ronda,0.0,2.0,0.0,0.0,2.0,0.0,7.0,-7.0,True
-1958,122,9.0,Grupos 1ra Ronda,3.0,4.0,1.0,1.0,2.0,9.0,6.0,3.0,True
-1962,122,2.0,Final,7.0,6.0,3.0,1.0,2.0,7.0,7.0,0.0,True
-1966,122,,no participó,,,,,,,,,False
-1970,122,15.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,2.0,7.0,-5.0,True
-1974,122,,no participó,,,,,,,,,False
-1978,122,,no participó,,,,,,,,,False
-1982,122,19.0,Grupos 1ra Ronda,2.0,3.0,0.0,2.0,1.0,2.0,4.0,-2.0,True
-1986,122,,no participó,,,,,,,,,False
-1990,122,6.0,Cuartos de Final,6.0,5.0,3.0,0.0,2.0,10.0,5.0,5.0,True
-1994,122,,no participó,,,,,,,,,False
-1998,122,,no participó,,,,,,,,,False
-2002,122,,no participó,,,,,,,,,False
-2006,122,20.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,3.0,4.0,-1.0,True
-2010,122,,no participó,,,,,,,,,False
-2014,122,,no participó,,,,,,,,,False
-2018,122,,no participó,,,,,,,,,False
-2022,122,,no participó,,,,,,,,,False
-2026,122,,,,,,,,,,,True
-1930,123,8.0,Grupos 1ra Ronda,2.0,2.0,1.0,0.0,1.0,3.0,5.0,-2.0,True
-1934,123,12.0,Octavos de Final,0.0,1.0,0.0,0.0,1.0,1.0,2.0,-1.0,True
-1938,123,9.0,Octavos de Final,1.0,2.0,0.0,1.0,1.0,4.0,5.0,-1.0,True
-1950,123,,no participó,,,,,,,,,False
-1954,123,,no participó,,,,,,,,,False
-1958,123,,no participó,,,,,,,,,False
-1962,123,,no participó,,,,,,,,,False
-1966,123,,no participó,,,,,,,,,False
-1970,123,10.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,4.0,5.0,-1.0,True
-1974,123,,no participó,,,,,,,,,False
-1978,123,,no participó,,,,,,,,,False
-1982,123,,no participó,,,,,,,,,False
-1986,123,,no participó,,,,,,,,,False
-1990,123,12.0,Octavos de Final,4.0,4.0,1.0,2.0,1.0,4.0,3.0,1.0,True
-1994,123,6.0,Cuartos de Final,10.0,5.0,3.0,1.0,1.0,10.0,9.0,1.0,True
-1998,123,11.0,Octavos de Final,7.0,4.0,2.0,1.0,1.0,4.0,3.0,1.0,True
-2002,123,,no participó,,,,,,,,,False
-2006,123,,no participó,,,,,,,,,False
-2010,123,,no participó,,,,,,,,,False
-2014,123,,no participó,,,,,,,,,False
-2018,123,,no participó,,,,,,,,,False
-2022,123,,no participó,,,,,,,,,False
-2026,123,,,,,,,,,,,True
-1930,124,,no participó,,,,,,,,,False
-1934,124,,no participó,,,,,,,,,False
-1938,124,,no participó,,,,,,,,,False
-1950,124,,no participó,,,,,,,,,False
-1954,124,,no participó,,,,,,,,,False
-1958,124,6.0,Cuartos de Final,5.0,5.0,2.0,1.0,2.0,5.0,6.0,-1.0,True
-1962,124,6.0,Cuartos de Final,5.0,4.0,2.0,1.0,1.0,9.0,7.0,2.0,True
-1966,124,4.0,Partido 3er Puesto,8.0,6.0,4.0,0.0,2.0,10.0,6.0,4.0,True
-1970,124,5.0,Cuartos de Final,5.0,4.0,2.0,1.0,1.0,6.0,2.0,4.0,True
-1974,124,,no participó,,,,,,,,,False
-1978,124,,no participó,,,,,,,,,False
-1982,124,7.0,Grupos 2da Ronda,6.0,5.0,2.0,2.0,1.0,7.0,4.0,3.0,True
-1986,124,10.0,Octavos de Final,5.0,4.0,2.0,1.0,1.0,12.0,5.0,7.0,True
-1990,124,17.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,4.0,4.0,0.0,True
-1994,124,18.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,7.0,6.0,1.0,True
-1998,124,,no participó,,,,,,,,,False
-2002,124,22.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,4.0,4.0,0.0,True
-2006,124,,no participó,,,,,,,,,False
-2010,124,,no participó,,,,,,,,,False
-2014,124,24.0,Grupos 1ra Ronda,2.0,3.0,0.0,2.0,1.0,2.0,3.0,-1.0,True
-2018,124,8.0,Cuartos de Final,8.0,5.0,2.0,2.0,1.0,11.0,7.0,4.0,True
-2022,124,,no participó,,,,,,,,,False
-2026,124,,no participó,,,,,,,,,False
-1930,125,,no participó,,,,,,,,,False
-1934,125,,no participó,,,,,,,,,False
-1938,125,,no participó,,,,,,,,,False
-1950,125,,no participó,,,,,,,,,False
-1954,125,,no participó,,,,,,,,,False
-1958,125,,no participó,,,,,,,,,False
-1962,125,,no participó,,,,,,,,,False
-1966,125,,no participó,,,,,,,,,False
-1970,125,,no participó,,,,,,,,,False
-1974,125,,no participó,,,,,,,,,False
-1978,125,,no participó,,,,,,,,,False
-1982,125,,no participó,,,,,,,,,False
-1986,125,,no participó,,,,,,,,,False
-1990,125,,no participó,,,,,,,,,False
-1994,125,,no participó,,,,,,,,,False
-1998,125,,no participó,,,,,,,,,False
-2002,125,7.0,Cuartos de Final,8.0,5.0,2.0,2.0,1.0,7.0,6.0,1.0,True
-2006,125,,no participó,,,,,,,,,False
-2010,125,,no participó,,,,,,,,,False
-2014,125,,no participó,,,,,,,,,False
-2018,125,17.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,4.0,4.0,0.0,True
-2022,125,10.0,Octavos de Final,6.0,4.0,2.0,0.0,2.0,5.0,7.0,-2.0,True
-2026,125,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
-1930,126,4.0,Partido 3er Puesto,4.0,3.0,2.0,0.0,1.0,7.0,7.0,0.0,True
-1934,126,,no participó,,,,,,,,,False
-1938,126,,no participó,,,,,,,,,False
-1950,126,5.0,Grupos 1ra Ronda,4.0,3.0,2.0,0.0,1.0,7.0,3.0,4.0,True
-1954,126,8.0,Cuartos de Final,3.0,3.0,1.0,1.0,1.0,2.0,3.0,-1.0,True
-1958,126,8.0,Cuartos de Final,4.0,4.0,1.0,2.0,1.0,7.0,7.0,0.0,True
-1962,126,4.0,Partido 3er Puesto,6.0,6.0,3.0,0.0,3.0,10.0,7.0,3.0,True
-1966,126,,no participó,,,,,,,,,False
-1970,126,,no participó,,,,,,,,,False
-1974,126,7.0,Grupos 2da Ronda,4.0,6.0,1.0,2.0,3.0,12.0,7.0,5.0,True
-1978,126,,no participó,,,,,,,,,False
-1982,126,16.0,Grupos 1ra Ronda,3.0,3.0,1.0,1.0,1.0,2.0,2.0,0.0,True
-1986,126,,no participó,,,,,,,,,False
-1990,126,5.0,Cuartos de Final,7.0,5.0,3.0,1.0,1.0,8.0,6.0,2.0,True
-1994,126,,no participó,,,,,,,,,False
-1998,126,10.0,Octavos de Final,7.0,4.0,2.0,1.0,1.0,5.0,4.0,1.0,True
-2002,126,,no participó,,,,,,,,,False
-2006,126,32.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,2.0,10.0,-8.0,True
-2010,126,23.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,2.0,3.0,-1.0,True
-2014,126,,no participó,,,,,,,,,False
-2018,126,23.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,2.0,4.0,-2.0,True
-2022,126,29.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,5.0,8.0,-3.0,True
-2026,126,,no participó,,,,,,,,,False
-1930,127,,no participó,,,,,,,,,False
-1934,127,,no participó,,,,,,,,,False
-1938,127,,no participó,,,,,,,,,False
-1950,127,,no participó,,,,,,,,,False
-1954,127,,no participó,,,,,,,,,False
-1958,127,,no participó,,,,,,,,,False
-1962,127,,no participó,,,,,,,,,False
-1966,127,,no participó,,,,,,,,,False
-1970,127,,no participó,,,,,,,,,False
-1974,127,,no participó,,,,,,,,,False
-1978,127,,no participó,,,,,,,,,False
-1982,127,,no participó,,,,,,,,,False
-1986,127,,no participó,,,,,,,,,False
-1990,127,,no participó,,,,,,,,,False
-1994,127,,no participó,,,,,,,,,False
-1998,127,24.0,Grupos 1ra Ronda,2.0,3.0,0.0,2.0,1.0,3.0,6.0,-3.0,True
-2002,127,17.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,5.0,5.0,0.0,True
-2006,127,,no participó,,,,,,,,,False
-2010,127,20.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,3.0,5.0,-2.0,True
-2014,127,,no participó,,,,,,,,,False
-2018,127,,no participó,,,,,,,,,False
-2022,127,,no participó,,,,,,,,,False
-2026,127,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
-1930,128,,no participó,,,,,,,,,False
-1934,128,8.0,Cuartos de Final,2.0,2.0,1.0,0.0,1.0,4.0,4.0,0.0,True
-1938,128,4.0,Partido 3er Puesto,2.0,3.0,1.0,0.0,2.0,11.0,9.0,2.0,True
-1950,128,3.0,Ronda Final,5.0,5.0,2.0,1.0,2.0,11.0,15.0,-4.0,True
-1954,128,,no participó,,,,,,,,,False
-1958,128,2.0,Final,9.0,6.0,4.0,1.0,1.0,12.0,7.0,5.0,True
-1962,128,,no participó,,,,,,,,,False
-1966,128,,no participó,,,,,,,,,False
-1970,128,9.0,Grupos 1ra Ronda,3.0,3.0,1.0,1.0,1.0,2.0,2.0,0.0,True
-1974,128,5.0,Grupos 2da Ronda,6.0,6.0,2.0,2.0,2.0,7.0,6.0,1.0,True
-1978,128,13.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,1.0,3.0,-2.0,True
-1982,128,,no participó,,,,,,,,,False
-1986,128,,no participó,,,,,,,,,False
-1990,128,21.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,3.0,6.0,-3.0,True
-1994,128,3.0,Partido 3er Puesto,12.0,7.0,3.0,3.0,1.0,15.0,8.0,7.0,True
-1998,128,,no participó,,,,,,,,,False
-2002,128,13.0,Octavos de Final,5.0,4.0,1.0,2.0,1.0,5.0,5.0,0.0,True
-2006,128,14.0,Octavos de Final,5.0,4.0,1.0,2.0,1.0,3.0,4.0,-1.0,True
-2010,128,,no participó,,,,,,,,,False
-2014,128,,no participó,,,,,,,,,False
-2018,128,7.0,Cuartos de Final,9.0,5.0,3.0,0.0,2.0,6.0,4.0,2.0,True
-2022,128,,no participó,,,,,,,,,False
-2026,128,,,,,,,,,,,True
-1930,129,,no participó,,,,,,,,,False
-1934,129,7.0,Cuartos de Final,2.0,2.0,1.0,0.0,1.0,5.0,5.0,0.0,True
-1938,129,6.0,Cuartos de Final,3.0,3.0,1.0,1.0,1.0,5.0,5.0,0.0,True
-1950,129,6.0,Grupos 1ra Ronda,3.0,3.0,1.0,1.0,1.0,4.0,6.0,-2.0,True
-1954,129,5.0,Cuartos de Final,4.0,4.0,2.0,0.0,2.0,11.0,11.0,0.0,True
-1958,129,,no participó,,,,,,,,,False
-1962,129,16.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,2.0,8.0,-6.0,True
-1966,129,16.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,1.0,9.0,-8.0,True
-1970,129,,no participó,,,,,,,,,False
-1974,129,,no participó,,,,,,,,,False
-1978,129,,no participó,,,,,,,,,False
-1982,129,,no participó,,,,,,,,,False
-1986,129,,no participó,,,,,,,,,False
-1990,129,,no participó,,,,,,,,,False
-1994,129,15.0,Octavos de Final,4.0,4.0,1.0,1.0,2.0,5.0,7.0,-2.0,True
-1998,129,,no participó,,,,,,,,,False
-2002,129,,no participó,,,,,,,,,False
-2006,129,10.0,Octavos de Final,8.0,4.0,2.0,2.0,0.0,4.0,0.0,4.0,True
-2010,129,19.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,1.0,1.0,0.0,True
-2014,129,11.0,Octavos de Final,6.0,4.0,2.0,0.0,2.0,7.0,7.0,0.0,True
-2018,129,14.0,Octavos de Final,5.0,4.0,1.0,2.0,1.0,5.0,5.0,0.0,True
-2022,129,12.0,Octavos de Final,6.0,4.0,2.0,0.0,2.0,5.0,9.0,-4.0,True
-2026,129,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
-1930,130,,no participó,,,,,,,,,False
-1934,130,,no participó,,,,,,,,,False
-1938,130,,no participó,,,,,,,,,False
-1950,130,,no participó,,,,,,,,,False
-1954,130,,no participó,,,,,,,,,False
-1958,130,,no participó,,,,,,,,,False
-1962,130,,no participó,,,,,,,,,False
-1966,130,,no participó,,,,,,,,,False
-1970,130,,no participó,,,,,,,,,False
-1974,130,,no participó,,,,,,,,,False
-1978,130,,no participó,,,,,,,,,False
-1982,130,,no participó,,,,,,,,,False
-1986,130,,no participó,,,,,,,,,False
-1990,130,,no participó,,,,,,,,,False
-1994,130,,no participó,,,,,,,,,False
-1998,130,,no participó,,,,,,,,,False
-2002,130,,no participó,,,,,,,,,False
-2006,130,30.0,Grupos 1ra Ronda,0.0,3.0,0.0,0.0,3.0,1.0,6.0,-5.0,True
-2010,130,,no participó,,,,,,,,,False
-2014,130,,no participó,,,,,,,,,False
-2018,130,,no participó,,,,,,,,,False
-2022,130,,no participó,,,,,,,,,False
-2026,130,,no participó,,,,,,,,,False
-1930,133,,no participó,,,,,,,,,False
-1934,133,,no participó,,,,,,,,,False
-1938,133,,no participó,,,,,,,,,False
-1950,133,,no participó,,,,,,,,,False
-1954,133,,no participó,,,,,,,,,False
-1958,133,,no participó,,,,,,,,,False
-1962,133,,no participó,,,,,,,,,False
-1966,133,,no participó,,,,,,,,,False
-1970,133,,no participó,,,,,,,,,False
-1974,133,,no participó,,,,,,,,,False
-1978,133,9.0,Grupos 1ra Ronda,3.0,3.0,1.0,1.0,1.0,3.0,2.0,1.0,True
-1982,133,,no participó,,,,,,,,,False
-1986,133,,no participó,,,,,,,,,False
-1990,133,,no participó,,,,,,,,,False
-1994,133,,no participó,,,,,,,,,False
-1998,133,26.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,1.0,4.0,-3.0,True
-2002,133,29.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,1.0,5.0,-4.0,True
-2006,133,24.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,3.0,6.0,-3.0,True
-2010,133,,no participó,,,,,,,,,False
-2014,133,,no participó,,,,,,,,,False
-2018,133,24.0,Grupos 1ra Ronda,3.0,3.0,1.0,0.0,2.0,5.0,8.0,-3.0,True
-2022,133,21.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,1.0,1.0,0.0,True
-2026,133,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
-1930,132,,no participó,,,,,,,,,False
-1934,132,,no participó,,,,,,,,,False
-1938,132,,no participó,,,,,,,,,False
-1950,132,,no participó,,,,,,,,,False
-1954,132,11.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,10.0,11.0,-1.0,True
-1958,132,,no participó,,,,,,,,,False
-1962,132,,no participó,,,,,,,,,False
-1966,132,,no participó,,,,,,,,,False
-1970,132,,no participó,,,,,,,,,False
-1974,132,,no participó,,,,,,,,,False
-1978,132,,no participó,,,,,,,,,False
-1982,132,,no participó,,,,,,,,,False
-1986,132,,no participó,,,,,,,,,False
-1990,132,,no participó,,,,,,,,,False
-1994,132,,no participó,,,,,,,,,False
-1998,132,,no participó,,,,,,,,,False
-2002,132,3.0,Partido 3er Puesto,13.0,7.0,4.0,1.0,2.0,10.0,6.0,4.0,True
-2006,132,,no participó,,,,,,,,,False
-2010,132,,no participó,,,,,,,,,False
-2014,132,,no participó,,,,,,,,,False
-2018,132,,no participó,,,,,,,,,False
-2022,132,,no participó,,,,,,,,,False
-2026,132,,,,,,,,,,,True
-1930,134,,no participó,,,,,,,,,False
-1934,134,,no participó,,,,,,,,,False
-1938,134,,no participó,,,,,,,,,False
-1950,134,,no participó,,,,,,,,,False
-1954,134,,no participó,,,,,,,,,False
-1958,134,,no participó,,,,,,,,,False
-1962,134,,no participó,,,,,,,,,False
-1966,134,,no participó,,,,,,,,,False
-1970,134,,no participó,,,,,,,,,False
-1974,134,,no participó,,,,,,,,,False
-1978,134,,no participó,,,,,,,,,False
-1982,134,,no participó,,,,,,,,,False
-1986,134,,no participó,,,,,,,,,False
-1990,134,,no participó,,,,,,,,,False
-1994,134,,no participó,,,,,,,,,False
-1998,134,,no participó,,,,,,,,,False
-2002,134,,no participó,,,,,,,,,False
-2006,134,8.0,Cuartos de Final,7.0,5.0,2.0,1.0,2.0,5.0,7.0,-2.0,True
-2010,134,,no participó,,,,,,,,,False
-2014,134,,no participó,,,,,,,,,False
-2018,134,,no participó,,,,,,,,,False
-2022,134,,no participó,,,,,,,,,False
-2026,134,,,,,,,,,,,True
-1930,135,1.0,Final,8.0,4.0,4.0,0.0,0.0,15.0,3.0,12.0,True
-1934,135,,no participó,,,,,,,,,False
-1938,135,,no participó,,,,,,,,,False
-1950,135,1.0,Ronda Final,7.0,4.0,3.0,1.0,0.0,15.0,5.0,10.0,True
-1954,135,4.0,Partido 3er Puesto,6.0,5.0,3.0,0.0,2.0,16.0,9.0,7.0,True
-1958,135,,no participó,,,,,,,,,False
-1962,135,13.0,Grupos 1ra Ronda,2.0,3.0,1.0,0.0,2.0,4.0,6.0,-2.0,True
-1966,135,7.0,Cuartos de Final,4.0,4.0,1.0,2.0,1.0,2.0,5.0,-3.0,True
-1970,135,4.0,Partido 3er Puesto,5.0,6.0,2.0,1.0,3.0,4.0,5.0,-1.0,True
-1974,135,13.0,Grupos 1ra Ronda,1.0,3.0,0.0,1.0,2.0,1.0,6.0,-5.0,True
-1978,135,,no participó,,,,,,,,,False
-1982,135,,no participó,,,,,,,,,False
-1986,135,16.0,Octavos de Final,2.0,4.0,0.0,2.0,2.0,2.0,8.0,-6.0,True
-1990,135,16.0,Octavos de Final,3.0,4.0,1.0,1.0,2.0,2.0,5.0,-3.0,True
-1994,135,,no participó,,,,,,,,,False
-1998,135,,no participó,,,,,,,,,False
-2002,135,26.0,Grupos 1ra Ronda,2.0,3.0,0.0,2.0,1.0,4.0,5.0,-1.0,True
-2006,135,,no participó,,,,,,,,,False
-2010,135,4.0,Partido 3er Puesto,11.0,7.0,3.0,2.0,2.0,11.0,8.0,3.0,True
-2014,135,12.0,Octavos de Final,6.0,4.0,2.0,0.0,2.0,4.0,6.0,-2.0,True
-2018,135,5.0,Cuartos de Final,12.0,5.0,4.0,0.0,1.0,7.0,3.0,4.0,True
-2022,135,20.0,Grupos 1ra Ronda,4.0,3.0,1.0,1.0,1.0,2.0,2.0,0.0,True
-2026,135,,clasificado,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True
+2018,58,27,Grupos 1ra Ronda,1,3,0,1,2,2,4,-2,True
+2022,58,4,Partido 3er Puesto,11,7,3,2,2,6,5,1,True
+2026,58,,clasificado,0,0,0,0,0,0,0,0,True
+1930,60,,no participó,,,,,,,,,False
+1934,60,,no participó,,,,,,,,,False
+1938,60,,no participó,,,,,,,,,False
+1950,60,,no participó,,,,,,,,,False
+1954,60,,no participó,,,,,,,,,False
+1958,60,,no participó,,,,,,,,,False
+1962,60,,no participó,,,,,,,,,False
+1966,60,,no participó,,,,,,,,,False
+1970,60,,no participó,,,,,,,,,False
+1974,60,,no participó,,,,,,,,,False
+1978,60,,no participó,,,,,,,,,False
+1982,60,,no participó,,,,,,,,,False
+1986,60,,no participó,,,,,,,,,False
+1990,60,,no participó,,,,,,,,,False
+1994,60,9,Octavos de Final,6,4,2,0,2,7,4,3,True
+1998,60,12,Octavos de Final,6,4,2,0,2,6,9,-3,True
+2002,60,27,Grupos 1ra Ronda,1,3,0,1,2,1,3,-2,True
+2006,60,,no participó,,,,,,,,,False
+2010,60,27,Grupos 1ra Ronda,1,3,0,1,2,3,5,-2,True
+2014,60,16,Octavos de Final,4,4,1,1,2,3,5,-2,True
+2018,60,21,Grupos 1ra Ronda,3,3,1,0,2,3,4,-1,True
+2022,60,,no participó,,,,,,,,,False
+2026,60,,no participó,,,,,,,,,False
+1930,62,,no participó,,,,,,,,,False
+1934,62,,no participó,,,,,,,,,False
+1938,62,,no participó,,,,,,,,,False
+1950,62,,no participó,,,,,,,,,False
+1954,62,,no participó,,,,,,,,,False
+1958,62,,no participó,,,,,,,,,False
+1962,62,,no participó,,,,,,,,,False
+1966,62,,no participó,,,,,,,,,False
+1970,62,,no participó,,,,,,,,,False
+1974,62,,no participó,,,,,,,,,False
+1978,62,,no participó,,,,,,,,,False
+1982,62,23,Grupos 1ra Ronda,0,3,0,0,3,2,12,-10,True
+1986,62,,no participó,,,,,,,,,False
+1990,62,,no participó,,,,,,,,,False
+1994,62,,no participó,,,,,,,,,False
+1998,62,,no participó,,,,,,,,,False
+2002,62,,no participó,,,,,,,,,False
+2006,62,,no participó,,,,,,,,,False
+2010,62,22,Grupos 1ra Ronda,3,3,0,3,0,2,2,0,True
+2014,62,,no participó,,,,,,,,,False
+2018,62,,no participó,,,,,,,,,False
+2022,62,,no participó,,,,,,,,,False
+2026,62,,clasificado,0,0,0,0,0,0,0,0,True
+1930,64,,no participó,,,,,,,,,False
+1934,64,,no participó,,,,,,,,,False
+1938,64,,no participó,,,,,,,,,False
+1950,64,,no participó,,,,,,,,,False
+1954,64,,no participó,,,,,,,,,False
+1958,64,,no participó,,,,,,,,,False
+1962,64,,no participó,,,,,,,,,False
+1966,64,,no participó,,,,,,,,,False
+1970,64,,no participó,,,,,,,,,False
+1974,64,,no participó,,,,,,,,,False
+1978,64,,no participó,,,,,,,,,False
+1982,64,,no participó,,,,,,,,,False
+1986,64,,no participó,,,,,,,,,False
+1990,64,,no participó,,,,,,,,,False
+1994,64,,no participó,,,,,,,,,False
+1998,64,,no participó,,,,,,,,,False
+2002,64,,no participó,,,,,,,,,False
+2006,64,,no participó,,,,,,,,,False
+2010,64,,no participó,,,,,,,,,False
+2014,64,,no participó,,,,,,,,,False
+2018,64,32,Grupos 1ra Ronda,0,3,0,0,3,2,11,-9,True
+2022,64,,no participó,,,,,,,,,False
+2026,64,,clasificado,0,0,0,0,0,0,0,0,True
+1930,65,9,Grupos 1ra Ronda,2,2,1,0,1,1,3,-2,True
+1934,65,,no participó,,,,,,,,,False
+1938,65,,no participó,,,,,,,,,False
+1950,65,11,Grupos 1ra Ronda,1,2,0,1,1,2,4,-2,True
+1954,65,,no participó,,,,,,,,,False
+1958,65,12,Grupos 1ra Ronda,3,3,1,1,1,9,12,-3,True
+1962,65,,no participó,,,,,,,,,False
+1966,65,,no participó,,,,,,,,,False
+1970,65,,no participó,,,,,,,,,False
+1974,65,,no participó,,,,,,,,,False
+1978,65,,no participó,,,,,,,,,False
+1982,65,,no participó,,,,,,,,,False
+1986,65,13,Octavos de Final,4,4,1,2,1,4,6,-2,True
+1990,65,,no participó,,,,,,,,,False
+1994,65,,no participó,,,,,,,,,False
+1998,65,14,Octavos de Final,5,4,1,2,1,3,2,1,True
+2002,65,16,Octavos de Final,4,4,1,1,2,6,7,-1,True
+2006,65,18,Grupos 1ra Ronda,3,3,1,0,2,2,2,0,True
+2010,65,8,Cuartos de Final,6,5,1,3,1,3,2,1,True
+2014,65,,no participó,,,,,,,,,False
+2018,65,,no participó,,,,,,,,,False
+2022,65,,no participó,,,,,,,,,False
+2026,65,,clasificado,0,0,0,0,0,0,0,0,True
+1930,66,10,Grupos 1ra Ronda,0,2,0,0,2,1,4,-3,True
+1934,66,,no participó,,,,,,,,,False
+1938,66,,no participó,,,,,,,,,False
+1950,66,,no participó,,,,,,,,,False
+1954,66,,no participó,,,,,,,,,False
+1958,66,,no participó,,,,,,,,,False
+1962,66,,no participó,,,,,,,,,False
+1966,66,,no participó,,,,,,,,,False
+1970,66,7,Cuartos de Final,4,4,2,0,2,9,9,0,True
+1974,66,,no participó,,,,,,,,,False
+1978,66,8,Grupos 2da Ronda,5,6,2,1,3,7,12,-5,True
+1982,66,20,Grupos 1ra Ronda,2,3,0,2,1,2,6,-4,True
+1986,66,,no participó,,,,,,,,,False
+1990,66,,no participó,,,,,,,,,False
+1994,66,,no participó,,,,,,,,,False
+1998,66,,no participó,,,,,,,,,False
+2002,66,,no participó,,,,,,,,,False
+2006,66,,no participó,,,,,,,,,False
+2010,66,,no participó,,,,,,,,,False
+2014,66,,no participó,,,,,,,,,False
+2018,66,20,Grupos 1ra Ronda,3,3,1,0,2,2,2,0,True
+2022,66,,no participó,,,,,,,,,False
+2026,66,,no participó,,,,,,,,,False
+1930,67,,no participó,,,,,,,,,False
+1934,67,,no participó,,,,,,,,,False
+1938,67,11,Octavos de Final,0,1,0,0,1,5,6,-1,True
+1950,67,,no participó,,,,,,,,,False
+1954,67,,no participó,,,,,,,,,False
+1958,67,,no participó,,,,,,,,,False
+1962,67,,no participó,,,,,,,,,False
+1966,67,,no participó,,,,,,,,,False
+1970,67,,no participó,,,,,,,,,False
+1974,67,3,Partido 3er Puesto,12,7,6,0,1,16,5,11,True
+1978,67,5,Grupos 2da Ronda,7,6,3,1,2,6,6,0,True
+1982,67,3,Partido 3er Puesto,9,7,3,3,1,11,5,6,True
+1986,67,14,Octavos de Final,3,4,1,1,2,1,7,-6,True
+1990,67,,no participó,,,,,,,,,False
+1994,67,,no participó,,,,,,,,,False
+1998,67,,no participó,,,,,,,,,False
+2002,67,25,Grupos 1ra Ronda,3,3,1,0,2,3,7,-4,True
+2006,67,21,Grupos 1ra Ronda,3,3,1,0,2,2,4,-2,True
+2010,67,,no participó,,,,,,,,,False
+2014,67,,no participó,,,,,,,,,False
+2018,67,25,Grupos 1ra Ronda,3,3,1,0,2,2,5,-3,True
+2022,67,15,Octavos de Final,4,4,1,1,2,3,5,-2,True
+2026,67,,,,,,,,,,,True
+1930,68,,no participó,,,,,,,,,False
+1934,68,,no participó,,,,,,,,,False
+1938,68,,no participó,,,,,,,,,False
+1950,68,,no participó,,,,,,,,,False
+1954,68,,no participó,,,,,,,,,False
+1958,68,,no participó,,,,,,,,,False
+1962,68,,no participó,,,,,,,,,False
+1966,68,3,Partido 3er Puesto,10,6,5,0,1,17,8,9,True
+1970,68,,no participó,,,,,,,,,False
+1974,68,,no participó,,,,,,,,,False
+1978,68,,no participó,,,,,,,,,False
+1982,68,,no participó,,,,,,,,,False
+1986,68,17,Grupos 1ra Ronda,2,3,1,0,2,2,4,-2,True
+1990,68,,no participó,,,,,,,,,False
+1994,68,,no participó,,,,,,,,,False
+1998,68,,no participó,,,,,,,,,False
+2002,68,21,Grupos 1ra Ronda,3,3,1,0,2,6,4,2,True
+2006,68,4,Partido 3er Puesto,13,7,4,1,2,7,5,2,True
+2010,68,11,Octavos de Final,5,4,1,2,1,7,1,6,True
+2014,68,18,Grupos 1ra Ronda,4,3,1,1,1,4,7,-3,True
+2018,68,13,Octavos de Final,5,4,1,2,1,6,6,0,True
+2022,68,8,Cuartos de Final,9,5,3,0,2,12,6,6,True
+2026,68,,clasificado,0,0,0,0,0,0,0,0,True
+1930,69,,no participó,,,,,,,,,False
+1934,69,,no participó,,,,,,,,,False
+1938,69,,no participó,,,,,,,,,False
+1950,69,,no participó,,,,,,,,,False
+1954,69,,no participó,,,,,,,,,False
+1958,69,,no participó,,,,,,,,,False
+1962,69,,no participó,,,,,,,,,False
+1966,69,,no participó,,,,,,,,,False
+1970,69,,no participó,,,,,,,,,False
+1974,69,16,Grupos 1ra Ronda,0,3,0,0,3,0,14,-14,True
+1978,69,,no participó,,,,,,,,,False
+1982,69,,no participó,,,,,,,,,False
+1986,69,,no participó,,,,,,,,,False
+1990,69,,no participó,,,,,,,,,False
+1994,69,,no participó,,,,,,,,,False
+1998,69,,no participó,,,,,,,,,False
+2002,69,,no participó,,,,,,,,,False
+2006,69,,no participó,,,,,,,,,False
+2010,69,,no participó,,,,,,,,,False
+2014,69,,no participó,,,,,,,,,False
+2018,69,,no participó,,,,,,,,,False
+2022,69,,no participó,,,,,,,,,False
+2026,69,,no participó,,,,,,,,,False
+1930,70,,no participó,,,,,,,,,False
+1934,70,2,Final,6,4,3,0,1,9,6,3,True
+1938,70,5,Cuartos de Final,3,3,1,1,1,5,3,2,True
+1950,70,,no participó,,,,,,,,,False
+1954,70,14,Grupos 1ra Ronda,0,2,0,0,2,0,7,-7,True
+1958,70,9,Grupos 1ra Ronda,3,4,1,1,2,9,6,3,True
+1962,70,2,Final,7,6,3,1,2,7,7,0,True
+1966,70,,no participó,,,,,,,,,False
+1970,70,15,Grupos 1ra Ronda,0,3,0,0,3,2,7,-5,True
+1974,70,,no participó,,,,,,,,,False
+1978,70,,no participó,,,,,,,,,False
+1982,70,19,Grupos 1ra Ronda,2,3,0,2,1,2,4,-2,True
+1986,70,,no participó,,,,,,,,,False
+1990,70,6,Cuartos de Final,6,5,3,0,2,10,5,5,True
+1994,70,,no participó,,,,,,,,,False
+1998,70,,no participó,,,,,,,,,False
+2002,70,,no participó,,,,,,,,,False
+2006,70,20,Grupos 1ra Ronda,3,3,1,0,2,3,4,-1,True
+2010,70,,no participó,,,,,,,,,False
+2014,70,,no participó,,,,,,,,,False
+2018,70,,no participó,,,,,,,,,False
+2022,70,,no participó,,,,,,,,,False
+2026,70,,,,,,,,,,,True
+1930,71,8,Grupos 1ra Ronda,2,2,1,0,1,3,5,-2,True
+1934,71,12,Octavos de Final,0,1,0,0,1,1,2,-1,True
+1938,71,9,Octavos de Final,1,2,0,1,1,4,5,-1,True
+1950,71,,no participó,,,,,,,,,False
+1954,71,,no participó,,,,,,,,,False
+1958,71,,no participó,,,,,,,,,False
+1962,71,,no participó,,,,,,,,,False
+1966,71,,no participó,,,,,,,,,False
+1970,71,10,Grupos 1ra Ronda,2,3,1,0,2,4,5,-1,True
+1974,71,,no participó,,,,,,,,,False
+1978,71,,no participó,,,,,,,,,False
+1982,71,,no participó,,,,,,,,,False
+1986,71,,no participó,,,,,,,,,False
+1990,71,12,Octavos de Final,4,4,1,2,1,4,3,1,True
+1994,71,6,Cuartos de Final,10,5,3,1,1,10,9,1,True
+1998,71,11,Octavos de Final,7,4,2,1,1,4,3,1,True
+2002,71,,no participó,,,,,,,,,False
+2006,71,,no participó,,,,,,,,,False
+2010,71,,no participó,,,,,,,,,False
+2014,71,,no participó,,,,,,,,,False
+2018,71,,no participó,,,,,,,,,False
+2022,71,,no participó,,,,,,,,,False
+2026,71,,,,,,,,,,,True
+1930,72,,no participó,,,,,,,,,False
+1934,72,,no participó,,,,,,,,,False
+1938,72,,no participó,,,,,,,,,False
+1950,72,,no participó,,,,,,,,,False
+1954,72,,no participó,,,,,,,,,False
+1958,72,6,Cuartos de Final,5,5,2,1,2,5,6,-1,True
+1962,72,6,Cuartos de Final,5,4,2,1,1,9,7,2,True
+1966,72,4,Partido 3er Puesto,8,6,4,0,2,10,6,4,True
+1970,72,5,Cuartos de Final,5,4,2,1,1,6,2,4,True
+1974,72,,no participó,,,,,,,,,False
+1978,72,,no participó,,,,,,,,,False
+1982,72,7,Grupos 2da Ronda,6,5,2,2,1,7,4,3,True
+1986,72,10,Octavos de Final,5,4,2,1,1,12,5,7,True
+1990,72,17,Grupos 1ra Ronda,2,3,1,0,2,4,4,0,True
+1994,72,18,Grupos 1ra Ronda,3,3,1,0,2,7,6,1,True
+1998,72,,no participó,,,,,,,,,False
+2002,72,22,Grupos 1ra Ronda,3,3,1,0,2,4,4,0,True
+2006,72,,no participó,,,,,,,,,False
+2010,72,,no participó,,,,,,,,,False
+2014,72,24,Grupos 1ra Ronda,2,3,0,2,1,2,3,-1,True
+2018,72,8,Cuartos de Final,8,5,2,2,1,11,7,4,True
+2022,72,,no participó,,,,,,,,,False
+2026,72,,no participó,,,,,,,,,False
+1930,73,,no participó,,,,,,,,,False
+1934,73,,no participó,,,,,,,,,False
+1938,73,,no participó,,,,,,,,,False
+1950,73,,no participó,,,,,,,,,False
+1954,73,,no participó,,,,,,,,,False
+1958,73,,no participó,,,,,,,,,False
+1962,73,,no participó,,,,,,,,,False
+1966,73,,no participó,,,,,,,,,False
+1970,73,,no participó,,,,,,,,,False
+1974,73,,no participó,,,,,,,,,False
+1978,73,,no participó,,,,,,,,,False
+1982,73,,no participó,,,,,,,,,False
+1986,73,,no participó,,,,,,,,,False
+1990,73,,no participó,,,,,,,,,False
+1994,73,,no participó,,,,,,,,,False
+1998,73,,no participó,,,,,,,,,False
+2002,73,7,Cuartos de Final,8,5,2,2,1,7,6,1,True
+2006,73,,no participó,,,,,,,,,False
+2010,73,,no participó,,,,,,,,,False
+2014,73,,no participó,,,,,,,,,False
+2018,73,17,Grupos 1ra Ronda,4,3,1,1,1,4,4,0,True
+2022,73,10,Octavos de Final,6,4,2,0,2,5,7,-2,True
+2026,73,,clasificado,0,0,0,0,0,0,0,0,True
+1930,74,4,Partido 3er Puesto,4,3,2,0,1,7,7,0,True
+1934,74,,no participó,,,,,,,,,False
+1938,74,,no participó,,,,,,,,,False
+1950,74,5,Grupos 1ra Ronda,4,3,2,0,1,7,3,4,True
+1954,74,8,Cuartos de Final,3,3,1,1,1,2,3,-1,True
+1958,74,8,Cuartos de Final,4,4,1,2,1,7,7,0,True
+1962,74,4,Partido 3er Puesto,6,6,3,0,3,10,7,3,True
+1966,74,,no participó,,,,,,,,,False
+1970,74,,no participó,,,,,,,,,False
+1974,74,7,Grupos 2da Ronda,4,6,1,2,3,12,7,5,True
+1978,74,,no participó,,,,,,,,,False
+1982,74,16,Grupos 1ra Ronda,3,3,1,1,1,2,2,0,True
+1986,74,,no participó,,,,,,,,,False
+1990,74,5,Cuartos de Final,7,5,3,1,1,8,6,2,True
+1994,74,,no participó,,,,,,,,,False
+1998,74,10,Octavos de Final,7,4,2,1,1,5,4,1,True
+2002,74,,no participó,,,,,,,,,False
+2006,74,32,Grupos 1ra Ronda,0,3,0,0,3,2,10,-8,True
+2010,74,23,Grupos 1ra Ronda,3,3,1,0,2,2,3,-1,True
+2014,74,,no participó,,,,,,,,,False
+2018,74,23,Grupos 1ra Ronda,3,3,1,0,2,2,4,-2,True
+2022,74,29,Grupos 1ra Ronda,1,3,0,1,2,5,8,-3,True
+2026,74,,no participó,,,,,,,,,False
+1930,75,,no participó,,,,,,,,,False
+1934,75,,no participó,,,,,,,,,False
+1938,75,,no participó,,,,,,,,,False
+1950,75,,no participó,,,,,,,,,False
+1954,75,,no participó,,,,,,,,,False
+1958,75,,no participó,,,,,,,,,False
+1962,75,,no participó,,,,,,,,,False
+1966,75,,no participó,,,,,,,,,False
+1970,75,,no participó,,,,,,,,,False
+1974,75,,no participó,,,,,,,,,False
+1978,75,,no participó,,,,,,,,,False
+1982,75,,no participó,,,,,,,,,False
+1986,75,,no participó,,,,,,,,,False
+1990,75,,no participó,,,,,,,,,False
+1994,75,,no participó,,,,,,,,,False
+1998,75,24,Grupos 1ra Ronda,2,3,0,2,1,3,6,-3,True
+2002,75,17,Grupos 1ra Ronda,4,3,1,1,1,5,5,0,True
+2006,75,,no participó,,,,,,,,,False
+2010,75,20,Grupos 1ra Ronda,4,3,1,1,1,3,5,-2,True
+2014,75,,no participó,,,,,,,,,False
+2018,75,,no participó,,,,,,,,,False
+2022,75,,no participó,,,,,,,,,False
+2026,75,,clasificado,0,0,0,0,0,0,0,0,True
+1930,76,,no participó,,,,,,,,,False
+1934,76,8,Cuartos de Final,2,2,1,0,1,4,4,0,True
+1938,76,4,Partido 3er Puesto,2,3,1,0,2,11,9,2,True
+1950,76,3,Ronda Final,5,5,2,1,2,11,15,-4,True
+1954,76,,no participó,,,,,,,,,False
+1958,76,2,Final,9,6,4,1,1,12,7,5,True
+1962,76,,no participó,,,,,,,,,False
+1966,76,,no participó,,,,,,,,,False
+1970,76,9,Grupos 1ra Ronda,3,3,1,1,1,2,2,0,True
+1974,76,5,Grupos 2da Ronda,6,6,2,2,2,7,6,1,True
+1978,76,13,Grupos 1ra Ronda,1,3,0,1,2,1,3,-2,True
+1982,76,,no participó,,,,,,,,,False
+1986,76,,no participó,,,,,,,,,False
+1990,76,21,Grupos 1ra Ronda,0,3,0,0,3,3,6,-3,True
+1994,76,3,Partido 3er Puesto,12,7,3,3,1,15,8,7,True
+1998,76,,no participó,,,,,,,,,False
+2002,76,13,Octavos de Final,5,4,1,2,1,5,5,0,True
+2006,76,14,Octavos de Final,5,4,1,2,1,3,4,-1,True
+2010,76,,no participó,,,,,,,,,False
+2014,76,,no participó,,,,,,,,,False
+2018,76,7,Cuartos de Final,9,5,3,0,2,6,4,2,True
+2022,76,,no participó,,,,,,,,,False
+2026,76,,,,,,,,,,,True
+1930,77,,no participó,,,,,,,,,False
+1934,77,7,Cuartos de Final,2,2,1,0,1,5,5,0,True
+1938,77,6,Cuartos de Final,3,3,1,1,1,5,5,0,True
+1950,77,6,Grupos 1ra Ronda,3,3,1,1,1,4,6,-2,True
+1954,77,5,Cuartos de Final,4,4,2,0,2,11,11,0,True
+1958,77,,no participó,,,,,,,,,False
+1962,77,16,Grupos 1ra Ronda,0,3,0,0,3,2,8,-6,True
+1966,77,16,Grupos 1ra Ronda,0,3,0,0,3,1,9,-8,True
+1970,77,,no participó,,,,,,,,,False
+1974,77,,no participó,,,,,,,,,False
+1978,77,,no participó,,,,,,,,,False
+1982,77,,no participó,,,,,,,,,False
+1986,77,,no participó,,,,,,,,,False
+1990,77,,no participó,,,,,,,,,False
+1994,77,15,Octavos de Final,4,4,1,1,2,5,7,-2,True
+1998,77,,no participó,,,,,,,,,False
+2002,77,,no participó,,,,,,,,,False
+2006,77,10,Octavos de Final,8,4,2,2,0,4,0,4,True
+2010,77,19,Grupos 1ra Ronda,4,3,1,1,1,1,1,0,True
+2014,77,11,Octavos de Final,6,4,2,0,2,7,7,0,True
+2018,77,14,Octavos de Final,5,4,1,2,1,5,5,0,True
+2022,77,12,Octavos de Final,6,4,2,0,2,5,9,-4,True
+2026,77,,clasificado,0,0,0,0,0,0,0,0,True
+1930,78,,no participó,,,,,,,,,False
+1934,78,,no participó,,,,,,,,,False
+1938,78,,no participó,,,,,,,,,False
+1950,78,,no participó,,,,,,,,,False
+1954,78,,no participó,,,,,,,,,False
+1958,78,,no participó,,,,,,,,,False
+1962,78,,no participó,,,,,,,,,False
+1966,78,,no participó,,,,,,,,,False
+1970,78,,no participó,,,,,,,,,False
+1974,78,,no participó,,,,,,,,,False
+1978,78,,no participó,,,,,,,,,False
+1982,78,,no participó,,,,,,,,,False
+1986,78,,no participó,,,,,,,,,False
+1990,78,,no participó,,,,,,,,,False
+1994,78,,no participó,,,,,,,,,False
+1998,78,,no participó,,,,,,,,,False
+2002,78,,no participó,,,,,,,,,False
+2006,78,30,Grupos 1ra Ronda,0,3,0,0,3,1,6,-5,True
+2010,78,,no participó,,,,,,,,,False
+2014,78,,no participó,,,,,,,,,False
+2018,78,,no participó,,,,,,,,,False
+2022,78,,no participó,,,,,,,,,False
+2026,78,,no participó,,,,,,,,,False
+1930,81,,no participó,,,,,,,,,False
+1934,81,,no participó,,,,,,,,,False
+1938,81,,no participó,,,,,,,,,False
+1950,81,,no participó,,,,,,,,,False
+1954,81,,no participó,,,,,,,,,False
+1958,81,,no participó,,,,,,,,,False
+1962,81,,no participó,,,,,,,,,False
+1966,81,,no participó,,,,,,,,,False
+1970,81,,no participó,,,,,,,,,False
+1974,81,,no participó,,,,,,,,,False
+1978,81,9,Grupos 1ra Ronda,3,3,1,1,1,3,2,1,True
+1982,81,,no participó,,,,,,,,,False
+1986,81,,no participó,,,,,,,,,False
+1990,81,,no participó,,,,,,,,,False
+1994,81,,no participó,,,,,,,,,False
+1998,81,26,Grupos 1ra Ronda,1,3,0,1,2,1,4,-3,True
+2002,81,29,Grupos 1ra Ronda,1,3,0,1,2,1,5,-4,True
+2006,81,24,Grupos 1ra Ronda,1,3,0,1,2,3,6,-3,True
+2010,81,,no participó,,,,,,,,,False
+2014,81,,no participó,,,,,,,,,False
+2018,81,24,Grupos 1ra Ronda,3,3,1,0,2,5,8,-3,True
+2022,81,21,Grupos 1ra Ronda,4,3,1,1,1,1,1,0,True
+2026,81,,clasificado,0,0,0,0,0,0,0,0,True
+1930,80,,no participó,,,,,,,,,False
+1934,80,,no participó,,,,,,,,,False
+1938,80,,no participó,,,,,,,,,False
+1950,80,,no participó,,,,,,,,,False
+1954,80,11,Grupos 1ra Ronda,2,3,1,0,2,10,11,-1,True
+1958,80,,no participó,,,,,,,,,False
+1962,80,,no participó,,,,,,,,,False
+1966,80,,no participó,,,,,,,,,False
+1970,80,,no participó,,,,,,,,,False
+1974,80,,no participó,,,,,,,,,False
+1978,80,,no participó,,,,,,,,,False
+1982,80,,no participó,,,,,,,,,False
+1986,80,,no participó,,,,,,,,,False
+1990,80,,no participó,,,,,,,,,False
+1994,80,,no participó,,,,,,,,,False
+1998,80,,no participó,,,,,,,,,False
+2002,80,3,Partido 3er Puesto,13,7,4,1,2,10,6,4,True
+2006,80,,no participó,,,,,,,,,False
+2010,80,,no participó,,,,,,,,,False
+2014,80,,no participó,,,,,,,,,False
+2018,80,,no participó,,,,,,,,,False
+2022,80,,no participó,,,,,,,,,False
+2026,80,,,,,,,,,,,True
+1930,82,,no participó,,,,,,,,,False
+1934,82,,no participó,,,,,,,,,False
+1938,82,,no participó,,,,,,,,,False
+1950,82,,no participó,,,,,,,,,False
+1954,82,,no participó,,,,,,,,,False
+1958,82,,no participó,,,,,,,,,False
+1962,82,,no participó,,,,,,,,,False
+1966,82,,no participó,,,,,,,,,False
+1970,82,,no participó,,,,,,,,,False
+1974,82,,no participó,,,,,,,,,False
+1978,82,,no participó,,,,,,,,,False
+1982,82,,no participó,,,,,,,,,False
+1986,82,,no participó,,,,,,,,,False
+1990,82,,no participó,,,,,,,,,False
+1994,82,,no participó,,,,,,,,,False
+1998,82,,no participó,,,,,,,,,False
+2002,82,,no participó,,,,,,,,,False
+2006,82,8,Cuartos de Final,7,5,2,1,2,5,7,-2,True
+2010,82,,no participó,,,,,,,,,False
+2014,82,,no participó,,,,,,,,,False
+2018,82,,no participó,,,,,,,,,False
+2022,82,,no participó,,,,,,,,,False
+2026,82,,,,,,,,,,,True
+1930,83,1,Final,8,4,4,0,0,15,3,12,True
+1934,83,,no participó,,,,,,,,,False
+1938,83,,no participó,,,,,,,,,False
+1950,83,1,Ronda Final,7,4,3,1,0,15,5,10,True
+1954,83,4,Partido 3er Puesto,6,5,3,0,2,16,9,7,True
+1958,83,,no participó,,,,,,,,,False
+1962,83,13,Grupos 1ra Ronda,2,3,1,0,2,4,6,-2,True
+1966,83,7,Cuartos de Final,4,4,1,2,1,2,5,-3,True
+1970,83,4,Partido 3er Puesto,5,6,2,1,3,4,5,-1,True
+1974,83,13,Grupos 1ra Ronda,1,3,0,1,2,1,6,-5,True
+1978,83,,no participó,,,,,,,,,False
+1982,83,,no participó,,,,,,,,,False
+1986,83,16,Octavos de Final,2,4,0,2,2,2,8,-6,True
+1990,83,16,Octavos de Final,3,4,1,1,2,2,5,-3,True
+1994,83,,no participó,,,,,,,,,False
+1998,83,,no participó,,,,,,,,,False
+2002,83,26,Grupos 1ra Ronda,2,3,0,2,1,4,5,-1,True
+2006,83,,no participó,,,,,,,,,False
+2010,83,4,Partido 3er Puesto,11,7,3,2,2,11,8,3,True
+2014,83,12,Octavos de Final,6,4,2,0,2,4,6,-2,True
+2018,83,5,Cuartos de Final,12,5,4,0,1,7,3,4,True
+2022,83,20,Grupos 1ra Ronda,4,3,1,1,1,2,2,0,True
+2026,83,,clasificado,0,0,0,0,0,0,0,0,True
