@@ -9,17 +9,25 @@ from __future__ import annotations
 
 import argparse
 import os
+import random
 import re
 import shutil
 import subprocess
 import tempfile
 import time
 from dataclasses import dataclass
-from typing import Iterable
+from typing import Any, Iterable
 from urllib.parse import urlparse
 
 import pandas as pd
 from bs4 import BeautifulSoup, Tag
+
+try:
+    from selenium.webdriver import Edge as SeleniumEdgeDriver
+    from selenium.webdriver.edge.options import Options as SeleniumEdgeOptions
+except Exception:  # pragma: no cover - fallback para entornos sin selenium
+    SeleniumEdgeDriver = None  # type: ignore[assignment]
+    SeleniumEdgeOptions = None  # type: ignore[assignment]
 
 from normalizacion_csv import normalizar_csv_intermedio
 
@@ -44,6 +52,10 @@ USER_AGENT = (
     "AppleWebKit/537.36 (KHTML, like Gecko) "
     "Chrome/131.0.0.0 Safari/537.36"
 )
+USER_AGENT_FIREFOX = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:128.0) "
+    "Gecko/20100101 Firefox/128.0"
+)
 
 
 @dataclass
@@ -51,6 +63,16 @@ class FuenteDatos:
     origen: str
     html_dir: str
     pausa: float
+    web_estricto: bool = False
+    reintentos_web: int = 4
+    jitter_web: float = 0.6
+    simular_firefox: bool = True
+    forzar_ipv4: bool = True
+    usar_selenium: bool = True
+    selenium_headless: bool = False
+    selenium_timeout: int = 90
+    edge_profile_dir: str = ""
+    driver_selenium: Any = None
     aviso_fallback_local_emitido: bool = False
 
     def _leer_html_local(self, ruta_sitio: str) -> str:
@@ -58,20 +80,112 @@ class FuenteDatos:
         with open(archivo_local, "r", encoding="utf-8", errors="ignore") as descriptor:
             return descriptor.read()
 
+    def _asegurar_edge_profile(self) -> str:
+        if not self.edge_profile_dir:
+            self.edge_profile_dir = tempfile.mkdtemp(prefix="_edge_profile_")
+        return self.edge_profile_dir
+
+    def _asegurar_driver_selenium(self) -> Any:
+        if self.driver_selenium is not None:
+            return self.driver_selenium
+        if SeleniumEdgeDriver is None or SeleniumEdgeOptions is None:
+            raise RuntimeError("Selenium no está disponible en el entorno para estrategia web.")
+
+        opciones = SeleniumEdgeOptions()
+        opciones.binary_location = resolver_ruta_edge()
+        opciones.add_argument("--disable-blink-features=AutomationControlled")
+        opciones.add_argument("--lang=es-ES")
+        if self.selenium_headless:
+            opciones.add_argument("--headless=new")
+
+        driver = SeleniumEdgeDriver(options=opciones)
+        driver.set_page_load_timeout(max(int(self.selenium_timeout), 30))
+        self.driver_selenium = driver
+        return driver
+
+    def _obtener_html_con_selenium(self, url: str) -> str:
+        driver = self._asegurar_driver_selenium()
+        driver.get(url)
+        html = getattr(driver, "page_source", "")
+        return str(html or "")
+
+    def _pausa_reintento_web(self) -> None:
+        base = max(self.pausa, 0.0)
+        jitter = random.uniform(0.0, max(self.jitter_web, 0.0))
+        espera = base + jitter
+        if espera > 0:
+            time.sleep(espera)
+
+    def _obtener_html_web(self, url: str) -> tuple[str, Exception | None]:
+        html_ultimo = ""
+        error_ultimo: Exception | None = None
+        total_intentos = max(int(self.reintentos_web), 1)
+        user_agents = [USER_AGENT_FIREFOX, USER_AGENT] if self.simular_firefox else [USER_AGENT]
+        edge_profile_dir = self._asegurar_edge_profile()
+        estrategias = ["edge", "curl"]
+        if self.usar_selenium:
+            estrategias.insert(0, "selenium")
+
+        for intento in range(1, total_intentos + 1):
+            for estrategia in estrategias:
+                if estrategia == "selenium":
+                    try:
+                        html_intento = self._obtener_html_con_selenium(url)
+                    except Exception as error:
+                        error_ultimo = error
+                        continue
+
+                    if html_intento:
+                        html_ultimo = html_intento
+                    if html_intento and not respuesta_web_bloqueada(html_intento):
+                        return html_intento, None
+                    continue
+
+                for user_agent in user_agents:
+                    try:
+                        if estrategia == "edge":
+                            html_intento = obtener_html_con_edge(
+                                url,
+                                user_agent=user_agent,
+                                profile_dir=edge_profile_dir,
+                            )
+                        else:
+                            html_intento = obtener_html_con_curl(
+                                url,
+                                user_agent=user_agent,
+                                forzar_ipv4=self.forzar_ipv4,
+                            )
+                    except Exception as error:
+                        error_ultimo = error
+                        continue
+
+                    if html_intento:
+                        html_ultimo = html_intento
+                    if html_intento and not respuesta_web_bloqueada(html_intento):
+                        return html_intento, None
+
+            if intento < total_intentos:
+                self._pausa_reintento_web()
+
+        return html_ultimo, error_ultimo
+
     def obtener_soup(self, ruta: str) -> BeautifulSoup:
         ruta_sitio = normalizar_ruta_sitio(ruta)
         if self.origen == "local":
             html = self._leer_html_local(ruta_sitio)
         else:
             url = normalizar_url(ruta_sitio)
-            html = ""
-            error_web: Exception | None = None
-            try:
-                html = obtener_html_con_edge(url)
-            except Exception as error:
-                error_web = error
+            html, error_web = self._obtener_html_web(url)
 
             if not html or respuesta_web_bloqueada(html):
+                if self.web_estricto:
+                    if error_web is not None:
+                        raise RuntimeError(
+                            f"Modo web estricto: no se pudo obtener HTML válido para {url}"
+                        ) from error_web
+                    raise RuntimeError(
+                        f"Modo web estricto: respuesta web bloqueada o vacía para {url}"
+                    )
                 try:
                     html = self._leer_html_local(ruta_sitio)
                     if not self.aviso_fallback_local_emitido:
@@ -86,6 +200,14 @@ class FuenteDatos:
         return BeautifulSoup(html, "html.parser")
 
     def cerrar(self) -> None:
+        if self.driver_selenium is not None:
+            try:
+                self.driver_selenium.quit()
+            except Exception:
+                pass
+            self.driver_selenium = None
+        if self.edge_profile_dir and os.path.isdir(self.edge_profile_dir):
+            shutil.rmtree(self.edge_profile_dir, ignore_errors=True)
         return None
 
 
@@ -101,15 +223,30 @@ def resolver_ruta_edge() -> str:
     raise FileNotFoundError("No se encontró Microsoft Edge instalado para el modo web.")
 
 
-def obtener_html_con_edge(url: str) -> str:
+def resolver_ruta_curl() -> str:
+    candidato = shutil.which("curl")
+    if candidato:
+        return candidato
+    raise FileNotFoundError("No se encontró curl instalado para el modo web.")
+
+
+def obtener_html_con_edge(url: str, user_agent: str = USER_AGENT, profile_dir: str = "") -> str:
     comando = [
         resolver_ruta_edge(),
         "--headless=new",
         "--disable-gpu",
+        "--disable-blink-features=AutomationControlled",
+        "--lang=es-ES",
+        "--window-size=1366,900",
+        "--virtual-time-budget=12000",
+        "--no-first-run",
+        "--no-default-browser-check",
         "--dump-dom",
-        f"--user-agent={USER_AGENT}",
+        f"--user-agent={user_agent}",
         url,
     ]
+    if profile_dir:
+        comando.insert(1, f"--user-data-dir={profile_dir}")
     resultado = subprocess.run(
         comando,
         capture_output=True,
@@ -119,6 +256,46 @@ def obtener_html_con_edge(url: str) -> str:
         timeout=90,
         check=True,
     )
+    return resultado.stdout
+
+
+def obtener_html_con_curl(url: str, user_agent: str = USER_AGENT, forzar_ipv4: bool = True) -> str:
+    comando = [
+        resolver_ruta_curl(),
+        "--silent",
+        "--show-error",
+        "--location",
+        "--compressed",
+        "--connect-timeout",
+        "20",
+        "--max-time",
+        "90",
+        "-A",
+        user_agent,
+        "-H",
+        "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "-H",
+        "Accept-Language: es-ES,es;q=0.9,en;q=0.8",
+        "-H",
+        "Upgrade-Insecure-Requests: 1",
+        "-H",
+        f"Referer: {BASE}/",
+        url,
+    ]
+    if forzar_ipv4:
+        comando.insert(1, "-4")
+
+    resultado = subprocess.run(
+        comando,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="ignore",
+        timeout=95,
+        check=False,
+    )
+    if resultado.returncode not in (0,):
+        raise RuntimeError(f"curl devolvió código {resultado.returncode} para {url}")
     return resultado.stdout
 
 
@@ -243,18 +420,39 @@ def es_equipo_probable(texto: str) -> bool:
 
 
 def respuesta_web_bloqueada(html: str) -> bool:
+    if not html:
+        return True
+
+    html_lower = html.lower()
     texto = limpiar_texto(html).lower()
     if not texto:
         return True
+
+    indicadores_html = (
+        "<title>403 forbidden</title>",
+        "<title>forbidden</title>",
+        "<h1>403 forbidden</h1>",
+        "<h1>forbidden</h1>",
+        "<h1>access denied</h1>",
+        "<title>access denied</title>",
+    )
+    if any(indicador in html_lower for indicador in indicadores_html):
+        return True
+
     indicadores = (
         "forbidden access",
         "access denied",
         "error 403",
+        "403 forbidden",
+        "status code 403",
         "captcha",
         "cloudflare",
         "just a moment",
+        "request blocked",
     )
     if any(indicador in texto for indicador in indicadores):
+        return True
+    if "403" in texto and ("forbidden" in texto or "denied" in texto):
         return True
     if len(texto) < 120 and "los mundiales" not in texto:
         return True
@@ -1303,6 +1501,49 @@ def main() -> None:
         help="Carpeta local con los HTML descargados",
     )
     parser.add_argument("--pausa", type=float, default=0.2, help="Pausa entre requests en modo web")
+    parser.add_argument(
+        "--reintentos-web",
+        type=int,
+        default=4,
+        help="Número de reintentos web por request.",
+    )
+    parser.add_argument(
+        "--jitter-web",
+        type=float,
+        default=0.6,
+        help="Jitter adicional entre reintentos web (segundos).",
+    )
+    parser.add_argument(
+        "--sin-simular-firefox",
+        action="store_true",
+        help="No usar user-agent Firefox en estrategias web.",
+    )
+    parser.add_argument(
+        "--sin-forzar-ipv4",
+        action="store_true",
+        help="No forzar IPv4 en estrategia curl.",
+    )
+    parser.add_argument(
+        "--sin-selenium",
+        action="store_true",
+        help="Desactivar estrategia Selenium para fetch web.",
+    )
+    parser.add_argument(
+        "--selenium-headless",
+        action="store_true",
+        help="Usar Selenium en modo headless (puede bloquear más fácil).",
+    )
+    parser.add_argument(
+        "--selenium-timeout",
+        type=int,
+        default=90,
+        help="Timeout de carga en Selenium (segundos).",
+    )
+    parser.add_argument(
+        "--web-estricto",
+        action="store_true",
+        help="En modo web, aborta si la respuesta viene bloqueada/vacía en lugar de usar fallback local.",
+    )
     args = parser.parse_args()
 
     anios = args.anio if args.anio else ANIOS
@@ -1316,6 +1557,14 @@ def main() -> None:
         origen=args.origen,
         html_dir=os.path.abspath(args.html_dir),
         pausa=0.0 if args.origen == "local" else max(args.pausa, 0.0),
+        web_estricto=args.web_estricto if args.origen == "web" else False,
+        reintentos_web=max(args.reintentos_web, 1) if args.origen == "web" else 1,
+        jitter_web=max(args.jitter_web, 0.0) if args.origen == "web" else 0.0,
+        simular_firefox=(not args.sin_simular_firefox) if args.origen == "web" else False,
+        forzar_ipv4=(not args.sin_forzar_ipv4) if args.origen == "web" else False,
+        usar_selenium=(not args.sin_selenium) if args.origen == "web" else False,
+        selenium_headless=args.selenium_headless if args.origen == "web" else False,
+        selenium_timeout=max(args.selenium_timeout, 30) if args.origen == "web" else 30,
     )
 
     print("=" * 60)
@@ -1326,6 +1575,16 @@ def main() -> None:
     print(f"  Secciones: {secciones}")
     print(f"  Salida final: {salida_final}")
     print(f"  Salida temporal raw: {raw_dir}")
+    if args.origen == "web":
+        print(f"  Web estricto: {'sí' if fuente.web_estricto else 'no'}")
+        print(f"  Reintentos web: {fuente.reintentos_web}")
+        print(f"  Jitter web: {fuente.jitter_web}")
+        print(f"  Simular Firefox: {'sí' if fuente.simular_firefox else 'no'}")
+        print(f"  Forzar IPv4: {'sí' if fuente.forzar_ipv4 else 'no'}")
+        print(f"  Selenium: {'sí' if fuente.usar_selenium else 'no'}")
+        if fuente.usar_selenium:
+            print(f"  Selenium headless: {'sí' if fuente.selenium_headless else 'no'}")
+            print(f"  Selenium timeout: {fuente.selenium_timeout}")
     if args.origen == "local":
         print(f"  HTML local: {fuente.html_dir}")
 
