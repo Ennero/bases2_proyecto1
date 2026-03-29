@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 set -eu
 
 SQLCMD="/opt/mssql-tools18/bin/sqlcmd"
@@ -36,26 +36,40 @@ fi
 
 echo ">>> SQL Server listo."
 
+# Espera a que la base este ONLINE antes del ETL.
+for i in $(seq 1 30); do
+  DB_STATE=$(
+    "$SQLCMD" -C -S "$SERVER" -U "$SA_USER" -P "$PASSWORD" -h -1 -W \
+      -Q "SET NOCOUNT ON; SELECT state_desc FROM sys.databases WHERE name='${DB_NAME}'" 2>/dev/null || true
+  )
+  if [ "$DB_STATE" = "ONLINE" ]; then
+    break
+  fi
+  sleep 2
+done
+
 # Solo inicializa una vez por volumen de datos.
 INIT_MARKER="/var/opt/mssql/.init_done"
 if [ ! -f "$INIT_MARKER" ]; then
   echo ">>> Primera inicializacion detectada. Ejecutando schema + ETL..."
 
-  CSV_WORKDIR="/tmp/csv_work"
+  CSV_WORKDIR="/var/opt/mssql/csv_work"
   rm -rf "$CSV_WORKDIR"
   mkdir -p "$CSV_WORKDIR"
   cp -a /csv/. "$CSV_WORKDIR"/
 
   CSV_DIR="$CSV_WORKDIR" /bin/bash /docker/init/02_fix_csvs.sh
 
-  "$SQLCMD" -b -C -S "$SERVER" -U "$SA_USER" -P "$PASSWORD" \
-    -i /docker/init/01_schema.sql -v DB_NAME="$DB_NAME"
-
-  "$SQLCMD" -b -C -S "$SERVER" -U "$SA_USER" -P "$PASSWORD" \
-    -d "$DB_NAME" -i /docker/init/03_etl.sql -v CSV_DIR="$CSV_WORKDIR"
-
-  touch "$INIT_MARKER"
-  echo ">>> Inicializacion completada."
+  if ! "$SQLCMD" -b -C -S "$SERVER" -U "$SA_USER" -P "$PASSWORD" \
+    -i /docker/init/01_schema.sql -v DB_NAME="$DB_NAME"; then
+    echo ">>> ERROR: fallo al crear el schema, se mantiene SQL Server en ejecucion."
+  elif ! "$SQLCMD" -b -C -S "$SERVER" -U "$SA_USER" -P "$PASSWORD" \
+    -d "$DB_NAME" -i /docker/init/03_etl.sql -v CSV_DIR="$CSV_WORKDIR"; then
+    echo ">>> ERROR: fallo el ETL, se mantiene SQL Server en ejecucion."
+  else
+    touch "$INIT_MARKER"
+    echo ">>> Inicializacion completada."
+  fi
 else
   echo ">>> Base ya inicializada; se omiten scripts de init."
 fi
