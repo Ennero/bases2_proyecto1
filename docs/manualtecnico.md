@@ -563,6 +563,36 @@ Atributos:
 
 Archivo: py/db/stored_procedures.sql
 
+### 9.0 Carga de los stored procedures
+
+Los stored procedures se crean automaticamente al levantar Docker. El archivo
+docker/init/01_schema.sql incluye la siguiente linea que los carga junto con el schema:
+
+```sql
+:r /db_scripts/stored_procedures.sql
+```
+
+Si la base ya esta levantada y se necesita recargarlos manualmente sin reiniciar:
+
+```bash
+docker exec -i mundiales_db /opt/mssql-tools18/bin/sqlcmd \
+  -C -S localhost -U sa -P "Mundiales2026!" -d mundiales \
+  -i /db_scripts/stored_procedures.sql
+```
+
+Verificar que existen despues de cargarlos:
+
+```sql
+SELECT name FROM sys.procedures
+WHERE name IN ('sp_mundial_por_anio', 'sp_historial_pais');
+```
+
+Regla general de uso:
+
+- Los nombres de paises se almacenan sin tildes ni diacriticos en la base.
+- Usar siempre nombres normalizados: Espana, Mexico, Belgica, Japon, Iran, Tunez.
+- Si se escribe un nombre con tilde el SP retorna: No se encontro ninguna seleccion con ese nombre.
+
 ### 9.1 sp_mundial_por_anio
 
 Objetivo:
@@ -571,41 +601,151 @@ Objetivo:
 
 Parametros:
 
-- @anio (obligatorio)
-- @grupo (opcional)
-- @pais (opcional)
-- @fecha (opcional)
+| Parametro | Tipo          | Requerido | Descripcion                                                     | Ejemplo       |
+| :-------- | :------------ | :-------- | :-------------------------------------------------------------- | :------------ |
+| @anio     | INT           | Si        | Anio del mundial                                                | 2022          |
+| @grupo    | CHAR(1)       | No        | Filtra tabla de grupos, partidos y planteles por letra de grupo | 'A'           |
+| @pais     | NVARCHAR(191) | No        | Filtra partidos, goles y goleadores de un pais. Sin tildes.     | 'Argentina'   |
+| @fecha    | NVARCHAR(64)  | No        | Filtra partidos de una fecha exacta                             | '20-Nov-2022' |
+| @seccion  | INT           | No        | Filtra para solo traer una sección del stored procedures        | 3             |
 
-Entrega secciones de resumen, grupos, partidos, goles, premios, tarjetas, planteles y entrenadores.
+Secciones que despliega:
 
-Ejemplo:
+1. Resumen general: sede, equipos, partidos jugados, goles totales y promedio.
+2. Posiciones finales: campeon, subcampeon, tercer y cuarto lugar.
+3. Tabla de grupos: estadisticas completas por grupo. Aplica filtro @grupo.
+4. Partidos y resultados: con ganador calculado e indicador de penales. Aplica filtros @pais y @fecha.
+5. Detalle de goles: jugador, minuto y tipo (gol, penal, autogol). Aplica filtros @pais y @fecha.
+6. Ranking de goleadores: ordenado por goles. Aplica filtro @pais.
+7. Premios del torneo: individuales y colectivos.
+8. Tarjetas: amarillas y rojas por seleccion. Aplica filtro @pais.
+9. Planteles convocados: por seleccion. Aplica filtros @pais y @grupo.
+10. Entrenadores: por seleccion. Aplica filtro @pais.
+
+Ejemplos de uso:
 
 ```sql
+-- Mundial 2022 completo
 EXEC dbo.sp_mundial_por_anio @anio = 2022;
+
+-- Mundial 2022 completo, solo la primera sección
+EXEC dbo.sp_mundial_por_anio @anio = 2022, @seccion=1;
+
+-- Solo el grupo A del Mundial 2022
+EXEC dbo.sp_mundial_por_anio @anio = 2022, @grupo = 'A';
+
+-- Partidos de Argentina en el Mundial 2022
+EXEC dbo.sp_mundial_por_anio @anio = 2022, @pais = 'Argentina';
+
+-- Partidos del 20 de noviembre de 2022
+EXEC dbo.sp_mundial_por_anio @anio = 2022, @fecha = '20-Nov-2022';
+
+-- Partidos de Espana en el grupo A del Mundial 2022
+EXEC dbo.sp_mundial_por_anio @anio = 2022, @grupo = 'A', @pais = 'Espana';
+
+-- Combinar fecha y pais
+EXEC dbo.sp_mundial_por_anio @anio = 2022, @fecha = '20-Nov-2022', @pais = 'Catar';
+
+-- Mundial 1990
+EXEC dbo.sp_mundial_por_anio @anio = 1990;
 ```
+
+Desde Docker por terminal:
+
+```bash
+docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
+  -C -S localhost -U sa -P "Mundiales2026!" -d mundiales `
+  -Q "EXEC dbo.sp_mundial_por_anio @anio = 2022, @seccion=1"
+```
+
+Manejo de errores:
+
+- Si el anio no existe en la base: No existe un Mundial registrado para el anio XXXX.
 
 ### 9.2 sp_historial_pais
 
 Objetivo:
 
-- Mostrar historial completo de una seleccion.
+- Mostrar el historial completo de una seleccion en todos los mundiales.
 
 Parametros:
 
-- @pais (obligatorio)
-- @anio (opcional)
+| Parametro | Tipo          | Requerido | Descripcion                                                           | Ejemplo     |
+| :-------- | :------------ | :-------- | :-------------------------------------------------------------------- | :---------- |
+| @pais     | NVARCHAR(191) | Si        | Nombre del pais sin tildes. Acepta nombre canonico o alias historico. | 'Argentina' |
+| @anio     | INT           | No        | Filtra todas las secciones a una edicion especifica                   | 2022        |
+| @seccion  | INT           | No        | Filtra para solo traer una sección del stored procedures              | 3           |
 
-Incluye estadisticas acumuladas, participaciones, partidos, goleadores, premios y convocatorias.
+Secciones que despliega:
 
-Ejemplo:
+1. Resumen historico acumulado: mundiales jugados, primer mundial, titulos obtenidos, estadisticas totales.
+2. Participaciones por edicion: sede, etapa alcanzada, estadisticas y columna indicando si fue sede.
+3. Mundiales como sede: ediciones donde el pais organizo el torneo.
+4. Desempeno en fase de grupos: estadisticas por grupo y edicion.
+5. Partidos jugados: todos los partidos con resultado desde perspectiva del pais (Ganado, Empate, Perdido).
+6. Goles anotados: por edicion y jugador, con desglose de penales y autogoles.
+7. Top 10 goleadores historicos: jugadores con mas goles en mundiales para ese pais, excluyendo autogoles.
+8. Premios obtenidos: individuales y colectivos, clasificados por tipo.
+9. Entrenadores historicos: por edicion.
+10. Top 15 jugadores mas convocados: con numero de mundiales, primera y ultima convocatoria.
+
+Ejemplos de uso:
 
 ```sql
+-- Historial completo de Argentina
 EXEC dbo.sp_historial_pais @pais = 'Argentina';
+
+-- Historial de Argentina solo en el Mundial 2022
+EXEC dbo.sp_historial_pais @pais = 'Argentina', @anio = 2022;
+
+-- Historial de Espana (sin tilde)
+EXEC dbo.sp_historial_pais @pais = 'Espana';
+
+-- Historial de Mexico (sin tilde)
+EXEC dbo.sp_historial_pais @pais = 'Mexico';
+
+-- Historial de Brasil
+EXEC dbo.sp_historial_pais @pais = 'Brasil';
+
+-- Alemania en el Mundial 1974
+EXEC dbo.sp_historial_pais @pais = 'Alemania', @anio = 1974;
+
+-- Otros paises con normalizacion de caracteres
+EXEC dbo.sp_historial_pais @pais = 'Belgica';
+EXEC dbo.sp_historial_pais @pais = 'Japon';
+EXEC dbo.sp_historial_pais @pais = 'Iran';
+EXEC dbo.sp_historial_pais @pais = 'Tunez';
+EXEC dbo.sp_historial_pais @pais = 'Peru';
+EXEC dbo.sp_historial_pais @pais = 'Camerun';
 ```
 
-Regla de uso:
+Desde Docker por terminal:
 
-- Consultar paises sin tildes: Espana, Mexico, Belgica.
+```bash
+docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd \
+  -C -S localhost -U sa -P "Mundiales2026!" -d mundiales \
+  -Q "EXEC dbo.sp_historial_pais @pais = 'Argentina', @seccion=1"
+```
+
+Manejo de errores:
+
+- Si el pais no existe o tiene tilde: No se encontro ninguna seleccion con el nombre "XXX". Verifique que el nombre este sin tildes.
+
+### 9.3 Referencia rapida de nombres de paises
+
+| Con tilde | Como buscarlo |
+| :-------- | :------------ |
+| España    | Espana        |
+| México    | Mexico        |
+| Bélgica   | Belgica       |
+| Japón     | Japon         |
+| Irán      | Iran          |
+| Túnez     | Tunez         |
+| Perú      | Peru          |
+| Camerún   | Camerun       |
+| Haití     | Haiti         |
+| Hungría   | Hungria       |
+| Sudáfrica | Sudafrica     |
 
 ## 10. Seccion para vistas SQL
 

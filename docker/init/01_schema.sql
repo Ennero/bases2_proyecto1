@@ -13,3 +13,4 @@ GO
 
 :r /db_scripts/sqlserver_schema.sql
 :r /db_scripts/performance_audit_logs.sql
+:r /db_scripts/stored_procedures.sql

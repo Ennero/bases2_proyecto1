@@ -20,9 +20,13 @@ CREATE OR ALTER PROCEDURE dbo.sp_mundial_por_anio
     @anio INT,
     @grupo CHAR(1) = NULL,
     @pais NVARCHAR(191) = NULL,
-    @fecha NVARCHAR(64) = NULL
+    @fecha NVARCHAR(64) = NULL,
+    @seccion INT = NULL
 AS
 BEGIN
+    PRINT '========================================================================================================='
+    PRINT '========================================   MUNDIALES DE FUTBOL   ========================================'
+    PRINT '========================================================================================================='
     SET NOCOUNT ON;
 
     -- Validar que el mundial exista
@@ -33,10 +37,12 @@ BEGIN
     END
 
     -- 1. Resumen General del mundial
+    IF @seccion IS NULL OR @seccion=1
+
+    BEGIN 
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║         RESUMEN GENERAL DEL MUNDIAL          ║';
     PRINT '╚══════════════════════════════════════════════╝';
-
     SELECT 
         m.anio AS [Anio],
         m.sede AS [Sede],
@@ -50,8 +56,11 @@ BEGIN
         END AS [Promedio Goles por Partido]
     FROM dbo.mundial m
     WHERE m.anio = @anio;
+    END
 
     -- 2. Posición Final (podio + todos)
+    IF @seccion IS NULL OR @seccion=2
+    BEGIN
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           POSICIONES FINALES                 ║';
@@ -71,8 +80,11 @@ BEGIN
     JOIN dbo.seleccion s ON s.seleccion_id = pf.seleccion_id
     WHERE pf.anio = @anio
     ORDER BY pf.posicion;
+    END
 
+    IF @seccion IS NULL OR @seccion=3
     -- 3. Tabla de grupos
+    BEGIN
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           TABLA DE GRUPOS                    ║';
@@ -96,8 +108,11 @@ BEGIN
     WHERE g.anio = @anio
         AND (@grupo IS NULL OR g.grupo = UPPER(@grupo))
     ORDER BY g.grupo, g.posicion;
+    END
 
+    IF @seccion IS NULL OR @seccion=4
     -- 4. Partidos y resultados
+    BEGIN
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           PARTIDOS Y RESULTADOS              ║';
@@ -129,8 +144,11 @@ BEGIN
         AND (@pais IS NULL OR s1.nombre = @pais OR sv.nombre = @pais)
         AND (@fecha IS NULL OR p.fecha = @fecha)
     ORDER BY p.partido_id;
+    END
 
+    IF @seccion IS NULL OR @seccion=5
     -- 5. Goles por partido (detalle)
+    BEGIN
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           DETALLE DE GOLES                   ║';
@@ -159,8 +177,11 @@ BEGIN
         AND (@pais IS NULL OR s1.nombre = @pais OR sv.nombre = @pais)
         AND (@fecha IS NULL OR p.fecha = @fecha)
     ORDER BY p.partido_id, g.minuto
+    END
 
-    -- 6. Tabla de goleadores del torneo 
+    IF @seccion IS NULL OR @seccion=6
+    -- 6. Tabla de goleadores del torneo
+    BEGIN 
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           GOLEADORES DEL TORNEO              ║';
@@ -177,8 +198,11 @@ BEGIN
     WHERE gl.anio = @anio
         AND (@pais IS NULL OR s.nombre = @pais)
     ORDER BY gl.goles DESC, j.nombre;
+    END
 
+    IF @seccion IS NULL OR @seccion=7
     -- 7. Premios del torneo 
+    BEGIN
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           PREMIOS DEL TORNEO                 ║';
@@ -201,8 +225,11 @@ BEGIN
     JOIN dbo.seleccion s ON s.seleccion_id = ps.seleccion_id
     WHERE ps.anio = @anio
     ORDER BY [Premio];
+    END
 
+    IF @seccion IS NULL OR @seccion=8
     -- 8. Tarjetas del torneo 
+    BEGIN
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           TARJETAS DEL TORNEO                ║';
@@ -220,8 +247,11 @@ BEGIN
         AND (@pais IS NULL OR s.nombre = @pais)
     GROUP BY s.nombre
     ORDER BY [Total] DESC, [Rojas] DESC;
+    END
 
+    IF @seccion IS NULL OR @seccion=9
     -- 9. Planteles convocados 
+    BEGIN
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           PLANTELES CONVOCADOS               ║';
@@ -243,8 +273,11 @@ BEGIN
             WHERE anio = @anio AND grupo = UPPER(@grupo)
         ))
     ORDER BY s.nombre, pj.posicion, pj.camiseta;
+    END
 
+    IF @seccion IS NULL OR @seccion=10
     -- 10. Entrenadores
+    BEGIN
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           ENTRENADORES                       ║';
@@ -259,6 +292,7 @@ BEGIN
     WHERE pe.anio = @anio
         AND (@pais IS NULL OR s.nombre = @pais)
     ORDER BY s.nombre;
+    END
 
 END;
 GO
@@ -273,7 +307,8 @@ GO
 -- ============================================================
 CREATE OR ALTER PROCEDURE dbo.sp_historial_pais
     @pais  NVARCHAR(191),
-    @anio  INT = NULL
+    @anio  INT = NULL,
+    @seccion INT = NULL
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -284,6 +319,10 @@ BEGIN
     SELECT @seleccion_id = seleccion_id
     FROM dbo.seleccion
     WHERE nombre = @pais;
+
+    PRINT '========================================================================================================='
+    PRINT '========================================   HISTORIAL SELECCION   ========================================'
+    PRINT '========================================================================================================='
 
     -- Si no se encontró por nombre canónico, buscar en alias
     IF @seleccion_id IS NULL
@@ -302,7 +341,9 @@ BEGIN
     DECLARE @nombre_canonico NVARCHAR(191);
     SELECT @nombre_canonico = nombre FROM dbo.seleccion WHERE seleccion_id = @seleccion_id;
 
+    IF @seccion IS NULL OR @seccion=1
     -- ── 1. Resumen general de la seleccion ────────────────────────────────────
+    BEGIN
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║         RESUMEN HISTORICO DE LA SELECCION    ║';
     PRINT '╚══════════════════════════════════════════════╝';
@@ -323,8 +364,11 @@ BEGIN
         COUNT(CASE WHEN pm.posicion = 1 THEN 1 END)            AS [Titulos]
     FROM dbo.participacion_mundial pm
     WHERE pm.seleccion_id = @seleccion_id;
+    END
 
+    IF @seccion IS NULL OR @seccion=2
     -- ── 2. Participaciones por edicion ────────────────────────────────────────
+    BEGIN
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           PARTICIPACIONES POR EDICION        ║';
@@ -353,8 +397,11 @@ BEGIN
     WHERE pm.seleccion_id = @seleccion_id
         AND (@anio IS NULL OR pm.anio = @anio)
     ORDER BY pm.anio;
+    END
 
+    IF @seccion IS NULL OR @seccion=3
     -- ── 3. Mundiales como sede ────────────────────────────────────────────────
+    BEGIN
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           MUNDIALES COMO SEDE                ║';
@@ -371,8 +418,11 @@ BEGIN
 
     IF @@ROWCOUNT = 0
         SELECT 'Esta seleccion no ha sido sede de ningun Mundial.' AS [Informacion];
+    END
 
+    IF @seccion IS NULL OR @seccion=4
     -- ── 4. Informacion de grupos por edicion ──────────────────────────────────
+    BEGIN
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           DESEMPENO EN FASE DE GRUPOS        ║';
@@ -395,8 +445,11 @@ BEGIN
     WHERE g.seleccion_id = @seleccion_id
         AND (@anio IS NULL OR g.anio = @anio)
     ORDER BY g.anio;
+    END
 
+    IF @seccion IS NULL OR @seccion=5
     -- ── 5. Todos los partidos ─────────────────────────────────────────────────
+    BEGIN
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           PARTIDOS JUGADOS                   ║';
@@ -432,8 +485,11 @@ BEGIN
     WHERE (p.local_seleccion_id = @seleccion_id OR p.visitante_seleccion_id = @seleccion_id)
         AND (@anio IS NULL OR p.anio = @anio)
     ORDER BY p.anio, p.partido_id;
+    END
 
+    IF @seccion IS NULL OR @seccion=6
     -- ── 6. Goles anotados por jugadores de la seleccion ───────────────────────
+    BEGIN
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           GOLES ANOTADOS                     ║';
@@ -452,8 +508,11 @@ BEGIN
         AND (@anio IS NULL OR p.anio = @anio)
     GROUP BY p.anio, j.nombre
     ORDER BY p.anio, [Goles] DESC;
+    END
 
+    IF @seccion IS NULL OR @seccion=7
     -- ── 7. Maximos goleadores historicos de la seleccion ─────────────────────
+    BEGIN
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           TOP GOLEADORES HISTORICOS          ║';
@@ -472,8 +531,11 @@ BEGIN
         AND g.es_autogol = 0
     GROUP BY j.nombre
     ORDER BY [Goles Totales] DESC;
+    END
 
+    IF @seccion IS NULL OR @seccion=8
     -- ── 8. Premios obtenidos ──────────────────────────────────────────────────
+    BEGIN
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           PREMIOS OBTENIDOS                  ║';
@@ -498,8 +560,11 @@ BEGIN
     WHERE ps.seleccion_id = @seleccion_id
         AND (@anio IS NULL OR ps.anio = @anio)
     ORDER BY [Anio], [Premio];
+    END
 
+    IF @seccion IS NULL OR @seccion=9
     -- ── 9. Entrenadores historicos ────────────────────────────────────────────
+    BEGIN
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           ENTRENADORES HISTORICOS            ║';
@@ -513,13 +578,16 @@ BEGIN
     WHERE pe.seleccion_id = @seleccion_id
         AND (@anio IS NULL OR pe.anio = @anio)
     ORDER BY pe.anio;
+    END 
 
+    IF @seccion IS NULL OR @seccion=10
     -- ── 10. Jugadores mas convocados historicamente ───────────────────────────
+    BEGIN
     PRINT '';
     PRINT '╔══════════════════════════════════════════════╗';
     PRINT '║           JUGADORES MAS CONVOCADOS           ║';
     PRINT '╚══════════════════════════════════════════════╝';
- 
+
     SELECT TOP 15
         j.nombre                AS [Jugador],
         COUNT(*)                AS [Mundiales Convocado],
@@ -530,6 +598,7 @@ BEGIN
     WHERE pj.seleccion_id = @seleccion_id
     GROUP BY j.nombre
     ORDER BY [Mundiales Convocado] DESC, j.nombre;
+    END 
 
 END;
 GO
