@@ -17,6 +17,7 @@ Proyecto para extraer, normalizar y cargar datos historicos de Copas del Mundo (
 - El modelo SQL no fuerza unicidad natural en casos historicos canonizados:
   - `participacion_mundial` puede repetir `(anio, seleccion_id)`.
   - `posicion_final` puede repetir `(anio, posicion)` o `(anio, seleccion_id)`.
+- En Docker, los CSV se copian a `/var/opt/mssql/csv_work` antes de la limpieza y la carga.
 - Auditoria post-scrapeo web disponible en `logs/auditoria_post_scrapeo_web_20260327_235248.json`.
   - `fk_orphan_total = 0`
   - `penalty_anomalies = 0`

@@ -209,6 +209,7 @@ En docker/init/02_fix_csvs.sh se aplica limpieza adicional para compatibilidad c
 - Correccion de enteros y booleanos.
 - Deduplicacion por llave primaria esperada.
 - Garantia de existencia de resolucion_identidad_jugador.csv.
+- La ruta de trabajo de CSV se toma desde la variable de entorno `CSV_DIR` cuando se ejecuta en Docker.
 
 ### 6.4 Politica de canonizacion historica y no unicidad controlada
 
@@ -258,6 +259,11 @@ flowchart TD
   H --> J["Base disponible"]
   I --> J
 ```
+
+Notas de carga en Linux:
+
+- `run_init.sh` copia los CSV desde `/csv` a `/var/opt/mssql/csv_work` antes de limpiar y cargar.
+- Para compatibilidad con SQL Server en Linux, algunos `BULK INSERT` usan el modo legacy (sin `FORMAT = 'CSV'`).
 
 ## 8. Diccionario tecnico de la base de datos
 

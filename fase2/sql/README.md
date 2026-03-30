@@ -63,7 +63,7 @@ Este directorio contiene los scripts para la simulacion de la Fase 2 del proyect
 ## Requisitos previos
 
 - Base de datos `mundiales` creada y cargada.
-- Esquema y tablas de logs creados (incluye `dbo.sp_registrar_logs_diarios`).
+- Esquema y tablas de logs creados (incluye `dbo.sp_registrar_logs_diarios` desde `performance_audit_logs.sql`).
 - Permisos de lectura/escritura sobre tablas de negocio y tablas `log_*`.
 
 ## Ejecucion
