@@ -58,22 +58,17 @@ PRIMARY_KEYS = {
     "tarjeta.csv": ["tarjeta_id"],
     "cambio.csv": ["cambio_id"],
     "penal.csv": ["penal_id"],
-    "grupo.csv": ["anio", "grupo", "seleccion_id", "seleccion_fuente"],
-    "posicion_final.csv": ["anio", "posicion", "seleccion_id", "seleccion_fuente"],
+    "grupo.csv": ["anio", "grupo", "seleccion_id"],
+    "posicion_final.csv": ["anio", "posicion", "seleccion_id"],
     "goleador.csv": ["anio", "jugador_id"],
     "premio_jugador.csv": ["anio", "premio", "jugador_id"],
     "premio_seleccion.csv": ["anio", "premio", "seleccion_id"],
     "plantel_jugador.csv": ["anio", "seleccion_id", "jugador_id"],
     "plantel_entrenador.csv": ["anio", "seleccion_id", "entrenador_id"],
-    "participacion_mundial.csv": ["anio", "seleccion_id", "seleccion_fuente", "etapa", "participo"],
+    "participacion_mundial.csv": ["anio", "seleccion_id", "etapa", "participo"],
     "resolucion_identidad_jugador.csv": ["source_table", "source_event_id"],
 }
 
-REQUIRED_EXTRA_COLUMNS = {
-    "grupo.csv": [("seleccion_fuente", "")],
-    "posicion_final.csv": [("seleccion_fuente", "")],
-    "participacion_mundial.csv": [("seleccion_fuente", "")],
-}
 
 RESOLUCION_FILE = "resolucion_identidad_jugador.csv"
 RESOLUCION_HEADER = [
@@ -143,12 +138,6 @@ for filename, int_cols in INT_COLUMNS.items():
     if not fieldnames:
         print(f"  WARN: {filename} sin encabezados, se omite")
         continue
-
-    for extra_col, default_value in REQUIRED_EXTRA_COLUMNS.get(filename, []):
-        if extra_col not in fieldnames:
-            fieldnames.append(extra_col)
-            for row in rows:
-                row[extra_col] = default_value
 
     for row in rows:
         for col in int_cols:

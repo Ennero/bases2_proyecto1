@@ -435,7 +435,6 @@ BEGIN TRY
     BULK INSERT #stg_grupo
     FROM '$(CSV_DIR)/grupo.csv'
     WITH (
-        FORMAT = 'CSV',
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',
@@ -474,7 +473,6 @@ BEGIN TRY
     BULK INSERT #stg_posicion_final
     FROM '$(CSV_DIR)/posicion_final.csv'
     WITH (
-        FORMAT = 'CSV',
         FIRSTROW = 2,
         FIELDQUOTE = '"',
         FIELDTERMINATOR = ',',

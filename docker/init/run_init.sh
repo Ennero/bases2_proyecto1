@@ -36,18 +36,6 @@ fi
 
 echo ">>> SQL Server listo."
 
-# Espera a que la base este ONLINE antes del ETL.
-for i in $(seq 1 30); do
-  DB_STATE=$(
-    "$SQLCMD" -C -S "$SERVER" -U "$SA_USER" -P "$PASSWORD" -h -1 -W \
-      -Q "SET NOCOUNT ON; SELECT state_desc FROM sys.databases WHERE name='${DB_NAME}'" 2>/dev/null || true
-  )
-  if [ "$DB_STATE" = "ONLINE" ]; then
-    break
-  fi
-  sleep 2
-done
-
 # Solo inicializa una vez por volumen de datos.
 INIT_MARKER="/var/opt/mssql/.init_done"
 if [ ! -f "$INIT_MARKER" ]; then
