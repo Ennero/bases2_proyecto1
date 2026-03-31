@@ -7,26 +7,30 @@
 - Base de datos principal: mundiales
 - Base de datos de restauracion: mundiales_restaurado
 - Carpeta de backups dentro del contenedor: /var/opt/mssql/backup/
+- Carpeta de backups en el PC: backups/ (raiz del repositorio)
 
 ---
 
 ## Conceptos rapidos de referencia
 
 **Full Backup:** Copia completa de toda la base de datos en ese momento.
-Para restaurar solo necesitamos este archivo.
+Para restaurar solo necesitas este archivo.
 
 **Differential Backup:** Copia solo lo que cambio desde el ultimo Full Backup.
 Para restaurar necesitas primero el Full Backup y luego aplicar el Differential encima.
 
-**Captura de validacion:** Pantallazo que muestra SELECT _ y SELECT COUNT(_) de las
-tablas afectadas, con la fecha y hora del sistema operativo visible en la barra de tareas.
+**Captura ANTES:** Pantallazo tomado antes de ejecutar un script, mostrando el estado
+actual de las tablas que van a ser modificadas. Sirve como evidencia del estado inicial.
 
-**Tiempo de restauracion:** Segundos que tarda en ejecutarse el comando RESTORE.
-Se mide con cronometro desde que se ejecuta hasta que SQL Server confirma que termino.
+**Captura DESPUES:** Pantallazo tomado despues de ejecutar un script, mostrando como
+quedaron las tablas afectadas. Sirve como evidencia de que la carga fue exitosa.
+
+**Regla de oro:** Todas las capturas deben mostrar la fecha y hora del sistema
+operativo visible en la barra de tareas de Windows.
 
 ---
 
-## Preparacion previa (hacer una sola vez antes del Dia 1)
+## Dia 0 — Preparacion (hacer una sola vez)
 
 ### Paso 1 — Levantar la base de datos
 
@@ -41,23 +45,32 @@ Esperar hasta ver en los logs:
 >>> Inicializacion completada.
 ```
 
-### Paso 2 — Verificar que los datos historicos cargaron correctamente
-
-```powershell
-docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
-  -C -S localhost -U sa -P "Mundiales2026!" -d mundiales `
-  -Q "SELECT COUNT(*) AS partidos FROM dbo.partido; SELECT COUNT(*) AS jugadores FROM dbo.jugador;"
-```
-
-Resultado esperado: 964 partidos, 8444 jugadores aproximadamente.
-
-### Paso 3 — Crear la carpeta de backups dentro del contenedor
+### Paso 2 — Crear la carpeta de backups
 
 ```powershell
 docker exec -it mundiales_db bash -c "mkdir -p /var/opt/mssql/backup"
 ```
 
-### Paso 4 — Ejecutar el script de catalogos 2030
+### ANTES — Captura 01: Estado inicial de las tablas antes de cualquier carga 2030
+
+Ejecutar en DBeaver y capturar pantalla con fecha/hora visible:
+
+```sql
+-- Verificar que no existe nada del 2030 aun (todos deben dar 0)
+SELECT COUNT(*) AS mundial_2030             FROM dbo.mundial                WHERE anio = 2030;
+SELECT COUNT(*) AS participacion_2030       FROM dbo.participacion_mundial   WHERE anio = 2030;
+SELECT COUNT(*) AS grupo_2030               FROM dbo.grupo                   WHERE anio = 2030;
+SELECT COUNT(*) AS plantel_jugador_2030     FROM dbo.plantel_jugador         WHERE anio = 2030;
+
+-- Verificar datos historicos cargados correctamente
+SELECT COUNT(*) AS partidos_historicos      FROM dbo.partido;
+SELECT COUNT(*) AS jugadores_historicos     FROM dbo.jugador;
+SELECT COUNT(*) AS selecciones              FROM dbo.seleccion;
+```
+
+Valores esperados: los primeros 4 en 0, partidos ~964, jugadores ~8444, selecciones ~144.
+
+### Paso 3 — Ejecutar el script de catalogos 2030
 
 ```powershell
 docker exec -i mundiales_db /opt/mssql-tools18/bin/sqlcmd `
@@ -66,10 +79,33 @@ docker exec -i mundiales_db /opt/mssql-tools18/bin/sqlcmd `
 ```
 
 Debe terminar sin errores. Si lanza THROW 50001 o 50002 significa que faltan
-selecciones o jugadores base — revisar que el ETL historico cargó correctamente.
+selecciones o jugadores base.
 
-**Tomar captura de pantalla** mostrando que el comando termino sin errores,
-con la fecha y hora del sistema operativo visible.
+### DESPUES — Captura 02: Estado de las tablas despues de 02_Carga_Catalogos_2030.sql
+
+Ejecutar en DBeaver y capturar pantalla con fecha/hora visible:
+
+_nota: de ahora en adelante los comandos están diseñados para ejecutar en una herramienta de gestión de base de datos, si deseas continuar usando la terminal del contenedor de docker lo puedes realizar de la siguiente forma:_
+
+```bash
+docker exec -i mundiales_db /opt/mssql-tools18/bin/sqlcmd `
+  -C -S localhost -U sa -P "Mundiales2026!" -d mundiales `
+  -Q "CONSULTA A EJECUTAR"
+```
+
+```sql
+-- Conteos esperados
+SELECT COUNT(*) AS mundial_2030             FROM dbo.mundial                WHERE anio = 2030;  -- esperado: 1
+SELECT COUNT(*) AS participacion_2030       FROM dbo.participacion_mundial   WHERE anio = 2030;  -- esperado: 4
+SELECT COUNT(*) AS grupo_2030               FROM dbo.grupo                   WHERE anio = 2030;  -- esperado: 4
+SELECT COUNT(*) AS plantel_jugador_2030     FROM dbo.plantel_jugador         WHERE anio = 2030;  -- esperado: 44
+
+-- Detalle de lo insertado
+SELECT * FROM dbo.mundial                WHERE anio = 2030;
+SELECT * FROM dbo.participacion_mundial  WHERE anio = 2030;
+SELECT * FROM dbo.grupo                  WHERE anio = 2030;
+SELECT * FROM dbo.plantel_jugador        WHERE anio = 2030 ORDER BY seleccion_id, jugador_id;
+```
 
 ---
 
@@ -77,44 +113,78 @@ con la fecha y hora del sistema operativo visible.
 
 ### Que ocurre en este dia
 
-Se insertan 4 partidos de fase de grupos del Mundial 2030, con sus apariciones,
-goles, tarjetas y cambios. Al final se registran los logs de fragmentacion
-e indices en todas las tablas de auditoria.
+Se insertan 4 partidos de fase de grupos con apariciones, goles, tarjetas y cambios.
+Tablas afectadas: partido, aparicion*partido, gol, tarjeta, cambio, log*\*.
+
+### ANTES — Captura 03: Estado de las tablas antes del Dia 1
+
+Ejecutar en DBeaver y capturar pantalla con fecha/hora visible:
+
+```sql
+-- Todas deben dar 0 para anio 2030
+SELECT COUNT(*) AS partido_2030         FROM dbo.partido            WHERE anio = 2030;
+SELECT COUNT(*) AS aparicion_2030       FROM dbo.aparicion_partido ap
+                                        INNER JOIN dbo.partido p ON p.partido_id = ap.partido_id
+                                        WHERE p.anio = 2030;
+SELECT COUNT(*) AS gol_2030             FROM dbo.gol g
+                                        INNER JOIN dbo.partido p ON p.partido_id = g.partido_id
+                                        WHERE p.anio = 2030;
+SELECT COUNT(*) AS tarjeta_2030         FROM dbo.tarjeta t
+                                        INNER JOIN dbo.partido p ON p.partido_id = t.partido_id
+                                        WHERE p.anio = 2030;
+SELECT COUNT(*) AS cambio_2030          FROM dbo.cambio c
+                                        INNER JOIN dbo.partido p ON p.partido_id = c.partido_id
+                                        WHERE p.anio = 2030;
+```
+
+Valores esperados: todos en 0.
 
 ### Paso 1 — Ejecutar el script del Dia 1
 
 ```powershell
 docker exec -i mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -C -S localhost -U sa -P "Mundiales2026!" -d mundiales `
-  -i /fase2/sql/03_Simulacion_Dia1_Grupos.sql
+  -i /fase2/03_Simulacion_Dia1_Grupos.sql
 ```
 
-### Paso 2 — Tomar capturas de validacion
+### DESPUES — Captura 04: Estado de las tablas despues del Dia 1
 
-Ejecutar en DBeaver o sqlcmd y capturar pantalla con fecha/hora visible:
+Ejecutar en DBeaver y capturar pantalla con fecha/hora visible:
 
 ```sql
--- Conteos generales
-SELECT COUNT(*) AS partidos_2030    FROM dbo.partido          WHERE anio = 2030;
-SELECT COUNT(*) AS goles_2030       FROM dbo.gol g
-                                    INNER JOIN dbo.partido p ON p.partido_id = g.partido_id
-                                    WHERE p.anio = 2030;
-SELECT COUNT(*) AS tarjetas_2030    FROM dbo.tarjeta t
-                                    INNER JOIN dbo.partido p ON p.partido_id = t.partido_id
-                                    WHERE p.anio = 2030;
-SELECT COUNT(*) AS cambios_2030     FROM dbo.cambio c
-                                    INNER JOIN dbo.partido p ON p.partido_id = c.partido_id
-                                    WHERE p.anio = 2030;
+-- Conteos esperados
+SELECT COUNT(*) AS partido_2030         FROM dbo.partido            WHERE anio = 2030;           -- esperado: 4
+SELECT COUNT(*) AS aparicion_2030       FROM dbo.aparicion_partido ap
+                                        INNER JOIN dbo.partido p ON p.partido_id = ap.partido_id
+                                        WHERE p.anio = 2030;                                     -- esperado: 32
+SELECT COUNT(*) AS gol_2030             FROM dbo.gol g
+                                        INNER JOIN dbo.partido p ON p.partido_id = g.partido_id
+                                        WHERE p.anio = 2030;                                     -- esperado: 10
+SELECT COUNT(*) AS tarjeta_2030         FROM dbo.tarjeta t
+                                        INNER JOIN dbo.partido p ON p.partido_id = t.partido_id
+                                        WHERE p.anio = 2030;                                     -- esperado: 6
+SELECT COUNT(*) AS cambio_2030          FROM dbo.cambio c
+                                        INNER JOIN dbo.partido p ON p.partido_id = c.partido_id
+                                        WHERE p.anio = 2030;                                     -- esperado: 4
 
--- Detalle de partidos insertados
-SELECT * FROM dbo.partido WHERE anio = 2030 ORDER BY partido_id;
+-- Detalle de lo insertado
+SELECT * FROM dbo.partido               WHERE anio = 2030 ORDER BY partido_id;
+SELECT * FROM dbo.gol g
+INNER JOIN dbo.partido p ON p.partido_id = g.partido_id
+WHERE p.anio = 2030 ORDER BY g.partido_id, g.minuto;
+SELECT * FROM dbo.tarjeta t
+INNER JOIN dbo.partido p ON p.partido_id = t.partido_id
+WHERE p.anio = 2030;
 
 -- Verificar logs del dia 1
-SELECT TOP 5 * FROM dbo.log_partido   ORDER BY log_id DESC;
-SELECT TOP 5 * FROM dbo.log_seleccion ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_partido     ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_seleccion   ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_gol         ORDER BY log_id DESC;
 ```
 
-### Paso 3 — Full Backup del Dia 1
+### Paso 2 — Full Backup del Dia 1
+
+Iniciar cronometro antes de ejecutar:
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
@@ -122,16 +192,14 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "BACKUP DATABASE [mundiales] TO DISK = '/var/opt/mssql/backup/mundiales_full_dia1.bak' WITH FORMAT, INIT, NAME = 'Full Backup Dia 1', STATS = 10"
 ```
 
-**Iniciar cronometro** antes de ejecutar este comando.
-**Detener cronometro** cuando aparezca en la salida:
+### DESPUES — Captura 05: Confirmacion Full Backup Dia 1
 
-```
-BACKUP DATABASE successfully processed X pages in X.XXX seconds
-```
+Que debe verse: mensaje de confirmacion con el tiempo de ejecucion.
+Anotar el tiempo en la tabla de registro de tiempos.
 
-Anotar el tiempo. Tomar captura de pantalla del resultado con fecha/hora visible.
+### Paso 3 — Differential Backup del Dia 1
 
-### Paso 4 — Differential Backup del Dia 1
+Iniciar cronometro antes de ejecutar:
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
@@ -139,17 +207,10 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "BACKUP DATABASE [mundiales] TO DISK = '/var/opt/mssql/backup/mundiales_diff_dia1.bak' WITH DIFFERENTIAL, FORMAT, INIT, NAME = 'Differential Backup Dia 1', STATS = 10"
 ```
 
-**Iniciar cronometro** antes de ejecutar.
-**Detener cronometro** al confirmar exito.
-Anotar el tiempo. Tomar captura de pantalla con fecha/hora visible.
+### DESPUES — Captura 06: Confirmacion Differential Backup Dia 1
 
-### Paso 5 — Verificar que los archivos de backup existen
-
-```powershell
-docker exec -it mundiales_db bash -c "ls -lh /var/opt/mssql/backup/"
-```
-
-Tomar captura mostrando los archivos .bak con sus tamanios.
+Que debe verse: mensaje de confirmacion con el tiempo de ejecucion.
+Anotar el tiempo en la tabla de registro de tiempos.
 
 ---
 
@@ -157,36 +218,68 @@ Tomar captura mostrando los archivos .bak con sus tamanios.
 
 ### Que ocurre en este dia
 
-Se insertan 2 semifinales y 1 final del Mundial 2030. La final incluye
-definicion por penales. Se registran logs de auditoria.
+Se insertan 2 semifinales y 1 final con penales.
+Tablas afectadas: partido, aparicion*partido, gol, tarjeta, cambio, penal, log*\*.
+
+### ANTES — Captura 07: Estado de las tablas antes del Dia 2
+
+Ejecutar en DBeaver y capturar pantalla con fecha/hora visible:
+
+```sql
+-- Deben mostrar los valores del Dia 1 (estado actual antes de cargar Dia 2)
+SELECT COUNT(*) AS partido_2030         FROM dbo.partido            WHERE anio = 2030;           -- esperado: 4
+SELECT COUNT(*) AS gol_2030             FROM dbo.gol g
+                                        INNER JOIN dbo.partido p ON p.partido_id = g.partido_id
+                                        WHERE p.anio = 2030;                                     -- esperado: 10
+SELECT COUNT(*) AS penal_2030           FROM dbo.penal pe
+                                        INNER JOIN dbo.partido p ON p.partido_id = pe.partido_id
+                                        WHERE p.anio = 2030;                                     -- esperado: 0
+SELECT * FROM dbo.partido               WHERE anio = 2030 ORDER BY partido_id;
+```
 
 ### Paso 1 — Ejecutar el script del Dia 2
 
 ```powershell
 docker exec -i mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -C -S localhost -U sa -P "Mundiales2026!" -d mundiales `
-  -i /fase2/sql/04_Simulacion_Dia2_Finales.sql
+  -i /fase2/04_Simulacion_Dia2_Finales.sql
 ```
 
-### Paso 2 — Tomar capturas de validacion
+### DESPUES — Captura 08: Estado de las tablas despues del Dia 2
+
+Ejecutar en DBeaver y capturar pantalla con fecha/hora visible:
 
 ```sql
--- Conteo acumulado de partidos (debe ser 7 ahora)
-SELECT COUNT(*) AS partidos_2030 FROM dbo.partido WHERE anio = 2030;
+-- Conteos acumulados esperados
+SELECT COUNT(*) AS partido_2030         FROM dbo.partido            WHERE anio = 2030;           -- esperado: 7
+SELECT COUNT(*) AS gol_2030             FROM dbo.gol g
+                                        INNER JOIN dbo.partido p ON p.partido_id = g.partido_id
+                                        WHERE p.anio = 2030;                                     -- esperado: 18
+SELECT COUNT(*) AS tarjeta_2030         FROM dbo.tarjeta t
+                                        INNER JOIN dbo.partido p ON p.partido_id = t.partido_id
+                                        WHERE p.anio = 2030;                                     -- esperado: 10
+SELECT COUNT(*) AS cambio_2030          FROM dbo.cambio c
+                                        INNER JOIN dbo.partido p ON p.partido_id = c.partido_id
+                                        WHERE p.anio = 2030;                                     -- esperado: 8
+SELECT COUNT(*) AS penal_2030           FROM dbo.penal pe
+                                        INNER JOIN dbo.partido p ON p.partido_id = pe.partido_id
+                                        WHERE p.anio = 2030;                                     -- esperado: 8
 
--- Detalle de todos los partidos incluyendo finales
-SELECT * FROM dbo.partido WHERE anio = 2030 ORDER BY partido_id;
-
--- Penales de la final
-SELECT * FROM dbo.penal pe
+-- Detalle de lo insertado
+SELECT * FROM dbo.partido               WHERE anio = 2030 ORDER BY partido_id;
+SELECT pe.*, p.etapa, p.fecha
+FROM dbo.penal pe
 INNER JOIN dbo.partido p ON p.partido_id = pe.partido_id
-WHERE p.anio = 2030;
+WHERE p.anio = 2030 ORDER BY pe.partido_id, pe.orden;
 
 -- Logs del dia 2
-SELECT TOP 5 * FROM dbo.log_partido ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_partido     ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_penal       ORDER BY log_id DESC;
 ```
 
-### Paso 3 — Full Backup del Dia 2
+### Paso 2 — Full Backup del Dia 2
+
+Iniciar cronometro antes de ejecutar:
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
@@ -194,9 +287,14 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "BACKUP DATABASE [mundiales] TO DISK = '/var/opt/mssql/backup/mundiales_full_dia2.bak' WITH FORMAT, INIT, NAME = 'Full Backup Dia 2', STATS = 10"
 ```
 
-Cronometrar y anotar tiempo. Tomar captura con fecha/hora visible.
+### DESPUES — Captura 09: Confirmacion Full Backup Dia 2
 
-### Paso 4 — Differential Backup del Dia 2
+Que debe verse: mensaje de confirmacion con el tiempo de ejecucion.
+Anotar el tiempo en la tabla de registro de tiempos.
+
+### Paso 3 — Differential Backup del Dia 2
+
+Iniciar cronometro antes de ejecutar:
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
@@ -204,7 +302,10 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "BACKUP DATABASE [mundiales] TO DISK = '/var/opt/mssql/backup/mundiales_diff_dia2.bak' WITH DIFFERENTIAL, FORMAT, INIT, NAME = 'Differential Backup Dia 2', STATS = 10"
 ```
 
-Cronometrar y anotar tiempo. Tomar captura con fecha/hora visible.
+### DESPUES — Captura 10: Confirmacion Differential Backup Dia 2
+
+Que debe verse: mensaje de confirmacion con el tiempo de ejecucion.
+Anotar el tiempo en la tabla de registro de tiempos.
 
 ---
 
@@ -212,34 +313,65 @@ Cronometrar y anotar tiempo. Tomar captura con fecha/hora visible.
 
 ### Que ocurre en este dia
 
-Se ejecuta un UPDATE sobre toda la tabla seleccion convirtiendo los nombres
-a mayusculas. Esto simula una operacion masiva de modificacion de datos.
-Se registran logs de auditoria.
+Se ejecuta UPDATE sobre dbo.seleccion convirtiendo todos los nombres a mayusculas.
+Tablas afectadas: seleccion, log\_\*.
+
+### ANTES — Captura 11: Estado de dbo.seleccion antes del Dia 3
+
+Ejecutar en DBeaver y capturar pantalla con fecha/hora visible:
+
+```sql
+-- Mostrar nombres en minusculas/mixto antes del UPDATE
+SELECT TOP 20 seleccion_id, nombre FROM dbo.seleccion ORDER BY seleccion_id;
+
+-- Contar cuantos nombres NO estan en mayusculas (debe ser > 0)
+SELECT COUNT(*) AS nombres_en_minusculas
+FROM dbo.seleccion
+WHERE nombre <> UPPER(nombre);
+```
+
+Valor esperado: nombres en minusculas/mixto, contador mayor a 0.
 
 ### Paso 1 — Ejecutar el script del Dia 3
 
 ```powershell
 docker exec -i mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -C -S localhost -U sa -P "Mundiales2026!" -d mundiales `
-  -i /fase2/sql/05_Update_Dia3_Mayusculas.sql
+  -i /fase2/05_Update_Dia3_Mayusculas.sql
 ```
 
-### Paso 2 — Tomar capturas de validacion
+### DESPUES — Captura 12: Estado de dbo.seleccion despues del Dia 3
+
+Ejecutar en DBeaver y capturar pantalla con fecha/hora visible:
 
 ```sql
--- Verificar que los nombres quedaron en mayusculas
+-- Mostrar nombres en mayusculas despues del UPDATE
 SELECT TOP 20 seleccion_id, nombre FROM dbo.seleccion ORDER BY seleccion_id;
 
--- Confirmar que ningun nombre tiene minusculas
-SELECT COUNT(*) AS nombres_sin_mayusculas
+-- Confirmar que ningun nombre tiene minusculas (debe ser 0)
+SELECT COUNT(*) AS nombres_en_minusculas
 FROM dbo.seleccion
-WHERE nombre <> UPPER(nombre);
+WHERE nombre <> UPPER(nombre);                                               -- esperado: 0
 
 -- Logs del dia 3
-SELECT TOP 5 * FROM dbo.log_seleccion ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_seleccion   ORDER BY log_id DESC;
 ```
 
+### Paso 2 — Ejecutar validacion final
+
+```powershell
+docker exec -i mundiales_db /opt/mssql-tools18/bin/sqlcmd `
+  -C -S localhost -U sa -P "Mundiales2026!" -d mundiales `
+  -i /fase2/06_Validacion_Fase2.sql
+```
+
+### DESPUES — Captura 13: Semaforo final de validacion
+
+Que debe verse: todas las filas del semaforo con estado OK.
+
 ### Paso 3 — Full Backup del Dia 3
+
+Iniciar cronometro antes de ejecutar:
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
@@ -247,9 +379,14 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "BACKUP DATABASE [mundiales] TO DISK = '/var/opt/mssql/backup/mundiales_full_dia3.bak' WITH FORMAT, INIT, NAME = 'Full Backup Dia 3', STATS = 10"
 ```
 
-Cronometrar y anotar tiempo. Tomar captura con fecha/hora visible.
+### DESPUES — Captura 14: Confirmacion Full Backup Dia 3
+
+Que debe verse: mensaje de confirmacion con el tiempo de ejecucion.
+Anotar el tiempo en la tabla de registro de tiempos.
 
 ### Paso 4 — Differential Backup del Dia 3
+
+Iniciar cronometro antes de ejecutar:
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
@@ -257,34 +394,18 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "BACKUP DATABASE [mundiales] TO DISK = '/var/opt/mssql/backup/mundiales_diff_dia3.bak' WITH DIFFERENTIAL, FORMAT, INIT, NAME = 'Differential Backup Dia 3', STATS = 10"
 ```
 
-Cronometrar y anotar tiempo. Tomar captura con fecha/hora visible.
+### DESPUES — Captura 15: Confirmacion Differential Backup Dia 3
 
-### Paso 5 — Ejecutar validacion final de Fase 2
+Que debe verse: mensaje de confirmacion con el tiempo de ejecucion.
+Anotar el tiempo en la tabla de registro de tiempos.
 
-```powershell
-docker exec -i mundiales_db /opt/mssql-tools18/bin/sqlcmd `
-  -C -S localhost -U sa -P "Mundiales2026!" -d mundiales `
-  -i /fase2/sql/06_Validacion_Fase2.sql
-```
-
-Todas las filas del semaforo deben mostrar OK. Tomar captura con fecha/hora visible.
-
-### Paso 6 — Verificar los 6 archivos de backup generados
+### Captura 16 — Listado de los 6 archivos de backup
 
 ```powershell
 docker exec -it mundiales_db bash -c "ls -lh /var/opt/mssql/backup/"
 ```
 
-Deben existir exactamente 6 archivos:
-
-- mundiales_full_dia1.bak
-- mundiales_diff_dia1.bak
-- mundiales_full_dia2.bak
-- mundiales_diff_dia2.bak
-- mundiales_full_dia3.bak
-- mundiales_diff_dia3.bak
-
-Tomar captura mostrando los 6 archivos con sus tamanios.
+Que debe verse: los 6 archivos .bak con sus nombres y tamanios.
 
 ---
 
@@ -292,9 +413,8 @@ Tomar captura mostrando los 6 archivos con sus tamanios.
 
 ### Que se hace en esta fase
 
-Se elimina la base de datos mundiales y se restaura desde cada Full Backup
-en orden secuencial, en una nueva base llamada mundiales_restaurado.
-Se mide el tiempo de cada restauracion.
+Se elimina la base de datos y se restaura desde cada Full Backup en orden,
+en una nueva base llamada mundiales_restaurado. Se mide el tiempo de cada restauracion.
 
 ### Paso 1 — Eliminar la base de datos original
 
@@ -304,9 +424,19 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "ALTER DATABASE [mundiales] SET SINGLE_USER WITH ROLLBACK IMMEDIATE; DROP DATABASE [mundiales];"
 ```
 
-Tomar captura confirmando que la BD fue eliminada.
+### ANTES — Captura 17: Confirmacion de que la BD fue eliminada
 
-### Paso 2 — Restaurar Full Backup Dia 1
+```powershell
+docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
+  -C -S localhost -U sa -P "Mundiales2026!" `
+  -Q "SELECT name FROM sys.databases WHERE name IN ('mundiales', 'mundiales_restaurado');"
+```
+
+Que debe verse: resultado vacio — ninguna de las dos bases existe.
+
+### Restauracion Full Backup Dia 1
+
+Iniciar cronometro antes de ejecutar:
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
@@ -314,30 +444,32 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "RESTORE DATABASE [mundiales_restaurado] FROM DISK = '/var/opt/mssql/backup/mundiales_full_dia1.bak' WITH MOVE 'mundiales' TO '/var/opt/mssql/data/mundiales_restaurado.mdf', MOVE 'mundiales_log' TO '/var/opt/mssql/data/mundiales_restaurado_log.ldf', REPLACE, STATS = 10"
 ```
 
-Cronometrar desde que se ejecuta hasta que aparece:
+### DESPUES — Captura 18: Validacion Full Backup Dia 1 restaurado
 
-```
-RESTORE DATABASE successfully processed X pages in X.XXX seconds
-```
-
-Anotar tiempo. Tomar captura con fecha/hora visible.
-
-Validar integridad:
+Ejecutar en DBeaver y capturar pantalla con fecha/hora visible:
 
 ```sql
-USE mundiales_restaurado;
-SELECT COUNT(*) AS partidos FROM dbo.partido;
-SELECT COUNT(*) AS partidos_2030 FROM dbo.partido WHERE anio = 2030;
--- Dia 1: debe haber 4 partidos 2030
+SELECT COUNT(*) AS partidos_2030        FROM mundiales_restaurado.dbo.partido           WHERE anio = 2030;  -- esperado: 4
+SELECT COUNT(*) AS goles_2030           FROM mundiales_restaurado.dbo.gol g
+                                        INNER JOIN mundiales_restaurado.dbo.partido p
+                                        ON p.partido_id = g.partido_id                  WHERE p.anio = 2030; -- esperado: 10
+SELECT COUNT(*) AS penales_2030         FROM mundiales_restaurado.dbo.penal pe
+                                        INNER JOIN mundiales_restaurado.dbo.partido p
+                                        ON p.partido_id = pe.partido_id                 WHERE p.anio = 2030; -- esperado: 0
+SELECT * FROM mundiales_restaurado.dbo.partido WHERE anio = 2030 ORDER BY partido_id;
 ```
 
-### Paso 3 — Eliminar y restaurar Full Backup Dia 2
+Anotar el tiempo en la tabla de registro.
+
+### Restauracion Full Backup Dia 2
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -C -S localhost -U sa -P "Mundiales2026!" `
   -Q "DROP DATABASE [mundiales_restaurado];"
 ```
+
+Iniciar cronometro antes de ejecutar:
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
@@ -345,22 +477,27 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "RESTORE DATABASE [mundiales_restaurado] FROM DISK = '/var/opt/mssql/backup/mundiales_full_dia2.bak' WITH MOVE 'mundiales' TO '/var/opt/mssql/data/mundiales_restaurado.mdf', MOVE 'mundiales_log' TO '/var/opt/mssql/data/mundiales_restaurado_log.ldf', REPLACE, STATS = 10"
 ```
 
-Cronometrar y anotar tiempo. Tomar captura.
-
-Validar:
+### DESPUES — Captura 19: Validacion Full Backup Dia 2 restaurado
 
 ```sql
-SELECT COUNT(*) AS partidos_2030 FROM mundiales_restaurado.dbo.partido WHERE anio = 2030;
--- Debe haber 7 partidos 2030
+SELECT COUNT(*) AS partidos_2030        FROM mundiales_restaurado.dbo.partido           WHERE anio = 2030;  -- esperado: 7
+SELECT COUNT(*) AS penales_2030         FROM mundiales_restaurado.dbo.penal pe
+                                        INNER JOIN mundiales_restaurado.dbo.partido p
+                                        ON p.partido_id = pe.partido_id                 WHERE p.anio = 2030; -- esperado: 8
+SELECT * FROM mundiales_restaurado.dbo.partido WHERE anio = 2030 ORDER BY partido_id;
 ```
 
-### Paso 4 — Eliminar y restaurar Full Backup Dia 3
+Anotar el tiempo en la tabla de registro.
+
+### Restauracion Full Backup Dia 3
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -C -S localhost -U sa -P "Mundiales2026!" `
   -Q "DROP DATABASE [mundiales_restaurado];"
 ```
+
+Iniciar cronometro antes de ejecutar:
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
@@ -368,14 +505,16 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "RESTORE DATABASE [mundiales_restaurado] FROM DISK = '/var/opt/mssql/backup/mundiales_full_dia3.bak' WITH MOVE 'mundiales' TO '/var/opt/mssql/data/mundiales_restaurado.mdf', MOVE 'mundiales_log' TO '/var/opt/mssql/data/mundiales_restaurado_log.ldf', REPLACE, STATS = 10"
 ```
 
-Cronometrar y anotar tiempo. Tomar captura.
-
-Validar:
+### DESPUES — Captura 20: Validacion Full Backup Dia 3 restaurado
 
 ```sql
--- Nombres deben estar en mayusculas
-SELECT TOP 10 nombre FROM mundiales_restaurado.dbo.seleccion ORDER BY seleccion_id;
+SELECT COUNT(*) AS partidos_2030        FROM mundiales_restaurado.dbo.partido           WHERE anio = 2030;  -- esperado: 7
+SELECT TOP 20 seleccion_id, nombre      FROM mundiales_restaurado.dbo.seleccion         ORDER BY seleccion_id;
+SELECT COUNT(*) AS nombres_minusculas   FROM mundiales_restaurado.dbo.seleccion
+                                        WHERE nombre <> UPPER(nombre);                                       -- esperado: 0
 ```
+
+Anotar el tiempo en la tabla de registro.
 
 ---
 
@@ -383,10 +522,10 @@ SELECT TOP 10 nombre FROM mundiales_restaurado.dbo.seleccion ORDER BY seleccion_
 
 ### Que se hace en esta fase
 
-El Differential Backup no es independiente — necesita el Full Backup como base.
-El proceso es: restaurar el Full en modo NORECOVERY, luego aplicar el Differential.
+El Differential necesita el Full como base. Se restaura el Full en NORECOVERY
+(queda en espera) y luego se aplica el Differential con RECOVERY.
 
-### Paso 1 — Eliminar la base restaurada
+### Paso 1 — Eliminar la base restaurada anterior
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
@@ -394,17 +533,15 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "DROP DATABASE [mundiales_restaurado];"
 ```
 
-### Paso 2 — Restaurar Full Dia 1 + Differential Dia 1
+### Restauracion Full Dia 1 + Differential Dia 1
 
-Primero el Full en modo NORECOVERY (queda en estado de espera):
+Iniciar cronometro antes del primer comando:
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -C -S localhost -U sa -P "Mundiales2026!" `
   -Q "RESTORE DATABASE [mundiales_restaurado] FROM DISK = '/var/opt/mssql/backup/mundiales_full_dia1.bak' WITH MOVE 'mundiales' TO '/var/opt/mssql/data/mundiales_restaurado.mdf', MOVE 'mundiales_log' TO '/var/opt/mssql/data/mundiales_restaurado_log.ldf', NORECOVERY, REPLACE, STATS = 10"
 ```
-
-Luego aplicar el Differential (cronometrar este paso):
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
@@ -412,17 +549,21 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "RESTORE DATABASE [mundiales_restaurado] FROM DISK = '/var/opt/mssql/backup/mundiales_diff_dia1.bak' WITH RECOVERY, STATS = 10"
 ```
 
-Cronometrar el tiempo total (Full NORECOVERY + Differential RECOVERY).
-Tomar captura con fecha/hora visible.
+Detener cronometro al confirmar exito del segundo comando.
 
-Validar:
+### DESPUES — Captura 21: Validacion Full+Diff Dia 1 restaurado
 
 ```sql
-SELECT COUNT(*) AS partidos_2030 FROM mundiales_restaurado.dbo.partido WHERE anio = 2030;
--- Debe haber 4 partidos
+SELECT COUNT(*) AS partidos_2030        FROM mundiales_restaurado.dbo.partido           WHERE anio = 2030;  -- esperado: 4
+SELECT COUNT(*) AS penales_2030         FROM mundiales_restaurado.dbo.penal pe
+                                        INNER JOIN mundiales_restaurado.dbo.partido p
+                                        ON p.partido_id = pe.partido_id                 WHERE p.anio = 2030; -- esperado: 0
+SELECT * FROM mundiales_restaurado.dbo.partido WHERE anio = 2030 ORDER BY partido_id;
 ```
 
-### Paso 3 — Eliminar y restaurar Full Dia 1 + Differential Dia 2
+Anotar el tiempo total en la tabla de registro.
+
+### Restauracion Full Dia 1 + Differential Dia 2
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
@@ -430,15 +571,13 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "DROP DATABASE [mundiales_restaurado];"
 ```
 
-Full en NORECOVERY:
+Iniciar cronometro:
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -C -S localhost -U sa -P "Mundiales2026!" `
   -Q "RESTORE DATABASE [mundiales_restaurado] FROM DISK = '/var/opt/mssql/backup/mundiales_full_dia1.bak' WITH MOVE 'mundiales' TO '/var/opt/mssql/data/mundiales_restaurado.mdf', MOVE 'mundiales_log' TO '/var/opt/mssql/data/mundiales_restaurado_log.ldf', NORECOVERY, REPLACE, STATS = 10"
 ```
-
-Differential Dia 2:
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
@@ -446,16 +585,19 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "RESTORE DATABASE [mundiales_restaurado] FROM DISK = '/var/opt/mssql/backup/mundiales_diff_dia2.bak' WITH RECOVERY, STATS = 10"
 ```
 
-Cronometrar tiempo total. Tomar captura.
-
-Validar:
+### DESPUES — Captura 22: Validacion Full+Diff Dia 2 restaurado
 
 ```sql
-SELECT COUNT(*) AS partidos_2030 FROM mundiales_restaurado.dbo.partido WHERE anio = 2030;
--- Debe haber 7 partidos
+SELECT COUNT(*) AS partidos_2030        FROM mundiales_restaurado.dbo.partido           WHERE anio = 2030;  -- esperado: 7
+SELECT COUNT(*) AS penales_2030         FROM mundiales_restaurado.dbo.penal pe
+                                        INNER JOIN mundiales_restaurado.dbo.partido p
+                                        ON p.partido_id = pe.partido_id                 WHERE p.anio = 2030; -- esperado: 8
+SELECT * FROM mundiales_restaurado.dbo.partido WHERE anio = 2030 ORDER BY partido_id;
 ```
 
-### Paso 4 — Eliminar y restaurar Full Dia 1 + Differential Dia 3
+Anotar el tiempo total en la tabla de registro.
+
+### Restauracion Full Dia 1 + Differential Dia 3
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
@@ -463,7 +605,7 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "DROP DATABASE [mundiales_restaurado];"
 ```
 
-Full en NORECOVERY:
+Iniciar cronometro:
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
@@ -471,28 +613,28 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "RESTORE DATABASE [mundiales_restaurado] FROM DISK = '/var/opt/mssql/backup/mundiales_full_dia1.bak' WITH MOVE 'mundiales' TO '/var/opt/mssql/data/mundiales_restaurado.mdf', MOVE 'mundiales_log' TO '/var/opt/mssql/data/mundiales_restaurado_log.ldf', NORECOVERY, REPLACE, STATS = 10"
 ```
 
-Differential Dia 3:
-
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -C -S localhost -U sa -P "Mundiales2026!" `
   -Q "RESTORE DATABASE [mundiales_restaurado] FROM DISK = '/var/opt/mssql/backup/mundiales_diff_dia3.bak' WITH RECOVERY, STATS = 10"
 ```
 
-Cronometrar tiempo total. Tomar captura.
-
-Validar:
+### DESPUES — Captura 23: Validacion Full+Diff Dia 3 restaurado
 
 ```sql
--- Nombres deben estar en mayusculas
-SELECT TOP 10 nombre FROM mundiales_restaurado.dbo.seleccion ORDER BY seleccion_id;
+SELECT COUNT(*) AS partidos_2030        FROM mundiales_restaurado.dbo.partido           WHERE anio = 2030;  -- esperado: 7
+SELECT TOP 20 seleccion_id, nombre      FROM mundiales_restaurado.dbo.seleccion         ORDER BY seleccion_id;
+SELECT COUNT(*) AS nombres_minusculas   FROM mundiales_restaurado.dbo.seleccion
+                                        WHERE nombre <> UPPER(nombre);                                       -- esperado: 0
 ```
+
+Anotar el tiempo total en la tabla de registro.
 
 ---
 
 ## Tabla de registro de tiempos
 
-Llenar esta tabla con los tiempos medidos durante la ejecucion:
+Llenar con los tiempos medidos con cronometro:
 
 | Operacion                    | Tiempo (segundos) | Tamanio archivo |
 | :--------------------------- | :---------------- | :-------------- |
@@ -511,204 +653,30 @@ Llenar esta tabla con los tiempos medidos durante la ejecucion:
 
 ---
 
-## Lista de capturas requeridas
+## Resumen de capturas
 
-Todas deben mostrar la fecha y hora del sistema operativo visible en la barra de tareas.
-Sugerencia: en Windows dejar la barra de tareas visible en la parte inferior antes de capturar.
-
----
-
-### Dia 0 — Preparacion
-
-**Captura 01 — Verificacion de carga historica**
-
-- [ ] Hecha
-- Que debe verse: resultado del comando sqlcmd con los conteos de partidos (~964) y jugadores (~8444).
-- Comando ejecutado:
-
-```powershell
-docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
-  -C -S localhost -U sa -P "Mundiales2026!" -d mundiales `
-  -Q "SELECT COUNT(*) AS partidos FROM dbo.partido; SELECT COUNT(*) AS jugadores FROM dbo.jugador;"
-```
-
-**Captura 02 — Carga de catalogos 2030**
-
-- [ ] Hecha
-- Que debe verse: terminal mostrando que el script 02_Carga_Catalogos_2030.sql termino sin mensajes de error. Si no hay output de error, SQL Server lo proceso correctamente.
-- Comando ejecutado:
-
-```powershell
-docker exec -i mundiales_db /opt/mssql-tools18/bin/sqlcmd `
-  -C -S localhost -U sa -P "Mundiales2026!" -d mundiales `
-  -i /fase2/02_Carga_Catalogos_2030.sql
-```
-
----
-
-### Dia 1 — Fase de grupos
-
-**Captura 03 — Conteos post-carga Dia 1**
-
-- [ ] Hecha
-- Que debe verse: resultados de SELECT COUNT(\*) mostrando 4 partidos, 10 goles, 6 tarjetas y 4 cambios para anio 2030.
-- Ejecutar en DBeaver:
-
-```sql
-SELECT COUNT(*) AS partidos_2030 FROM dbo.partido WHERE anio = 2030;
-SELECT COUNT(*) AS goles_2030 FROM dbo.gol g
-  INNER JOIN dbo.partido p ON p.partido_id = g.partido_id WHERE p.anio = 2030;
-SELECT COUNT(*) AS tarjetas_2030 FROM dbo.tarjeta t
-  INNER JOIN dbo.partido p ON p.partido_id = t.partido_id WHERE p.anio = 2030;
-SELECT COUNT(*) AS cambios_2030 FROM dbo.cambio c
-  INNER JOIN dbo.partido p ON p.partido_id = c.partido_id WHERE p.anio = 2030;
-```
-
-**Captura 04 — Detalle de partidos Dia 1**
-
-- [ ] Hecha
-- Que debe verse: SELECT \* de dbo.partido filtrando anio 2030, mostrando las 4 filas con partido_id 6001 al 6004, fechas, equipos y marcadores.
-- Ejecutar en DBeaver:
-
-```sql
-SELECT * FROM dbo.partido WHERE anio = 2030 ORDER BY partido_id;
-```
-
-**Captura 05 — Full Backup Dia 1**
-
-- [ ] Hecha
-- Que debe verse: terminal mostrando el mensaje de confirmacion de SQL Server con el tiempo que tardo. Ejemplo: "BACKUP DATABASE successfully processed 12345 pages in 4.532 seconds".
-- Anotar el tiempo en la tabla de registro.
-
-**Captura 06 — Differential Backup Dia 1**
-
-- [ ] Hecha
-- Que debe verse: terminal mostrando confirmacion del Differential Backup con el tiempo que tardo.
-- Anotar el tiempo en la tabla de registro.
-
----
-
-### Dia 2 — Semifinales y final
-
-**Captura 07 — Conteos post-carga Dia 2**
-
-- [ ] Hecha
-- Que debe verse: SELECT COUNT(\*) mostrando 7 partidos acumulados para anio 2030 (4 del Dia 1 + 3 del Dia 2).
-- Ejecutar en DBeaver:
-
-```sql
-SELECT COUNT(*) AS partidos_2030 FROM dbo.partido WHERE anio = 2030;
-SELECT * FROM dbo.partido WHERE anio = 2030 ORDER BY partido_id;
-```
-
-**Captura 08 — Detalle de penales**
-
-- [ ] Hecha
-- Que debe verse: SELECT \* de dbo.penal mostrando los 8 penales de la semifinal y la final del 2030 con sus resultados (Gol, Atajado, Fuera).
-- Ejecutar en DBeaver:
-
-```sql
-SELECT pe.*, p.etapa, p.fecha
-FROM dbo.penal pe
-INNER JOIN dbo.partido p ON p.partido_id = pe.partido_id
-WHERE p.anio = 2030
-ORDER BY pe.partido_id, pe.orden;
-```
-
-**Captura 09 — Full Backup Dia 2**
-
-- [ ] Hecha
-- Que debe verse: terminal con confirmacion del Full Backup y tiempo de ejecucion.
-- Anotar el tiempo en la tabla de registro.
-
-**Captura 10 — Differential Backup Dia 2**
-
-- [ ] Hecha
-- Que debe verse: terminal con confirmacion del Differential Backup y tiempo de ejecucion.
-- Anotar el tiempo en la tabla de registro.
-
----
-
-### Dia 3 — Update masivo a mayusculas
-
-**Captura 11 — Verificacion de nombres en mayusculas**
-
-- [ ] Hecha
-- Que debe verse: SELECT TOP 20 de dbo.seleccion mostrando que todos los nombres estan en mayusculas. Tambien el COUNT(\*) confirmando que 0 filas tienen minusculas.
-- Ejecutar en DBeaver:
-
-```sql
-SELECT TOP 20 seleccion_id, nombre FROM dbo.seleccion ORDER BY seleccion_id;
-SELECT COUNT(*) AS nombres_sin_mayusculas FROM dbo.seleccion WHERE nombre <> UPPER(nombre);
-```
-
-**Captura 12 — Semaforo final de validacion**
-
-- [ ] Hecha
-- Que debe verse: resultado del script 06_Validacion_Fase2.sql con todas las filas del semaforo mostrando OK en la columna estado.
-
-**Captura 13 — Full Backup Dia 3**
-
-- [ ] Hecha
-- Que debe verse: terminal con confirmacion del Full Backup y tiempo de ejecucion.
-- Anotar el tiempo en la tabla de registro.
-
-**Captura 14 — Differential Backup Dia 3**
-
-- [ ] Hecha
-- Que debe verse: terminal con confirmacion del Differential Backup y tiempo de ejecucion.
-- Anotar el tiempo en la tabla de registro.
-
-**Captura 15 — Listado de los 6 archivos de backup**
-
-- [ ] Hecha
-- Que debe verse: resultado de ls -lh mostrando los 6 archivos .bak con sus nombres y tamanios en disco.
-- Comando:
-
-```powershell
-docker exec -it mundiales_db bash -c "ls -lh /var/opt/mssql/backup/"
-```
-
----
-
-### Fase 3 — Restauracion de Full Backups
-
-**Captura 16 — Restauracion Full Dia 1**
-
-- [ ] Hecha
-- Que debe verse: terminal con confirmacion de RESTORE exitoso y tiempo. Luego SELECT COUNT(\*) mostrando 4 partidos 2030 en mundiales_restaurado.
-- Valor esperado: 4 partidos para anio 2030.
-
-**Captura 17 — Restauracion Full Dia 2**
-
-- [ ] Hecha
-- Que debe verse: terminal con confirmacion de RESTORE exitoso y tiempo. Luego SELECT COUNT(\*) mostrando 7 partidos 2030 en mundiales_restaurado.
-- Valor esperado: 7 partidos para anio 2030.
-
-**Captura 18 — Restauracion Full Dia 3**
-
-- [ ] Hecha
-- Que debe verse: terminal con confirmacion de RESTORE exitoso y tiempo. Luego SELECT TOP 10 de seleccion mostrando nombres en mayusculas.
-- Valor esperado: todos los nombres en mayusculas.
-
----
-
-### Fase 4 — Restauracion de Differential Backups
-
-**Captura 19 — Restauracion Full+Diff Dia 1**
-
-- [ ] Hecha
-- Que debe verse: terminal mostrando los dos pasos (NORECOVERY y luego RECOVERY) con sus confirmaciones. SELECT COUNT(\*) con 4 partidos 2030.
-- Valor esperado: 4 partidos para anio 2030.
-
-**Captura 20 — Restauracion Full+Diff Dia 2**
-
-- [ ] Hecha
-- Que debe verse: terminal con los dos pasos de restauracion. SELECT COUNT(\*) con 7 partidos 2030.
-- Valor esperado: 7 partidos para anio 2030.
-
-**Captura 21 — Restauracion Full+Diff Dia 3**
-
-- [ ] Hecha
-- Que debe verse: terminal con los dos pasos de restauracion. SELECT TOP 10 de seleccion con nombres en mayusculas.
-- Valor esperado: todos los nombres en mayusculas.
+| #   | Momento            | Que debe verse                                          |
+| :-- | :----------------- | :------------------------------------------------------ |
+| 01  | ANTES Dia 0        | Conteos en 0 para 2030, datos historicos cargados       |
+| 02  | DESPUES catalogos  | 1 mundial, 4 participaciones, 4 grupos, 44 planteles    |
+| 03  | ANTES Dia 1        | partido, gol, tarjeta, cambio en 0 para 2030            |
+| 04  | DESPUES Dia 1      | 4 partidos, 10 goles, 6 tarjetas, 4 cambios, logs       |
+| 05  | DESPUES Full Dia 1 | Confirmacion backup con tiempo                          |
+| 06  | DESPUES Diff Dia 1 | Confirmacion backup con tiempo                          |
+| 07  | ANTES Dia 2        | 4 partidos, 0 penales (estado Dia 1)                    |
+| 08  | DESPUES Dia 2      | 7 partidos, 18 goles, 8 penales, logs                   |
+| 09  | DESPUES Full Dia 2 | Confirmacion backup con tiempo                          |
+| 10  | DESPUES Diff Dia 2 | Confirmacion backup con tiempo                          |
+| 11  | ANTES Dia 3        | Nombres de seleccion en minusculas/mixto                |
+| 12  | DESPUES Dia 3      | Nombres en mayusculas, 0 filas con minusculas, logs     |
+| 13  | DESPUES Validacion | Semaforo con todas las filas en OK                      |
+| 14  | DESPUES Full Dia 3 | Confirmacion backup con tiempo                          |
+| 15  | DESPUES Diff Dia 3 | Confirmacion backup con tiempo                          |
+| 16  | Listado backups    | 6 archivos .bak con tamanios                            |
+| 17  | ANTES Fase 3       | Confirmacion BD eliminada                               |
+| 18  | DESPUES Full Dia 1 | 4 partidos, 10 goles, 0 penales en mundiales_restaurado |
+| 19  | DESPUES Full Dia 2 | 7 partidos, 8 penales en mundiales_restaurado           |
+| 20  | DESPUES Full Dia 3 | 7 partidos, nombres en mayusculas                       |
+| 21  | DESPUES F+D Dia 1  | 4 partidos, 0 penales                                   |
+| 22  | DESPUES F+D Dia 2  | 7 partidos, 8 penales                                   |
+| 23  | DESPUES F+D Dia 3  | 7 partidos, nombres en mayusculas                       |
