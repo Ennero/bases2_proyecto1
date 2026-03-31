@@ -14,17 +14,11 @@ BEGIN TRY
         THROW 50001, 'Faltan selecciones requeridas (IDs 1,2,3,4) en dbo.seleccion.', 1;
     END;
 
-    ;WITH numeros AS (
-        SELECT TOP (44)
-            ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS jugador_id
-        FROM sys.all_objects
-    )
     IF EXISTS (
-        SELECT 1
-        FROM numeros n
-        LEFT JOIN dbo.jugador j
-            ON j.jugador_id = n.jugador_id
-        WHERE j.jugador_id IS NULL
+        SELECT TOP (44) ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS jugador_id
+        FROM sys.all_objects
+        EXCEPT
+        SELECT jugador_id FROM dbo.jugador WHERE jugador_id BETWEEN 1 AND 44
     )
     BEGIN
         THROW 50002, 'Faltan jugadores requeridos (IDs del 1 al 44) en dbo.jugador.', 1;

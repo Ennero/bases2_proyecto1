@@ -98,6 +98,7 @@ bases2_proyecto1/
 |-- html_descargados/
 `-- docs/
     `-- manualtecnico.md
+|-- backups/ # Archivos .bak generados durante Fase 2
 ```
 
 ## 5. Proceso de recoleccion de datos
@@ -243,6 +244,9 @@ Por este motivo, el modelo SQL no debe imponer unicidad natural en esos pares de
 - run_init.sh: inicializa base y evita reprocesos con marcador .init_done.
 - 01_schema.sql: crea base y ejecuta schema.
 - 03_etl.sql: dispara carga ETL.
+- backups/: carpeta local mapeada al contenedor como /var/opt/mssql/backup/.
+  Todos los Full Backup y Differential Backup generados durante Fase 2 se
+  almacenan aqui automaticamente.
 
 ### 7.2 Flujo de inicializacion
 
@@ -899,6 +903,8 @@ Recomendaciones:
 - Evitar publicar secretos en repositorio.
 - Respaldar volumen mssql_data periodicamente.
 - Versionar cambios de esquema, ETL y procedures.
+- Los archivos .bak en backups/ no se versionan en Git. Respaldar esta carpeta
+  manualmente o copiarla a almacenamiento externo antes de eliminar el contenedor.
 
 ## 15. Decision tecnica sobre uso de dbo
 

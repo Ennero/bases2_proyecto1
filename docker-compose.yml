@@ -19,6 +19,10 @@ services:
       - ./py/db:/db_scripts:ro
       # CSVs montados para la carga
       - ./datos_normalizados_web:/csv
+      # Scripts de fase 2
+      - ./fase2/sql:/fase2:ro
+      # Backups - carpeta local del repositorio mapeado del contenedor
+      - ./backups:/var/opt/mssql/backup
     healthcheck:
       test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -C -S localhost -U sa -P \"$${MSSQL_SA_PASSWORD}\" -Q \"SELECT 1\" > /dev/null || exit 1"]
       interval: 10s

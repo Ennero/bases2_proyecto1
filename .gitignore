@@ -215,3 +215,6 @@ Scripts
 html_descargados
 html_descargados.zip
 .github
+
+# backups
+backups/*.bak
