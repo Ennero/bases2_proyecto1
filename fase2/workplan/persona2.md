@@ -638,8 +638,8 @@ Llenar con los tiempos medidos con cronometro:
 
 | Operacion                    | Tiempo (segundos) | Tamanio archivo |
 | :--------------------------- | :---------------- | :-------------- |
-| Full Backup Dia 1            |                   |                 |
-| Differential Backup Dia 1    |                   |                 |
+| Full Backup Dia 1            | 2.28              | 17.1 MB         |
+| Differential Backup Dia 1    | 1.98              | 2.11 MB         |
 | Full Backup Dia 2            |                   |                 |
 | Differential Backup Dia 2    |                   |                 |
 | Full Backup Dia 3            |                   |                 |
