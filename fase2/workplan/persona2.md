@@ -642,8 +642,8 @@ Llenar con los tiempos medidos con cronometro:
 | Differential Backup Dia 1    | 1.98              | 2.11 MB (2,220,032 bytes)  |
 | Full Backup Dia 2            | 2.47              | 17.1 MB (17,948,672 bytes) |
 | Differential Backup Dia 2    | 1.88              | 2.11 MB (2,220,032 bytes)  |
-| Full Backup Dia 3            |                   |                            |
-| Differential Backup Dia 3    |                   |                            |
+| Full Backup Dia 3            | 2.10              | 17.1 MB (17,948,672 bytes) |
+| Differential Backup Dia 3    | 1.89              | 2.11 MB (2,220,032 bytes)  |
 | Restauracion Full Dia 1      |                   |                            |
 | Restauracion Full Dia 2      |                   |                            |
 | Restauracion Full Dia 3      |                   |                            |
