@@ -636,20 +636,20 @@ Anotar el tiempo total en la tabla de registro.
 
 Llenar con los tiempos medidos con cronometro:
 
-| Operacion                    | Tiempo (segundos) | Tamanio archivo |
-| :--------------------------- | :---------------- | :-------------- |
-| Full Backup Dia 1            | 2.28              | 17.1 MB         |
-| Differential Backup Dia 1    | 1.98              | 2.11 MB         |
-| Full Backup Dia 2            |                   |                 |
-| Differential Backup Dia 2    |                   |                 |
-| Full Backup Dia 3            |                   |                 |
-| Differential Backup Dia 3    |                   |                 |
-| Restauracion Full Dia 1      |                   |                 |
-| Restauracion Full Dia 2      |                   |                 |
-| Restauracion Full Dia 3      |                   |                 |
-| Restauracion Full+Diff Dia 1 |                   |                 |
-| Restauracion Full+Diff Dia 2 |                   |                 |
-| Restauracion Full+Diff Dia 3 |                   |                 |
+| Operacion                    | Tiempo (segundos) | Tamanio archivo            |
+| :--------------------------- | :---------------- | :------------------------- |
+| Full Backup Dia 1            | 2.28              | 17.1 MB (17,948,672 bytes) |
+| Differential Backup Dia 1    | 1.98              | 2.11 MB (2,220,032 bytes)  |
+| Full Backup Dia 2            | 2.47              | 17.1 MB (17,948,672 bytes) |
+| Differential Backup Dia 2    | 1.88              | 2.11 MB (2,220,032 bytes)  |
+| Full Backup Dia 3            |                   |                            |
+| Differential Backup Dia 3    |                   |                            |
+| Restauracion Full Dia 1      |                   |                            |
+| Restauracion Full Dia 2      |                   |                            |
+| Restauracion Full Dia 3      |                   |                            |
+| Restauracion Full+Diff Dia 1 |                   |                            |
+| Restauracion Full+Diff Dia 2 |                   |                            |
+| Restauracion Full+Diff Dia 3 |                   |                            |
 
 ---
 
