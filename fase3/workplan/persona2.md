@@ -267,6 +267,7 @@ SELECT COUNT(*) AS penal_2030           FROM dbo.penal pe
 
 -- Detalle de lo insertado
 SELECT * FROM dbo.partido               WHERE anio = 2030 ORDER BY partido_id;
+
 SELECT pe.*, p.etapa, p.fecha
 FROM dbo.penal pe
 INNER JOIN dbo.partido p ON p.partido_id = pe.partido_id
@@ -449,19 +450,58 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
 Ejecutar en DBeaver y capturar pantalla con fecha/hora visible:
 
 ```sql
-SELECT COUNT(*) AS partidos_2030        FROM mundiales_restaurado.dbo.partido           WHERE anio = 2030;  -- esperado: 4
-SELECT COUNT(*) AS goles_2030           FROM mundiales_restaurado.dbo.gol g
-                                        INNER JOIN mundiales_restaurado.dbo.partido p
-                                        ON p.partido_id = g.partido_id                  WHERE p.anio = 2030; -- esperado: 10
-SELECT COUNT(*) AS penales_2030         FROM mundiales_restaurado.dbo.penal pe
-                                        INNER JOIN mundiales_restaurado.dbo.partido p
-                                        ON p.partido_id = pe.partido_id                 WHERE p.anio = 2030; -- esperado: 0
-SELECT * FROM mundiales_restaurado.dbo.partido WHERE anio = 2030 ORDER BY partido_id;
+SELECT COUNT(*) AS partidos_2030 FROM mundiales_restaurado.dbo.partido  WHERE anio = 2030;  -- esperado: 4
+
+SELECT COUNT(*) AS apariciones_2030 FROM mundiales_restaurado.dbo.aparicion_partido ap INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = ap.partido_id WHERE p.anio = 2030; -- esperado: 32
+
+SELECT COUNT(*) AS goles_2030 FROM mundiales_restaurado.dbo.gol g INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = g.partido_id WHERE p.anio = 2030;
+ -- esperado: 10
+
+SELECT COUNT(*) AS tarjetas_2030 FROM mundiales_restaurado.dbo.tarjeta t INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = t.partido_id WHERE p.anio = 2030; -- esperado: 6
+
+SELECT COUNT(*) AS cambios_2030 FROM mundiales_restaurado.dbo.cambio c INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = c.partido_id WHERE p.anio = 2030; -- esperado: 4
+
+-- Detalles
+
+SELECT * FROM dbo.partido WHERE anio = 2030 ORDER BY partido_id;
+
+SELECT * FROM dbo.aparicion_partido ap INNER JOIN dbo.partido p ON p.partido_id = ap.partido_id  WHERE p.anio = 2030;
+
+SELECT * FROM dbo.gol g INNER JOIN dbo.partido p ON p.partido_id = g.partido_id WHERE p.anio = 2030 ORDER BY g.partido_id, g.minuto;
+
+SELECT * FROM dbo.tarjeta t INNER JOIN dbo.partido p ON p.partido_id = t.partido_id WHERE p.anio = 2030;
+
+SELECT * FROM dbo.cambio c INNER JOIN dbo.partido p ON p.partido_id = c.partido_id  WHERE p.anio = 2030;
+
+-- Verificar los logs
+
+SELECT TOP 3 * FROM dbo.log_partido     ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_seleccion   ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_gol         ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_cambio      ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_tarjeta     ORDER BY log_id DESC;
+
 ```
 
 Anotar el tiempo en la tabla de registro.
 
 ### Restauracion Full Backup Dia 2
+
+### ANTES — Captura 19: Verificación de datos no existentes
+
+```sql
+SELECT COUNT(*) AS partidos_2030 FROM mundiales_restaurado.dbo.partido  WHERE anio = 2030;  -- esperado: 7
+
+SELECT COUNT(*) AS aparacion_2030  FROM mundiales_restaurado.dbo.aparicion_partido ap INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = ap.partido_id WHERE p.anio = 2030; -- esperado:
+
+SELECT COUNT(*) AS gol_2030  FROM mundiales_restaurado.dbo.gol g INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = g.partido_id WHERE p.anio = 2030; -- esperado:
+
+SELECT COUNT(*) AS tarjeta_2030  FROM mundiales_restaurado.dbo.tarjeta t INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = t.partido_id WHERE p.anio = 2030; -- esperado:
+
+SELECT COUNT(*) AS cambio_2030  FROM mundiales_restaurado.dbo.cambio c INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = c.partido_id WHERE p.anio = 2030; -- esperado:
+
+SELECT COUNT(*) AS penales_2030  FROM mundiales_restaurado.dbo.penal pe INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = pe.partido_id WHERE p.anio = 2030; -- esperado: 8
+```
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
@@ -480,10 +520,10 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
 ### DESPUES — Captura 19: Validacion Full Backup Dia 2 restaurado
 
 ```sql
-SELECT COUNT(*) AS partidos_2030        FROM mundiales_restaurado.dbo.partido           WHERE anio = 2030;  -- esperado: 7
-SELECT COUNT(*) AS penales_2030         FROM mundiales_restaurado.dbo.penal pe
-                                        INNER JOIN mundiales_restaurado.dbo.partido p
-                                        ON p.partido_id = pe.partido_id                 WHERE p.anio = 2030; -- esperado: 8
+SELECT COUNT(*) AS partidos_2030 FROM mundiales_restaurado.dbo.partido  WHERE anio = 2030;  -- esperado: 7
+
+SELECT COUNT(*) AS penales_2030  FROM mundiales_restaurado.dbo.penal pe INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = pe.partido_id WHERE p.anio = 2030; -- esperado: 8
+
 SELECT * FROM mundiales_restaurado.dbo.partido WHERE anio = 2030 ORDER BY partido_id;
 ```
 
@@ -644,7 +684,7 @@ Llenar con los tiempos medidos con cronometro:
 | Differential Backup Dia 2    | 1.88              | 2.11 MB (2,220,032 bytes)  |
 | Full Backup Dia 3            | 2.10              | 17.1 MB (17,948,672 bytes) |
 | Differential Backup Dia 3    | 1.89              | 2.11 MB (2,220,032 bytes)  |
-| Restauracion Full Dia 1      |                   |                            |
+| Restauracion Full Dia 1      | 2.60              |                            |
 | Restauracion Full Dia 2      |                   |                            |
 | Restauracion Full Dia 3      |                   |                            |
 | Restauracion Full+Diff Dia 1 |                   |                            |
