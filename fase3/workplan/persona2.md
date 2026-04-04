@@ -492,22 +492,34 @@ Anotar el tiempo en la tabla de registro.
 ```sql
 SELECT COUNT(*) AS partidos_2030 FROM mundiales_restaurado.dbo.partido  WHERE anio = 2030;  -- esperado: 7
 
-SELECT COUNT(*) AS aparacion_2030  FROM mundiales_restaurado.dbo.aparicion_partido ap INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = ap.partido_id WHERE p.anio = 2030; -- esperado:
+SELECT COUNT(*) AS aparacion_2030  FROM mundiales_restaurado.dbo.aparicion_partido ap INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = ap.partido_id WHERE p.anio = 2030; -- esperado: 32
 
-SELECT COUNT(*) AS gol_2030  FROM mundiales_restaurado.dbo.gol g INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = g.partido_id WHERE p.anio = 2030; -- esperado:
+SELECT COUNT(*) AS gol_2030  FROM mundiales_restaurado.dbo.gol g INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = g.partido_id WHERE p.anio = 2030; -- esperado: 10
 
-SELECT COUNT(*) AS tarjeta_2030  FROM mundiales_restaurado.dbo.tarjeta t INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = t.partido_id WHERE p.anio = 2030; -- esperado:
+SELECT COUNT(*) AS tarjeta_2030  FROM mundiales_restaurado.dbo.tarjeta t INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = t.partido_id WHERE p.anio = 2030; -- esperado: 6
 
-SELECT COUNT(*) AS cambio_2030  FROM mundiales_restaurado.dbo.cambio c INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = c.partido_id WHERE p.anio = 2030; -- esperado:
+SELECT COUNT(*) AS cambio_2030  FROM mundiales_restaurado.dbo.cambio c INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = c.partido_id WHERE p.anio = 2030; -- esperado: 4
 
-SELECT COUNT(*) AS penales_2030  FROM mundiales_restaurado.dbo.penal pe INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = pe.partido_id WHERE p.anio = 2030; -- esperado: 8
+SELECT COUNT(*) AS penales_2030  FROM mundiales_restaurado.dbo.penal pe INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = pe.partido_id WHERE p.anio = 2030; -- esperado: 0
 ```
+
+### Captura 20: Eliminación
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -C -S localhost -U sa -P "Mundiales2026!" `
   -Q "DROP DATABASE [mundiales_restaurado];"
 ```
+
+Confirmar que la DB fue eliminada
+
+```powershell
+docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
+  -C -S localhost -U sa -P "Mundiales2026!" `
+  -Q "SELECT name FROM sys.databases WHERE name IN ('mundiales', 'mundiales_restaurado');"
+```
+
+### Captura 21: Restauración
 
 Iniciar cronometro antes de ejecutar:
 
@@ -517,14 +529,44 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "RESTORE DATABASE [mundiales_restaurado] FROM DISK = '/var/opt/mssql/backup/mundiales_full_dia2.bak' WITH MOVE 'mundiales' TO '/var/opt/mssql/data/mundiales_restaurado.mdf', MOVE 'mundiales_log' TO '/var/opt/mssql/data/mundiales_restaurado_log.ldf', REPLACE, STATS = 10"
 ```
 
-### DESPUES — Captura 19: Validacion Full Backup Dia 2 restaurado
+### DESPUES — Captura 22: Validacion Full Backup Dia 2 restaurado
 
 ```sql
 SELECT COUNT(*) AS partidos_2030 FROM mundiales_restaurado.dbo.partido  WHERE anio = 2030;  -- esperado: 7
 
+SELECT COUNT(*) AS aparacion_2030  FROM mundiales_restaurado.dbo.aparicion_partido ap INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = ap.partido_id WHERE p.anio = 2030; -- esperado: 56
+
+SELECT COUNT(*) AS gol_2030  FROM mundiales_restaurado.dbo.gol g INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = g.partido_id WHERE p.anio = 2030; -- esperado: 18
+
+SELECT COUNT(*) AS tarjeta_2030  FROM mundiales_restaurado.dbo.tarjeta t INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = t.partido_id WHERE p.anio = 2030; -- esperado: 10
+
+SELECT COUNT(*) AS cambio_2030  FROM mundiales_restaurado.dbo.cambio c INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = c.partido_id WHERE p.anio = 2030; -- esperado: 8
+
 SELECT COUNT(*) AS penales_2030  FROM mundiales_restaurado.dbo.penal pe INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = pe.partido_id WHERE p.anio = 2030; -- esperado: 8
 
+-- Especifico
+
 SELECT * FROM mundiales_restaurado.dbo.partido WHERE anio = 2030 ORDER BY partido_id;
+
+SELECT * FROM mundiales_restaurado.dbo.aparicion_partido ap INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = ap.partido_id WHERE p.anio = 2030 and (p.etapa = 'Final' or p.etapa = 'Semifinal');
+
+SELECT * FROM mundiales_restaurado.dbo.gol g INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = g.partido_id WHERE p.anio = 2030 and (p.etapa = 'Final' or p.etapa = 'Semifinal');
+
+SELECT * FROM mundiales_restaurado.dbo.tarjeta t INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = t.partido_id WHERE p.anio = 2030 and (p.etapa = 'Final' or p.etapa = 'Semifinal');
+
+SELECT * FROM mundiales_restaurado.dbo.cambio c INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = c.partido_id WHERE p.anio = 2030 and (p.etapa = 'Final' or p.etapa = 'Semifinal');
+
+SELECT * FROM mundiales_restaurado.dbo.penal pe INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = pe.partido_id WHERE p.anio = 2030 and (p.etapa = 'Final' or p.etapa = 'Semifinal');
+
+-- LOGS
+
+SELECT TOP 3 * FROM dbo.log_partido     ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_aparicion_partido     ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_gol     ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_tarjeta     ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_cambio     ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_penal       ORDER BY log_id DESC;
+
 ```
 
 Anotar el tiempo en la tabla de registro.
@@ -685,7 +727,7 @@ Llenar con los tiempos medidos con cronometro:
 | Full Backup Dia 3            | 2.10              | 17.1 MB (17,948,672 bytes) |
 | Differential Backup Dia 3    | 1.89              | 2.11 MB (2,220,032 bytes)  |
 | Restauracion Full Dia 1      | 2.60              |                            |
-| Restauracion Full Dia 2      |                   |                            |
+| Restauracion Full Dia 2      | 2.71              |                            |
 | Restauracion Full Dia 3      |                   |                            |
 | Restauracion Full+Diff Dia 1 |                   |                            |
 | Restauracion Full+Diff Dia 2 |                   |                            |
@@ -695,28 +737,34 @@ Llenar con los tiempos medidos con cronometro:
 
 ## Resumen de capturas
 
-| #   | Momento            | Que debe verse                                          |
-| :-- | :----------------- | :------------------------------------------------------ |
-| 01  | ANTES Dia 0        | Conteos en 0 para 2030, datos historicos cargados       |
-| 02  | DESPUES catalogos  | 1 mundial, 4 participaciones, 4 grupos, 44 planteles    |
-| 03  | ANTES Dia 1        | partido, gol, tarjeta, cambio en 0 para 2030            |
-| 04  | DESPUES Dia 1      | 4 partidos, 10 goles, 6 tarjetas, 4 cambios, logs       |
-| 05  | DESPUES Full Dia 1 | Confirmacion backup con tiempo                          |
-| 06  | DESPUES Diff Dia 1 | Confirmacion backup con tiempo                          |
-| 07  | ANTES Dia 2        | 4 partidos, 0 penales (estado Dia 1)                    |
-| 08  | DESPUES Dia 2      | 7 partidos, 18 goles, 8 penales, logs                   |
-| 09  | DESPUES Full Dia 2 | Confirmacion backup con tiempo                          |
-| 10  | DESPUES Diff Dia 2 | Confirmacion backup con tiempo                          |
-| 11  | ANTES Dia 3        | Nombres de seleccion en minusculas/mixto                |
-| 12  | DESPUES Dia 3      | Nombres en mayusculas, 0 filas con minusculas, logs     |
-| 13  | DESPUES Validacion | Semaforo con todas las filas en OK                      |
-| 14  | DESPUES Full Dia 3 | Confirmacion backup con tiempo                          |
-| 15  | DESPUES Diff Dia 3 | Confirmacion backup con tiempo                          |
-| 16  | Listado backups    | 6 archivos .bak con tamanios                            |
-| 17  | ANTES Fase 3       | Confirmacion BD eliminada                               |
-| 18  | DESPUES Full Dia 1 | 4 partidos, 10 goles, 0 penales en mundiales_restaurado |
-| 19  | DESPUES Full Dia 2 | 7 partidos, 8 penales en mundiales_restaurado           |
-| 20  | DESPUES Full Dia 3 | 7 partidos, nombres en mayusculas                       |
-| 21  | DESPUES F+D Dia 1  | 4 partidos, 0 penales                                   |
-| 22  | DESPUES F+D Dia 2  | 7 partidos, 8 penales                                   |
-| 23  | DESPUES F+D Dia 3  | 7 partidos, nombres en mayusculas                       |
+| #   | Momento               | Que debe verse                                          |
+| :-- | :-------------------- | :------------------------------------------------------ |
+| 01  | ANTES Dia 0           | Conteos en 0 para 2030, datos historicos cargados       |
+| 02  | DESPUES catalogos     | 1 mundial, 4 participaciones, 4 grupos, 44 planteles    |
+| 03  | ANTES Dia 1           | partido, gol, tarjeta, cambio en 0 para 2030            |
+| 04  | DESPUES Dia 1         | 4 partidos, 10 goles, 6 tarjetas, 4 cambios, logs       |
+| 05  | DESPUES Full Dia 1    | Confirmacion backup con tiempo                          |
+| 06  | DESPUES Diff Dia 1    | Confirmacion backup con tiempo                          |
+| 07  | ANTES Dia 2           | 4 partidos, 0 penales (estado Dia 1)                    |
+| 08  | DESPUES Dia 2         | 7 partidos, 18 goles, 8 penales, logs                   |
+| 09  | DESPUES Full Dia 2    | Confirmacion backup con tiempo                          |
+| 10  | DESPUES Diff Dia 2    | Confirmacion backup con tiempo                          |
+| 11  | ANTES Dia 3           | Nombres de seleccion en minusculas/mixto                |
+| 12  | DESPUES Dia 3         | Nombres en mayusculas, 0 filas con minusculas, logs     |
+| 13  | DESPUES Validacion    | Semaforo con todas las filas en OK                      |
+| 14  | DESPUES Full Dia 3    | Confirmacion backup con tiempo                          |
+| 15  | DESPUES Diff Dia 3    | Confirmacion backup con tiempo                          |
+| 16  | Listado backups       | 6 archivos .bak con tamanios                            |
+| 17  | ANTES Fase 3          | Confirmacion BD eliminada                               |
+| 18  | DESPUES Full Dia 1    | 4 partidos, 10 goles, 0 penales en mundiales_restaurado |
+| 19  | ANTES Full Dia 2      |                                                         |
+| 20  | Eliminación de la DB  |                                                         |
+| 22  | Restauración de la DB |                                                         |
+| 21  | DESPUES Full Dia 2    | 7 partidos, 8 penales en mundiales_restaurado           |
+| 23  | ANTES Full Dia 3      |                                                         |
+| 24  | Eliminación de la DB  |                                                         |
+| 25  | Restauración de la DB |                                                         |
+| 26  | DESPUES Full Dia 3    | 7 partidos, nombres en mayusculas                       |
+| 21  | DESPUES F+D Dia 1     | 4 partidos, 0 penales                                   |
+| 22  | DESPUES F+D Dia 2     | 7 partidos, 8 penales                                   |
+| 23  | DESPUES F+D Dia 3     | 7 partidos, nombres en mayusculas                       |
