@@ -633,10 +633,20 @@ El Differential necesita el Full como base. Se restaura el Full en NORECOVERY
 
 ### Paso 1 — Eliminar la base restaurada anterior
 
+### Captura 27: Eliminación
+
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -C -S localhost -U sa -P "Mundiales2026!" `
   -Q "DROP DATABASE [mundiales_restaurado];"
+```
+
+Verificamos que se elimino la DB
+
+```powershell
+docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
+  -C -S localhost -U sa -P "Mundiales2026!" `
+  -Q "SELECT name FROM sys.databases WHERE name IN ('mundiales', 'mundiales_restaurado');"
 ```
 
 ### Restauracion Full Dia 1 + Differential Dia 1
@@ -655,16 +665,43 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "RESTORE DATABASE [mundiales_restaurado] FROM DISK = '/var/opt/mssql/backup/mundiales_diff_dia1.bak' WITH RECOVERY, STATS = 10"
 ```
 
+### DESPUES - Captura 28: Restauración Completada
+
 Detener cronometro al confirmar exito del segundo comando.
 
-### DESPUES — Captura 21: Validacion Full+Diff Dia 1 restaurado
+### DESPUES — Captura 29: Validacion Full+Diff Dia 1 restaurado
 
 ```sql
-SELECT COUNT(*) AS partidos_2030        FROM mundiales_restaurado.dbo.partido           WHERE anio = 2030;  -- esperado: 4
-SELECT COUNT(*) AS penales_2030         FROM mundiales_restaurado.dbo.penal pe
-                                        INNER JOIN mundiales_restaurado.dbo.partido p
-                                        ON p.partido_id = pe.partido_id                 WHERE p.anio = 2030; -- esperado: 0
-SELECT * FROM mundiales_restaurado.dbo.partido WHERE anio = 2030 ORDER BY partido_id;
+SELECT COUNT(*) AS partidos_2030 FROM mundiales_restaurado.dbo.partido  WHERE anio = 2030;  -- esperado: 4
+
+SELECT COUNT(*) AS apariciones_2030 FROM mundiales_restaurado.dbo.aparicion_partido ap INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = ap.partido_id WHERE p.anio = 2030; -- esperado: 32
+
+SELECT COUNT(*) AS goles_2030 FROM mundiales_restaurado.dbo.gol g INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = g.partido_id WHERE p.anio = 2030;
+ -- esperado: 10
+
+SELECT COUNT(*) AS tarjetas_2030 FROM mundiales_restaurado.dbo.tarjeta t INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = t.partido_id WHERE p.anio = 2030; -- esperado: 6
+
+SELECT COUNT(*) AS cambios_2030 FROM mundiales_restaurado.dbo.cambio c INNER JOIN mundiales_restaurado.dbo.partido p ON p.partido_id = c.partido_id WHERE p.anio = 2030; -- esperado: 4
+
+-- Detalles
+
+SELECT * FROM dbo.partido WHERE anio = 2030 ORDER BY partido_id;
+
+SELECT * FROM dbo.aparicion_partido ap INNER JOIN dbo.partido p ON p.partido_id = ap.partido_id  WHERE p.anio = 2030;
+
+SELECT * FROM dbo.gol g INNER JOIN dbo.partido p ON p.partido_id = g.partido_id WHERE p.anio = 2030 ORDER BY g.partido_id, g.minuto;
+
+SELECT * FROM dbo.tarjeta t INNER JOIN dbo.partido p ON p.partido_id = t.partido_id WHERE p.anio = 2030;
+
+SELECT * FROM dbo.cambio c INNER JOIN dbo.partido p ON p.partido_id = c.partido_id  WHERE p.anio = 2030;
+
+-- Verificar los logs
+
+SELECT TOP 3 * FROM dbo.log_partido     ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_seleccion   ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_gol         ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_cambio      ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_tarjeta     ORDER BY log_id DESC;
 ```
 
 Anotar el tiempo total en la tabla de registro.
@@ -753,7 +790,7 @@ Llenar con los tiempos medidos con cronometro:
 | Restauracion Full Dia 1      | 2.60              |                            |
 | Restauracion Full Dia 2      | 2.71              |                            |
 | Restauracion Full Dia 3      | 3.34              |                            |
-| Restauracion Full+Diff Dia 1 |                   |                            |
+| Restauracion Full+Diff Dia 1 | 6.33              |                            |
 | Restauracion Full+Diff Dia 2 |                   |                            |
 | Restauracion Full+Diff Dia 3 |                   |                            |
 
@@ -788,7 +825,10 @@ Llenar con los tiempos medidos con cronometro:
 | 23  | ANTES Full Dia 3      |                                                         |
 | 24  | Eliminación de la DB  |                                                         |
 | 25  | Restauración de la DB |                                                         |
-| 27  | DESPUES Full Dia 3    | 7 partidos, nombres en mayusculas                       |
-| 21  | DESPUES F+D Dia 1     | 4 partidos, 0 penales                                   |
-| 22  | DESPUES F+D Dia 2     | 7 partidos, 8 penales                                   |
-| 23  | DESPUES F+D Dia 3     | 7 partidos, nombres en mayusculas                       |
+| 26  | DESPUES Full Dia 3    | 7 partidos, nombres en mayusculas                       |
+| 27  | Eliminación de la DB  |                                                         |
+| 28  | Restauración de la DB |                                                         |
+| 29  | DESPUES F+D Dia 1     | 4 partidos, 0 penales                                   |
+
+| 22 | DESPUES F+D Dia 2 | 7 partidos, 8 penales |
+| 23 | DESPUES F+D Dia 3 | 7 partidos, nombres en mayusculas |
