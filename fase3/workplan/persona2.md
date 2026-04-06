@@ -560,12 +560,12 @@ SELECT * FROM mundiales_restaurado.dbo.penal pe INNER JOIN mundiales_restaurado.
 
 -- LOGS
 
-SELECT TOP 3 * FROM dbo.log_partido     ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_partido               ORDER BY log_id DESC;
 SELECT TOP 3 * FROM dbo.log_aparicion_partido     ORDER BY log_id DESC;
-SELECT TOP 3 * FROM dbo.log_gol     ORDER BY log_id DESC;
-SELECT TOP 3 * FROM dbo.log_tarjeta     ORDER BY log_id DESC;
-SELECT TOP 3 * FROM dbo.log_cambio     ORDER BY log_id DESC;
-SELECT TOP 3 * FROM dbo.log_penal       ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_gol                   ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_tarjeta               ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_cambio                ORDER BY log_id DESC;
+SELECT TOP 3 * FROM dbo.log_penal                 ORDER BY log_id DESC;
 
 ```
 
@@ -573,11 +573,29 @@ Anotar el tiempo en la tabla de registro.
 
 ### Restauracion Full Backup Dia 3
 
+### ANTES — Captura 23: Verificación de datos no existentes
+
+```sql
+SELECT * FROM mundiales_restaurado.dbo.seleccion  WHERE anio = 2030;
+```
+
+### Captura 24: Eliminación
+
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -C -S localhost -U sa -P "Mundiales2026!" `
   -Q "DROP DATABASE [mundiales_restaurado];"
 ```
+
+Verificamos que se elimino la DB
+
+```powershell
+docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
+  -C -S localhost -U sa -P "Mundiales2026!" `
+  -Q "SELECT name FROM sys.databases WHERE name IN ('mundiales', 'mundiales_restaurado');"
+```
+
+### Captura 25: restauración
 
 Iniciar cronometro antes de ejecutar:
 
@@ -587,13 +605,19 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "RESTORE DATABASE [mundiales_restaurado] FROM DISK = '/var/opt/mssql/backup/mundiales_full_dia3.bak' WITH MOVE 'mundiales' TO '/var/opt/mssql/data/mundiales_restaurado.mdf', MOVE 'mundiales_log' TO '/var/opt/mssql/data/mundiales_restaurado_log.ldf', REPLACE, STATS = 10"
 ```
 
-### DESPUES — Captura 20: Validacion Full Backup Dia 3 restaurado
+### DESPUES — Captura 26: Validacion Full Backup Dia 3 restaurado
 
 ```sql
 SELECT COUNT(*) AS partidos_2030        FROM mundiales_restaurado.dbo.partido           WHERE anio = 2030;  -- esperado: 7
+
 SELECT TOP 20 seleccion_id, nombre      FROM mundiales_restaurado.dbo.seleccion         ORDER BY seleccion_id;
-SELECT COUNT(*) AS nombres_minusculas   FROM mundiales_restaurado.dbo.seleccion
-                                        WHERE nombre <> UPPER(nombre);                                       -- esperado: 0
+
+SELECT COUNT(*) AS nombres_minusculas   FROM mundiales_restaurado.dbo.seleccion WHERE nombre <> UPPER(nombre);  -- esperado: 0
+
+
+-- Logs
+
+SELECT TOP 3 * FROM dbo.log_seleccion            ORDER BY log_id DESC;
 ```
 
 Anotar el tiempo en la tabla de registro.
@@ -728,7 +752,7 @@ Llenar con los tiempos medidos con cronometro:
 | Differential Backup Dia 3    | 1.89              | 2.11 MB (2,220,032 bytes)  |
 | Restauracion Full Dia 1      | 2.60              |                            |
 | Restauracion Full Dia 2      | 2.71              |                            |
-| Restauracion Full Dia 3      |                   |                            |
+| Restauracion Full Dia 3      | 3.34              |                            |
 | Restauracion Full+Diff Dia 1 |                   |                            |
 | Restauracion Full+Diff Dia 2 |                   |                            |
 | Restauracion Full+Diff Dia 3 |                   |                            |
@@ -759,12 +783,12 @@ Llenar con los tiempos medidos con cronometro:
 | 18  | DESPUES Full Dia 1    | 4 partidos, 10 goles, 0 penales en mundiales_restaurado |
 | 19  | ANTES Full Dia 2      |                                                         |
 | 20  | Eliminación de la DB  |                                                         |
-| 22  | Restauración de la DB |                                                         |
-| 21  | DESPUES Full Dia 2    | 7 partidos, 8 penales en mundiales_restaurado           |
+| 21  | Restauración de la DB |                                                         |
+| 22  | DESPUES Full Dia 2    | 7 partidos, 8 penales en mundiales_restaurado           |
 | 23  | ANTES Full Dia 3      |                                                         |
 | 24  | Eliminación de la DB  |                                                         |
 | 25  | Restauración de la DB |                                                         |
-| 26  | DESPUES Full Dia 3    | 7 partidos, nombres en mayusculas                       |
+| 27  | DESPUES Full Dia 3    | 7 partidos, nombres en mayusculas                       |
 | 21  | DESPUES F+D Dia 1     | 4 partidos, 0 penales                                   |
 | 22  | DESPUES F+D Dia 2     | 7 partidos, 8 penales                                   |
 | 23  | DESPUES F+D Dia 3     | 7 partidos, nombres en mayusculas                       |
