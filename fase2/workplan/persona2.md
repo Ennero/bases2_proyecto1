@@ -799,18 +799,36 @@ Anotar el tiempo total en la tabla de registro.
 
 ### Restauracion Full Dia 1 + Differential Dia 3
 
+### ANTES — Captura 34: Verificación de datos no existentes
+
+```sql
+SELECT * FROM mundiales_restaurado.dbo.seleccion;
+```
+
+### Captura 35: Eliminación
+
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -C -S localhost -U sa -P "Mundiales2026!" `
   -Q "DROP DATABASE [mundiales_restaurado];"
 ```
 
+Verificamos que se elimino la DB
+
+```powershell
+docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
+  -C -S localhost -U sa -P "Mundiales2026!" `
+  -Q "SELECT name FROM sys.databases WHERE name IN ('mundiales', 'mundiales_restaurado');"
+```
+
+### Captura 36: Restauración
+
 Iniciar cronometro:
 
 ```powershell
 docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -C -S localhost -U sa -P "Mundiales2026!" `
-  -Q "RESTORE DATABASE [mundiales_restaurado] FROM DISK = '/var/opt/mssql/backup/mundiales_full_dia1.bak' WITH MOVE 'mundiales' TO '/var/opt/mssql/data/mundiales_restaurado.mdf', MOVE 'mundiales_log' TO '/var/opt/mssql/data/mundiales_restaurado_log.ldf', NORECOVERY, REPLACE, STATS = 10"
+  -Q "RESTORE DATABASE [mundiales_restaurado] FROM DISK = '/var/opt/mssql/backup/mundiales_full_dia3.bak' WITH MOVE 'mundiales' TO '/var/opt/mssql/data/mundiales_restaurado.mdf', MOVE 'mundiales_log' TO '/var/opt/mssql/data/mundiales_restaurado_log.ldf', NORECOVERY, REPLACE, STATS = 10"
 ```
 
 ```powershell
@@ -819,13 +837,19 @@ docker exec -it mundiales_db /opt/mssql-tools18/bin/sqlcmd `
   -Q "RESTORE DATABASE [mundiales_restaurado] FROM DISK = '/var/opt/mssql/backup/mundiales_diff_dia3.bak' WITH RECOVERY, STATS = 10"
 ```
 
-### DESPUES — Captura 23: Validacion Full+Diff Dia 3 restaurado
+### DESPUES — Captura 37: Validacion Full+Diff Dia 3 restaurado
 
 ```sql
 SELECT COUNT(*) AS partidos_2030        FROM mundiales_restaurado.dbo.partido           WHERE anio = 2030;  -- esperado: 7
+
 SELECT TOP 20 seleccion_id, nombre      FROM mundiales_restaurado.dbo.seleccion         ORDER BY seleccion_id;
-SELECT COUNT(*) AS nombres_minusculas   FROM mundiales_restaurado.dbo.seleccion
-                                        WHERE nombre <> UPPER(nombre);                                       -- esperado: 0
+
+SELECT COUNT(*) AS nombres_minusculas   FROM mundiales_restaurado.dbo.seleccion WHERE nombre <> UPPER(nombre);  -- esperado: 0
+
+
+-- Logs
+
+SELECT TOP 3 * FROM dbo.log_seleccion            ORDER BY log_id DESC;
 ```
 
 Anotar el tiempo total en la tabla de registro.
@@ -849,7 +873,7 @@ Llenar con los tiempos medidos con cronometro:
 | Restauracion Full Dia 3      | 3.34              |                            |
 | Restauracion Full+Diff Dia 1 | 6.33              |                            |
 | Restauracion Full+Diff Dia 2 | 5.55              |                            |
-| Restauracion Full+Diff Dia 3 |                   |                            |
+| Restauracion Full+Diff Dia 3 | 5.65              |                            |
 
 ---
 
