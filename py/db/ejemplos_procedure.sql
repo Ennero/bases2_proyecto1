@@ -29,7 +29,6 @@ EXEC dbo.sp_mundial_por_anio @anio = 1990;
 
 
 
-CLEAR SCREEM
 -- STORED PROCEDURES: 2
 -- Historial completo de Argentina
 EXEC dbo.sp_historial_pais @pais = 'Argentina';	

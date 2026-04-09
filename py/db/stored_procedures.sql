@@ -124,6 +124,7 @@ BEGIN
         p.etapa AS [Etapa],
         s1.nombre AS [Seleccion Local],
         p.goles_local AS [Goles Local],
+        p.goles_visitante AS [Goles Visitante],
         sv.nombre AS [Seleccion Visitante],
         CASE 
             WHEN p.definicion_penales = 1
@@ -217,14 +218,15 @@ BEGIN
     JOIN dbo.seleccion s ON s.seleccion_id = pj.seleccion_id
     WHERE pj.anio = @anio
     UNION ALL
-    SELECT 
+    // Fair play no sale 
+    /*SELECT 
         ps.premio AS [Premio],
         NULL AS [Jugador],
         s.nombre AS [Seleccion]
     FROM dbo.premio_seleccion ps
     JOIN dbo.seleccion s ON s.seleccion_id = ps.seleccion_id
     WHERE ps.anio = @anio
-    ORDER BY [Premio];
+    ORDER BY [Premio];*/ 
     END
 
     IF @seccion IS NULL OR @seccion=8
@@ -550,7 +552,7 @@ BEGIN
     JOIN dbo.jugador j ON j.jugador_id = pj.jugador_id
     WHERE pj.seleccion_id = @seleccion_id
         AND (@anio IS NULL OR pj.anio = @anio)
-    UNION ALL
+    /*UNION ALL
     SELECT
         ps.anio                 AS [Anio],
         ps.premio               AS [Premio],
@@ -559,7 +561,8 @@ BEGIN
     FROM dbo.premio_seleccion ps
     WHERE ps.seleccion_id = @seleccion_id
         AND (@anio IS NULL OR ps.anio = @anio)
-    ORDER BY [Anio], [Premio];
+    ORDER BY [Anio], [Premio];*/ 
+    // Fair play no sale 
     END
 
     IF @seccion IS NULL OR @seccion=9
