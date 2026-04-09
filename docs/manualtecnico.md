@@ -458,14 +458,23 @@ Atributos:
 
 ### 8.15 Tabla goleador
 
-Proposito: registro de goleadores por edicion.
+Proposito: lista oficial de goleadores por edicion del mundial, extraida de la fuente web. Contiene la cantidad real de goles anotados por cada jugador en cada torneo.
+
+Fuente: https://www.losmundialesdefutbol.com/mundiales/{anio}_goleadores.php
+Archivo HTML local: html_descargados/mundiales_{anio}_goleadores.php
 
 Atributos:
 
 - anio: referencia al mundial.
-- jugador_id: jugador goleador.
+- jugador_id: jugador registrado.
 - seleccion_id: seleccion del jugador en la edicion.
-- goles: cantidad de goles.
+- goles: cantidad de goles anotados en el torneo, extraida de la columna de goles de la tabla HTML de la fuente.
+
+Correccion aplicada al scraper (scraping_normalizado.py):
+
+Se detecto y corrigio un defecto en la funcion extraer_goleadores. La tabla HTML de la fuente tiene la estructura: [Posicion | Jugador | Goles (con icono ball.jpg) | Partidos].
+
+Nota: para el detalle granular de cada gol individual (minuto, tipo, partido), usar la tabla gol.
 
 ### 8.16 Tabla premio_jugador
 

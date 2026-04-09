@@ -1027,11 +1027,24 @@ def extraer_goleadores(fuente: FuenteDatos, anios: list[int], carpeta: str) -> N
             if not enlace:
                 continue
             goles = 0
-            for celda in reversed(celdas):
-                numero = extraer_entero(limpiar_texto(celda.get_text()))
-                if numero is not None:
-                    goles = numero
+            for celda in celdas:
+                if celda.find("img", src=re.compile(r"ball", re.IGNORECASE)):
+                    numero = extraer_entero(limpiar_texto(celda.get_text()))
+                    if numero is not None:
+                        goles = numero
                     break
+            else:
+                # Fallback: si no se encuentra la imagen de balon, tomar
+                # el penultimo numero (columna goles antes de partidos).
+                numeros_encontrados = []
+                for celda in celdas:
+                    numero = extraer_entero(limpiar_texto(celda.get_text()))
+                    if numero is not None:
+                        numeros_encontrados.append(numero)
+                if len(numeros_encontrados) >= 2:
+                    goles = numeros_encontrados[-2]
+                elif numeros_encontrados:
+                    goles = numeros_encontrados[-1]
             filas.append({
                 "anio": anio,
                 "jugador": limpiar_texto(enlace.get_text()),
