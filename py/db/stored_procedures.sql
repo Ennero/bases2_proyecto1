@@ -217,16 +217,18 @@ BEGIN
     JOIN dbo.jugador j ON j.jugador_id = pj.jugador_id
     JOIN dbo.seleccion s ON s.seleccion_id = pj.seleccion_id
     WHERE pj.anio = @anio
+    -- Fair play no sale (premio_seleccion comentado temporalmente)
+    /*
     UNION ALL
-    // Fair play no sale 
-    /*SELECT 
+    SELECT 
         ps.premio AS [Premio],
         NULL AS [Jugador],
         s.nombre AS [Seleccion]
     FROM dbo.premio_seleccion ps
     JOIN dbo.seleccion s ON s.seleccion_id = ps.seleccion_id
     WHERE ps.anio = @anio
-    ORDER BY [Premio];*/ 
+    ORDER BY [Premio];
+    */
     END
 
     IF @seccion IS NULL OR @seccion=8
@@ -561,8 +563,9 @@ BEGIN
     FROM dbo.premio_seleccion ps
     WHERE ps.seleccion_id = @seleccion_id
         AND (@anio IS NULL OR ps.anio = @anio)
-    ORDER BY [Anio], [Premio];*/ 
-    // Fair play no sale 
+    ORDER BY [Anio], [Premio];
+    */
+    -- Fair play no sale (premio_seleccion comentado temporalmente)
     END
 
     IF @seccion IS NULL OR @seccion=9

@@ -7,17 +7,17 @@
 - [4. Estructura del repositorio](#4-estructura-del-repositorio)
 - [5. Proceso de recoleccion de datos](#5-proceso-de-recoleccion-de-datos)
 - [6. Proceso de normalizacion y generacion de CSV](#6-proceso-de-normalizacion-y-generacion-de-csv)
-- [6.4 Politica de canonizacion historica y no unicidad controlada](#64-politica-de-canonizacion-historica-y-no-unicidad-controlada)
+  - [6.4 Politica de canonizacion historica y no unicidad controlada](#64-politica-de-canonizacion-historica-y-no-unicidad-controlada)
 - [7. Carga en Docker y SQL Server](#7-carga-en-docker-y-sql-server)
 - [8. Diccionario tecnico de la base de datos](#8-diccionario-tecnico-de-la-base-de-datos)
 - [9. Stored procedures](#9-stored-procedures)
-- [10. Seccion para vistas SQL](#10-seccion-para-vistas-sql)
+- [10. Vista SQL del sistema](#10-vista-sql-del-sistema)
 - [11. Operacion diaria](#11-operacion-diaria)
 - [12. Validaciones recomendadas](#12-validaciones-recomendadas)
 - [13. Troubleshooting](#13-troubleshooting)
 - [14. Seguridad y mantenimiento](#14-seguridad-y-mantenimiento)
 - [15. Decision tecnica sobre uso de dbo](#15-decision-tecnica-sobre-uso-de-dbo)
-- [16. Fase 2: Simulacion y auditoria de rendimiento](#16-Fase-2:—Simulacion-y-auditoria-de-rendimiento)
+- [16. Fase 2: Simulacion y auditoria de rendimiento](#16-fase-2-simulacion-y-auditoria-de-rendimiento)
 
 ## 2. Alcance y objetivos
 
@@ -92,13 +92,16 @@ bases2_proyecto1/
 |       |-- stored_procedures.sql
 |       |-- performance_audit_logs.sql
 |       |-- modelo_wc.dbml
+|       |-- ejemplos_procedure.sql
 |       `-- ejemplos_procedure.txt
 |-- datos_normalizados_web/
 |-- datos_normalizados_local/
 |-- html_descargados/
+|-- backups/          # Archivos .bak generados durante Fase 2
 `-- docs/
-    `-- manualtecnico.md
-|-- backups/ # Archivos .bak generados durante Fase 2
+    |-- manualtecnico.md
+    |-- tablas.md
+    `-- imgs/
 ```
 
 ## 5. Proceso de recoleccion de datos
@@ -760,59 +763,62 @@ Manejo de errores:
 | Hungría   | Hungria       |
 | Sudáfrica | Sudafrica     |
 
-## 10. Seccion para vistas SQL
+## 10. Vista SQL del sistema
 
-Esta seccion queda reservada para la implementacion de vistas por parte de tu companera.
+El modelo cuenta con una vista definida directamente en `py/db/sqlserver_schema.sql`, creada
+automaticamente junto con el schema al levantar Docker.
 
-Responsable funcional:
+### 10.1 v_evento_jugador_pendiente
 
-- Estefania Mazariegos
+**Archivo:** `py/db/sqlserver_schema.sql` (al final del archivo)
 
-Objetivo de las vistas:
+**Proposito:** Consolidar en un solo resultado todos los eventos de partido (goles, tarjetas,
+cambios y penales) donde el jugador no pudo ser identificado automaticamente durante el ETL.
+Permite hacer seguimiento rapido de inconsistencias de datos y es la fuente para la tabla
+`resolucion_identidad_jugador`.
 
-- Simplificar consultas recurrentes.
-- Estandarizar datasets de reporteria.
-- Facilitar integracion con BI.
+**Tablas fuente:** `dbo.gol`, `dbo.tarjeta`, `dbo.cambio`, `dbo.penal`,
+`dbo.resolucion_identidad_jugador`
 
-### 10.1 Convenciones recomendadas
+**Columnas expuestas:**
 
-- Prefijo: v\_
-- Formato de nombre: snake_case
-- Evitar logica de negocio duplicada entre vistas
-- Documentar cada vista con proposito y columnas
+| Columna              | Descripcion                                    |
+| :------------------- | :--------------------------------------------- |
+| source_table         | Tabla origen del evento (gol, tarjeta, etc.)   |
+| source_event_id      | ID del evento en su tabla origen               |
+| partido_id           | Partido donde ocurrio el evento                |
+| seleccion_id         | Seleccion asociada al evento                   |
+| jugador_nombre_raw   | Nombre textual no resuelto (puede ser NULL)    |
+| minuto               | Minuto del evento                              |
 
-### 10.2 Plantilla para documentar cada vista
+**Filtros internos aplicados:**
 
-Usar este formato al agregar nuevas vistas:
+- Goles donde `jugador_id IS NULL`
+- Tarjetas donde `jugador_id IS NULL`
+- Cambios donde `jugador_entra_id IS NULL` (entrada)
+- Cambios donde `jugador_sale_id IS NULL` (salida)
+- Penales donde `jugador_id IS NULL`
 
-```text
-Nombre de vista:
-Objetivo:
-Tablas fuente:
-Columnas expuestas:
-Filtros aplicados:
-Ejemplo de uso:
+**Ejemplos de uso:**
+
+```sql
+-- Ver total de eventos con jugador pendiente
+SELECT COUNT(*) AS pendientes FROM dbo.v_evento_jugador_pendiente;
+
+-- Ver eventos pendientes por tipo de evento
+SELECT source_table, COUNT(*) AS cantidad
+FROM dbo.v_evento_jugador_pendiente
+GROUP BY source_table
+ORDER BY cantidad DESC;
+
+-- Ver goles sin jugador identificado
+SELECT * FROM dbo.v_evento_jugador_pendiente
+WHERE source_table = 'gol';
+
+-- Ver eventos pendientes de un partido especifico
+SELECT * FROM dbo.v_evento_jugador_pendiente
+WHERE partido_id = 500;
 ```
-
-### 10.3 Espacio de registro de vistas
-
-Vista 1:
-
-- Nombre:
-- Objetivo:
-- Estado:
-
-Vista 2:
-
-- Nombre:
-- Objetivo:
-- Estado:
-
-Vista 3:
-
-- Nombre:
-- Objetivo:
-- Estado:
 
 ## 11. Operacion diaria
 
