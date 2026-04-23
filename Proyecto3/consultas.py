@@ -1,6 +1,13 @@
-from pymongo import MongoClient
+try:
+    from pymongo import MongoClient
+    import certifi # <-- 1. Importar certifi
+except ImportError:
+    raise ImportError("Falta una librería. Ejecuta: pip install pymongo certifi")
 
-client = MongoClient("mongodb+srv://grupo3:PR3_G3@cluster0.1weo2z1.mongodb.net/mundiales?appName=Cluster0")
+# 2. Agregar tlsCAFile=certifi.where() al final
+uri = "mongodb+srv://grupo3:PR3_G3@cluster0.1weo2z1.mongodb.net/mundiales?appName=Cluster0"
+client = MongoClient(uri, tlsCAFile=certifi.where())
+
 db = client["mundiales"]
 
 # ==========================================
