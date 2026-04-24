@@ -45,8 +45,129 @@ fase3/
 ├── metodo_c.py      # Método C: reporte completo por año de mundial
 ├── metodo_d.py      # Método D: expediente completo por selección
 ├── consultas.py     # Consultas rápidas y resúmenes generales
+├── migracion.py     # Script de migración SQL Server → MongoDB
 └── requirements.txt # Dependencias del proyecto
 ```
+
+---
+
+## 🔄 Script de migración — `migracion.py`
+
+Este script realiza la migración completa de datos desde SQL Server hacia
+MongoDB Atlas. Transforma el modelo relacional en un modelo de documentos
+embebidos optimizado para consultas rápidas.
+
+### ¿Qué hace?
+
+El proceso de migración toma los datos normalizados de SQL Server y los
+reorganiza en MongoDB siguiendo una estrategia de desnormalización controlada:
+
+1. **Crea colecciones e índices** en MongoDB para las 4 tablas principales.
+2. **Carga datos independientes primero** (selecciones y jugadores sin dependencias).
+3. **Construye un caché en memoria** para evitar miles de búsquedas en MongoDB.
+4. **Enriquece documentos con nombres** agregando campos denormalizados (ej: `seleccionNombre` junto a `seleccionId`).
+5. **Carga datos dependientes** (mundiales y partidos con sus relaciones embebidas).
+
+### Funciones principales
+
+| Función | Descripcion |
+| :--- | :--- |
+| `crear_colecciones()` | Elimina colecciones existentes y crea las 4 nuevas colecciones vacías |
+| `crear_indices()` | Define índices únicos y de búsqueda para optimizar consultas |
+| `cargar_selecciones()` | Inserta todas las selecciones con sus aliases, participaciones, grupos y posiciones finales |
+| `cargar_jugadores()` | Inserta todos los jugadores con sus goleadores, premios y planteles |
+| `construir_cache()` | Crea diccionarios en memoria `id → nombre` para selecciones y jugadores |
+| `cargar_mundiales(sel_map, jug_map)` | Inserta cada mundial con grupos, goleadores, premios, participaciones y planteles enriquecidos |
+| `cargar_partidos(sel_map, jug_map)` | Inserta cada partido con goles, tarjetas, cambios, apariciones y dirección técnica enriquecidos |
+
+### Estrategia de enriquecimiento
+
+En lugar de hacer un `find_one()` a MongoDB por cada registro (operación muy
+lenta), el script construye dos diccionarios en memoria tras cargar
+selecciones y jugadores:
+
+```python
+sel_map = {1: "Argentina", 2: "Brasil", ...}
+jug_map = {100: "Messi", 200: "Pelé", ...}
+```
+
+Luego, al cargar mundiales y partidos, usa estos diccionarios para agregar
+nombres directamente sin consultas a la base de datos:
+
+```python
+"seleccionId": 1,
+"seleccionNombre": sel_map.get(1)  # ← O(1) lookup, muy rápido
+```
+
+### Modo de uso
+
+#### Ejecución simple
+
+```bash
+python migracion.py
+```
+
+Ejecuta el flujo completo de migración:
+
+```
+==================================================
+  MIGRACIÓN SQL Server → MongoDB
+==================================================
+── Creando colecciones ──
+  mundial: eliminada
+  mundial: creada
+  ...
+── Cargando selecciones ──
+  256 selecciones insertadas
+── Cargando jugadores ──
+  12000 jugadores insertados
+── Construyendo caché de nombres ──
+  256 selecciones, 12000 jugadores en caché
+── Cargando mundiales ──
+  21 mundiales insertados
+── Cargando partidos ──
+  900 partidos insertados
+==================================================
+  Migración completada ✓
+==================================================
+```
+
+### Manejo de errores
+
+El script captura errores de inserción masiva con `BulkWriteError` para
+continuar la migración incluso si hay duplicados o conflictos de llave única.
+Cada error se registra como:
+
+```
+  ⚠ BulkWriteError selecciones: {error_details}
+```
+
+### Requisitos previos para ejecutar
+
+1. **SQL Server accesible** en `localhost:1433` con:
+   - Base de datos: `mundiales`
+   - Usuario: `sa`
+   - Contraseña: `Mundiales2026!`
+   - (Ajusta las credenciales en la sección `CONEXIONES` del script)
+
+2. **MongoDB Atlas cluster** configurado con:
+   - Usuario: `grupo3`
+   - Contraseña: `PR3_G3`
+   - Base de datos: `mundiales`
+   - (Verifica la cadena de conexión en la sección `CONEXIONES`)
+
+3. **Dependencias instaladas:**
+   ```bash
+   pip install pyodbc pymongo
+   ```
+
+### Optimizaciones implementadas
+
+- **Caché en memoria** para búsquedas O(1) de nombres
+- **Inserción en lote** (`insert_many`) en lugar de inserciones individuales
+- **Índices únicos** en campos ID para evitar duplicados
+- **Índices de búsqueda** en campos frecuentes (año, país, etc.)
+- **Construcción ordenada** de dependencias (independientes primero)
 
 ---
 
