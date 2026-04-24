@@ -1,4 +1,4 @@
-# 🏆 Sistema de Consultas — Mundiales de Fútbol (MongoDB)
+# Sistema de Consultas — Mundiales de Fútbol (MongoDB)
 
 Fase 3 del proyecto de Bases de Datos 2 (USAC). Este módulo implementa una
 interfaz en Python para consultar la base de datos NoSQL de Mundiales de
@@ -10,7 +10,7 @@ históricos fueron migrados a un modelo de documentos en MongoDB.
 
 ---
 
-## 🚀 Requisitos previos
+## Requisitos previos
 
 **Python:** 3.8 o superior.
 
@@ -36,7 +36,7 @@ centralizada en `conexion.py`.
 
 ---
 
-## 📂 Estructura del proyecto
+## Estructura del proyecto
 
 ```
 fase3/
@@ -51,7 +51,7 @@ fase3/
 
 ---
 
-## 🔄 Script de migración — `migracion.py`
+## Script de migración — `migracion.py`
 
 Este script realiza la migración completa de datos desde SQL Server hacia
 MongoDB Atlas. Transforma el modelo relacional en un modelo de documentos
@@ -128,7 +128,7 @@ Ejecuta el flujo completo de migración:
 ── Cargando partidos ──
   900 partidos insertados
 ==================================================
-  Migración completada ✓
+  Migración completada
 ==================================================
 ```
 
@@ -139,7 +139,7 @@ continuar la migración incluso si hay duplicados o conflictos de llave única.
 Cada error se registra como:
 
 ```
-  ⚠ BulkWriteError selecciones: {error_details}
+  BulkWriteError selecciones: {error_details}
 ```
 
 ### Requisitos previos para ejecutar
@@ -171,7 +171,7 @@ Cada error se registra como:
 
 ---
 
-## 🗄️ Modelo de datos en MongoDB
+## Modelo de datos en MongoDB
 
 La base de datos se llama `mundiales` y contiene 4 colecciones principales.
 A diferencia del modelo relacional de la Fase 1, MongoDB embebe los datos
@@ -260,7 +260,7 @@ anotados y convocatorias.
 
 ---
 
-## 🛠️ Guía de uso
+## Guía de uso
 
 ### Opción 1 — Menú interactivo (recomendado)
 
@@ -307,7 +307,7 @@ Ejecuta las 6 consultas de resumen general en secuencia.
 
 ---
 
-## 📘 Método C — `info_mundial_por_anio`
+## Método C — `info_mundial_por_anio`
 
 Muestra el reporte completo de una edición del Mundial.
 
@@ -352,7 +352,7 @@ info_mundial_por_anio(2022, filtro_grupo="G", filtro_pais="Brasil")
 Desde el menú interactivo:
 
 ```
-▶ Ingresa el año del mundial: 2022
+Ingresa el año del mundial: 2022
 Filtro - Grupo (ej. A, B): G
 Filtro - País participante (ej. Brasil): Brasil
 Filtro - Fecha exacta (ej. 12-Jul-1998): [Enter para omitir]
@@ -360,7 +360,7 @@ Filtro - Fecha exacta (ej. 12-Jul-1998): [Enter para omitir]
 
 ---
 
-## 📗 Método D — `info_por_pais`
+## Método D — `info_por_pais`
 
 Muestra el expediente historico completo de una seleccion.
 
@@ -405,7 +405,7 @@ info_por_pais("BRASIL")
 
 ---
 
-## 📙 Consultas rápidas — `consultas.py`
+## Consultas rápidas — `consultas.py`
 
 Ejecuta 6 funciones de resumen general sobre toda la base de datos.
 
@@ -434,7 +434,7 @@ goles_hechos_mundiales(top=5)
 
 ---
 
-## ⚙️ Detalles de implementacion
+## Detalles de implementacion
 
 ### Conexion a MongoDB Atlas
 
