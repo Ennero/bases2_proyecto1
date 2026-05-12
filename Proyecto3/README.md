@@ -144,21 +144,21 @@ Cada error se registra como:
 
 ### Requisitos previos para ejecutar
 
-1. **SQL Server accesible** en `localhost:1433` con:
-   - Base de datos: `mundiales`
-   - Usuario: `sa`
-   - Contraseña: `Mundiales2026!`
-   - (Ajusta las credenciales en la sección `CONEXIONES` del script)
+1. **SQL Server accesible** (ej. en `localhost:1433`)
+   - Variables de entorno en un archivo `.env`:
+     - `SQL_SERVER`
+     - `SQL_DB`
+     - `SQL_USER`
+     - `SQL_PASSWORD`
 
-2. **MongoDB Atlas cluster** configurado con:
-   - Usuario: `grupo3`
-   - Contraseña: `PR3_G3`
-   - Base de datos: `mundiales`
-   - (Verifica la cadena de conexión en la sección `CONEXIONES`)
+2. **MongoDB Atlas cluster** configurado (o MongoDB local)
+   - Configura la cadena de conexión en tu `.env` con la variable:
+     `MONGO_URI`
+   (Verifica el archivo `.env.example` para más detalles)
 
 3. **Dependencias instaladas:**
    ```bash
-   pip install pyodbc pymongo
+   pip install -r requirements.txt
    ```
 
 ### Optimizaciones implementadas

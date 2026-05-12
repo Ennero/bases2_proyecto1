@@ -218,3 +218,8 @@ html_descargados.zip
 
 # backups
 backups/*.bak
+# Custom Project Files
+backups/
+logs/
+tmp_{web}_{strict}_{smoke}/
+

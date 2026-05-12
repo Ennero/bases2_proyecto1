@@ -14,26 +14,34 @@ El enriquecimiento (agregar *Nombre junto a cada *Id) se hace con
 diccionarios en memoria para no hacer miles de find_one() a MongoDB.
 """
 
+import os
 import pyodbc
 from pymongo import MongoClient
 from pymongo.errors import BulkWriteError
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ──────────────────────────────────────────────
-# CONEXIONES  —  ajusta SERVER / UID / PWD
+# CONEXIONES
 # ──────────────────────────────────────────────
+sql_server = os.getenv("SQL_SERVER", "localhost,1433")
+sql_db = os.getenv("SQL_DB", "mundiales")
+sql_user = os.getenv("SQL_USER", "sa")
+sql_pwd = os.getenv("SQL_PASSWORD", "Mundiales2026!")
+
 sql = pyodbc.connect(
-    "DRIVER={ODBC Driver 17 for SQL Server};"
-    "SERVER=localhost,1433;"
-    "DATABASE=mundiales;"
-    "UID=sa;"
-    "PWD=Mundiales2026!;"
+    f"DRIVER={{ODBC Driver 17 for SQL Server}};"
+    f"SERVER={sql_server};"
+    f"DATABASE={sql_db};"
+    f"UID={sql_user};"
+    f"PWD={sql_pwd};"
     "Encrypt=yes;"
     "TrustServerCertificate=yes;"
 )
 
-mongo = MongoClient(
-    "mongodb+srv://grupo3:PR3_G3@cluster0.1weo2z1.mongodb.net/mundiales?appName=Cluster0"
-)
+mongo_uri = os.getenv("MONGO_URI", "mongodb://localhost:27017/mundiales")
+mongo = MongoClient(mongo_uri)
 db = mongo["mundiales"]
 
 # ──────────────────────────────────────────────
