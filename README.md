@@ -1,60 +1,79 @@
-# Mundiales de Futbol - Base de Datos Relacional
+<div align="center">
 
-Autores: David Barrios, Enner Mendizabal, Estefania Mazariegos  
-Licencia: MIT  
-Version: 2026.2  
-Ultima actualizacion: Marzo 28, 2026
+# ⚽ FIFA World Cup Database & Automated ETL Pipeline
 
-## Descripcion general
+**Pipeline integral de extracción (Web Scraping), normalización y modelado de datos históricos de Copas del Mundo (1930-2026) en SQL Server con Docker**
 
-Proyecto para extraer, normalizar y cargar datos historicos de Copas del Mundo (1930-2026) en SQL Server.
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
+[![SQL Server](https://img.shields.io/badge/SQL_Server-2022-CC292B?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/sql-server)
+[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+[![University](https://img.shields.io/badge/USAC-Bases_de_Datos_2-003366?style=for-the-badge)](https://ingenieria.usac.edu.gt/)
 
-## Estado tecnico actual (mar 2026)
+</div>
 
-- Parseo de penales corregido: solo toma marcador cuando hay contexto explicito de definicion por penales.
-- Si no hay marcador valido en fuente, `penales_local` y `penales_visitante` se mantienen nulos.
-- Canonizacion historica activa en selecciones: Alemania Occidental/Oriental, URSS, RF de Yugoslavia, Serbia y Montenegro, Checoslovaquia, Holanda/Paises Bajos.
-- El modelo SQL no fuerza unicidad natural en casos historicos canonizados:
-  - `participacion_mundial` puede repetir `(anio, seleccion_id)`.
-  - `posicion_final` puede repetir `(anio, posicion)` o `(anio, seleccion_id)`.
-- En Docker, los CSV se copian a `/var/opt/mssql/csv_work` antes de la limpieza y la carga.
-- Auditoria post-scrapeo web disponible en `logs/auditoria_post_scrapeo_web_20260327_235248.json`.
-  - `fk_orphan_total = 0`
-  - `penalty_anomalies = 0`
+---
 
-## Inicio rapido
+## 📌 Descripción General
 
-1. Levantar el entorno:
+Este proyecto implementa una solución de **Ingeniería de Datos y Bases de Datos Relacionales** para la recolección, limpieza, modelado y explotación analítica de la historia completa de las Copas Mundiales de la FIFA (1930 a 2026):
 
+- **Extracción & Web Scraping:** Scripts en Python para capturar resultados, alineaciones, estadísticas de penales y detalles de partidos.
+- **Normalización & Calidad de Datos:** Reglas de canonización histórica (e.g., Alemania Occidental/Oriental, URSS, Yugoslavia, Países Bajos), resolución de anomalías y validación de integridad referencial.
+- **Base de Datos Relacional (SQL Server):** Despliegue contenerizado en Docker con esquema relacional optimizado, llaves foráneas, índices, vistas y procedimientos almacenados para reportería analítica.
+- **Auditoría Automatizada:** Reportes JSON de validación post-scraping (`fk_orphan_total = 0`, validación de penales y métricas).
+
+---
+
+## 🚀 Inicio Rápido con Docker
+
+### 1. Levantar el Contenedor y Carga Automática
 ```bash
 docker compose up -d --build
 ```
 
-2. Verificar carga basica:
-
+### 2. Verificar la Carga de Datos en SQL Server
 ```bash
 docker exec -i mundiales_db /opt/mssql-tools18/bin/sqlcmd \
   -C -S localhost -U sa -P "Mundiales2026!" -d mundiales \
-  -Q "SELECT COUNT(*) AS partidos FROM dbo.partido;"
+  -Q "SELECT COUNT(*) AS total_partidos FROM dbo.partido;"
 ```
 
-## Manual tecnico unificado
+---
 
-Toda la documentacion tecnica del proyecto se encuentra en:
+## 📦 Estructura del Repositorio
 
-- [docs/manualtecnico.md](docs/manualtecnico.md)
+```
+bases2_proyecto1/
+├── db/                       # Scripts DDL, procedimientos almacenados y vistas SQL
+├── docker/                   # Configuración y Dockerfiles para SQL Server
+├── docs/                     # Documentación completa
+│   └── manualtecnico.md      # Manual técnico unificado (Arquitectura, ETL, Modelo E-R)
+├── py/                       # Scripts de scraping, limpieza y carga ETL en Python
+├── logs/                     # Reportes y logs de auditoría de datos
+├── docker-compose.yml        # Orquestación de servicios
+├── LICENSE                   # Licencia MIT
+└── README.md                 # Este documento
+```
 
-Ese manual incluye arquitectura, scraping, normalizacion, Docker, esquema SQL, ETL, stored procedures, lineamientos de vistas, operacion y troubleshooting.
+---
 
+## 📚 Documentación Técnica
 
+Para conocer a fondo el modelo entidad-relación, detalles de normalización, endpoints de scraping y diseño de procedimientos almacenados, consulta el **[Manual Técnico Unificado](docs/manualtecnico.md)**.
 
+---
 
+## 📄 Licencia
 
+Este proyecto está liberado bajo la Licencia **MIT**. Consulta el archivo [LICENSE](LICENSE) para más información.
 
+---
 
+## 👨‍💻 Autores
 
-| Rol sugerido | Fases a cargo | Responsabilidades principales |
-| :--- | :--- | :--- |
-| **1. Especialista en Arquitectura y Carga de Datos** | Fase 1 y Fase 2 | • Analizar estrategias y preparar el entorno estableciendo rutas de almacenamiento <br>• Crear la base de datos con claves primarias, foráneas y restricciones .<br>• Agregar una tabla de registro (LOG) para cada tabla principal <br>• Realizar la carga masiva (simular partidos, cambiar nombres a mayúsculas) durante los 3 días simulados 65, 68.<br>• Obtener el nivel de fragmentación e insertarlo en los logs respectivos |
-| **2. Administrador de Respaldos y Restauración** | Fase 2  Fase 3 y Fase 4 | • Ejecutar backups completos e incrementales/diferenciales por consola al final de cada día de carga 43, 55.<br>• Eliminar la base de datos y restaurar los backups en orden secuencial en un segundo esquema 46, 72, 74.<br>• Tomar capturas de pantalla de validación (`SELECT *` y `SELECT COUNT(*)`) asegurando que la fecha y hora del sistema operativo sean visibles 47, 77.<br>• Registrar los tiempos precisos de restauración con cronómetro87, 112. |
-| **3. Analista de Rendimiento y Documentador Técnico** | Fase 5 y Entregables | • Realizar el análisis comparativo de los tiempos de restauración registrados 76.<br>• Elaborar recomendaciones y conclusiones basadas en datos reales 76.<br>• Redactar la Documentación Técnica en PDF (metodología, modelo ER, especificaciones del servidor) <br>• Crear el Manual de Usuario paso a paso <br>• Consolidar y comentar el Código Fuente (scripts SQL) para la entrega final. |
+- **Enner Mendizabal** - [@Ennero](https://github.com/Ennero)
+- **David Barrios**
+- **Estefania Mazariegos**
+
+*Facultad de Ingeniería, Universidad de San Carlos de Guatemala.*
