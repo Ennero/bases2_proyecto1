@@ -2,7 +2,7 @@
 
 # ⚽ FIFA World Cup Database & Automated ETL Pipeline
 
-**Pipeline integral de extracción (Web Scraping), normalización y modelado de datos históricos de Copas del Mundo (1930-2026) en SQL Server con Docker**
+**Entregas de bases de datos sobre mundiales: scraping, normalización, SQL Server y fases de simulación/migración**
 
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
 [![SQL Server](https://img.shields.io/badge/SQL_Server-2022-CC292B?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/sql-server)
@@ -16,7 +16,7 @@
 
 ## 📌 Descripción General
 
-Este proyecto implementa una solución de **Ingeniería de Datos y Bases de Datos Relacionales** para la recolección, limpieza, modelado y explotación analítica de la historia completa de las Copas Mundiales de la FIFA (1930 a 2026):
+Este proyecto implementa una solución de **Ingeniería de Datos y Bases de Datos Relacionales** para la recolección, limpieza, modelado y explotación analítica de datos de Copas Mundiales de la FIFA incluidos en los archivos de la entrega:
 
 - **Extracción & Web Scraping:** Scripts en Python para capturar resultados, alineaciones, estadísticas de penales y detalles de partidos.
 - **Normalización & Calidad de Datos:** Reglas de canonización histórica (e.g., Alemania Occidental/Oriental, URSS, Yugoslavia, Países Bajos), resolución de anomalías y validación de integridad referencial.
@@ -27,7 +27,7 @@ Este proyecto implementa una solución de **Ingeniería de Datos y Bases de Dato
 
 ## 🚀 Inicio Rápido con Docker
 
-### 1. Levantar el Contenedor y Carga Automática
+### 1. Levantar SQL Server y la inicialización configurada
 ```bash
 docker compose up -d --build
 ```
@@ -77,3 +77,17 @@ Este proyecto está liberado bajo la Licencia **MIT**. Consulta el archivo [LICE
 - **Estefania Mazariegos**
 
 *Facultad de Ingeniería, Universidad de San Carlos de Guatemala.*
+
+## Entregas y fases incluidas
+
+| Ruta | Contenido y documentación |
+|---|---|
+| [py/](py/) | Scraping, normalización y scripts de datos. |
+| [docs/manualtecnico.md](docs/manualtecnico.md) | Modelo y explicación técnica de la base de mundiales. |
+| [fase2/](fase2/) | Simulación de cargas por días y respaldos; [orden de scripts](fase2/sql/README.md). |
+| [fase3/](fase3/) y [fase4/](fase4/) | Archivos de las fases posteriores conservados en la entrega. |
+| [Proyecto3/](Proyecto3/README.md) | Aplicación Python de consultas/migración con configuración y dependencias propias. |
+
+Para Proyecto3, copiar `Proyecto3/.env.example` a `.env` dentro de esa carpeta, instalar `Proyecto3/requirements.txt` y seguir su README. No asumir que todos los scripts de fases se ejecutan al levantar el Compose principal.
+
+La cobertura temporal y las métricas de calidad corresponden a los CSV y auditorías incluidos; no se afirma una historia exhaustiva por el rango del título. Las contraseñas visibles en el Compose y los comandos son de un entorno local de demostración. Cambiarlas si se reutiliza la configuración fuera de ese entorno.
